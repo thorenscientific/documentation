@@ -28,9 +28,19 @@ Contents
    :maxdepth: 2
 
    User Guides <eval/user-guide/index>
-   Active Learning <university/active_learning/index>
-   miscellaneous/docs_guidelines
    university/index
+
+.. toctree::
+   :caption: Active Learning
+   :maxdepth: 2
+   
+   Exercises <university/active_learning/index>
+   
+.. toctree::
+   :caption: Docs and Guidelines
+   :maxdepth: 2
+   
+   Docs and Guidelines <miscellaneous/docs_guidelines>
 
 .. toctree::
    :caption: Contributing and Guidelines
