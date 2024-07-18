@@ -19,22 +19,17 @@ Contents
 .. toctree::
    :caption: Linux Kernel & Software
    :maxdepth: 2
+   :glob:
 
-   linux/kuiper/index
-   linux/drivers/index
-   linux/kernel/index
-   linux/software/index
+   linux/*/index
 
 .. toctree::
    :caption: Evaluation Boards
    :maxdepth: 2
 
-   eval/user-guide/index
-
-.. toctree::
-   :caption: University Program
-   :maxdepth: 1
-
+   User Guides <eval/user-guide/index>
+   Active Learning <university/active_learning/index>
+   miscellaneous/docs_guidelines
    university/index
 
 .. toctree::
