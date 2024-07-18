@@ -27,3 +27,8 @@ interref_repos = ['doctools']
 # -- Options for HTML output --------------------------------------------------
 
 html_theme = 'cosmic'
+numfig = True
+
+
+numfig_format = {'figure': 'Figure %s', 'table': 'Table %s',
+                 'code-block': 'Listing %s', 'section': 'Section %s'}

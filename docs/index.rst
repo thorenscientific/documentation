@@ -21,10 +21,7 @@ Contents
    :maxdepth: 2
 
    User Guides <eval/user-guide/index>
+   Active Learning <university/active_learning/index>
    miscellaneous/docs_guidelines
 
-.. toctree::
-   :caption: University Program
-   :maxdepth: 1
 
-   university/index
