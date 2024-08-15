@@ -28,6 +28,12 @@ Industrial Ethernet
 Inertial MEMS Sensors
 -------------------------------------------------------------------------------
 
+.. toctree::
+   :caption: MEMS Accelerometers
+   :maxdepth: 1
+
+   eval-adxl355-pmdz/index
+
 Interface and Isolation
 -------------------------------------------------------------------------------
 
