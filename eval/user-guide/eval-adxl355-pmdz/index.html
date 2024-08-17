@@ -99,12 +99,12 @@
 <li><a class="reference internal" href="#">EVAL-ADXL355-PMDZ User Guide</a><ul>
 <li><a class="reference internal" href="#overview">Overview</a></li>
 <li><a class="reference internal" href="#input-and-output-connections-and-configurations">Input and Output Connections and Configurations</a><ul>
-<li><a class="reference internal" href="#host-processor-connector">Host Processor Connector</a></li>
+<li><a class="reference internal" href="#pmod-processor-connector">Pmod  Processor Connector</a></li>
 <li><a class="reference internal" href="#adxl355-interrupt-pins">ADXL355 Interrupt Pins</a></li>
 <li><a class="reference internal" href="#power-supply-considerations-and-configuration">Power Supply Considerations and Configuration</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#device-driver-support">Device Driver Support</a></li>
+<li><a class="reference internal" href="#device-driver-and-software-support">Device Driver and Software Support</a></li>
 <li><a class="reference internal" href="#system-setup-using-adicup3029">System Setup Using ADICUP3029</a><ul>
 <li><a class="reference internal" href="#demo-requirements">Demo Requirements</a></li>
 <li><a class="reference internal" href="#setting-up-the-hardware">Setting up the Hardware</a></li>
@@ -117,29 +117,29 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#system-setup-using-raspberry-pi">System Setup Using Raspberry Pi</a><ul>
-<li><a class="reference internal" href="#demo-requirements-2">Demo Requirements</a></li>
+<li><a class="reference internal" href="#id2">Demo Requirements</a></li>
 <li><a class="reference internal" href="#loading-image-on-sd-card">Loading Image on SD Card</a></li>
 <li><a class="reference internal" href="#configuring-the-sd-card">Configuring the SD Card</a></li>
-<li><a class="reference internal" href="#setting-up-the-hardware-1">Setting up the Hardware</a></li>
-<li><a class="reference internal" href="#system-setup-using-eval-adicup360">System Setup Using EVAL-ADICUP360</a><ul>
-<li><a class="reference internal" href="#hardware-connection">Hardware Connection</a><ul>
+<li><a class="reference internal" href="#id3">Setting up the Hardware</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#system-setup-using-eval-adicup360-deprecated">System Setup Using EVAL-ADICUP360 <strong>(DEPRECATED)</strong></a></li>
+<li><a class="reference internal" href="#application-software-all-platforms">Application Software (All Platforms)</a><ul>
 <li><a class="reference internal" href="#for-rpi-direct-local-access">For RPI Direct Local Access:</a></li>
-<li><a class="reference internal" href="#for-windows-machine-connected-to-raspberry-pi">For Windows machine connected to Raspberry Pi:</a></li>
-<li><a class="reference internal" href="#for-windows-machine-connected-to-adicup3029">For Windows machine connected to ADICUP3029:</a></li>
-</ul>
-</li>
+<li><a class="reference internal" href="#for-windows-machine-connected-to-raspberry-pi">For Windows machine connected to Raspberry Pi:</a><ul>
+<li><a class="reference internal" href="#for-windows-machine-connected-to-adicup3029">For Windows machine connected to ADICUP3029:</a><ul>
 <li><a class="reference internal" href="#iio-commands">IIO Commands</a></li>
-<li><a class="reference internal" href="#iio-oscilloscope">IIO Oscilloscope</a><ul>
-<li><a class="reference internal" href="#debug-panel">Debug Panel</a></li>
-<li><a class="reference internal" href="#dmm-panel">DMM Panel</a></li>
+<li><a class="reference internal" href="#iio-oscilloscope">IIO Oscilloscope</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#pyadi-iio">PyADI-IIO</a><ul>
+<li><a class="reference internal" href="#debug-panel">Debug Panel</a></li>
+<li><a class="reference internal" href="#dmm-panel">DMM Panel</a><ul>
+<li><a class="reference internal" href="#pyadi-iio">PyADI-IIO</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#running-the-example">Running the example</a></li>
 <li><a class="reference internal" href="#for-rpi">For RPi</a></li>
 <li><a class="reference internal" href="#for-no-os">For No-OS</a></li>
-</ul>
-</li>
 </ul>
 </li>
 <li><a class="reference internal" href="#more-information-and-useful-links">More information and useful links</a></li>
@@ -207,7 +207,7 @@ Content on this topic
 <h1>EVAL-ADXL355-PMDZ User Guide<a class="headerlink" href="#eval-adxl355-pmdz-user-guide" title="Link to this heading">¶</a></h1>
 <section id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Link to this heading">¶</a></h2>
-<p>The <a class="icon adi reference external" href="https://www.analog.com/adxl355">ADXL355</a> is a low noise density, low 0g offset drift, low power, 3-axis MEMS accelerometer with selectable measurement ranges. The ADXL355 supports the ±2g, ±4g, and ±8g ranges, and offers industry leading noise, offset drift over temperature, and long term stability, enabling precision applications with minimal calibration and with very low power consumption. Applications include:</p>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/eval-adxl355-pmdz">EVAL-ADXL355-PMDZ</a> is a compact, low-cost, Pmod-compatible evaluation board for the <a class="icon adi reference external" href="https://www.analog.com/adxl355">ADXL355</a> low noise density, low zero-g offset drift, low power, 3-axis MEMS accelerometer with selectable measurement ranges. The ADXL355 supports the ±2g, ±4g, and ±8g ranges, and offers industry leading noise, offset drift over temperature, and long term stability, enabling precision applications with minimal calibration and with very low power consumption. Applications include:</p>
 <ul class="simple">
 <li><p>Inertial measurement units (IMUs)/altitude and heading reference systems (AHRS)</p></li>
 <li><p>Platform stabilization systems</p></li>
@@ -218,16 +218,16 @@ Content on this topic
 <li><p>Condition monitoring</p></li>
 </ul>
 <p>The ADXL355 accelerometers offer guaranteed temperature stability with null offset coefficients of 0.15mg/°C (max). The stability minimizes resource and expense associated with calibration and testing effort, helping to achieve higher throughput for device OEMs. In addition, the hermetic package helps ensure that the end product conforms to its repeatability and stability specifications long after they leave the factory.</p>
-<p>With output of ±2g to ±8g full scale range (FSR), selectable digital filtering from 1 Hz to 1 kHz, and low noise density of 25µ/√Hz at less than 200µA current consumption, ADXL355 MEMS accelerometer offers performance level comparable to much more expensive devices with less power consumption and BOM cost. For general board details and to buy a board, please visit the <a class="icon adi reference external" href="https://www.analog.com/eval-adxl355-pmdz">EVAL-ADXL355-PMDZ</a> product page.</p>
+<p>With output of ±2g to ±8g full scale range (FSR), selectable digital filtering from 1 Hz to 1 kHz, and low noise density of 25µ/√Hz at less than 200µA current consumption, ADXL355 MEMS accelerometer offers performance level comparable to much more expensive devices with less power consumption and BOM cost.</p>
 <p><a class="reference internal" href="../../../_images/adxl355_pmdz.png"><img alt="adxl355_pmdz.png" src="../../../_images/adxl355_pmdz.png" style="width: 350px;" /></a></p>
 </section>
 <section id="input-and-output-connections-and-configurations">
 <h2>Input and Output Connections and Configurations<a class="headerlink" href="#input-and-output-connections-and-configurations" title="Link to this heading">¶</a></h2>
 <p>The PMOD board is small in size with dimensions approximately 2.5 cm in width by 2.5 cm in length.</p>
-<section id="host-processor-connector">
-<h3>Host Processor Connector<a class="headerlink" href="#host-processor-connector" title="Link to this heading">¶</a></h3>
-<p>The PMOD interface is a series of standardized digital interfaces for various digital communication protocols such as SPI, I2C, and UART. These interface types were standardized by Digilent, which is now a division of National Instruments. Complete details on the PMOD specification can be found <a class="reference external" href="https://www.digilentinc.com/Pmods/Digilent-Pmod_%20Interface_Specification.pdf">here</a>.</p>
-<p>The specific interface used for the EVAL-ADXL355-PMDZ boards is the extended SPI. In general ADI has adopted the extended SPI connector for all PMOD devices which have an SPI interface. It provides flexibility to add interrupts, general purpose I/O, resets, and other important digitally controlled functions.</p>
+<section id="pmod-processor-connector">
+<h3>Pmod  Processor Connector<a class="headerlink" href="#pmod-processor-connector" title="Link to this heading">¶</a></h3>
+<p>The PMOD interface is a series of standardized digital interfaces for various digital communication protocols such as SPI, I2C, and UART. These interface types were standardized by Digilent, which is now a division of National Instruments. Complete details on the Pmod specification can be found on the <a class="reference external" href="https://digilent.com/reference/pmod/start">Digilent Pmod landing page</a>.</p>
+<p>The specific interface used for the EVAL-ADXL355-PMDZ boards is the extended SPI. In general ADI has adopted the extended SPI connector for all PMOD devices which have an SPI interface. It provides flexibility to add interrupts, general purpose I/O, resets, and other digitally controlled functions.</p>
 <div class="table-wrapper docutils container">
 <table class="docutils align-default">
 <thead>
@@ -292,56 +292,62 @@ Content on this topic
 </section>
 <section id="adxl355-interrupt-pins">
 <h3>ADXL355 Interrupt Pins<a class="headerlink" href="#adxl355-interrupt-pins" title="Link to this heading">¶</a></h3>
-<p>The EVAL-ADXL355-PMDZ has two interrupt pins and a data ready pin which can be used as external indicators for the user. The interrupt pins can be programmed through software to reflect various status flags within the ADXL355, and those pins are accessible through the SPI PMOD header. For complete details on the individual status flags, what they mean, and how to program the chip to reflect those interrupts, please consult the <a href="#id4"><span class="problematic" id="id5">`ADXL355 &lt;ADI&gt;ADXL355&gt;`__</span></a> data sheet.</p>
+<p>The EVAL-ADXL355-PMDZ has two interrupt pins and a data ready pin which can be used as external indicators for the user. The interrupt pins can be programmed through software to reflect various status flags within the ADXL355, and those pins are accessible through the SPI PMOD header. For complete details on the individual status flags, what they mean, and how to program the chip to reflect those interrupts, please consult the <a class="icon adi reference external" href="https://www.analog.com/adxl355">ADXL355</a> data sheet.</p>
 </section>
 <section id="power-supply-considerations-and-configuration">
 <h3>Power Supply Considerations and Configuration<a class="headerlink" href="#power-supply-considerations-and-configuration" title="Link to this heading">¶</a></h3>
-<p>When using the ADXL355 PMOD board, the 3.3V power for the PMOD comes directly from the host board it is connected to. The power from the host is generally capable of providing up to 100 mA at 3.3V; but for complete PMOD power specifications, please click <a class="reference external" href="https://www.digilentinc.com/Pmods/Digilent-Pmod_%20Interface_Specification.pdf">here</a>.</p>
+<p>When using the ADXL355 PMOD board, the 3.3V power for the PMOD comes directly from the host board it is connected to. Most Pmod platform boards can supply at least 100 mA, more than adquate for the EVAL-ADXL355-PMDZ.</p>
 </section>
 </section>
-<section id="device-driver-support">
-<h2>Device Driver Support<a class="headerlink" href="#device-driver-support" title="Link to this heading">¶</a></h2>
-<p>There are two device driver solutions that are provided for controlling the <strong>EVAL-ADXL355-PMDZ</strong>:</p>
+<section id="device-driver-and-software-support">
+<h2>Device Driver and Software Support<a class="headerlink" href="#device-driver-and-software-support" title="Link to this heading">¶</a></h2>
+<p>There are two device driver and accompanying software solutions provided for the EVAL-ADXL355-PMDZ:</p>
+<p><strong>ADXL355 no-OS Driver</strong></p>
 <blockquote>
 <div><ul>
-<li><p><strong>ADXL355 no-OS Driver</strong></p>
+<li><p>The <a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/blob/main/drivers/accel/adxl355">ADXL355 no-OS driver</a> is used in bare-metal applications, typically running on low-power, embedded microcontrollers.</p></li>
+<li><p>The <a class="icon git reference external" href="https://github.com/analogdevicesinc/no-OS/blob/main/projects/eval-adxl355-pmdz">ADXL355 no-OS example project</a> uses the ADXL355 no-OS driver and has several configuration options:</p>
 <blockquote>
 <div><ul class="simple">
-<li><p>The <strong>[[ :resources:tools-software:uc-drivers:adxl355|ADXL355 no-OS driver]]</strong> is used in bare-metal applications, typically running on low-power, embedded microcontrollers.</p></li>
-<li><p>The <strong>[[ :resources:eval:user-guides:eval-adxl355-pmdz:no-os-setup|ADXL355 no-OS Example Project]]</strong> uses the ADXL355 no-OS driver and has several configuration options.
-* The tinyiiod configuration emulates the Linux IIO framework through the [[repo&gt;libtinyiiod|tinyiiod daemon library]]. The application communicates with the host computer via the serial backend, over a USB-UART physical connection. This facilitates rapid application development on a host computer, independent from embedded code development. This is the configuration that will be referenced in the no-OS platform setups below.</p></li>
+<li><p>The tinyiiod configuration emulates the Linux IIO framework through the tinyiiod daemon library. The application communicates with the host computer via the serial backend, over a USB-UART physical connection. This facilitates rapid application development on a host computer, independent from embedded code development. This is the configuration that will be referenced in the no-OS platform setups below.</p></li>
+<li><p>The “dummy” configuration implements a simple command-line program that can be run on a terminal.</p></li>
 </ul>
 </div></blockquote>
 </li>
-<li><dl class="simple">
+</ul>
+</div></blockquote>
+<div class="admonition-download admonition">
+<p class="admonition-title">Download</p>
+<p>A zip file containing prebuilt programming files for the no-OS example project, targeting platforms below are available at: <a class="reference external" href="https://github.com/analogdevicesinc/no-OS/releases/download/last_commit/eval-adxl355-pmdz.zip">eval-adxl355-pmdz.zip</a>.</p>
+<p>More details are provided in the platform-specific sections below.</p>
+</div>
+<dl class="simple">
 <dt><strong>ADXL355 Linux Driver</strong></dt><dd><ul class="simple">
-<li><p>The <strong>[[ :resources:tools-software:linux-drivers:iio-accelerometer:adxl355|ADXL355 Linux driver]]</strong> is used in applications running the Linux operating system, typically on larger processors and SoC devices.</p></li>
-<li><p>The ADXL355 Linux driver uses the Industrial Input/Output (IIO) framework, greatly simplifying the development of application code via the cross-platform Libiio library, which is written in C and includes bindings for Python, MATLAB, C#, and other languages. Application code can run directly on the platform board, communicating with the device over the local backend, or from a remote host over the network or USB backends.\</p></li>
+<li><p>The <a class="reference external" href="https://wiki.analog.com/resources/tools-software/linux-drivers/iio-accelerometer/adxl355">ADXL355 Linux driver</a> is used in applications running the Linux operating system, typically on larger processors and SoC devices.</p></li>
+<li><p>The ADXL355 Linux driver uses the Industrial Input/Output (IIO) framework, greatly simplifying the development of application code via the cross-platform Libiio library, which is written in C and includes bindings for Python, MATLAB, C#, and other languages. Application code can run directly on the platform board, communicating with the device over the local backend, or from a remote host over the network or USB backends.</p></li>
 </ul>
 </dd>
 </dl>
-</li>
-</ul>
-</div></blockquote>
 </section>
 <section id="system-setup-using-adicup3029">
 <h2>System Setup Using ADICUP3029<a class="headerlink" href="#system-setup-using-adicup3029" title="Link to this heading">¶</a></h2>
-<p>The ** EVAL-ADXL355-PMDZ ** can be used with <a class="icon adi reference external" href="https://www.analog.com/eval-adicup3029">ADICUP3029</a>.</p>
+<p>The EVAL-ADXL355-PMDZ can be used with <a class="icon adi reference external" href="https://www.analog.com/eval-adicup3029">ADICUP3029</a>.</p>
 <section id="demo-requirements">
 <h3>Demo Requirements<a class="headerlink" href="#demo-requirements" title="Link to this heading">¶</a></h3>
 <p>The following is the list of items needed in order to replicate this demo.</p>
 <ul class="simple">
-<li><p>** Hardware **</p>
+<li><p>Hardware</p>
 <ul>
-<li><p><a href="#id4"><span class="problematic" id="id6">`EVAL-ADICUP3029 &lt;ADI&gt;EVAL-ADICUP3029&gt;`__</span></a></p></li>
-<li><p><a href="#id4"><span class="problematic" id="id7">`EVAL-ADXL355-PMDZ &lt;ADI&gt;EVAL-ADXL355-PMDZ&gt;`__</span></a></p></li>
+<li><p><a href="#id4"><span class="problematic" id="id5">`EVAL-ADICUP3029 &lt;ADI&gt;EVAL-ADICUP3029&gt;`__</span></a></p></li>
+<li><p><a href="#id4"><span class="problematic" id="id6">`EVAL-ADXL355-PMDZ &lt;ADI&gt;EVAL-ADXL355-PMDZ&gt;`__</span></a></p></li>
 <li><p>Micro-USB to USB Cable</p></li>
 <li><p>PC or Laptop with USB Port</p></li>
 </ul>
 </li>
-<li><p>** Software **</p>
+<li><p>Software</p>
 <ul>
-<li><p><a href="#id4"><span class="problematic" id="id8">`ADuCM3029_demo_ADXL355.hex &lt;repo&gt;no-OS/releases/download/Latest/eval-adxl355-pmdz.zip&gt;`__</span></a></p></li>
+<li><p>For IIO / libiio: eval-adxl355-pmdz_aducm3029_iio_example.hex from the programming file zip</p></li>
+<li><p>For terminal CLI: eval-adxl355-pmdz_aducm3029_dummy_example.hex from the programming file zip</p></li>
 </ul>
 </li>
 </ul>
@@ -351,24 +357,7 @@ Content on this topic
 <ol class="arabic simple">
 <li><p>Dragging and Dropping the .Hex to the Daplink drive</p></li>
 <li><p>Using the drag and drop method, the software is going to be a version that Analog Devices creates for testing and evaluation purposes. This is the <strong>EASIEST</strong> way to get started with the reference design.</p></li>
-<li><p>Building, Compiling, and Debugging using CCES</p>
-<ol class="arabic simple">
-<li><p>Importing the project into <a class="icon adi reference external" href="https://www.analog.com/en/design-center/evaluation-hardware-and-software/software/adswt-cces.html">CrossCore Embedded Studio</a> is going to allow you to change parameters and customize the software to your application, but will be a bit more advanced and will require you to download the CrossCore toolchain.</p></li>
 </ol>
-</li>
-</ol>
-</div>
-<div class="admonition-download admonition">
-<p class="admonition-title">Download</p>
-<p>A zip file containing prebuilt programming files for the no-OS platforms below are available at: <a class="reference external" href="https://github.com/analogdevicesinc/no-OS/releases/download/last_commit/eval-adxl355-pmdz.zip">eval-adxl355-pmdz.zip</a>.</p>
-<p>Each platorm will typically have:</p>
-<blockquote>
-<div><ul class="simple">
-<li><p>A “dummy” programming file, which implements a simple command-line program that can be run on a terminal.</p></li>
-<li><p>An “iio” programming file, which allows the use of standard development tools and the libiio cross-platform library and language bindings.</p></li>
-</ul>
-</div></blockquote>
-<p>More details are provided in the platform-specific sections below.</p>
 </div>
 </section>
 <section id="setting-up-the-hardware">
@@ -405,14 +394,13 @@ Content on this topic
 </li>
 <li><p>** Software **</p>
 <ul>
-<li><p>For MAX32655FTHR,
-* Pre-built hex file: [[repo&gt;no-OS/releases/download/Latest/eval-adxl355-pmdz.zip | MAX32655FTHR_demo_ADXL355.hex]]
-* PuTTY or other similar software</p></li>
+<li><p>For MAX32655FTHR, programming file from zip:
+- For IIO / libiio: eval-adxl355-pmdz_maxim_iio_example_max32655_adxl355.hex
+- For terminal CLI: eval-adxl355-pmdz_maxim_dummy_example_max32655_adxl355.hex</p></li>
 <li><dl class="simple">
 <dt>For MAX32650FTHR,</dt><dd><ul>
-<li><p>Maxim Micros SDK [[maxim&gt;en/design/software-description.html/swpart=SFW0010820A]]</p></li>
-<li><p>Pre-built hex file: MAX32650FTHR_demo_ADXL355.hex from eval-adxl355-pmdz.zip file</p></li>
-<li><p>PuTTY or other similar software</p></li>
+<li><p>For IIO / libiio: eval-adxl355-pmdz_maxim_iio_example_max32650_adxl355.hex</p></li>
+<li><p>For terminal CLI: eval-adxl355-pmdz_maxim_dummy_example_max32650_adxl355.hex</p></li>
 </ul>
 </dd>
 </dl>
@@ -494,7 +482,7 @@ Content on this topic
 <li><p>Power up the <strong>MAX32650FTHR</strong> by connecting it to your laptop using micro-USB. Connect <strong>MAX32625PICO</strong> to your laptop as well.</p></li>
 <li><p>Open the file explorer. Drag-and-drop the pre-built hex file to the DAPLINK. If the transfer was not completed, update the firmware for the DAPLINK. Follow the steps here: <a class="reference external" href="https://github.com/MaximIntegrated/max32625pico-firmware-images/">https://github.com/MaximIntegrated/max32625pico-firmware-images/</a></p></li>
 <li><p>Open PuTTY or other similar software. Check the Device Manager to set the correct COM port for the <strong>MAX32650FTHR</strong>.</p></li>
-<li><p>Set baud rate according to the hex file used available in <a href="#id4"><span class="problematic" id="id9">`MAX32650FTHR_demo_ADXL355.hex &lt;repo&gt;no-OS/releases/download/Latest/eval-adxl355-pmdz.zip&gt;`__</span></a>:</p></li>
+<li><p>Set baud rate according to the hex file used available in <a href="#id4"><span class="problematic" id="id7">`MAX32650FTHR_demo_ADXL355.hex &lt;repo&gt;no-OS/releases/download/Latest/eval-adxl355-pmdz.zip&gt;`__</span></a>:</p></li>
 </ol>
 <div class="table-wrapper docutils container">
 <table class="docutils align-default">
@@ -519,9 +507,9 @@ Content on this topic
 </section>
 <section id="system-setup-using-raspberry-pi">
 <h2>System Setup Using Raspberry Pi<a class="headerlink" href="#system-setup-using-raspberry-pi" title="Link to this heading">¶</a></h2>
-<p>The ** EVAL-ADXL355-PMDZ ** can be used with a Raspberry Pi.</p>
-<section id="demo-requirements-2">
-<span id="id2"></span><h3>Demo Requirements<a class="headerlink" href="#demo-requirements-2" title="Link to this heading">¶</a></h3>
+<p>The EVAL-ADXL355-PMDZ can be used with a Raspberry Pi.</p>
+<section id="id2">
+<h3>Demo Requirements<a class="headerlink" href="#id2" title="Link to this heading">¶</a></h3>
 <p>The following is a list of items needed in order to replicate this demo.</p>
 <ul class="simple">
 <li><p><strong>Hardware</strong></p>
@@ -539,11 +527,8 @@ Content on this topic
 </li>
 </ul>
 </li>
-<li><p><strong>Software</strong></p>
-<ul>
-<li><p><a class="reference external" href="/resources/tools-software/linux-software/kuiper-linux">Kuiper Linux Image</a></p></li>
-</ul>
-</li>
+<li><p><strong>Software</strong>
+- <a class="reference external" href="https://wiki.analog.com/resources/tools-software/linux-software/adi-kuiper_images/release_notes">Kuiper Linux Image</a></p></li>
 </ul>
 </section>
 <section id="loading-image-on-sd-card">
@@ -552,13 +537,13 @@ Content on this topic
 </section>
 <section id="configuring-the-sd-card">
 <h3>Configuring the SD Card<a class="headerlink" href="#configuring-the-sd-card" title="Link to this heading">¶</a></h3>
-<p>Follow the configuration procedure under <strong>Configuring the SD Card for Raspberry Pi Projects</strong> on the <a class="reference external" href="/resources/tools-software/linux-software/kuiper-linux">Kuiper Linux</a> page, substituting the following lines in <strong>config.txt</strong>:</p>
+<p>Follow the configuration procedure under <strong>Configuring the SD Card for Raspberry Pi Projects</strong> on the <a class="reference external" href="https://wiki.analog.com//resources/tools-software/linux-software/kuiper-linux">Kuiper Linux</a> page, substituting the following lines in <strong>config.txt</strong>:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dtoverlay</span><span class="o">=</span><span class="n">rpi</span><span class="o">-</span><span class="n">adxl355</span>
 </pre></div>
 </div>
 </section>
-<section id="setting-up-the-hardware-1">
-<span id="id3"></span><h3>Setting up the Hardware<a class="headerlink" href="#setting-up-the-hardware-1" title="Link to this heading">¶</a></h3>
+<section id="id3">
+<h3>Setting up the Hardware<a class="headerlink" href="#id3" title="Link to this heading">¶</a></h3>
 <p>To set up the circuit for evaluation, consider the following steps:</p>
 <ol class="arabic simple">
 <li><p>Connect the <strong>P9</strong> of the <strong>PMOD to Raspberry Pi Interposer</strong> board at the male header GPIO pin connector of the <strong>Raspberry Pi</strong> as shown below. <a class="reference internal" href="../../../_images/interposer.png"><img alt="image2" src="../../../_images/interposer.png" style="width: 500px;" /></a></p></li>
@@ -569,9 +554,10 @@ Content on this topic
 <li><p>Power on the RPi board by plugging in a 5V power supply with a micro-USB connector. The final setup should look similar to the picture below. <a class="reference internal" href="../../../_images/eval-adxl355-pmdz_overall_setup.png"><img alt="eval-adxl355-pmdz_overall_setup.png" src="../../../_images/eval-adxl355-pmdz_overall_setup.png" style="width: 600px;" /></a></p></li>
 </ol>
 </section>
-<section id="system-setup-using-eval-adicup360">
-<h3>System Setup Using EVAL-ADICUP360<a class="headerlink" href="#system-setup-using-eval-adicup360" title="Link to this heading">¶</a></h3>
-<p>The original software example for the ADXL355 was developed on the ADICUP360 platform, and is a simple, terminal-based command line interface. This type of example program is being deprecated in favor of tinyiiod-based servers for embedded platforms, however this example is still available for reference here: <a class="reference external" href="/resources/eval/user-guides/eval-adicup360/reference_designs/demo_adxl355">ADXL355 Accelerometer PMOD Demo on ADICUP360</a>.</p>
+</section>
+<section id="system-setup-using-eval-adicup360-deprecated">
+<h2>System Setup Using EVAL-ADICUP360 <strong>(DEPRECATED)</strong><a class="headerlink" href="#system-setup-using-eval-adicup360-deprecated" title="Link to this heading">¶</a></h2>
+<p>The original software example for the ADXL355 was developed on the ADICUP360 platform, and is a simple, terminal-based command line interface. This type of example program is being deprecated in favor of tinyiiod-based servers for embedded platforms, however this example is still available for reference here: <a class="reference external" href="https://wiki.analog.com/resources/eval/user-guides/eval-adicup360/reference_designs/demo_adxl355">ADXL355 Accelerometer PMOD Demo on ADICUP360</a>.</p>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>In order to use the <strong>EVAL-ADXL355-PMDZ</strong> with the <strong>ADICUP360</strong>, the user <strong>MUST</strong> remove resistor R1. The ADXL355 holds the DATA_RDY pin low during powerup, and that holds the EVAL-ADICUP360 in UART boot mode. When this mode is active the MCU will stay in standby mode till it receives the proper command, effectively making the ADuCM360 not run. So to avoid this, please remove R1 and note that you can’t use the DATA_RDY pin with the ADICUP360.</p>
@@ -580,113 +566,100 @@ Content on this topic
 <p class="admonition-title">Note</p>
 <p>Note that the libiio, iio oscilloscope, and pyadi-iio sections below do NOT apply to this example.</p>
 </div>
-<div class="line-block">
-<div class="line">===== Application Software (All Platforms) =====</div>
-</div>
-<section id="hardware-connection">
-<h4>Hardware Connection<a class="headerlink" href="#hardware-connection" title="Link to this heading">¶</a></h4>
+</section>
+<section id="application-software-all-platforms">
+<h2>Application Software (All Platforms)<a class="headerlink" href="#application-software-all-platforms" title="Link to this heading">¶</a></h2>
 <p>The Libiio is a library used for interfacing with IIO devices and is required to be installed on your computer.</p>
 <div class="admonition-download admonition">
 <p class="admonition-title">Download</p>
 <p>Download and install the latest <a class="reference external" href="https://github.com/analogdevicesinc/libiio/releases">Libiio package</a> on your machine.</p>
 </div>
 <p>To be able to connect your device, the software must be able to create a context. The context creation in the software depends on the backend used to connect to the device as well as the platform where the EVAL-ADXL355-PMDZ is attached. Two platforms are currently supported for the EVAL-ADXL355-PMDZ: Raspberry Pi using the ADI Kuiper Linux and the ADICUP3029 running the no-OS ADXL355 demo project. The user needs to supply a <strong>URI</strong> which will be used in the context creation.</p>
-<p>The <a class="reference external" href="/resources/tools-software/linux-software/libiio/iio_info">iio_info</a> command is a part of the libIIO package that reports all IIO attributes.</p>
-<div class="line-block">
-<div class="line">Upon installation, simply enter the command on the terminal command line to access it.</div>
-</div>
+<p>The <a class="reference external" href="https://wiki.analog.com/resources/tools-software/linux-software/libiio/iio_info">iio_info</a> command is a part of the libIIO package that reports all IIO attributes.</p>
+<p>Upon installation, simply enter the command on the terminal command line to access it.</p>
 <section id="for-rpi-direct-local-access">
-<h5>For RPI Direct Local Access:<a class="headerlink" href="#for-rpi-direct-local-access" title="Link to this heading">¶</a></h5>
+<h3>For RPI Direct Local Access:<a class="headerlink" href="#for-rpi-direct-local-access" title="Link to this heading">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iio_info</span>
 </pre></div>
 </div>
 </section>
 <section id="for-windows-machine-connected-to-raspberry-pi">
-<h5>For Windows machine connected to Raspberry Pi:<a class="headerlink" href="#for-windows-machine-connected-to-raspberry-pi" title="Link to this heading">¶</a></h5>
+<h3>For Windows machine connected to Raspberry Pi:<a class="headerlink" href="#for-windows-machine-connected-to-raspberry-pi" title="Link to this heading">¶</a></h3>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iio_info</span> <span class="o">-</span><span class="n">u</span> <span class="n">ip</span><span class="p">:</span><span class="o">&lt;</span><span class="n">ip</span> <span class="n">address</span> <span class="n">of</span> <span class="n">your</span> <span class="n">ip</span><span class="o">&gt;</span>
 </pre></div>
 </div>
-<p>Example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">If</span> <span class="n">your</span> <span class="n">Raspberry</span> <span class="n">Pi</span> <span class="n">has</span> <span class="n">the</span> <span class="n">IP</span> <span class="n">address</span> <span class="mf">192.168.1.7</span><span class="p">,</span> <span class="n">you</span> <span class="n">have</span> <span class="n">to</span> <span class="n">use</span> <span class="o">//</span><span class="n">iio_info</span> <span class="o">-</span><span class="n">u</span> <span class="n">ip</span><span class="p">::</span><span class="mf">192.168.1.7</span><span class="o">//</span> <span class="k">as</span> <span class="n">your</span> <span class="n">URI</span>
+<p>For example, if your Raspberry Pi has the IP address 192.168.1.7, then enter:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iio_info</span> <span class="o">-</span><span class="n">u</span> <span class="n">ip</span><span class="p">:</span><span class="mf">192.168.1.7</span>
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Do note that the Windows machine and the RPI board should be connected to the same network in order for the machine to detect the device.</p>
 </div>
-</section>
 <section id="for-windows-machine-connected-to-adicup3029">
-<h5>For Windows machine connected to ADICUP3029:<a class="headerlink" href="#for-windows-machine-connected-to-adicup3029" title="Link to this heading">¶</a></h5>
+<h4>For Windows machine connected to ADICUP3029:<a class="headerlink" href="#for-windows-machine-connected-to-adicup3029" title="Link to this heading">¶</a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iio_info</span> <span class="o">-</span><span class="n">u</span> <span class="n">serial</span><span class="p">:</span><span class="o">&lt;</span><span class="n">serial</span> <span class="n">port</span><span class="o">&gt;</span>
 </pre></div>
 </div>
 <p>Examples:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">In</span> <span class="n">a</span> <span class="n">Windows</span> <span class="n">machine</span><span class="p">,</span> <span class="n">you</span> <span class="n">can</span> <span class="n">check</span> <span class="n">the</span> <span class="n">port</span> <span class="n">of</span> <span class="n">your</span> <span class="n">ADICUP3029</span> <span class="n">via</span> <span class="n">Device</span> <span class="n">Manager</span> <span class="ow">in</span> <span class="n">the</span> <span class="n">Ports</span> <span class="p">(</span><span class="n">COM</span> <span class="o">&amp;</span> <span class="n">LPT</span><span class="p">)</span> <span class="n">section</span><span class="o">.</span> <span class="n">If</span> <span class="n">your</span> <span class="n">device</span> <span class="ow">is</span> <span class="ow">in</span> <span class="n">COM4</span><span class="p">,</span> <span class="n">you</span> <span class="n">have</span> <span class="n">to</span> <span class="n">use</span> <span class="o">//</span><span class="n">iio_info</span> <span class="o">-</span><span class="n">u</span> <span class="n">serial</span><span class="p">:</span><span class="n">COM4</span><span class="o">//</span> <span class="k">as</span> <span class="n">your</span> <span class="n">URI</span><span class="o">.</span>
-<span class="o">*</span> <span class="n">In</span> <span class="n">a</span> <span class="n">Unix</span><span class="o">-</span><span class="n">based</span> <span class="n">machine</span><span class="p">,</span> <span class="n">you</span> <span class="n">will</span> <span class="n">see</span> <span class="n">it</span> <span class="n">under</span> <span class="n">the</span> <span class="o">/</span><span class="n">dev</span><span class="o">/</span> <span class="n">directory</span> <span class="ow">in</span> <span class="n">this</span> <span class="nb">format</span> <span class="s2">&quot;ttyUSBn&quot;</span><span class="p">,</span> <span class="n">where</span> <span class="n">n</span> <span class="ow">is</span> <span class="n">a</span> <span class="n">number</span> <span class="n">depending</span> <span class="n">on</span> <span class="n">how</span> <span class="n">many</span> <span class="n">serial</span> <span class="n">USB</span> <span class="n">devices</span> <span class="n">attached</span><span class="o">.</span> <span class="n">If</span> <span class="n">you</span> <span class="n">see</span> <span class="n">that</span> <span class="n">your</span> <span class="n">device</span> <span class="ow">is</span> <span class="n">ttyUSB0</span><span class="p">,</span> <span class="n">you</span> <span class="n">have</span> <span class="n">to</span> <span class="n">use</span> <span class="n">serial</span><span class="p">:</span><span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">ttyUSB0</span> <span class="k">as</span> <span class="n">your</span> <span class="n">URI</span><span class="o">.</span>
+<ul class="simple">
+<li><p>In a Windows machine, you can check the port of your ADICUP3029 via Device Manager in the Ports (COM &amp; LPT) section. If your device is in COM4, enter:</p></li>
+</ul>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iio_info</span> <span class="o">-</span><span class="n">u</span> <span class="n">serial</span><span class="p">:</span><span class="n">COM4</span>
 </pre></div>
 </div>
-</section>
-</section>
+<p>On a Unix-based machine, you will see it under the /dev/ directory in this format “ttyUSBn”, where n is a number depending on how many serial USB devices attached. If you see that your device is ttyUSB0, enter:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iio_info</span> <span class="o">-</span><span class="n">u</span> <span class="n">serial</span><span class="p">:</span><span class="o">/</span><span class="n">dev</span><span class="o">/</span><span class="n">ttyUSB0</span>
+</pre></div>
+</div>
 <section id="iio-commands">
-<h4>IIO Commands<a class="headerlink" href="#iio-commands" title="Link to this heading">¶</a></h4>
+<h5>IIO Commands<a class="headerlink" href="#iio-commands" title="Link to this heading">¶</a></h5>
 <p>There are different commands that can be used to manage and control the device being used. The <a class="reference external" href="/resources/tools-software/linux-software/libiio/iio_attr">iio_attr</a> command reads and writes IIO attributes.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>analog@analog:~$ iio_attr [OPTION]...
 </pre></div>
 </div>
-<p>Example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">To</span> <span class="n">look</span> <span class="n">at</span> <span class="n">the</span> <span class="n">context</span> <span class="n">attributes</span><span class="p">,</span> <span class="n">enter</span> <span class="n">this</span> <span class="n">code</span> <span class="n">on</span> <span class="n">the</span> <span class="n">terminal</span><span class="p">:</span>
-</pre></div>
-</div>
+<p>To look at the context attributes, enter the following command on the terminal:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>analog@analog:~$ iio_attr -a -C
 </pre></div>
 </div>
-<div class="line-block">
-<div class="line"><br /></div>
-<div class="line">The <a class="reference external" href="/resources/tools-software/linux-software/libiio/iio_reg">iio_reg</a> command reads or writes SPI or I2C registers in an IIO device. This is generally not needed for end applications, but can be useful in debugging drivers. Note that you need to specify a context using the <em>-u</em> qualifier when you are not directly accessing the device via RPI or when you are using the ADICUP3029 platform.</div>
-</div>
+<p>The <a class="reference external" href="/resources/tools-software/linux-software/libiio/iio_reg">iio_reg</a> command reads or writes SPI or I2C registers in an IIO device. This is generally not needed for end applications, but can be useful in debugging drivers. Note that you need to specify a context using the <em>-u</em> qualifier when you are not directly accessing the device via RPI or when you are using the ADICUP3029 platform.</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span>analog@analog:~$ iio_reg -u &lt;context&gt; &lt;device&gt; &lt;register&gt; [&lt;value&gt;]
 </pre></div>
 </div>
-<p>Example:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">*</span> <span class="n">To</span> <span class="n">read</span> <span class="n">the</span> <span class="n">device</span> <span class="n">ID</span> <span class="p">(</span><span class="n">register</span> <span class="o">=</span> <span class="mh">0x02</span><span class="p">)</span> <span class="n">of</span> <span class="n">an</span> <span class="n">ADXL355</span> <span class="n">interfaced</span> <span class="n">via</span> <span class="n">RPI</span> <span class="kn">from</span> <span class="nn">a</span> <span class="n">Windows</span> <span class="n">machine</span><span class="p">,</span> <span class="n">enter</span> <span class="n">the</span> <span class="n">following</span> <span class="n">code</span> <span class="n">on</span> <span class="n">the</span> <span class="n">terminal</span><span class="p">:</span>
-</pre></div>
-</div>
+<p>To read the device ID (register = 0x02) of an ADXL355 interfaced via RPI from a Windows machine, enter the following code on the terminal:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">iio_reg</span> <span class="o">-</span><span class="n">u</span> <span class="n">ip</span><span class="p">:</span><span class="o">&lt;</span><span class="n">ip</span> <span class="n">address</span><span class="o">&gt;</span> <span class="n">adxl355</span> <span class="mh">0x02</span>
 </pre></div>
 </div>
-<div class="line-block">
-<div class="line"><br /></div>
-</div>
 </section>
 <section id="iio-oscilloscope">
-<h4>IIO Oscilloscope<a class="headerlink" href="#iio-oscilloscope" title="Link to this heading">¶</a></h4>
-<p>&lt;note important&gt;Make sure to download/update to the latest version of IIO Oscilloscope found on this link<a class="reference external" href="https://github.com/analogdevicesinc/iio-oscilloscope/releases">https://github.com/analogdevicesinc/iio-oscilloscope/releases</a>&lt;/note&gt;</p>
-<ol class="arabic simple">
-<li><p>Once done with the installation or an update of the latest IIO Oscilloscope, open the application. The user needs to supply a URI which will be used in the context creation of the IIO Oscilloscope and the instructions can be seen from the previous section.</p></li>
-<li><p>Press refresh to display available IIO Devices, once ADXL355 appeared, press connect.</p></li>
-</ol>
+<h5>IIO Oscilloscope<a class="headerlink" href="#iio-oscilloscope" title="Link to this heading">¶</a></h5>
+<p>Download and install the latest version of IIO Oscilloscope from: <a class="reference external" href="https://github.com/analogdevicesinc/iio-oscilloscope/releases">IIO Oscilloscope Installers</a>.</p>
+<p>Once done with the installation or an update of the latest IIO Oscilloscope, open the application. The user needs to supply a URI which will be used in the context creation of the IIO Oscilloscope and the instructions can be seen from the previous section.
+Press refresh to display available IIO Devices, once ADXL355 appeared, press connect.</p>
 <p><a class="reference internal" href="../../../_images/adxl355_iio_osc.png"><img alt="adxl355_iio_osc.png" src="../../../_images/adxl355_iio_osc.png" style="width: 300px;" /></a></p>
+</section>
+</section>
 <section id="debug-panel">
-<h5>Debug Panel<a class="headerlink" href="#debug-panel" title="Link to this heading">¶</a></h5>
+<h4>Debug Panel<a class="headerlink" href="#debug-panel" title="Link to this heading">¶</a></h4>
 <p>Below is the Debug panel of ADXL355 wherein you can directly access the attributes of the device. <a class="reference internal" href="../../../_images/adxl355_iio_debug.png"><img alt="adxl355_iio_debug.png" src="../../../_images/adxl355_iio_debug.png" style="width: 400px;" /></a></p>
 </section>
 <section id="dmm-panel">
-<h5>DMM Panel<a class="headerlink" href="#dmm-panel" title="Link to this heading">¶</a></h5>
+<h4>DMM Panel<a class="headerlink" href="#dmm-panel" title="Link to this heading">¶</a></h4>
 <p>Access the DMM panel to see the instantaneous reading of the x, y and z axis acceleration readings and the device temperature. <a class="reference internal" href="../../../_images/adxl355_iio_dmm_panel.png"><img alt="adxl355_iio_dmm_panel.png" src="../../../_images/adxl355_iio_dmm_panel.png" style="width: 400px;" /></a></p>
-</section>
-</section>
 <section id="pyadi-iio">
-<h4>PyADI-IIO<a class="headerlink" href="#pyadi-iio" title="Link to this heading">¶</a></h4>
+<h5>PyADI-IIO<a class="headerlink" href="#pyadi-iio" title="Link to this heading">¶</a></h5>
 <div class="line-block">
 <div class="line"><a class="reference external" href="/resources/tools-software/linux-software/pyadi-iio">PyADI-IIO</a> is a python abstraction module for ADI hardware with IIO drivers to make them easier to use. This module provides device-specific APIs built on top of the current libIIO python bindings. These interfaces try to match the driver naming as much as possible without the need to understand the complexities of libIIO and IIO.</div>
 <div class="line">Follow the step-by-step procedure on how to install, configure, and set up PYADI-IIO and install the necessary packages/modules needed by referring to this <a class="reference external" href="/resources/tools-software/linux-software/pyadi-iio">link</a>.</div>
 </div>
+</section>
+</section>
 <section id="running-the-example">
-<h5>Running the example<a class="headerlink" href="#running-the-example" title="Link to this heading">¶</a></h5>
+<h4>Running the example<a class="headerlink" href="#running-the-example" title="Link to this heading">¶</a></h4>
 <p>After installing and configuring PYADI-IIO in your machine, you are now ready to run python script examples. In our case, run the <strong>adxl355_example.py</strong> found in the examples folder.</p>
 </section>
 <section id="for-rpi">
-<h5>For RPi<a class="headerlink" href="#for-rpi" title="Link to this heading">¶</a></h5>
+<h4>For RPi<a class="headerlink" href="#for-rpi" title="Link to this heading">¶</a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">D</span><span class="p">:</span>\\<span class="n">pyadi</span><span class="o">-</span><span class="n">iio</span>\\<span class="n">examples</span><span class="o">&gt;</span><span class="n">python</span> <span class="n">adxl355_example</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
 </div>
@@ -697,7 +670,7 @@ Content on this topic
 </div>
 </section>
 <section id="for-no-os">
-<h5>For No-OS<a class="headerlink" href="#for-no-os" title="Link to this heading">¶</a></h5>
+<h4>For No-OS<a class="headerlink" href="#for-no-os" title="Link to this heading">¶</a></h4>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">D</span><span class="p">:</span>\\<span class="n">pyadi</span><span class="o">-</span><span class="n">iio</span>\\<span class="n">examples</span><span class="o">&gt;</span><span class="n">python</span> <span class="n">adxl355_no_os_example</span><span class="o">.</span><span class="n">py</span> <span class="n">serial</span><span class="p">:</span><span class="o">&lt;</span><span class="n">serial</span> <span class="n">port</span><span class="o">&gt;</span><span class="p">,</span><span class="mi">57600</span>
 </pre></div>
 </div>
@@ -711,7 +684,6 @@ Content on this topic
 <p class="admonition-title">Download</p>
 <p>Github link for the python sample script: <a class="reference external" href="https://github.com/analogdevicesinc/pyadi-iio/blob/master/examples/adxl355_no_os_example.py">ADXL355 Python Example</a></p>
 </div>
-</section>
 </section>
 </section>
 <section id="more-information-and-useful-links">
@@ -750,7 +722,7 @@ Content on this topic
 <div class="admonition note">
 <p class="admonition-title">Note</p>
 <p>Tip:
-Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. <a href="#id4"><span class="problematic" id="id10">`Register &lt;reg&gt;EVAL-ADXL355-PMDZ?&amp;v=Rev B&gt;`__</span></a> to receive all these great benefits and more!</p>
+Receive software update notifications, documentation updates, view the latest videos, and more when you register your hardware. <a href="#id4"><span class="problematic" id="id8">`Register &lt;reg&gt;EVAL-ADXL355-PMDZ?&amp;v=Rev B&gt;`__</span></a> to receive all these great benefits and more!</p>
 </div>
 </section>
 </section>
