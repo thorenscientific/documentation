@@ -1,0 +1,218 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>LTspice Example: LVDS pair &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.min.css?v=a3ba2641" />
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script defer="" src="../../_static/app.umd.js?v=61e1751a"></script>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Documentation guidelines" href="../../miscellaneous/docs_guidelines.html" />
+    <link rel="prev" title="Converter Connectivity Tutorial" href="../../university/active_learning/converter_connectivity_tutorial/index.html" />
+   
+  
+  <meta name="global_root" content="../../../">
+  <meta name="repo" content="">
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head><body>
+  <div class="banner"></div>
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button value="search" class="icon"></button>
+      <span id="search-progress"></span>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com"></a>
+        <div class="vertical-divider"></div>
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        <a id="logo" href="../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../eval/index.html">Evaluation Boards</a>
+  <a href="../../university/index.html">University Program</a>
+  <a href="../../../hdl/index.html">HDL</a>
+  <a href="../../../pyadi-iio/index.html">Hardware Python Interfaces</a>
+  <a href="../../../no-OS/index.html">no-OS</a>
+  <a href="../../../precision-converters-firmware/index.html">Precision Converters Firmware</a>
+  <a href="../../../PrecisionToolbox/index.html">Precision Toolbox</a>
+  <a href="../../../doctools/index.html">Doctools</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div>
+          <div class="localtoc-header">On this page</div>
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">LTspice Example: LVDS pair</a><ul>
+<li><a class="reference internal" href="#objective">Objective:</a></li>
+<li><a class="reference internal" href="#warning">Warning</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../eval/index.html">Evaluation Boards</a>
+  <a href="../../university/index.html">University Program</a>
+  <a href="../../../hdl/index.html">HDL</a>
+  <a href="../../../pyadi-iio/index.html">Hardware Python Interfaces</a>
+  <a href="../../../no-OS/index.html">no-OS</a>
+  <a href="../../../precision-converters-firmware/index.html">Precision Converters Firmware</a>
+  <a href="../../../PrecisionToolbox/index.html">Precision Toolbox</a>
+  <a href="../../../doctools/index.html">Doctools</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <html>
+  <body><p class="caption" role="heading"><span class="caption-text">LTspice Examples</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="current reference internal" href="#">Exercises</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="simple">
+</ul>
+</li>
+</ul>
+</body>
+</html>
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body" role="main">
+            
+  <section id="ltspice-example-lvds-pair">
+<h1>LTspice Example: LVDS pair<a class="headerlink" href="#ltspice-example-lvds-pair" title="Link to this heading">¶</a></h1>
+<p>Quick and dirty example of what a documented LTspice example on GitHub might look like. The folder for this exact page is at:</p>
+<p>Pages are “atomic” and can be moved around.</p>
+<p>(Forgive the table of contents and sidebar navigation, mthoren-adi is still figuring that out.)</p>
+<section id="objective">
+<h2>Objective:<a class="headerlink" href="#objective" title="Link to this heading">¶</a></h2>
+<p>To simulate the behavior of a perfect LVDS transmitter driving the input capacitance of an FPGA.</p>
+<p>Download the LTspice simulation here:</p>
+<p><a class="reference download internal" download="" href="../../_downloads/de75a1426da295dd0284ced28735917f/LVDS_FPGA_signal_integrity.asc"><code class="xref download docutils literal notranslate"><span class="pre">LVDS_FPGA_signal_integrity.asc</span></code></a></p>
+<p>Here is how to number figures: <a class="reference internal" href="#fig-lvds-screenshot"><span class="std std-numref">Figure 14</span></a> is a screenshot of the LTspice simulation (you can screenshot waveforms, etc. too, of course):</p>
+<figure class="align-center" id="id1">
+<span id="fig-lvds-screenshot"></span><a class="reference internal image-reference" href="../../_images/lvds_pair_ltspice_screenshot.png"><img alt="../../_images/lvds_pair_ltspice_screenshot.png" src="../../_images/lvds_pair_ltspice_screenshot.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 14 </span><span class="caption-text">Screenshot of LVDS simulation</span><a class="headerlink" href="#id1" title="Link to this image">¶</a></p>
+</figcaption>
+</figure>
+<p>Here is an example of embedding a video. Who better to describe the subtleties of signal Integrity than this expert?</p>
+<div class="iframe-video"><iframe src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ"></iframe></div><p>If there is a complaint or edit needed to an LTspice simulation or the document itself, it’s a pull request like any other. Anyone inside ADI or outside can start a PR, but the admin’s approval is needed to merge. Here is a case where a professor found an error in the LTspice simulation from this Active Learning exercise (the 50-ohm output impedance of the ADALM2000 was not included):</p>
+<p><a class="reference external" href="https://wiki.analog.com/university/courses/electronics/rl_transient_response">Activity: Transient Response of an RL Circuit - ADALM2000</a></p>
+<p>Here is the pull request:</p>
+<p><a class="reference external" href="https://github.com/analogdevicesinc/education_tools/pull/49/">Pull Request</a></p>
+<p>And the details of the files changed:</p>
+<p><a class="reference external" href="https://github.com/analogdevicesinc/education_tools/pull/49/files">Pull Request Files Changed</a></p>
+<p>How cool would it be to have a visual diffing tool for this? There is a company that does this sort of thing for PCB design files. We could do one for LTspice.</p>
+<p>Generic warning banner example:</p>
+</section>
+<section id="warning">
+<h2>Warning<a class="headerlink" href="#warning" title="Link to this heading">¶</a></h2>
+<div><div class="esd-warning docutils container">
+<div class="icon"></div><p>All the products described on this page include ESD (electrostatic discharge) sensitive devices. Electrostatic charges as high as 4000V readily accumulate on the human body or test equipment and can discharge without detection.
+Although the boards feature ESD protection circuitry, permanent damage may occur on devices subjected to high-energy electrostatic discharges. Therefore, proper ESD precautions are recommended to avoid performance degradation or loss of functionality. This includes removing static charge on external equipment, cables, or antennas before connecting to the device. </p>
+</div>
+</div><div class="toctree-wrapper compound">
+</div>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="../../university/active_learning/converter_connectivity_tutorial/index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Converter Connectivity Tutorial</a>
+    <a href="../../miscellaneous/docs_guidelines.html" title="Next document (Alt+Shift+RightArrow)" class="next">Documentation guidelines</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <div id="vertical-border"></div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2024, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>
