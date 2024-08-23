@@ -27,7 +27,13 @@ Contents
    :maxdepth: 2
    
    Exercises <university/active_learning/index>
+
+.. toctree::
+   :caption: LTspice Examples
+   :maxdepth: 2
    
+   Exercises <ltspice_examples/lvds_pair/index>
+
 .. toctree::
    :caption: Docs and Guidelines
    :maxdepth: 2
