@@ -18,26 +18,33 @@ Contents
 
 .. toctree::
    :caption: Evaluation Boards
-   :maxdepth: 2
+   :maxdepth: 4
 
-   User Guides <eval/user-guide/index>
+   User Guides<eval/user-guide/index>
 
 .. toctree::
-   :caption: Active Learning
-   :maxdepth: 2
-   
-   Exercises <university/active_learning/index>
+   :caption: University Program
+   :maxdepth: 4
+
+   university/index
 
 .. toctree::
    :caption: LTspice Examples
-   :maxdepth: 2
+   :maxdepth: 4
    
-   Exercises <ltspice_examples/lvds_pair/index>
+   LTspice Examples<ltspice_examples/index>
 
 .. toctree::
    :caption: Docs and Guidelines
-   :maxdepth: 2
+   :maxdepth: 4
    
-   Docs and Guidelines <miscellaneous/docs_guidelines>
+   Docs and Guidelines<miscellaneous/docs_guidelines>
+   
+.. toctree::
+   :caption: Learning
+   :maxdepth: 4
+   
+   ./learning/index
+
 
 
