@@ -7,18 +7,19 @@
 
     <title>System Level Documentation &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css?v=8e8a900e" />
-    <link rel="stylesheet" type="text/css" href="_static/style.min.css?v=a3ba2641" />
+    <link rel="stylesheet" type="text/css" href="_static/style.min.css?v=990931db" />
     <script src="_static/documentation_options.js?v=5929fcd5"></script>
     <script src="_static/doctools.js?v=9a2dae69"></script>
     <script src="_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script defer="" src="_static/app.umd.js?v=61e1751a"></script>
+    <script defer="" src="_static/app.umd.js?v=c93eadd1"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="index" title="Index" href="genindex.html" />
     <link rel="search" title="Search" href="search.html" />
     <link rel="next" title="User Guides: Evaluation Boards and Kits" href="eval/user-guide/index.html" />
    
   
   <meta name="global_root" content="./../">
-  <meta name="repo" content="">
+  <meta name="repo" content="documentation">
   
 
 
@@ -75,10 +76,11 @@
 
   <div class="repotoc-tree overlay">
     <root>
-  <a href="./eval/index.html">Evaluation Boards</a>
-  <a href="./university/index.html">University Program</a>
+  <a href="./index.html" class="current">System Level</a>
   <a href="./../hdl/index.html">HDL</a>
+  <a href="./../testbenches/index.html">HDL Testbenches</a>
   <a href="./../pyadi-iio/index.html">Hardware Python Interfaces</a>
+  <a href="./../libiio/index.html">libiio</a>
   <a href="./../no-OS/index.html">no-OS</a>
   <a href="./../precision-converters-firmware/index.html">Precision Converters Firmware</a>
   <a href="./../PrecisionToolbox/index.html">Precision Toolbox</a>
@@ -121,10 +123,11 @@ Content on this topic
 </label>
 <div class="repotoc-tree">
   <root>
-  <a href="./eval/index.html">Evaluation Boards</a>
-  <a href="./university/index.html">University Program</a>
+  <a href="./index.html" class="current">System Level</a>
   <a href="./../hdl/index.html">HDL</a>
+  <a href="./../testbenches/index.html">HDL Testbenches</a>
   <a href="./../pyadi-iio/index.html">Hardware Python Interfaces</a>
+  <a href="./../libiio/index.html">libiio</a>
   <a href="./../no-OS/index.html">no-OS</a>
   <a href="./../precision-converters-firmware/index.html">Precision Converters Firmware</a>
   <a href="./../PrecisionToolbox/index.html">Precision Toolbox</a>
@@ -171,7 +174,7 @@ Content on this topic
 <li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="learning/tools_for_ls/index.html">Tools for Low-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
 <li class="toctree-l2"><a class="reference internal" href="learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
 <li class="toctree-l2"><a class="reference internal" href="learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
 </ul>
@@ -190,7 +193,7 @@ Content on this topic
           <div class="body" role="main">
             
   <section id="system-level-documentation">
-<h1>System Level Documentation<a class="headerlink" href="#system-level-documentation" title="Link to this heading">¶</a></h1>
+<h1>System Level Documentation<a class="headerlink" href="#system-level-documentation" title="Link to this heading">#</a></h1>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
 <p>Work-in-progress, not all content available at the
@@ -203,7 +206,7 @@ project examples for FPGA connectivity.
 It also contains user guides for some Analog Devices evaluation boards to help
 developers get up and running fast.</p>
 <section id="contents">
-<h2>Contents<a class="headerlink" href="#contents" title="Link to this heading">¶</a></h2>
+<h2>Contents<a class="headerlink" href="#contents" title="Link to this heading">#</a></h2>
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Evaluation Boards</span></p>
 <ul>
@@ -307,7 +310,34 @@ developers get up and running fast.</p>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="learning/index.html#system-design">System Design</a><ul>
-<li class="toctree-l3"><a class="reference internal" href="learning/tools_for_ls/index.html">Tools for Low-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l3"><a class="reference internal" href="learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="learning/tools_for_ls/index.html#introduction">Introduction</a></li>
+<li class="toctree-l4"><a class="reference internal" href="learning/tools_for_ls/index.html#background">Background</a></li>
+<li class="toctree-l4"><a class="reference internal" href="learning/tools_for_ls/index.html#slide-deck-and-video">Slide Deck and Video</a></li>
+<li class="toctree-l4"><a class="reference internal" href="learning/tools_for_ls/index.html#preparation-a-few-resources-for-learning-python">Preparation - a few resources for learning Python</a></li>
+<li class="toctree-l4"><a class="reference internal" href="learning/tools_for_ls/index.html#what-does-just-enough-software-look-like">What does “Just Enough Software” look like?</a></li>
+<li class="toctree-l4"><a class="reference internal" href="learning/tools_for_ls/index.html#software-stack-background">Software Stack Background</a></li>
+<li class="toctree-l4"><a class="reference internal" href="learning/tools_for_ls/index.html#introducing-an-exciting-new-product-that-we-ll-apply-our-skills">Introducing an exciting new product that we’ll apply our skills</a></li>
+<li class="toctree-l4"><a class="reference internal" href="learning/tools_for_ls/index.html#component-selection-based-on-software-support-rather-than-pure-analog-performance">Component selection based on software support (rather than pure analog performance)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="learning/tools_for_ls/index.html#hardware-setup">Hardware Setup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="learning/tools_for_ls/index.html#booting-the-system">Booting the system</a></li>
+<li class="toctree-l4"><a class="reference internal" href="learning/tools_for_ls/index.html#post-boot-housekeeping">Post-boot housekeeping</a></li>
+<li class="toctree-l4"><a class="reference internal" href="learning/tools_for_ls/index.html#configuring-the-system-and-rebooting">Configuring the System (and rebooting!)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="learning/tools_for_ls/index.html#command-line-tools-hello-ad5592r">Command Line Tools (Hello, AD5592r!)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="learning/tools_for_ls/index.html#iio-oscilloscope">IIO Oscilloscope</a></li>
+<li class="toctree-l4"><a class="reference internal" href="learning/tools_for_ls/index.html#device-trees-telling-linux-what-s-connected">Device Trees: Telling Linux what’s connected</a></li>
+<li class="toctree-l4"><a class="reference internal" href="learning/tools_for_ls/index.html#pyadi-iio-and-examples">Pyadi-iio And examples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="learning/tools_for_ls/index.html#hands-on-working-through-a-simple-but-complete-case-study"><strong>Hands-On!</strong> Working through a simple, but complete case study</a></li>
+<li class="toctree-l4"><a class="reference internal" href="learning/tools_for_ls/index.html#next-steps-developing-on-a-remote-host">Next Steps: Developing on a remote host</a></li>
+<li class="toctree-l4"><a class="reference internal" href="learning/tools_for_ls/index.html#next-steps-other-languages-c-c-matlab-etc">Next Steps: Other languages (C++, C#, MATLAB, etc.)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="learning/tools_for_ls/index.html#next-steps-no-os-development-on-linux-you-bet">Next Steps: No-OS development on Linux? You bet!</a></li>
+<li class="toctree-l4"><a class="reference internal" href="learning/tools_for_ls/index.html#next-steps-porting-to-a-fully-embedded-system">Next Steps: Porting to a fully embedded system</a></li>
+<li class="toctree-l4"><a class="reference internal" href="learning/tools_for_ls/index.html#more-just-enough-software-examples">More “Just Enough Software” examples</a></li>
+<li class="toctree-l4"><a class="reference internal" href="learning/tools_for_ls/index.html#drawing-parallels-to-other-software-flows">Drawing parallels to other software flows</a></li>
+<li class="toctree-l4"><a class="reference internal" href="learning/tools_for_ls/index.html#wrapup">Wrapup</a></li>
+<li class="toctree-l4"><a class="reference internal" href="learning/tools_for_ls/index.html#additional-references">Additional References</a></li>
+</ul>
+</li>
 <li class="toctree-l3"><a class="reference internal" href="learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
 <li class="toctree-l3"><a class="reference internal" href="learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
 </ul>
