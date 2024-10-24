@@ -16,7 +16,7 @@
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
     <link rel="next" title="Release notes" href="release-notes.html" />
-    <link rel="prev" title="Building with Petalinux" href="../kernel/petalinux.html" />
+    <link rel="prev" title="System Level Documentation" href="../../index.html" />
    
   
   <meta name="global_root" content="../../../">
@@ -106,7 +106,10 @@
 <li><a class="reference internal" href="#users-and-passwords">Users and Passwords</a></li>
 <li><a class="reference internal" href="#configuring-the-sd-card-for-fpga-projects">Configuring the SD Card for FPGA Projects</a><ul>
 <li><a class="reference internal" href="#amd-xilinx">AMD/Xilinx</a></li>
-<li><a class="reference internal" href="#intel-altera">Intel/Altera</a></li>
+<li><a class="reference internal" href="#intel-altera">Intel/Altera</a><ul>
+<li><a class="reference internal" href="#writing-the-preloader-file">Writing the preloader file</a></li>
+</ul>
+</li>
 </ul>
 </li>
 <li><a class="reference internal" href="#configuring-the-sd-card-for-raspberry-pi-projects">Configuring the SD Card for Raspberry Pi Projects</a></li>
@@ -156,39 +159,66 @@ Content on this topic
 </div>
 <div class="toc-tree">
   <html>
-  <body><p class="caption" role="heading"><span class="caption-text">Linux Kernel &amp; Software</span></p>
+  <body><p class="caption" role="heading"><span class="caption-text">Kuiper &amp; Linux Kernel</span></p>
 <ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="../drivers/index.html">Linux drivers</a></li>
-<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
-<li class="toctree-l2"><a class="reference internal" href="../kernel/petalinux.html">Building with Petalinux</a></li>
-</ul>
-</li>
-<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2" checked=""/><div class="collapse"><a class="current reference internal" href="#">Kuiper Linux</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="current reference internal" href="#">Kuiper Linux</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l2"><a class="reference internal" href="release-notes.html">Release notes</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sdcard/index.html">SD Card flashing</a></li>
 <li class="toctree-l2"><a class="reference internal" href="project-list.html">Project list</a></li>
 <li class="toctree-l2"><a class="reference internal" href="update.html">Updating</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../software/index.html">Software</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1" id="toctree-collapse-3-1"/><div class="collapse"><a class="reference internal" href="../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-3-1"><div class="icon"></div></label></div><ul>
-<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3-1-1" id="toctree-collapse-3-1-1"/><div class="collapse"><a class="reference internal" href="../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-3-1-1"><div class="icon"></div></label></div><ul>
-<li class="toctree-l4"><a class="reference internal" href="../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
-<li class="toctree-l4"><a class="reference internal" href="../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../drivers/iio-transceiver/index.html">IIO Transceivers</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1-1" id="toctree-collapse-2-1-1"/><div class="collapse"><a class="reference internal" href="../drivers/iio-transceiver/adrv9009/index.html">ADRV9009, ADRV9008-1, ADRV9008-2</a><label for="toctree-collapse-2-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../drivers/iio-transceiver/adrv9009/customization.html">Customization</a></li>
 </ul>
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-2" id="toctree-collapse-2-2"/><div class="collapse"><a class="reference internal" href="../drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
 </ul>
 </li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../kernel/petalinux.html">Building with Petalinux</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Software</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Evaluation Boards</span></p>
 <ul>
-<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../eval/user-guide/index.html">User Guides</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../eval/user-guide/index.html">User guides</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../eval/user-guide/eval-adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ User Guide</a></li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../eval/user-guide/adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-1" id="toctree-collapse-7-1"/><div class="collapse"><a class="reference internal" href="../../eval/user-guide/adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-7-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../eval/user-guide/adrv9009/prerequisites.html">Prerequisites</a></li>
-<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1-1" id="toctree-collapse-4-1-1"/><div class="collapse"><a class="reference internal" href="../../eval/user-guide/adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-4-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-1-1" id="toctree-collapse-7-1-1"/><div class="collapse"><a class="reference internal" href="../../eval/user-guide/adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-7-1-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../eval/user-guide/adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
 </ul>
 </li>
@@ -200,8 +230,8 @@ Content on this topic
 </ul>
 <p class="caption" role="heading"><span class="caption-text">University Program</span></p>
 <ul>
-<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../university/index.html">Engineering University Program</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5-1" id="toctree-collapse-5-1"/><div class="collapse"><a class="reference internal" href="../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-5-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../university/index.html">Engineering University Program</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8-1" id="toctree-collapse-8-1"/><div class="collapse"><a class="reference internal" href="../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-8-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
 </ul>
@@ -211,32 +241,32 @@ Content on this topic
 </ul>
 <p class="caption" role="heading"><span class="caption-text">LTspice Examples</span></p>
 <ul>
-<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../ltspice_examples/index.html">LTspice Examples</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../ltspice_examples/index.html">LTspice Examples</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../ltspice_examples/lvds_pair/index.html">LTspice Example: LVDS pair</a></li>
 </ul>
 </li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Learning</span></p>
 <ul>
-<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-1" id="toctree-collapse-7-1"/><div class="collapse"><a class="reference internal" href="../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a><label for="toctree-collapse-7-1"><div class="icon"></div></label></div><ul class="simple">
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learning/sw_infrastructure/index.html">Key ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-2" id="toctree-collapse-7-2"/><div class="collapse"><a class="reference internal" href="../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a><label for="toctree-collapse-7-2"><div class="icon"></div></label></div><ul class="simple">
 </ul>
-</li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-3" id="toctree-collapse-7-3"/><div class="collapse"><a class="reference internal" href="../../learning/sw_infrastructure/index.html">Key ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors</a><label for="toctree-collapse-7-3"><div class="icon"></div></label></div><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-4" id="toctree-collapse-7-4"/><div class="collapse"><a class="reference internal" href="../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a><label for="toctree-collapse-7-4"><div class="icon"></div></label></div><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-5" id="toctree-collapse-7-5"/><div class="collapse"><a class="reference internal" href="../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a><label for="toctree-collapse-7-5"><div class="icon"></div></label></div><ul class="simple">
-</ul>
-</li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-6" id="toctree-collapse-7-6"/><div class="collapse"><a class="reference internal" href="../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a><label for="toctree-collapse-7-6"><div class="icon"></div></label></div><ul class="simple">
-</ul>
-</li>
+<p class="caption" role="heading"><span class="caption-text">Learning</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learning/sw_infrastructure/index.html">Key ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
 </ul>
 </li>
 </ul>
@@ -277,7 +307,7 @@ prototyping and development</p>
 </ul>
 <p>ADI Kuiper Linux supports many platforms and development kits containing
 AMD(Xilinx) and Intel(Altera) FPGAs, as well as Raspberry Pi systems.
-Please see :ref <cite>kuiper project-list</cite>
+Please see <a class="reference internal" href="project-list.html#kuiper-project-list"><span class="std std-ref">Project list</span></a>
 for a complete list of supported development kits and hardware projects.</p>
 <section id="requirements">
 <h2>Requirements<a class="headerlink" href="#requirements" title="Link to this heading">#</a></h2>
@@ -355,23 +385,23 @@ use the <strong>EJECT</strong> function when removing the SD card from the reade
 <p>For the <strong>zynq projects</strong> copy these files to the root of the BOOT FAT32
 partition:</p>
 <ol class="arabic simple">
-<li><p>target/BOOT.BIN</p></li>
-<li><p>target/&lt;specific_folder&gt;/devicetree.dtb</p></li>
+<li><p>&lt;target&gt;/BOOT.BIN</p></li>
+<li><p>&lt;target&gt;/&lt;specific_folder&gt;/devicetree.dtb</p></li>
 <li><p>zynq-common/uImage</p></li>
 </ol>
 <p>For the <strong>zynqmp projects</strong> copy these files to the root of the BOOT FAT32
 partition:</p>
 <ol class="arabic simple">
-<li><p>target/BOOT.BIN</p></li>
-<li><p>target/&lt;specific_folder&gt;/system.dtb</p></li>
+<li><p>&lt;target&gt;/BOOT.BIN</p></li>
+<li><p>&lt;target&gt;/&lt;specific_folder&gt;/system.dtb</p></li>
 <li><p>zynqmp-common/Image</p></li>
 </ol>
 <p>For the <strong>versal projects</strong> copy these files to the root of the BOOT FAT32
 partition:</p>
 <ol class="arabic simple">
-<li><p>target/BOOT.BIN</p></li>
-<li><p>target/&lt;specific_folder&gt;/system.dtb</p></li>
-<li><p>target/boot.scr</p></li>
+<li><p>&lt;target&gt;/BOOT.BIN</p></li>
+<li><p>&lt;target&gt;/&lt;specific_folder&gt;/system.dtb</p></li>
+<li><p>&lt;target&gt;/boot.scr</p></li>
 <li><p>versal-common/Image</p></li>
 </ol>
 </section>
@@ -380,30 +410,68 @@ partition:</p>
 <p>For <strong>Arria10 SOC projects</strong> copy these files to the root of the BOOT FAT32
 partition:</p>
 <ol class="arabic simple">
-<li><p>target/fit_spl_fpga.itb</p></li>
-<li><p>target/socfpga_arria10_socdk_sdmmc.dtb</p></li>
-<li><p>target/u-boot.img</p></li>
+<li><p>&lt;target&gt;/fit_spl_fpga.itb</p></li>
+<li><p>&lt;target&gt;/socfpga_arria10_socdk_sdmmc.dtb</p></li>
+<li><p>&lt;target&gt;/u-boot.img</p></li>
 <li><p>socfpga_arria10_common/zImage</p></li>
 <li><p>socfpga_arria10_common/extlinux.conf, inside a folder named ‘extlinux’.
 Create the folder if it does not exist;</p></li>
 <li><p>write preloader file (fit_spl_fpga.itb) to the corresponding SD card
 partition (third partition - 4MB in size).</p></li>
 </ol>
-<p>(e.g. <code class="code docutils literal notranslate"><span class="pre">dd</span> <span class="pre">if=u-boot-splx4.sfp</span> <span class="pre">of=/dev/mmcblk0p3</span></code>).</p>
 <p>For <strong>Cyclone5 projects</strong> copy these files to the root of the BOOT FAT32
 partition:</p>
 <ol class="arabic simple">
-<li><p>target/soc_system.rbf</p></li>
-<li><p>target/socfpga.dtb</p></li>
-<li><p>target/u-boot.scr</p></li>
-<li><p>target/u-boot-with-spl.sfp</p></li>
+<li><p>&lt;target&gt;/soc_system.rbf</p></li>
+<li><p>&lt;target&gt;/socfpga.dtb</p></li>
+<li><p>&lt;target&gt;/u-boot.scr</p></li>
+<li><p>&lt;target&gt;/u-boot-with-spl.sfp</p></li>
 <li><p>socfpga_cyclone5_common/zImage</p></li>
 <li><p>socfpga_cyclone5_common/extlinux.conf , in a folder called ‘extlinux’. Create
 the folder if it does not exist;</p></li>
 <li><p>write preloader file (u-boot-with-spl.sfp) to the corresponding SD card
 partition (third partition - 4MB in size)</p></li>
 </ol>
-<p>(e.g. <code class="code docutils literal notranslate"><span class="pre">dd</span> <span class="pre">if=u-boot-with-spl.bin</span> <span class="pre">of=/dev/mmcblk0p3</span></code>).</p>
+<section id="writing-the-preloader-file">
+<h4>Writing the preloader file<a class="headerlink" href="#writing-the-preloader-file" title="Link to this heading">#</a></h4>
+<p>Writing the boot preloader partition require special attention,
+first look for the device with BOOT mountpoint and annotate the third partition
+from the same device.</p>
+<p>Then, clear the partition with zeros and write the preloader image
+(in this example, using a Linux host machine, and Arria10 SoC’s <em>./u-boot-splx4.sfp</em>):</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>$
+</pre></div>
+</div>
+<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nv">DEV</span><span class="o">=</span>mmcblk0p3
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>$
+</pre></div>
+</div>
+<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>/mnt/BOOT/socfpga_arria10_socdk_ad9081
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>$
+</pre></div>
+</div>
+<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>dd<span class="w"> </span><span class="k">if</span><span class="o">=</span>/dev/zero<span class="w"> </span><span class="nv">of</span><span class="o">=</span>/dev/<span class="nv">$DEV</span><span class="w"> </span><span class="nv">oflag</span><span class="o">=</span>sync<span class="w"> </span><span class="nv">status</span><span class="o">=</span>progress<span class="w"> </span><span class="nv">bs</span><span class="o">=</span>64k<span class="w"> </span><span class="o">||</span><span class="w"> </span><span class="nb">true</span>
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>dd: error writing &#39;/dev/mmcblk0p3&#39;: No space left on device
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>$
+</pre></div>
+</div>
+<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>dd<span class="w"> </span><span class="k">if</span><span class="o">=</span>./u-boot-splx4.sfp<span class="w"> </span><span class="nv">of</span><span class="o">=</span>/dev/<span class="nv">$DEV</span><span class="w"> </span><span class="nv">oflag</span><span class="o">=</span>sync<span class="w"> </span><span class="nv">status</span><span class="o">=</span>progress<span class="w"> </span><span class="nv">bs</span><span class="o">=</span>64k
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>1697+1 records in
+1697+1 records out
+868996 bytes (869 kB, 849 KiB) copied, 0.21262 s, 4.1 MB/s
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div></section>
 </section>
 </section>
 <section id="configuring-the-sd-card-for-raspberry-pi-projects">
@@ -417,13 +485,20 @@ often present on company computers.</p>
 <p>Connect a keyboard, mouse, and monitor to the Raspberry Pi and connect power.
 The ADI Kuiper Linux desktop should appear. Before editing, it is a good idea to
 make a backup of the original file, just in case something goes wrong (which it
-won’t, but still…) Open a terminal and enter the following command (noting
-that “<a class="reference external" href="mailto:analog&#37;&#52;&#48;analog">analog<span>&#64;</span>analog</a>:~ $” is the prompt, and does not need to be typed):</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>analog@analog:~ $ sudo cp /boot/config.txt /boot/config.backup
-analog@analog:~ $ sudo mousepad /boot/config.txt
+won’t, but still…) Open a terminal and enter the following command:</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<p>This will bring up the text editor. At this point, the appropriate device tree
+<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>cp<span class="w"> </span>/boot/config.txt<span class="w"> </span>/boot/config.backup
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>mousepad<span class="w"> </span>/boot/config.txt
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div><p>This will bring up the text editor. At this point, the appropriate device tree
 overlays can be included, for example, add the following line to enable the
 ADXL345 3-axis SPI accelerometer, noting that the lirc-rpi lines are shown for
 reference, and any line beginning with “#” is ignored:</p>
@@ -436,10 +511,13 @@ reference, and any line beginning with “#” is ignored:</p>
 and reference designs. For a complete list of overlays for available hardware,
 please visit the <a class="reference internal" href="project-list.html#kuiper-project-list"><span class="std std-ref">project list</span></a>.</p>
 <p>After editing config.txt, <strong>reboot</strong> for changes to take effect.</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span>analog@analog:~ $ reboot
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-</section>
+<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>reboot
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div></section>
 <section id="system-verification">
 <h2>System Verification<a class="headerlink" href="#system-verification" title="Link to this heading">#</a></h2>
 <p>There are two things to check when making sure your system is setup properly.</p>
@@ -1028,27 +1106,32 @@ and enabled in the configuration file, will be displayed in the terminal window
 by running the <strong>iio_info</strong> command, this is a good way to verify that the
 hardware and device drivers loaded properly.</p>
 <p>Here’s an example output:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>analog@analog:~<span class="w"> </span>$<span class="w"> </span>iio_info
-Library<span class="w"> </span>version:<span class="w"> </span><span class="m">0</span>.21<span class="w"> </span><span class="o">(</span>git<span class="w"> </span>tag:<span class="w"> </span>1c0781b<span class="o">)</span>
-Compiled<span class="w"> </span>with<span class="w"> </span>backends:<span class="w"> </span><span class="nb">local</span><span class="w"> </span>xml<span class="w"> </span>ip
-IIO<span class="w"> </span>context<span class="w"> </span>created<span class="w"> </span>with<span class="w"> </span><span class="nb">local</span><span class="w"> </span>backend.
-Backend<span class="w"> </span>version:<span class="w"> </span><span class="m">0</span>.21<span class="w"> </span><span class="o">(</span>git<span class="w"> </span>tag:<span class="w"> </span>1c0781b<span class="o">)</span>
-Backend<span class="w"> </span>description<span class="w"> </span>string:<span class="w"> </span>Linux<span class="w"> </span>analog<span class="w"> </span><span class="m">4</span>.19.86-v7l+<span class="w"> </span><span class="c1">#3 SMP Tue Sep 1 19:43:06 UTC 2020 armv7l</span>
-IIO<span class="w"> </span>context<span class="w"> </span>has<span class="w"> </span><span class="m">2</span><span class="w"> </span>attributes:
-<span class="w">    </span>local,kernel:<span class="w"> </span><span class="m">4</span>.19.86-v7l+
-<span class="w">    </span>uri:<span class="w"> </span>local:
-IIO<span class="w"> </span>context<span class="w"> </span>has<span class="w"> </span><span class="m">5</span><span class="w"> </span>devices:
-<span class="w">    </span>iio:device0:<span class="w"> </span>ad7127-8<span class="w"> </span><span class="o">(</span>buffer<span class="w"> </span>capable<span class="o">)</span>
-<span class="w">        </span><span class="m">8</span><span class="w"> </span>channels<span class="w"> </span>found:
-<span class="w">            </span>voltage0-voltage1:<span class="w">  </span><span class="o">(</span>input,<span class="w"> </span>index:<span class="w"> </span><span class="m">0</span>,<span class="w"> </span>format:<span class="w"> </span>be:u24/32&gt;&gt;0<span class="o">)</span>
-<span class="w">            </span><span class="m">6</span><span class="w"> </span>channel-specific<span class="w"> </span>attributes<span class="w"> </span>found:
-<span class="w">                </span>attr<span class="w">  </span><span class="m">0</span>:<span class="w"> </span>filter_low_pass_3db_frequency<span class="w"> </span>value:<span class="w"> </span><span class="m">3</span>
-<span class="w">                </span>attr<span class="w">  </span><span class="m">1</span>:<span class="w"> </span>offset<span class="w"> </span>value:<span class="w"> </span><span class="m">0</span>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="w"> </span>iio_info
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select highlight-text notranslate"><div class="highlight"><pre><span></span>Library version: 0.21 (git tag: 1c0781b)
+Compiled with backends: local xml ip
+IIO context created with local backend.
+Backend version: 0.21 (git tag: 1c0781b)
+Backend description string: Linux analog 4.19.86-v7l+ #3 SMP Tue Sep 1 19:43:06 UTC 2020 armv7l
+IIO context has 2 attributes:
+    local,kernel: 4.19.86-v7l+
+    uri: local:
+IIO context has 5 devices:
+    iio:device0: ad7127-8 (buffer capable)
+        8 channels found:
+            voltage0-voltage1:  (input, index: 0, format: be:u24/32&gt;&gt;0)
+            6 channel-specific attributes found:
+                attr  0: filter_low_pass_3db_frequency value: 3
+                attr  1: offset value: 0
 ...
 ...
 </pre></div>
 </div>
-<p>So if your setup is running Kuiper Linux and you can see the device drivers from
+<div class="clear-left"></div></div></div><p>So if your setup is running Kuiper Linux and you can see the device drivers from
 your hardware, then you are all set and ready to use the setup!!</p>
 </section>
 </section>
@@ -1083,7 +1166,7 @@ well with:
           </div>
               <div class="related">
                 &nbsp;
-    <a href="../kernel/petalinux.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Building with Petalinux</a>
+    <a href="../../index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">System Level Documentation</a>
     <a href="release-notes.html" title="Next document (Alt+Shift+RightArrow)" class="next">Release notes</a>
               </div>
           
