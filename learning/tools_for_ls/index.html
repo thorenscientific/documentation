@@ -7,9 +7,9 @@
 
     <title>Tools for Low Speed Mixed Signal System Design &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8e8a900e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/style.min.css?v=990931db" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.min.css?v=3e3e1b4d" />
     <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
-    <script src="../../_static/doctools.js?v=9a2dae69"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script defer="" src="../../_static/app.umd.js?v=c93eadd1"></script>
     <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
@@ -209,7 +209,6 @@ Content on this topic
 <li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../university/index.html">Engineering University Program</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
 <li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5-1" id="toctree-collapse-5-1"/><div class="collapse"><a class="reference internal" href="../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-5-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../../university/active_learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
 </ul>
 </li>
@@ -229,10 +228,21 @@ Content on this topic
 <li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-1" id="toctree-collapse-7-1"/><div class="collapse"><a class="reference internal" href="../tutorial_prec_adc/index.html">Precision ADC Tutorial</a><label for="toctree-collapse-7-1"><div class="icon"></div></label></div><ul class="simple">
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="../sw_infrastructure/index.html">Key ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Tools for Low Speed Mixed Signal System Design</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-2" id="toctree-collapse-7-2"/><div class="collapse"><a class="reference internal" href="../converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a><label for="toctree-collapse-7-2"><div class="icon"></div></label></div><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-3" id="toctree-collapse-7-3"/><div class="collapse"><a class="reference internal" href="../sw_infrastructure/index.html">Key ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors</a><label for="toctree-collapse-7-3"><div class="icon"></div></label></div><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-4" id="toctree-collapse-7-4" checked=""/><div class="collapse"><a class="current reference internal" href="#">Tools for Low Speed Mixed Signal System Design</a><label for="toctree-collapse-7-4"><div class="icon"></div></label></div><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-5" id="toctree-collapse-7-5"/><div class="collapse"><a class="reference internal" href="../tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a><label for="toctree-collapse-7-5"><div class="icon"></div></label></div><ul class="simple">
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-6" id="toctree-collapse-7-6"/><div class="collapse"><a class="reference internal" href="../tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a><label for="toctree-collapse-7-6"><div class="icon"></div></label></div><ul class="simple">
+</ul>
+</li>
 </ul>
 </li>
 </ul>
@@ -279,10 +289,10 @@ Throughout the exercises we’ll be writing simple Python code to capture and an
 <li><p>Raspberry Pi 4; 2G, 4G, or 8G version. (3B, 3B Plus will work, but
 you will want the 4 :-) )</p></li>
 <li><p>5V USB-C wall adapter for Raspberry Pi (micro USB for model 3)</p></li>
-<li><p><a href="#id1"><span class="problematic" id="id2">`EVAL-AD5592R-PMDZ &lt;adi&gt;eval-ad5592r-pmdz&gt;`__</span></a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/eval-ad5592r-pmdz">EVAL-AD5592R-PMDZ</a></p></li>
 <li><p>Electrical connection hardware (choose one):</p>
 <ul>
-<li><p><a href="#id1"><span class="problematic" id="id3">`Raspberry Pi to PMOD/QuikEval™/LTpowerPlay® Adaptor HAT &lt;adi&gt;pmd-rpi-intz&gt;`__</span></a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/pmd-rpi-intz">Raspberry Pi to PMOD/QuikEval™/LTpowerPlay® Adaptor HAT</a></p></li>
 <li><p>12x 15cm socket-to-socket jumpers such as <strong>[[https://schmartboard.com/wire-jumpers/female-jumpers/5-inch/|these from Schmartboard]]</strong></p></li>
 </ul>
 </li>
@@ -442,6 +452,8 @@ in the Shed curve tracer to no-OS on Linux. &lt;/WRAP&gt;</p>
 </section>
 <section id="additional-references">
 <h2>Additional References<a class="headerlink" href="#additional-references" title="Link to this heading">#</a></h2>
+<div class="toctree-wrapper compound">
+</div>
 </section>
 </section>
 
