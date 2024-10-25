@@ -12,6 +12,7 @@
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script defer="" src="../../_static/app.umd.js?v=c93eadd1"></script>
+    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="icon" href="../../_static/icon.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -100,6 +101,7 @@
           <ul>
 <li><a class="reference internal" href="#">Tools for Precision Wideband Mixed Signal System Design</a><ul>
 <li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#materials">Materials</a></li>
 <li><a class="reference internal" href="#background">Background</a></li>
 <li><a class="reference internal" href="#slide-deck-and-video">Slide Deck and Video</a></li>
 <li><a class="reference internal" href="#preparation-a-few-resources-for-learning-python">Preparation - a few resources for learning Python</a></li>
@@ -232,28 +234,9 @@ Content on this topic
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">LTspice Examples</span></p>
-<ul>
-<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../ltspice_examples/index.html">LTspice Examples</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../ltspice_examples/lvds_pair/index.html">LTspice Example: LVDS pair</a></li>
-</ul>
-</li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Learning</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="../tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../sw_infrastructure/index.html">Key ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Tools for Precision Wideband Mixed Signal System Design</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
-</ul>
-</li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Learning</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../sw_infrastructure/index.html">Key ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
@@ -283,20 +266,19 @@ Content on this topic
             
   <section id="tools-for-precision-wideband-mixed-signal-system-design">
 <h1>Tools for Precision Wideband Mixed Signal System Design<a class="headerlink" href="#tools-for-precision-wideband-mixed-signal-system-design" title="Link to this heading">#</a></h1>
-<div class="line-block">
-<div class="line"><strong>Note:</strong> This is a work in progress.</div>
-</div>
+<p><strong>Note:</strong> This is a work in progress.</p>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
-<div class="line-block">
-<div class="line">The goal of this tutorial is to equip the reader with a collection of
+<p>The goal of this tutorial is to equip the reader with a collection of
 hardware and software tools for developing precision wideband
-mixed-signal applications.</div>
-<div class="line">** Content Guide:** This tutorial includes complete written
+mixed-signal applications.
+<strong>Content Guide:</strong> This tutorial includes complete written
 instructions, a video guide, and a slide deck that can be used for
-delivering as a hands-on workshop.</div>
-<div class="line">What exactly does “Precision Wideband” mean? In the context of this
-tutorial, the “wideband” part means that <strong>unlike</strong> “low speed”
+delivering as a hands-on workshop.
+What exactly does “Precision Wideband” mean?</p>
+<p>The “precision” part means that DC parameters such as offset, gain
+error, linearity, and temperature drift are also important.</p>
+<p>The “wideband” part means that <strong>unlike</strong> “low speed”
 applications, timing, or jitter, of individual samples with respect to
 previous and future samples <strong>IS</strong> critical. The application involves
 extracting information from arrays of samples that are correlated with
@@ -304,32 +286,31 @@ each other in some way. AC performance metrics such as signal to noise
 ratio and total harmonic distortion extracted from a Fourier transform
 of the data <strong>will</strong> be considered. Even if the end applicaiton does
 not involve sinewaves, these metrics are almost always a useful
-indicator of performance.</div>
-<div class="line">The “precision” part means that DC parameters such as offset, gain
-error, linearity, and temperature drift are also important.</div>
-</div>
-<div class="line-block">
-<div class="line"><br /></div>
-<div class="line"><strong>In contrast</strong> - sample jitter is important in a “wideband”
-application. If you are measuring signal to noise ratio, the Signal to
-Noise ratio (SNR) can be no greater than:</div>
-<div class="line">&lt;m&gt;SNR &lt;= -20 * log(2*pi*f_{IN}*t_{j})&lt;/m&gt;</div>
-<div class="line">where:</div>
-<div class="line">&lt;m&gt;f_{IN}&lt;/m&gt; is the analog input frequency in Hz</div>
-<div class="line">&lt;m&gt;t_{j}&lt;/m&gt; is the RMS jitter in seconds RMS</div>
-<div class="line">In this tutorial, we will be generating excitation waveforms,
+indicator of performance.</p>
+<p>An important point is that sample jitter is important for the “wideband” aspects of these applications. If you are measuring signal to noise ratio, the Signal to Noise ratio (SNR) can be no greater than:</p>
+<p><span class="math notranslate nohighlight">\(SNR &lt;= -20 * log(2*pi*f\_{IN}*t\_{j})\)</span></p>
+<p>where:</p>
+<ul class="simple">
+<li><p><span class="math notranslate nohighlight">\(f\_{IN}\)</span> is the analog input frequency in Hz</p></li>
+<li><p><span class="math notranslate nohighlight">\(t\_{j}\)</span> is the RMS jitter in seconds RMS</p></li>
+</ul>
+<p>where:
+<span class="math notranslate nohighlight">\(f_{IN}\)</span> is the analog input frequency in Hz
+<span class="math notranslate nohighlight">\(t_{j}\)</span> is the RMS jitter in seconds RMS</p>
+<p>In this tutorial, we will be generating excitation waveforms,
 digitizing time-domain signals, performing Fast Fourier Transforms
 (FFTs), extracting features from the frequency domain, and calculating
 measurement parameters. We <strong>will</strong> be measuring AC Signal to Noise
 Ratio (SNR), Total Harmonic Distortion (THD), measuring steps,
-wiggles, and other situations where precise timing is required.</div>
-<div class="line">Throughout the exercises we’ll be writing simple Python code to
+wiggles, and other situations where precise timing is required.
+Throughout the exercises we’ll be writing simple Python code to
 capture and analyze data, using the industry standard Industrial I/O
 (IIO) framework to interact with the ADC, and the popular NumPy and
 Matplotlib Python libraries. Thus this exercise also serves as a
-mini-tutorial on Python.</div>
-<div class="line">==== Materials ====</div>
-</div>
+mini-tutorial on Python.</p>
+</section>
+<section id="materials">
+<h2>Materials<a class="headerlink" href="#materials" title="Link to this heading">#</a></h2>
 <ul class="simple">
 <li><p>Raspberry Pi 4; 2G, 4G, or 8G version, OR Raspberry Pi 400 (the
 keyboard one).</p></li>
@@ -375,41 +356,25 @@ directory, run these commands in a terminal:</div>
 </section>
 <section id="background">
 <h2>Background<a class="headerlink" href="#background" title="Link to this heading">#</a></h2>
-<div class="line-block">
-<div class="line">This tutorial builds on the concepts covered in:</div>
-<div class="line">Introduction to the basic concepts of writing software to talk to
-external devices:</div>
-<div class="line"><a class="reference external" href="/university/labs/software/iio_intro_toolbox">Converter Connectivity
-Tutorial</a></div>
-<div class="line">This tutorial that starts to deal with analyzing time series data:</div>
-<div class="line"><a class="reference external" href="/university/labs/software/precision_adc_toolbox">Precision ADC
-Tutorial</a></div>
-<div class="line">And this workshop in which we actually build a simple test instrument:</div>
-<div class="line"><a class="reference external" href="/university/labs/software/tools_for_low_speed_mix-sig_systems">Tools for Low Speed Mixed Signal System
-Design</a></div>
-</div>
+<p>This tutorial builds on the concepts covered in:
+Introduction to the basic concepts of writing software to talk to
+external devices:
+<a class="reference external" href="/university/labs/software/iio_intro_toolbox">Converter Connectivity Tutorial</a>
+This tutorial that starts to deal with analyzing time series data:
+<a class="reference external" href="/university/labs/software/precision_adc_toolbox">Precision ADC Tutorial</a>
+And this workshop in which we actually build a simple test instrument:
+<a class="reference external" href="/university/labs/software/tools_for_low_speed_mix-sig_systems">Tools for Low Speed Mixed Signal System Design</a></p>
 </section>
 <section id="slide-deck-and-video">
 <h2>Slide Deck and Video<a class="headerlink" href="#slide-deck-and-video" title="Link to this heading">#</a></h2>
 <p>Since this tutorial is also designed to be presented as a live, hands-on
 workshop, a slide deck is provided here:</p>
-<p>&lt;WRAP lo round download 80%&gt; <strong>Tools for Low-Speed Mixed Signal System
-Design Slide Deck</strong> &lt;/WRAP&gt;</p>
-<div class="line-block">
-<div class="line"><br /></div>
-<div class="line">A complete video run-through is also provided, either as a companion
+<p>A complete video run-through is also provided, either as a companion
 to following the tutorial yourself, or to practice before presenting
-as a hands-on workshop:</div>
-</div>
+as a hands-on workshop:</p>
 <div class="admonition note">
 <p class="admonition-title">Note</p>
-<p>Video to come soon, in the meantime please enjoy this primer on precision wideband applications:</p>
-<div class="iframe-video"><iframe class="only-screen" src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ"></iframe><span class="only-screen"></span><div class="admonition video only-print"><p class="admonition-title">Video</p>
-<p><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><span>https://www.youtube.com/watch?v=dQw4w9WgXcQ</span></a></p>
-</div></div></div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Finish Me (Translate slide deck and video into complete written instructions with photos, diagrams, etc.)</p>
+<p>ToDo: Video and Slide Deck</p>
 </div>
 </section>
 <section id="preparation-a-few-resources-for-learning-python">

@@ -140,7 +140,7 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#running-the-example">Running the example</a></li>
-<li><a class="reference internal" href="#for-rpi">For RPi</a></li>
+<li><a class="reference internal" href="#running-directly-on-the-rpi">Running directly on the RPi</a></li>
 <li><a class="reference internal" href="#for-no-os">For No-OS</a></li>
 </ul>
 </li>
@@ -267,28 +267,9 @@ Content on this topic
 </ul>
 </li>
 </ul>
-<p class="caption" role="heading"><span class="caption-text">LTspice Examples</span></p>
-<ul>
-<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../ltspice_examples/index.html">LTspice Examples</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../ltspice_examples/lvds_pair/index.html">LTspice Example: LVDS pair</a></li>
-</ul>
-</li>
-</ul>
 <p class="caption" role="heading"><span class="caption-text">Learning</span></p>
 <ul>
-<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../learning/sw_infrastructure/index.html">Key ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
-</ul>
-</li>
-</ul>
-<p class="caption" role="heading"><span class="caption-text">Learning</span></p>
-<ul>
-<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../learning/sw_infrastructure/index.html">Key ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
@@ -768,9 +749,13 @@ Press refresh to display available IIO Devices, once ADXL355 appeared, press con
 <section id="running-the-example">
 <h4>Running the example<a class="headerlink" href="#running-the-example" title="Link to this heading">#</a></h4>
 <p>After installing and configuring PYADI-IIO in your machine, you are now ready to run python script examples. In our case, run the <strong>adxl355_example.py</strong> found in the examples folder.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Github link for the python sample script: <a class="icon git reference external" href="https://github.com/analogdevicesinc/pyadi-iio/tree/main/examples/adxl355_example.py">ADXL355 Python Example</a></p>
+</div>
 </section>
-<section id="for-rpi">
-<h4>For RPi<a class="headerlink" href="#for-rpi" title="Link to this heading">#</a></h4>
+<section id="running-directly-on-the-rpi">
+<h4>Running directly on the RPi<a class="headerlink" href="#running-directly-on-the-rpi" title="Link to this heading">#</a></h4>
 <div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">D</span><span class="p">:</span>\<span class="n">pyadi</span><span class="o">-</span><span class="n">iio</span>\<span class="n">examples</span><span class="o">&gt;</span>
 </pre></div>
 </div>
@@ -778,10 +763,6 @@ Press refresh to display available IIO Devices, once ADXL355 appeared, press con
 </pre></div>
 </div>
 <div class="clear-left"></div></div></div><p>Press enter and you will get these readings. <a class="reference internal" href="../../../_images/adxl355_python_example_rpi.png"><img alt="adxl355_python_example_rpi.png" src="../../../_images/adxl355_python_example_rpi.png" style="width: 600px;" /></a></p>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>Github link for the python sample script: <a class="icon git reference external" href="https://github.com/analogdevicesinc/pyadi-iio/tree/main/examples/adxl355_example.py">ADXL355 Python Example</a></p>
-</div>
 </section>
 <section id="for-no-os">
 <h4>For No-OS<a class="headerlink" href="#for-no-os" title="Link to this heading">#</a></h4>
@@ -797,10 +778,6 @@ Press refresh to display available IIO Devices, once ADXL355 appeared, press con
 </div>
 <p>Press enter and you will get these readings.</p>
 <p><a class="reference internal" href="../../../_images/no_os_adxl355_pyadi.png"><img alt="no_os_adxl355_pyadi.png" src="../../../_images/no_os_adxl355_pyadi.png" style="width: 600px;" /></a></p>
-<div class="admonition-download admonition">
-<p class="admonition-title">Download</p>
-<p>Github link for the python sample script: <a class="icon git reference external" href="https://github.com/analogdevicesinc/pyadi-iio/tree/main/examples/adxl355_no_os_example.py">ADXL355 Python Example</a></p>
-</div>
 </section>
 </section>
 <section id="more-information-and-useful-links">
