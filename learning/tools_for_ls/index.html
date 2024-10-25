@@ -7,7 +7,7 @@
 
     <title>Tools for Low Speed Mixed Signal System Design &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8e8a900e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/style.min.css?v=3e3e1b4d" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.min.css?v=95305861" />
     <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
@@ -101,6 +101,7 @@
           <ul>
 <li><a class="reference internal" href="#">Tools for Low Speed Mixed Signal System Design</a><ul>
 <li><a class="reference internal" href="#introduction">Introduction</a></li>
+<li><a class="reference internal" href="#materials">Materials</a></li>
 <li><a class="reference internal" href="#background">Background</a></li>
 <li><a class="reference internal" href="#slide-deck-and-video">Slide Deck and Video</a></li>
 <li><a class="reference internal" href="#preparation-a-few-resources-for-learning-python">Preparation - a few resources for learning Python</a></li>
@@ -274,63 +275,87 @@ Content on this topic
             
   <section id="tools-for-low-speed-mixed-signal-system-design">
 <h1>Tools for Low Speed Mixed Signal System Design<a class="headerlink" href="#tools-for-low-speed-mixed-signal-system-design" title="Link to this heading">#</a></h1>
-<p><strong>Note:</strong> This is a work in progress.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This is a work in progress.</p>
+</div>
 <section id="introduction">
 <h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
-<p>The goal of this tutorial is to equip the reader with a collection of hardware and software tools for developing low-speed mixed-signal applications.
-Content Guide: This tutorial includes complete written instructions, a video guide, and a slide deck that can be used for delivering as a hands-on workshop.</p>
-<p>What exactly does “Low Speed” mean? In the context of this tutorial, it means that timing is not very critical. Signals are either completely static or moving slowly such that it doesn’t matter if the instant that an ADC samples the signal wiggles around a bit relative to the previous sampling. While clock jitter is one source of this uncertainty, software delays (such as the time between a timer interrupt and the assertion of a “convert” edge) will likely be dominant. Important parameters in low-speed applications are offset, gain error, linearity, and temperature drift. “Noise” in a low-speed application is typically synonymous with resolution, and is typically measured by applying a noiseless input signal and taking a histogram of the output readings. AC performance metrics such as signal to noise ratio and total harmonic distortion extracted from a Fourier transform of the data will not be considered.
-In contrast - sample jitter is important in a “high speed” application. If you are measuring signal to noise ratio, the Signal to Noise ratio (SNR) can be no greater than:</p>
+<p>The goal of this tutorial is to equip the reader with a collection of hardware
+and software tools for developing low-speed mixed-signal applications.
+Content Guide: This tutorial includes complete written instructions, a video
+guide, and a slide deck that can be used for delivering as a hands-on workshop.</p>
+<p>What exactly does “Low Speed” mean? In the context of this tutorial, it
+means that timing is not very critical. Signals are either completely static or
+moving slowly such that it doesn’t matter if the instant that an ADC samples
+the signal wiggles around a bit relative to the previous sampling. While clock
+jitter is one source of this uncertainty, software delays (such as the time
+between a timer interrupt and the assertion of a “convert” edge) will
+likely be dominant. Important parameters in low-speed applications are offset,
+gain error, linearity, and temperature drift. “Noise” in a low-speed
+application is typically synonymous with resolution, and is typically measured
+by applying a noiseless input signal and taking a histogram of the output
+readings. AC performance metrics such as signal to noise ratio and total
+harmonic distortion extracted from a Fourier transform of the data will not be
+considered.
+In contrast - sample jitter is important in a “high speed” application. If
+you are measuring signal to noise ratio, the Signal to Noise ratio (SNR) can be
+no greater than:</p>
 <p><span class="math notranslate nohighlight">\(SNR &lt;= -20 * log(2*pi*f\_{IN}*t\_{j})\)</span></p>
-<p>where:</p>
-<ul class="simple">
-<li><p><span class="math notranslate nohighlight">\(f\_{IN}\)</span> is the analog input frequency in Hz</p></li>
-<li><p><span class="math notranslate nohighlight">\(t\_{j}\)</span> is the RMS jitter in seconds RMS</p></li>
-</ul>
-<p>where:
+<p>Where:
 <span class="math notranslate nohighlight">\(f_{IN}\)</span> is the analog input frequency in Hz
 <span class="math notranslate nohighlight">\(t_{j}\)</span> is the RMS jitter in seconds RMS</p>
-<p>So that’s it. In this tutorial, we will set voltages and currents, read voltages and currents, do some basic math, but each reading will be treated independently, no correlation to previous or future readings. We will NOT be measuring AC Signal to Noise Ratio (SNR), Total Harmonic Distortion (THD), nor measuring steps, wiggles, or any other situation where precise timing is required. (Rest assured, there are lots of very interesting applications in this category.)
-Throughout the exercises we’ll be writing simple Python code to capture and analyze data, using the industry standard Industrial I/O (IIO) framework to interact with the ADC, and the popular NumPy and Matplotlib Python libraries. Thus this exercise also serves as a mini-tutorial on Python.
-==== Materials</p>
-<ul class="simple">
+<p>So that’s it. In this tutorial, we will set voltages and currents, read
+voltages and currents, do some basic math, but each reading will be treated
+independently, no correlation to previous or future readings. We will NOT be
+measuring AC Signal to Noise Ratio (SNR), Total Harmonic Distortion (THD), nor
+measuring steps, wiggles, or any other situation where precise timing is
+required. (Rest assured, there are lots of very interesting applications in
+this category.)
+Throughout the exercises we’ll be writing simple Python code to capture and
+analyze data, using the industry standard Industrial I/O (IIO) framework to
+interact with the ADC, and the popular NumPy and Matplotlib Python libraries.
+Thus this exercise also serves as a mini-tutorial on Python.</p>
+</section>
+<section id="materials">
+<h2>Materials<a class="headerlink" href="#materials" title="Link to this heading">#</a></h2>
+<ul>
 <li><p>Raspberry Pi 4; 2G, 4G, or 8G version. (3B, 3B Plus will work, but
 you will want the 4 :-) )</p></li>
 <li><p>5V USB-C wall adapter for Raspberry Pi (micro USB for model 3)</p></li>
 <li><p><a class="icon adi reference external" href="https://www.analog.com/eval-ad5592r-pmdz">EVAL-AD5592R-PMDZ</a></p></li>
 <li><p>Electrical connection hardware (choose one):</p>
-<ul>
+<ul class="simple">
 <li><p><a class="icon adi reference external" href="https://www.analog.com/pmd-rpi-intz">Raspberry Pi to PMOD/QuikEval™/LTpowerPlay® Adaptor HAT</a></p></li>
-<li><p>12x 15cm socket-to-socket jumpers such as <strong>[[https://schmartboard.com/wire-jumpers/female-jumpers/5-inch/|these from Schmartboard]]</strong></p></li>
+<li><p>12x 15cm socket-to-socket jumpers such as <a class="reference external" href="https://schmartboard.com/wire-jumpers/female-jumpers/5-inch/">these from Schmartboard</a>.</p></li>
 </ul>
 </li>
-<li><p>16GB (or larger) Class 10 (or faster) micro-SD card, with <strong>[[resources:tools-software:linux-software:kuiper-linux|Analog Devices Kuiper Linux]]</strong> installed</p></li>
+<li><p>16GB (or larger) Class 10 (or faster) micro-SD card, with <a class="reference internal" href="../../linux/kuiper/index.html#kuiper"><span class="std std-ref">Kuiper Linux</span></a> installed</p></li>
 <li><dl class="simple">
-<dt>User interface setup (choose one):</dt><dd><ul>
+<dt>User interface setup (choose one):</dt><dd><ul class="simple">
 <li><p>HDMI monitor, keyboard, mouse plugged directly into Raspberry Pi</p></li>
 <li><p>Host Windows/Linux/Mac computer on same network as Raspberry Pi</p></li>
 </ul>
 </dd>
 </dl>
 </li>
-<li><p>[[adi&gt;en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/adalm2000.html|ADALM2000]] (Not required for all experiments.)</p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/en/design-center/evaluation-hardware-and-software/evaluation-boards-kits/adalm2000.html">ADALM2000</a> (Not required for all experiments.)</p></li>
 <li><p>2N3904 NPN Transistor</p></li>
 <li><p>47Ω resistor</p></li>
 <li><p>47kΩ resistor</p></li>
 <li><p>Breadboard or prototyping board, hookup wire</p></li>
 <li><p>Clone or download zip of the Python code for this tutorial</p></li>
-<li><dl class="simple">
-<dt>Python files: <strong>[[downgit&gt;pyadi-iio/tree/master/examples/ad5592r_examples|AD5592r Pyadi-IIO examples]]</strong></dt><dd><ul>
-<li><p>(Note that these are included in the pyadi-iio repo, consider cloning the entire thing:</p></li>
-</ul>
-</dd>
-</dl>
-</li>
-</ul>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">git</span> <span class="n">clone</span> <span class="n">https</span><span class="p">:</span><span class="o">//</span><span class="n">github</span><span class="o">.</span><span class="n">com</span><span class="o">/</span><span class="n">analogdevicesinc</span><span class="o">/</span><span class="n">pyadi</span><span class="o">-</span><span class="n">iio</span><span class="o">.</span><span class="n">git</span>
+<li><div class="line-block">
+<div class="line">Python files: <a class="icon git reference external" href="https://github.com/analogdevicesinc/pyadi-iio/tree/main/examples/ad5592r_examples">AD5592r Pyadi-IIO examples</a></div>
+<div class="line">Note that these are included in the pyadi-iio repo, consider cloning the entire thing:</div>
+</div>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
 </pre></div>
 </div>
-<ul class="simple">
+<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>clone<span class="w"> </span>https://github.com/analogdevicesinc/pyadi-iio.git
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div></li>
 <li><p>AD5592R Device Tree Overlay for alternate configuration with GPIO
 pins</p></li>
 </ul>
@@ -341,19 +366,16 @@ pins</p></li>
 </section>
 <section id="background">
 <h2>Background<a class="headerlink" href="#background" title="Link to this heading">#</a></h2>
-<div class="line-block">
-<div class="line">This tutorial builds on the concepts covered in:</div>
-<div class="line"><a class="reference external" href="/university/labs/software/iio_intro_toolbox">Converter Connectivity
-Tutorial</a></div>
-<div class="line">It also serves as a preview to this tutorial that starts to deal with
-analyzing time series data:</div>
-<div class="line"><a class="reference external" href="/university/labs/software/precision_adc_toolbox">Precision ADC
-Tutorial</a></div>
-</div>
+<p>This tutorial builds on the concepts covered in:
+<a class="reference external" href="https://wiki.analog.com/university/labs/software/iio_intro_toolbox">Converter Connectivity Tutorial</a>
+It also serves as a preview to this tutorial that starts to deal with
+analyzing time series data:
+<a class="reference external" href="https://wiki.analog.com/university/labs/software/precision_adc_toolbox">Precision ADC Tutorial</a></p>
 </section>
 <section id="slide-deck-and-video">
 <h2>Slide Deck and Video<a class="headerlink" href="#slide-deck-and-video" title="Link to this heading">#</a></h2>
-<p>Since this tutorial is also designed to be presented as a live, hands-on workshop, a slide deck is provided here:</p>
+<p>Since this tutorial is also designed to be presented as a live, hands-on
+workshop, a slide deck is provided here:</p>
 <div class="admonition-download admonition">
 <p class="admonition-title">Download</p>
 <p><a class="reference download internal" download="" href="../../_downloads/5f8ba5fc016914dab43ca303d198846d/Tools_for_low_speed_ms_workshop.pptx"><code class="xref download docutils literal notranslate"><span class="pre">Tools</span> <span class="pre">for</span> <span class="pre">Low-Speed</span> <span class="pre">Mixed</span> <span class="pre">Signal</span> <span class="pre">System</span> <span class="pre">Design</span> <span class="pre">Slide</span> <span class="pre">Deck</span></code></a></p>
@@ -364,10 +386,11 @@ hands-on workshop: &lt;WRAP todo&gt; This video is accurate, but will be
 re-done at some point:</p>
 <div class="iframe-video"><iframe class="only-screen" src="https://www.youtube-nocookie.com/embed/tJtzUrt9_1U"></iframe><span class="only-screen"></span><div class="admonition video only-print"><p class="admonition-title">Video</p>
 <p><a href="https://www.youtube.com/watch?v=tJtzUrt9_1U"><span>https://www.youtube.com/watch?v=tJtzUrt9_1U</span></a></p>
-</div></div><div class="line-block">
-<div class="line">&lt;WRAP todo&gt; Finish Me</div>
-<div class="line">(Translate slide deck and video into complete written instructions
-with photos, diagrams, etc.) &lt;/WRAP&gt;</div>
+</div></div><div class="admonition-todo admonition" id="id1">
+<p class="admonition-title">Todo</p>
+<p>Finish Me
+(Translate slide deck and video into complete written instructions
+with photos, diagrams, etc.)</p>
 </div>
 </section>
 <section id="preparation-a-few-resources-for-learning-python">
@@ -393,9 +416,12 @@ with photos, diagrams, etc.) &lt;/WRAP&gt;</div>
 </section>
 <section id="post-boot-housekeeping">
 <h2>Post-boot housekeeping<a class="headerlink" href="#post-boot-housekeeping" title="Link to this heading">#</a></h2>
-<p>The Raspberry Pi-based hardware and Linux setup mirrors that of the ADXL345 used in the <a class="reference external" href="/university/labs/software/iio_intro_toolbox">Converter
-Connectivity Toolbox and
-Tutorial</a>, including bringing up the pyadi-iio example. Follow the instructions for downloading and installing ADI Kuiper Linux, and editing config.txt. The only difference is the interrupt connection and device tree overlay to be added to config.txt. For this exercise, add the following line to config.txt:</p>
+<p>The Raspberry Pi-based hardware and Linux setup mirrors that of the ADXL345
+used in the <a class="reference external" href="https://wiki.analog.com/university/labs/software/iio_intro_toolbox">Converter Connectivity Toolbox and Tutorial</a>,
+including bringing up the pyadi-iio example. Follow the instructions for downloading and
+installing ADI Kuiper Linux, and editing config.txt. The only difference is the
+interrupt connection and device tree overlay to be added to config.txt. For
+this exercise, add the following line to config.txt:</p>
 <div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">dtoverlay</span><span class="o">=</span><span class="n">rpi</span><span class="o">-</span><span class="n">ad5592r</span>
 </pre></div>
 </div>
@@ -443,8 +469,11 @@ will begin on a standard development platform, then be ported to a
 custom board. Runnin no-OS code on Linux provides a way to get started
 on the embedded code development, before actually embedding.
 A full treatment of this flow is beyond the scope of this tutorial,
-but will be documented in a future tutorial. &lt;WRAP todo&gt; Port the Fred
-in the Shed curve tracer to no-OS on Linux. &lt;/WRAP&gt;</p>
+but will be documented in a future tutorial.</p>
+<div class="admonition-todo admonition" id="id2">
+<p class="admonition-title">Todo</p>
+<p>Port the Fred in the Shed curve tracer to no-OS on Linux.</p>
+</div>
 </section>
 <section id="next-steps-porting-to-a-fully-embedded-system">
 <h2>Next Steps: Porting to a fully embedded system<a class="headerlink" href="#next-steps-porting-to-a-fully-embedded-system" title="Link to this heading">#</a></h2>
