@@ -6,7 +6,7 @@ Objective:
 
 The objective of this activity is to explore the concepts of efficiency, power loss, temperature rise, and heat flow.
 
-Safety:
+Safety
 -------
 
 This experiment deals with power electronics, and while the voltages are low, and power is generally less than a few watts, devices and heat sinks can get hot, and if something goes wrong, parts can fail unexpectedly. WEAR EYE PROTECTION, and DON'T TOUCH circuits when they are running, and wait for them to cool down after shutting off power.
@@ -25,9 +25,14 @@ Background:
 
 All circuits require power. A smart phone is a close-to-home example; it is compact, reliable (hopefully) and performs an astonishing array of functions. Electric cars, network server blades, avionics, your laptop computer, and your microwave oven, all require power. And a common theme with most modern electronics is that powering them is not getting any easier - requirements on voltage accuracy, current capacity, size, cost, are all being pushed further and further. But no power conversion circuit is perfect, some power will be lost in the process, and it is this lost power, and what do do with it, that will be explored in this lab.
 
-When thinking about power supplies, the term "efficiency" often one of the first parameter that comes to mind. And this is one way of comparing power supplies, and is certainly important. But the idea of power loss is often a more practical metric to keep in the forefront of your mind. Why? Consider two laptop chargers, one is 85% efficient and the other is 90% efficient, which are typical numbers. While paying a little more for the extra bit of energy required for the 5% less efficient unit might be annoying, it's insignificant compared to what it costs to run an air conditioner (or electric oven, etc.) The real annoyance is how hot the charger gets; the 85% efficient supply dissipates 50% more power, and the temperature rise will be 1.5X as much above ambient. Have you ever left a laptop charger on your couch, and somehow a pillow found its way on top of it? That extra power makes a BIG difference!
+When thinking about power supplies, the term "efficiency" often one of the first parameter that comes to mind. And this is one way of comparing power supplies, and is certainly important. But the idea of power loss is often a more practical metric to keep in the forefront of your mind. Why? Consider two laptop chargers, one is 85% efficient and the other is 90% efficient, which are typical numbers. While paying a little more for the extra bit of energy required for the 5% less efficient unit might be annoying, it's insignificant compared to what it costs to run an air conditioner (or electric oven, etc.) The real annoyance is how hot the charger gets; the 85% efficient supply dissipates 50% more power, and the temperature rise will be 1.5X as much above ambient. Have you ever left a laptop charger on your couch, and somehow a pillow found its way on top of it as shown in Figure 1? That extra power makes a BIG difference!
 
-|cozy_laptop_charger.jpg| <WRAP centeralign> Figure 1. Common Laptop Charger Situation </WRAP>
+
+.. figure:: cozy_laptop_charger.jpg
+   :align: center
+   :width: 600
+
+**Figure 1.** Common Laptop Charger Situation
 
 Here on Earth, there is the luxury of air to carry heat away from stuff that gets hot. What about a space application? Or even an avionic application, where air may have a fraction of its ability to move heat that it has at sea level? That's why the difference between a 99% efficient power supply and a 98% efficient supply can be tremendously important - the 98% efficient supply has double the power loss; twice as much heat must be carried away from the application, and in space, thermal radiation is the only way.
 
@@ -59,7 +64,7 @@ Why don't Linear Regulators have an efficiency number proudly displayed on the f
 
 Before even starting to build any circuitry, we know that we're going to have to get rid of some heat. The LT3080 regulator from the parts kit is in the very common T0-220 package, with a tab for mounting to a heat sink.
 
-|wiki_lt3080_pinout.png| <WRAP centeralign> Figure 2. LT3080 package, pinout, thermal resistance </WRAP>
+|wiki_lt3080_pinout.png| **Figure 2.** LT3080 package, pinout, thermal resistance 
 
 This shows the physical layout of the part, pinout, and three parameters, defined as follows:
 
@@ -105,7 +110,7 @@ Doing a quick calculation on the LT3080 in the TO-20 package, if the input volta
 
 |lt3080_1w_temp_rise_sch.png|
 
-<WRAP centeralign> Figure 3. Electrical model of thermal resistance, 1W dissipation. </WRAP>
+Figure 3. Electrical model of thermal resistance, 1W dissipation. 
 
 Notice that Tjunction is 65 "volts", which is 65C in the analogy.
 
@@ -113,7 +118,7 @@ But what happens if the load current increases to 500mA? Now you have to get rid
 
 |lt3080_2w5_temp_rise_sch.png|
 
-<WRAP centeralign> Figure 4. Electrical model of thermal resistance, 2.5W dissipation. </WRAP>
+Figure 4. Electrical model of thermal resistance, 2.5W dissipation. 
 
 That doesn't sound like a very high performance part, and the datasheet clearly says the part is capable of delivering 1.1A of current. So what is going on, given the Θ\ :sub:`JA` of 40°C/W? Here is the key point about datasheet Θ\ :sub:`JA` numbers:
 
@@ -121,7 +126,7 @@ That doesn't sound like a very high performance part, and the datasheet clearly 
 
 |wiki_TO-220_thermals.png|
 
-<WRAP centeralign> Figure 5. Table 5 from LT3080 datasheet </WRAP>
+Figure 5. Table 5 from LT3080 datasheet 
 
 And note that while Θ\ :sub:`JA` is listed for the TO-220 package on page 2 of the datasheet, it's not even mentioned here. Why? Because the TO-220 package is designed to be mounted to an external heat sink of some sort. It is possible to solder the back tab of the part to a circuit board, but you would normally use the DD-Pak in those situations (DD-Pak looks like a TO-220 with shorter leads and no tab.)
 
@@ -131,7 +136,7 @@ The LT3080 in the parts kit is the TO-220 package version, and we're not solderi
 
 |wiki_aavid_7021_thermals.png|
 
-<WRAP centeralign> Figure 6. Aavid 7021 Temperature rise and Thermal resistance. </WRAP>
+Figure 6. Aavid 7021 Temperature rise and Thermal resistance. 
 
 This shows the following:
 
@@ -143,13 +148,13 @@ This is reconcilable with table 5 above - the heat sink is a folded up piece of 
 
 |wiki_aavid_7021_drawing.png|
 
-<WRAP centeralign> Figure 7. Aavid 7021 diagram </WRAP>
+Figure 7. Aavid 7021 diagram 
 
 Let's re-run the LTspice simulation one more time, with the Aavid 7021 heat sink's thermal resistance:
 
 |wiki_lt3080_2w5_temp_rise_w_sink_sch.png|
 
-<WRAP centeralign> Figure 8. Electrical model of thermal resistance, 2.5W dissipation with heat sink. </WRAP>
+Figure 8. Electrical model of thermal resistance, 2.5W dissipation with heat sink. 
 
 The expected temperature rise is about 32.5°C, for a junction temperature of 57.5°C
 
@@ -160,19 +165,19 @@ Refer to the circuit shown below.
 
 |LT3080_schematic.png|
 
-<WRAP centeralign> Figure 9. LT3080 schematic </WRAP>
+Figure 9. LT3080 schematic 
 
 The LTspice file is set up to sweep the input voltage from 5V to 12V and plot input power, output power, and efficiency. Results are shown in Figure 10 below, with the red trace representing efficiency.
 
 |lt3080_efficiency.png|
 
-<WRAP centeralign> Figure 10. LT3080 LTspice simulation</WRAP>
+Figure 10. LT3080 LTspice simulation
 
 As expected, efficiency is relatively high (about 66%) when the input voltage (shown in green) is low. As the input voltage increases, the power dissipation in the LT3080 (blue) increases, and efficiency decreases (to about 28% when the input voltage is 12V). Results of this simulation will reflect reality very accurately. The reason is that the loss mechanisms are straightforward - power dissipations are simply DC currents multiplied by DC voltages.
 
 |lt3080_bb.png|
 
-<WRAP centeralign> Figure 11. LT3080 Breadboard connections</WRAP>
+Figure 11. LT3080 Breadboard connections
 
 Construct the circuit on a solder-less breadboard, keeping the following in mind:
 
@@ -182,25 +187,25 @@ Also, there are several options for measuring voltages and currents. Input volta
 
 |LT3080_breadboard.jpg|
 
-<WRAP centeralign> Figure 12. Overhead view </WRAP>
+Figure 12. Overhead view 
 
 Things are about to get a bit warm - too warm to touch. So we need a way of at least getting some idea of HOW warm without getting burned. The AD592 temperature sensor provides an easy way to do this:
 
 |AD592_circuit.png|
 
-<WRAP centeralign> Figure 13. AD592 Thermometer Circuit </WRAP>
+Figure 13. AD592 Thermometer Circuit 
 
 The AD592 leads can be extended, and the middle lead is not connected so it can be used to provide extra support.
 
 |AD592_temperature_sensor.jpg|
 
-<WRAP centeralign> Figure 14. AD592 Connections </WRAP>
+Figure 14. AD592 Connections 
 
 A small rubber band can then be used to hold the sensor against the top surface of the LT3080 as shown in Figure 15. Use a tiny drop of thermal grease between the sensor and top of the LT3080 package.
 
 |AD592_mounting.jpg|
 
-<WRAP centeralign> Figure 15. AD592 mounting </WRAP>
+Figure 15. AD592 mounting 
 
 It was mentioned above that the top of the "case" is not truly a measurement of the case temperature - but it turns out that the temperature of the top of the case can be used to approximate the temperature of the junction - which is difficult to measure directly. Application note 834 from Vishay: https://www.vishay.com/docs/69993/an834.pdf describes the relationship between the measured temperature rise at the top of a package to junction temperature rise by the following formula:
 
@@ -221,13 +226,13 @@ Next, we'll explore the efficiency and thermal performance of the LTM8067 Isolat
 
 |LTM8067_bob.PNG|
 
-<WRAP centeralign> Figure 16. LTM8067 Breakout Board </WRAP>
+Figure 16. LTM8067 Breakout Board 
 
 The block diagram from the datasheet shows a basic isolated flyback circuit. Without going into details, one key point is worth worth noting: unlike the pass transistor in the LT3080, The MOSFET in the LTM8067 is either off completely, or on completely, operating as a switch. This means that very little power is dissipated in the transistor. Furthermore, the resistance of the transformer windings is designed to be as small as possible, also resulting in minimal power dissipation. The Schottky diode will necessarily have some forward drop, usually about 0.4V, so that is one loss mechanism that we can predict with some accuracy. For example, if the load current is 250mA, the diode will dissipate 0.1W as heat. But that's still relatively small, compared to the dissipation in an LT3080 under some circumstances.
 
 |LTM8067_block_diagram.png|
 
-<WRAP centeralign> Figure 17. LTM8067 Block Diagram. </WRAP>
+Figure 17. LTM8067 Block Diagram. 
 
 Setup for this experiment is straightforward; the LTM8067 BOB has four pairs of pins, and the pins of each pair are the same node. Note that with the adjustment potentiometer on the left:
 
@@ -240,37 +245,37 @@ Also note that the output current capability of the LTM8067 varies with input vo
 
 |LTM8067_iout_vs_vin.png|
 
-<WRAP centeralign> Figure 18. LTM8067 Output Current vs. Input Voltage </WRAP>
+Figure 18. LTM8067 Output Current vs. Input Voltage 
 
 Even with the BOB set to the minimum output of 3V, the 6.2 Ω power resistor will draw 440mA, requiring about 20V input voltage. Borrow a neighbor's 6.2Ω resistor and connect in series with your for a total load resistance of 13.6Ω, as shown in the schematic below.
 
 |ltm8067_schematic.png|
 
-<WRAP centeralign> Figure 19. LTM8067 Schematic </WRAP>
+Figure 19. LTM8067 Schematic 
 
 Simulations of switching regulators are not as straightforward. Some aspects of the circuit's operation are modeled well - such as the control loop dynamics, and instantaneous voltages and currents. However, power loss mechanisms are not well modeled, so it is better to refer to the part's datasheet for measured results. The LTM8067 LTspice simulation is set up to show the turn-on transient waveforms by default. The green trace is the output voltage, and the red trace is input current - notice that current is drawn in "chunks" from the source, due to switching nature of the module.
 
 |ltm8067_waveform.png|
 
-<WRAP centeralign> Figure 20. LTM8067 Turn-on Transient </WRAP>
+Figure 20. LTM8067 Turn-on Transient 
 
 However, we can still try extracting efficiency from the LTspice simulation. Disable the startup transient SPICE directives (right-click, set to "Comment") and enable the efficiency SPICE directives (right-click, set to "SPICE directive"). Re-run the simulation, then view the SPICE error log. Results are shown in the figure below
 
 |ltm8067_efficiency.png|
 
-<WRAP centeralign> Figure 21. LTM8067 Efficiency(%) vs Input Voltage Simulation that MUST be Compared to Datasheet Curves </WRAP>
+Figure 21. LTM8067 Efficiency(%) vs Input Voltage Simulation that MUST be Compared to Datasheet Curves 
 
 (Comparing with datasheet figure "Efficiency vs Load Current, VOUT = 3.3V" reveals that LTspice is optimistically high.)
 
 |ltm8067_bb.png|
 
-<WRAP centeralign> Figure 22. LTM8067 Breadboard Circuit </WRAP>
+Figure 22. LTM8067 Breadboard Circuit 
 
 Construct the circuit on a solder-less breadboard. As with the LT3080 circuit, construction details matter.
 
 |LTM8067_breadboard.jpg|
 
-<WRAP centeralign> Figure 23. LTM8067 Construction and Connection Details </WRAP>
+Figure 23. LTM8067 Construction and Connection Details 
 
 Power up the circuit and fill out the following data table:
 
