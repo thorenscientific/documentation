@@ -16,7 +16,7 @@
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
     <link rel="next" title="Creating new pages" href="creating_new_pages.html" />
-    <link rel="prev" title="Tools for High-Speed Mixed Signal System Design" href="../learning/tools_for_hs/index.html" />
+    <link rel="prev" title="What software do I need for my SDR?" href="../learning/workshop_what_sw_for_sdr/index.html" />
    
   
   <meta name="global_root" content="../../">
@@ -109,6 +109,7 @@
 <li><a class="reference internal" href="#adding-content">Adding content</a></li>
 <li><a class="reference internal" href="#pushing-and-triggering-the-ci">Pushing and triggering the CI</a></li>
 <li><a class="reference internal" href="#resuming-work-at-a-later-time">Resuming work at a later time</a></li>
+<li><a class="reference internal" href="#understanding-git-lfs">Understanding git lfs</a></li>
 </ul>
 </li>
 </ul>
@@ -235,6 +236,7 @@ Content on this topic
 <li class="toctree-l2"><a class="reference internal" href="../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
 </ul>
 </li>
 </ul>
@@ -340,10 +342,6 @@ copy <code class="docutils literal notranslate"><span class="pre">private</span>
      <span class="c1"># Set your private copy as upstream</span>
      <span class="n">remote</span> <span class="o">=</span> <span class="n">private</span>
      <span class="n">merge</span> <span class="o">=</span> <span class="n">refs</span><span class="o">/</span><span class="n">heads</span><span class="o">/</span><span class="n">main</span>
-<span class="p">[</span><span class="n">lfs</span> <span class="s2">&quot;https://github.com/&lt;your_user&gt;/documentation.git/info/lfs&quot;</span><span class="p">]</span>
-     <span class="n">access</span> <span class="o">=</span> <span class="n">basic</span>
-<span class="p">[</span><span class="n">lfs</span> <span class="s2">&quot;https://github.com/analogdevicesinc/documentation.git/info/lfs&quot;</span><span class="p">]</span>
-     <span class="n">access</span> <span class="o">=</span> <span class="n">basic</span>
 </pre></div>
 </div>
 <p>Push the working branch to your copy.</p>
@@ -501,13 +499,53 @@ configure GitHub Pages at <em>github.com/&lt;your_user&gt;/documentation/setting
 </div>
 <div class="clear-left"></div></div></div><p>Edit, build, commit, push as usual.</p>
 </section>
+<section id="understanding-git-lfs">
+<h2>Understanding git lfs<a class="headerlink" href="#understanding-git-lfs" title="Link to this heading">#</a></h2>
+<p>Since git lfs is not that common in the wild, it may be tricky to get the hang
+of it.</p>
+<p>First of all, the basics:
+lfs replaces binaries files with pointers, and stores the binaries outside the
+git repository, in an external server.</p>
+<p>When you do <code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">clone/pull</span></code>, by default lfs will also download the binaries
+at the “smudge” step.
+You can change this behaviour by setting globally
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">lfs</span> <span class="pre">install</span> <span class="pre">--skip-smudge</span></code> or temporally with <code class="docutils literal notranslate"><span class="pre">GIT_LFS_SKIP_SMUDGE=1</span></code>
+environment variable.</p>
+<p>If during a clone or pull you obtain the error:</p>
+<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="n">Encountered</span> <span class="n">n</span> <span class="n">file</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="n">that</span> <span class="n">should</span> <span class="n">have</span> <span class="n">been</span> <span class="n">pointers</span>
+</pre></div>
+</div>
+<p>That simply means that someone pushed files to remote that should have been
+pointers (defined in the <em>.gitattributes</em> file).
+And to fix is simple:</p>
+<div class="code-shell"><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>add<span class="w"> </span>--renomalize<span class="w"> </span>.
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>commit<span class="w"> </span>-m<span class="w"> </span><span class="s2">&quot;Convert binary files to pointers&quot;</span>
+</pre></div>
+</div>
+<div class="clear-left"></div></div><div><div class="no-select float-left highlight-default notranslate"><div class="highlight"><pre><span></span>~$
+</pre></div>
+</div>
+<div class="bold highlight-bash notranslate"><div class="highlight"><pre><span></span>git<span class="w"> </span>push
+</pre></div>
+</div>
+<div class="clear-left"></div></div></div><p>And advise the committer to ensure he has git lfs enabled with
+<code class="docutils literal notranslate"><span class="pre">git</span> <span class="pre">lfs</span> <span class="pre">install</span></code>.</p>
+</section>
 </section>
 
 
           </div>
               <div class="related">
                 &nbsp;
-    <a href="../learning/tools_for_hs/index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Tools for High-Speed Mixed Signal System Design</a>
+    <a href="../learning/workshop_what_sw_for_sdr/index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">What software do I need for my SDR?</a>
     <a href="creating_new_pages.html" title="Next document (Alt+Shift+RightArrow)" class="next">Creating new pages</a>
               </div>
           

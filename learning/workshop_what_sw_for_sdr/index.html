@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Project list &#8212; System Level Documentation  documentation</title>
+    <title>What software do I need for my SDR? &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8e8a900e" />
     <link rel="stylesheet" type="text/css" href="../../_static/style.min.css?v=95305861" />
     <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
@@ -15,8 +15,8 @@
     <link rel="icon" href="../../_static/icon.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Updating" href="update.html" />
-    <link rel="prev" title="SD Card flashing" href="sdcard/index.html" />
+    <link rel="next" title="Forking and publishing" href="../../contributing/forking_publishing.html" />
+    <link rel="prev" title="Tools for High-Speed Mixed Signal System Design" href="../tools_for_hs/index.html" />
    
   
   <meta name="global_root" content="../../../">
@@ -98,7 +98,12 @@
         </div>
         <nav>
           <ul>
-<li><a class="reference internal" href="#">Project list</a></li>
+<li><a class="reference internal" href="#">What software do I need for my SDR?</a><ul>
+<li><a class="reference internal" href="#ftc2023-pluto-workshop">FTC2023 Pluto Workshop</a></li>
+<li><a class="reference internal" href="#ftc2024-jupiter-workshop">FTC2024 Jupiter Workshop</a></li>
+<li><a class="reference internal" href="#introduction">Introduction</a></li>
+</ul>
+</li>
 </ul>
 
         </nav>
@@ -135,31 +140,31 @@ Content on this topic
 <div class="toc-tree">
   <html>
   <body><p class="caption" role="heading"><span class="caption-text">Kuiper &amp; Linux Kernel</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1" checked=""/><div class="collapse"><a class="reference internal" href="index.html">Kuiper Linux</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul class="current">
-<li class="toctree-l2"><a class="reference internal" href="release-notes.html">Release notes</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sdcard/index.html">SD Card flashing</a></li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">Project list</a></li>
-<li class="toctree-l2"><a class="reference internal" href="update.html">Updating</a></li>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../linux/kuiper/index.html">Kuiper Linux</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../linux/kuiper/release-notes.html">Release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../linux/kuiper/sdcard/index.html">SD Card flashing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../linux/kuiper/project-list.html">Project list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../linux/kuiper/update.html">Updating</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../drivers/iio-transceiver/index.html">IIO Transceivers</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
-<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1-1" id="toctree-collapse-2-1-1"/><div class="collapse"><a class="reference internal" href="../drivers/iio-transceiver/adrv9009/index.html">ADRV9009, ADRV9008-1, ADRV9008-2</a><label for="toctree-collapse-2-1-1"><div class="icon"></div></label></div><ul>
-<li class="toctree-l4"><a class="reference internal" href="../drivers/iio-transceiver/adrv9009/customization.html">Customization</a></li>
-</ul>
-</li>
-</ul>
-</li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-2" id="toctree-collapse-2-2"/><div class="collapse"><a class="reference internal" href="../drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-2"><div class="icon"></div></label></div><ul>
-<li class="toctree-l3"><a class="reference internal" href="../drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
-<li class="toctree-l3"><a class="reference internal" href="../drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../linux/drivers/iio-transceiver/index.html">IIO Transceivers</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1-1" id="toctree-collapse-2-1-1"/><div class="collapse"><a class="reference internal" href="../../linux/drivers/iio-transceiver/adrv9009/index.html">ADRV9009, ADRV9008-1, ADRV9008-2</a><label for="toctree-collapse-2-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../linux/drivers/iio-transceiver/adrv9009/customization.html">Customization</a></li>
 </ul>
 </li>
 </ul>
 </li>
-<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
-<li class="toctree-l2"><a class="reference internal" href="../kernel/petalinux.html">Building with Petalinux</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-2" id="toctree-collapse-2-2"/><div class="collapse"><a class="reference internal" href="../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../linux/kernel/petalinux.html">Building with Petalinux</a></li>
 </ul>
 </li>
 </ul>
@@ -215,15 +220,15 @@ Content on this topic
 </li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Learning</span></p>
-<ul>
-<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../learning/sw_infrastructure/index.html">Key ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sw_infrastructure/index.html">Key ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">What software do I need for my SDR?</a></li>
 </ul>
 </li>
 </ul>
@@ -245,18 +250,36 @@ Content on this topic
         <div class="bodywrapper" id="top-anchor">
           <div class="body" role="main">
             
-  <section id="project-list">
-<span id="kuiper-project-list"></span><h1>Project list<a class="headerlink" href="#project-list" title="Link to this heading">#</a></h1>
-<p>See the project list
-<a class="reference external" href="https://wiki.analog.com/resources/tools-software/linux-software/kuiper-linux/project-list">here</a>.</p>
+  <section id="what-software-do-i-need-for-my-sdr">
+<h1>What software do I need for my SDR?<a class="headerlink" href="#what-software-do-i-need-for-my-sdr" title="Link to this heading">#</a></h1>
+<section id="ftc2023-pluto-workshop">
+<h2>FTC2023 Pluto Workshop<a class="headerlink" href="#ftc2023-pluto-workshop" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>USB drive image is available <a class="reference external" href="https://swdownloads.analog.com/cse/kuiper/FTC2023_SDR.zip">here</a></p></li>
+<li><p>Documentation is available <a class="reference external" href="https://swdownloads.analog.com/cse/workshops/ftc2024/pluto_sdr/FTC2023_SDR_pluto.zip">here</a> (PPT, lab instructions and exercises)</p></li>
+</ul>
+</section>
+<section id="ftc2024-jupiter-workshop">
+<h2>FTC2024 Jupiter Workshop<a class="headerlink" href="#ftc2024-jupiter-workshop" title="Link to this heading">#</a></h2>
+<ul class="simple">
+<li><p>RPi400 SD Card image is available <a class="reference external" href="https://swdownloads.analog.com/cse/kuiper/Kuiper_rpi400_FTC2024_SDR.zip">here</a></p></li>
+<li><p>Jupiter SD Card image is available <a class="reference external" href="https://swdownloads.analog.com/cse/kuiper/Kuiper_jupiter_FTC2024_SDR.zip">here</a></p></li>
+<li><p>Documentation is available <a class="reference external" href="https://swdownloads.analog.com/cse/workshops/ftc2024/jupiter_sdr/ftc24_SDR_jupiter.zip">here</a> (PPT, lab instructions and exercises)</p></li>
+</ul>
+</section>
+<section id="introduction">
+<h2>Introduction<a class="headerlink" href="#introduction" title="Link to this heading">#</a></h2>
+<p>Future home of this workshop:
+WIP</p>
+</section>
 </section>
 
 
           </div>
               <div class="related">
                 &nbsp;
-    <a href="sdcard/index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">SD Card flashing</a>
-    <a href="update.html" title="Next document (Alt+Shift+RightArrow)" class="next">Updating</a>
+    <a href="../tools_for_hs/index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Tools for High-Speed Mixed Signal System Design</a>
+    <a href="../../contributing/forking_publishing.html" title="Next document (Alt+Shift+RightArrow)" class="next">Forking and publishing</a>
               </div>
           
         </div>
