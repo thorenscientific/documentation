@@ -19,6 +19,13 @@ Efficiency and Power Loss
 
    efficiency_power_loss/index
 
+Buck Converter Basics
+-------------------------------------------------------------------------------
+
+.. toctree::
+   :maxdepth: 1
+
+   buck_converter_basics/index
 
 Another Exercise: Placeholder
 -------------------------------------------------------------------------------
