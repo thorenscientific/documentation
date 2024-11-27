@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Integrated Noise KWIK Lecture + Lab &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../_static/style.min.css?v=95305861" />
+    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script defer="" src="../../_static/app.umd.js?v=c93eadd1"></script>
+    <link rel="icon" href="../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../genindex.html" />
+    <link rel="search" title="Search" href="../../search.html" />
+    <link rel="next" title="Forking and publishing" href="../../contributing/forking_publishing.html" />
+    <link rel="prev" title="Low Frequency Noise KWIK Lecture + Lab" href="../low_freq_noise/index.html" />
+   
+  
+  <meta name="global_root" content="../../../">
+  <meta name="repo" content="documentation">
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head><body>
+  <div class="banner"></div>
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button value="search" class="icon"></button>
+      <span id="search-progress"></span>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com"></a>
+        <div class="vertical-divider"></div>
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        <a id="logo" href="../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../index.html" class="current">System Level</a>
+  <a href="../../../hdl/index.html">HDL</a>
+  <a href="../../../testbenches/index.html">HDL Testbenches</a>
+  <a href="../../../pyadi-iio/index.html">Hardware Python Interfaces</a>
+  <a href="../../../libiio/index.html">libiio</a>
+  <a href="../../../no-OS/index.html">no-OS</a>
+  <a href="../../../precision-converters-firmware/index.html">Precision Converters Firmware</a>
+  <a href="../../../PrecisionToolbox/index.html">Precision Toolbox</a>
+  <a href="../../../scopy/index.html">Scopy</a>
+  <a href="../../../doctools/index.html">Doctools</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div>
+          <div class="localtoc-header">On this page</div>
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Integrated Noise KWIK Lecture + Lab</a><ul>
+<li><a class="reference internal" href="#general-description">General Description</a></li>
+<li><a class="reference internal" href="#objective">Objective</a></li>
+<li><a class="reference internal" href="#lecture-materials">Lecture Materials</a></li>
+<li><a class="reference internal" href="#integrated-noise-kwik-demo-board-user-guide">Integrated Noise KWIK Demo Board User Guide</a></li>
+<li><a class="reference internal" href="#adalm2000-active-learning-module-and-scopy">ADALM2000 Active Learning Module and Scopy</a></li>
+<li><a class="reference internal" href="#adalm2000-configuration-files">ADALM2000 Configuration Files</a></li>
+<li><a class="reference internal" href="#ltspice-simulation-circuits">LTspice Simulation Circuits</a></li>
+<li><a class="reference internal" href="#eval-kw4501z-images">EVAL-KW4501Z Images</a></li>
+<li><a class="reference internal" href="#kwik-demo-gerber-files">KWIK Demo Gerber Files</a></li>
+<li><a class="reference internal" href="#additional-reading">Additional Reading</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../index.html" class="current">System Level</a>
+  <a href="../../../hdl/index.html">HDL</a>
+  <a href="../../../testbenches/index.html">HDL Testbenches</a>
+  <a href="../../../pyadi-iio/index.html">Hardware Python Interfaces</a>
+  <a href="../../../libiio/index.html">libiio</a>
+  <a href="../../../no-OS/index.html">no-OS</a>
+  <a href="../../../precision-converters-firmware/index.html">Precision Converters Firmware</a>
+  <a href="../../../PrecisionToolbox/index.html">Precision Toolbox</a>
+  <a href="../../../scopy/index.html">Scopy</a>
+  <a href="../../../doctools/index.html">Doctools</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <html>
+  <body><p class="caption" role="heading"><span class="caption-text">Kuiper &amp; Linux Kernel</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../linux/kuiper/index.html">Kuiper Linux</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../linux/kuiper/release-notes.html">Release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../linux/kuiper/sdcard/index.html">SD Card flashing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../linux/kuiper/project-list.html">Project list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../linux/kuiper/update.html">Updating</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../linux/drivers/iio-transceiver/index.html">IIO Transceivers</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1-1" id="toctree-collapse-2-1-1"/><div class="collapse"><a class="reference internal" href="../../linux/drivers/iio-transceiver/adrv9009/index.html">ADRV9009, ADRV9008-1, ADRV9008-2</a><label for="toctree-collapse-2-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../linux/drivers/iio-transceiver/adrv9009/customization.html">Customization</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-2" id="toctree-collapse-2-2"/><div class="collapse"><a class="reference internal" href="../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-2-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../linux/kernel/petalinux.html">Building with Petalinux</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Software</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Evaluation Boards</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../eval/user-guide/index.html">User guides</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../eval/user-guide/eval-adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ User Guide</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-1" id="toctree-collapse-7-1"/><div class="collapse"><a class="reference internal" href="../../eval/user-guide/adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-7-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../eval/user-guide/adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7-1-1" id="toctree-collapse-7-1-1"/><div class="collapse"><a class="reference internal" href="../../eval/user-guide/adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-7-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../eval/user-guide/adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../eval/user-guide/adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">University Program</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../university/index.html">Engineering University Program</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8-1" id="toctree-collapse-8-1"/><div class="collapse"><a class="reference internal" href="../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-8-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Learning</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2"><a class="reference internal" href="../tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../sw_infrastructure/index.html">Key ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../low_freq_noise/index.html">Low Frequency Noise KWIK Lecture + Lab</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Integrated Noise KWIK Lecture + Lab</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributing and Guidelines</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/forking_publishing.html">Forking and publishing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/creating_new_pages.html">Creating new pages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+</ul>
+</body>
+</html>
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body" role="main">
+            
+  <section id="integrated-noise-kwik-lecture-lab">
+<h1>Integrated Noise KWIK Lecture + Lab<a class="headerlink" href="#integrated-noise-kwik-lecture-lab" title="Link to this heading">#</a></h1>
+<section id="general-description">
+<h2>General Description<a class="headerlink" href="#general-description" title="Link to this heading">#</a></h2>
+<p>The Integrated Noise Know-how with Integrated Knowledge (KWIK) Lecture and Lab is a training module comprised of a descriptive lesson and a hands-on activity using the ADALM2000 with the goal of understanding the integrated noise of an amplifier.</p>
+<p>The Integrated Noise KWIK Lecture and Lab training module syncs well with its companion board, the EVAL-KW4501Z, an easy-to-use plug-and-play evaluation board that contains an ADA4510-2, a dual-channel, high precision, low offset voltage, low-noise, and rail-to-rail input and output operational amplifier, and can directly be fastened into the ADALM2000, ADI’s portable, USB-powered, software-defined test and measurement instrument.</p>
+</section>
+<section id="objective">
+<h2>Objective<a class="headerlink" href="#objective" title="Link to this heading">#</a></h2>
+<p>The Integrated Noise KWIK Lecture and Lab aims to inform of and demonstrate the effects of integrated noise in a system. The module focuses on defining and measuring integrated noise, as well as discussing ways on how to handle, mitigate, and work around them.</p>
+</section>
+<section id="lecture-materials">
+<h2>Lecture Materials<a class="headerlink" href="#lecture-materials" title="Link to this heading">#</a></h2>
+<div class="admonition-download admonition">
+<p class="admonition-title">Download</p>
+<p><a class="reference download internal" download="" href="../../_downloads/2f7ff128cf302135d57d771be9215e65/demystifying_noise_kwik_lecture.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Demystifying</span> <span class="pre">Noise</span> <span class="pre">KWIK</span> <span class="pre">Lecture</span></code></a></p>
+</div>
+<div class="admonition-download admonition">
+<p class="admonition-title">Download</p>
+<p><a class="reference download internal" download="" href="../../_downloads/d15432589ad976d4f80e022fd4407c31/demystifying_noise_total_noise_kwik_labs.pdf"><code class="xref download docutils literal notranslate"><span class="pre">Demystifying</span> <span class="pre">Noise:</span> <span class="pre">Total</span> <span class="pre">Integrated</span> <span class="pre">Noise</span> <span class="pre">KWIK</span> <span class="pre">Lab</span></code></a></p>
+</div>
+</section>
+<section id="integrated-noise-kwik-demo-board-user-guide">
+<h2>Integrated Noise KWIK Demo Board User Guide<a class="headerlink" href="#integrated-noise-kwik-demo-board-user-guide" title="Link to this heading">#</a></h2>
+<p>A comprehensive User Guide for the evaluation hardware EVAL-KW4501Z can be found at</p>
+<div class="admonition-download admonition">
+<p class="admonition-title">Download</p>
+<p><a class="reference download internal" download="" href="../../_downloads/0e20825bf6cdae5db1a19999527d3715/eval-kw4501z_evkit_9_2_2024_104043_am_utc.pdf"><code class="xref download docutils literal notranslate"><span class="pre">EVAL-KW4501Z</span> <span class="pre">KWIK</span> <span class="pre">Demo</span> <span class="pre">User</span> <span class="pre">Guide</span></code></a></p>
+</div>
+</section>
+<section id="adalm2000-active-learning-module-and-scopy">
+<h2>ADALM2000 Active Learning Module and Scopy<a class="headerlink" href="#adalm2000-active-learning-module-and-scopy" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://www.analog.com/en/resources/evaluation-hardware-and-software/evaluation-boards-kits/adalm2000.html">ADALM2000 Active Learning Module</a></p>
+<p><a class="reference external" href="https://wiki.analog.com/university/tools/m2k/scopy">Scopy - A Graphical User Interface (GUI) for the ADALM2000. A multi-functional software toolset with strong capabilities for signal analysis</a></p>
+<p>Software Setup Instructions for LTSpice (installation and first time use), ADALM2000 (installation and first time use) and Scopy (installation and first time use)</p>
+<div class="admonition-download admonition">
+<p class="admonition-title">Download</p>
+<p><a class="reference download internal" download="" href="../../_downloads/d2c122fb7ed46a0451c571607939f3a1/adalm2000_scopy_and_ltspice_setup_instructions_v1.0.docx"><code class="xref download docutils literal notranslate"><span class="pre">adalm2000_scopy_and_ltspice_setup_instructions_v1.0.docx</span></code></a></p>
+</div>
+</section>
+<section id="adalm2000-configuration-files">
+<h2>ADALM2000 Configuration Files<a class="headerlink" href="#adalm2000-configuration-files" title="Link to this heading">#</a></h2>
+<p>Configuration files for the ADALM2000 Scopy that are referenced in the lecture material can be found at:</p>
+<div class="admonition-download admonition">
+<p class="admonition-title">Download</p>
+<p><a class="reference download internal" download="" href="../../_downloads/c6695282266a92123f3888b0cd251734/integrated_noise_scopy_config.zip"><code class="xref download docutils literal notranslate"><span class="pre">KWIK</span> <span class="pre">Integrated</span> <span class="pre">Noise</span> <span class="pre">Demo</span> <span class="pre">Board</span> <span class="pre">Scopy</span> <span class="pre">Config</span> <span class="pre">Files</span></code></a></p>
+</div>
+</section>
+<section id="ltspice-simulation-circuits">
+<h2>LTspice Simulation Circuits<a class="headerlink" href="#ltspice-simulation-circuits" title="Link to this heading">#</a></h2>
+<div class="line-block">
+<div class="line">LTspice Circuits used in the lecture material are available at:</div>
+</div>
+<div class="admonition-download admonition">
+<p class="admonition-title">Download</p>
+<p><a class="reference download internal" download="" href="../../_downloads/3fa944a0c55d05d62f36178bad6c0ef6/integrated_noise.zip"><code class="xref download docutils literal notranslate"><span class="pre">Integrated</span> <span class="pre">Noise</span> <span class="pre">LTspice</span> <span class="pre">Simulation</span> <span class="pre">File</span></code></a></p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Keep all files in the zip folder in the same folder on your local PC.</p>
+</div>
+</section>
+<hr class="docutils" />
+<section id="eval-kw4501z-images">
+<h2>EVAL-KW4501Z Images<a class="headerlink" href="#eval-kw4501z-images" title="Link to this heading">#</a></h2>
+<p><a class="reference internal" href="../../_images/integrated-noise-kwik-demo-board_top-evaluation-board.jpg"><img alt="Integrated Noise Top View" src="../../_images/integrated-noise-kwik-demo-board_top-evaluation-board.jpg" style="width: 200px;" /></a> <a class="reference internal" href="../../_images/integrated-noise-kwik-demo-board_bottom-evaluation-board.jpg"><img alt="Integrated Noise Bottom View" src="../../_images/integrated-noise-kwik-demo-board_bottom-evaluation-board.jpg" style="width: 200px;" /></a> <img alt="Integrated Noise Angle View" src="../../_images/integrated-noise-kwik-demo-board_angle-evaluation-board.jpg" /></p>
+</section>
+<section id="kwik-demo-gerber-files">
+<h2>KWIK Demo Gerber Files<a class="headerlink" href="#kwik-demo-gerber-files" title="Link to this heading">#</a></h2>
+<div class="admonition-download admonition">
+<p class="admonition-title">Download</p>
+<p><a class="reference download internal" download="" href="../../_downloads/98432a10e60341f89f406617a37da9e2/eval-kw4501z_gerber_files.zip"><code class="xref download docutils literal notranslate"><span class="pre">EVAL-KW4501Z</span> <span class="pre">Gerber</span> <span class="pre">Files</span></code></a></p>
+</div>
+</section>
+<section id="additional-reading">
+<h2>Additional Reading<a class="headerlink" href="#additional-reading" title="Link to this heading">#</a></h2>
+<p><a class="reference external" href="https://ez.analog.com/precision-technology-signal-chains/w/kwik-circuits">KWIK Circuits Main Page</a></p>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="../low_freq_noise/index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Low Frequency Noise KWIK Lecture + Lab</a>
+    <a href="../../contributing/forking_publishing.html" title="Next document (Alt+Shift+RightArrow)" class="next">Forking and publishing</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <div id="vertical-border"></div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2024, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>
