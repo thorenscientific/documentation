@@ -77,3 +77,12 @@ ADPAQ
 
 Active Bias Controllers
 -------------------------------------------------------------------------------
+
+Time of Flight Boards
+-------------------------------------------------------------------------------
+
+.. toctree::
+   :caption: EVAL-ADTF3175D-NXZ ToF Module
+   :maxdepth: 1
+
+   eval-adtf3175d-nxz/index
