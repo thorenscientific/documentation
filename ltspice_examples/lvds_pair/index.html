@@ -5,19 +5,18 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Active Learning: Student-oriented Lab Exercises &#8212; System Level Documentation  documentation</title>
+    <title>LTspice Example: LVDS pair &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8e8a900e" />
     <link rel="stylesheet" type="text/css" href="../../_static/style.min.css?v=95305861" />
     <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
     <script src="../../_static/doctools.js?v=9bcbadda"></script>
     <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
     <script defer="" src="../../_static/app.umd.js?v=c93eadd1"></script>
-    <script async="async" src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
     <link rel="icon" href="../../_static/icon.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
-    <link rel="next" title="Activity: The Wien Bridge Oscillator" href="wien_bridge_oscillator/index.html" />
-    <link rel="prev" title="Engineering University Program" href="../index.html" />
+    <link rel="next" title="Forking and publishing" href="../../contributing/forking_publishing.html" />
+    <link rel="prev" title="LTspice Examples" href="../index.html" />
    
   
   <meta name="global_root" content="../../../">
@@ -99,11 +98,9 @@
         </div>
         <nav>
           <ul>
-<li><a class="reference internal" href="#">Active Learning: Student-oriented Lab Exercises</a><ul>
-<li><a class="reference internal" href="#wien-bridge-oscillator-adalm2000-version">Wien Bridge Oscillator: ADALM2000 version</a></li>
-<li><a class="reference internal" href="#efficiency-and-power-loss">Efficiency and Power Loss</a></li>
-<li><a class="reference internal" href="#buck-converter-basics">Buck Converter Basics</a></li>
-<li><a class="reference internal" href="#another-exercise-placeholder">Another Exercise: Placeholder</a></li>
+<li><a class="reference internal" href="#">LTspice Example: LVDS pair</a><ul>
+<li><a class="reference internal" href="#objective">Objective:</a></li>
+<li><a class="reference internal" href="#warning">Warning</a></li>
 </ul>
 </li>
 </ul>
@@ -212,12 +209,12 @@ Content on this topic
 </li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">University Program</span></p>
-<ul class="current">
-<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">Engineering University Program</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul class="current">
-<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8-1" id="toctree-collapse-8-1" checked=""/><div class="collapse"><a class="current reference internal" href="#">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-8-1"><div class="icon"></div></label></div><ul>
-<li class="toctree-l3"><a class="reference internal" href="wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
-<li class="toctree-l3"><a class="reference internal" href="efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
-<li class="toctree-l3"><a class="reference internal" href="buck_converter_basics/index.html">Activity: Buck Converter Basics</a></li>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../university/index.html">Engineering University Program</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8-1" id="toctree-collapse-8-1"/><div class="collapse"><a class="reference internal" href="../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-8-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../university/active_learning/buck_converter_basics/index.html">Activity: Buck Converter Basics</a></li>
 </ul>
 </li>
 </ul>
@@ -239,9 +236,9 @@ Content on this topic
 </li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">LTspice Examples</span></p>
-<ul>
-<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../ltspice_examples/index.html">LTspice Examples</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
-<li class="toctree-l2"><a class="reference internal" href="../../ltspice_examples/lvds_pair/index.html">LTspice Example: LVDS pair</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">LTspice Examples</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2 current"><a class="current reference internal" href="#">LTspice Example: LVDS pair</a></li>
 </ul>
 </li>
 </ul>
@@ -263,45 +260,52 @@ Content on this topic
         <div class="bodywrapper" id="top-anchor">
           <div class="body" role="main">
             
-  <section id="active-learning-student-oriented-lab-exercises">
-<h1>Active Learning: Student-oriented Lab Exercises<a class="headerlink" href="#active-learning-student-oriented-lab-exercises" title="Link to this heading">#</a></h1>
-<section id="wien-bridge-oscillator-adalm2000-version">
-<h2>Wien Bridge Oscillator: ADALM2000 version<a class="headerlink" href="#wien-bridge-oscillator-adalm2000-version" title="Link to this heading">#</a></h2>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
-</ul>
-</div>
+  <section id="ltspice-example-lvds-pair">
+<h1>LTspice Example: LVDS pair<a class="headerlink" href="#ltspice-example-lvds-pair" title="Link to this heading">#</a></h1>
+<p>Quick and dirty example of what a documented LTspice example on GitHub might look like. The folder for this exact page is at:</p>
+<p><a class="reference external" href="https://github.com/mthoren-adi/documentation/tree/main/docs/ltspice_examples/lvds_pair">Source and LTspice simulation for this page</a></p>
+<p>Pages are “atomic” and can be moved around.</p>
+<p>(Forgive the table of contents and sidebar navigation, mthoren-adi is still figuring that out.)</p>
+<section id="objective">
+<h2>Objective:<a class="headerlink" href="#objective" title="Link to this heading">#</a></h2>
+<p>To simulate the behavior of a perfect LVDS transmitter driving the input capacitance of an FPGA.</p>
+<p>Download the LTspice simulation here:</p>
+<p><a class="reference download internal" download="" href="../../_downloads/de75a1426da295dd0284ced28735917f/LVDS_FPGA_signal_integrity.asc"><code class="xref download docutils literal notranslate"><span class="pre">LVDS_FPGA_signal_integrity.asc</span></code></a></p>
+<p>Here is how to number figures: <a class="reference internal" href="#fig-lvds-screenshot"><span class="std std-numref">Figure 1</span></a> is a screenshot of the LTspice simulation (you can screenshot waveforms, etc. too, of course):</p>
+<figure class="align-center" id="id1">
+<span id="fig-lvds-screenshot"></span><a class="reference internal image-reference" href="../../_images/lvds_pair_ltspice_screenshot.png"><img alt="../../_images/lvds_pair_ltspice_screenshot.png" src="../../_images/lvds_pair_ltspice_screenshot.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">Screenshot of LVDS simulation</span><a class="headerlink" href="#id1" title="Link to this image">#</a></p>
+</figcaption>
+</figure>
+<p>Here is an example of embedding a video. Who better to describe the subtleties of signal Integrity than this expert?</p>
+<div class="iframe-video"><iframe class="only-screen" src="https://www.youtube-nocookie.com/embed/dQw4w9WgXcQ"></iframe><span class="only-screen"></span><div class="admonition video only-print"><p class="admonition-title">Video</p>
+<p><a href="https://www.youtube.com/watch?v=dQw4w9WgXcQ"><span>https://www.youtube.com/watch?v=dQw4w9WgXcQ</span></a></p>
+</div></div><p>If there is a complaint or edit needed to an LTspice simulation or the document itself, it’s a pull request like any other. Anyone inside ADI or outside can start a PR, but the admin’s approval is needed to merge. Here is a case where a professor found an error in the LTspice simulation from this Active Learning exercise (the 50-ohm output impedance of the ADALM2000 was not included):</p>
+<p><a class="reference external" href="https://wiki.analog.com/university/courses/electronics/rl_transient_response">Activity: Transient Response of an RL Circuit - ADALM2000</a></p>
+<p>Here is the pull request:</p>
+<p><a class="reference external" href="https://github.com/analogdevicesinc/education_tools/pull/49/">Pull Request</a></p>
+<p>And the details of the files changed:</p>
+<p><a class="reference external" href="https://github.com/analogdevicesinc/education_tools/pull/49/files">Pull Request Files Changed</a></p>
+<p>How cool would it be to have a visual diffing tool for this? There is a company that does this sort of thing for PCB design files. We could do one for LTspice.</p>
+<p>Generic warning banner example:</p>
 </section>
-<section id="efficiency-and-power-loss">
-<h2>Efficiency and Power Loss<a class="headerlink" href="#efficiency-and-power-loss" title="Link to this heading">#</a></h2>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
-</ul>
+<section id="warning">
+<h2>Warning<a class="headerlink" href="#warning" title="Link to this heading">#</a></h2>
+<div><div class="esd-warning docutils container">
+<div class="icon"></div><p>All the products described on this page include ESD (electrostatic discharge) sensitive devices. Electrostatic charges as high as 4000V readily accumulate on the human body or test equipment and can discharge without detection.
+Although the boards feature ESD protection circuitry, permanent damage may occur on devices subjected to high-energy electrostatic discharges. Therefore, proper ESD precautions are recommended to avoid performance degradation or loss of functionality. This includes removing static charge on external equipment, cables, or antennas before connecting to the device. </p>
 </div>
-</section>
-<section id="buck-converter-basics">
-<h2>Buck Converter Basics<a class="headerlink" href="#buck-converter-basics" title="Link to this heading">#</a></h2>
-<div class="toctree-wrapper compound">
-<ul>
-<li class="toctree-l1"><a class="reference internal" href="buck_converter_basics/index.html">Activity: Buck Converter Basics</a></li>
-</ul>
-</div>
-</section>
-<section id="another-exercise-placeholder">
-<h2>Another Exercise: Placeholder<a class="headerlink" href="#another-exercise-placeholder" title="Link to this heading">#</a></h2>
-<div class="toctree-wrapper compound">
-</div>
-</section>
+</div></section>
 </section>
 
 
           </div>
               <div class="related">
                 &nbsp;
-    <a href="../index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Engineering University Program</a>
-    <a href="wien_bridge_oscillator/index.html" title="Next document (Alt+Shift+RightArrow)" class="next">Activity: The Wien Bridge Oscillator</a>
+    <a href="../index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">LTspice Examples</a>
+    <a href="../../contributing/forking_publishing.html" title="Next document (Alt+Shift+RightArrow)" class="next">Forking and publishing</a>
               </div>
           
         </div>

@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>Documentation guidelines &#8212; System Level Documentation  documentation</title>
+    <title>LTspice Examples &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8e8a900e" />
     <link rel="stylesheet" type="text/css" href="../_static/style.min.css?v=95305861" />
     <script src="../_static/documentation_options.js?v=5929fcd5"></script>
@@ -15,7 +15,8 @@
     <link rel="icon" href="../_static/icon.svg"/>
     <link rel="index" title="Index" href="../genindex.html" />
     <link rel="search" title="Search" href="../search.html" />
-    <link rel="prev" title="Creating new pages" href="creating_new_pages.html" />
+    <link rel="next" title="LTspice Example: LVDS pair" href="lvds_pair/index.html" />
+    <link rel="prev" title="Integrated Noise KWIK Lecture + Lab" href="../learning/integrated_noise/index.html" />
    
   
   <meta name="global_root" content="../../">
@@ -97,8 +98,9 @@
         </div>
         <nav>
           <ul>
-<li><a class="reference internal" href="#">Documentation guidelines</a><ul>
-<li><a class="reference internal" href="#templates">Templates</a></li>
+<li><a class="reference internal" href="#">LTspice Examples</a><ul>
+<li><a class="reference internal" href="#lvds-pair-simulation">LVDS pair simulation</a></li>
+<li><a class="reference internal" href="#another-example-asdf-example">Another Example: ASDF Example</a></li>
 </ul>
 </li>
 </ul>
@@ -234,17 +236,17 @@ Content on this topic
 </li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">LTspice Examples</span></p>
-<ul>
-<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../ltspice_examples/index.html">LTspice Examples</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
-<li class="toctree-l2"><a class="reference internal" href="../ltspice_examples/lvds_pair/index.html">LTspice Example: LVDS pair</a></li>
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10" checked=""/><div class="collapse"><a class="current reference internal" href="#">LTspice Examples</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="lvds_pair/index.html">LTspice Example: LVDS pair</a></li>
 </ul>
 </li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Contributing and Guidelines</span></p>
-<ul class="current">
-<li class="toctree-l1"><a class="reference internal" href="forking_publishing.html">Forking and publishing</a></li>
-<li class="toctree-l1"><a class="reference internal" href="creating_new_pages.html">Creating new pages</a></li>
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Documentation guidelines</a></li>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/forking_publishing.html">Forking and publishing</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/creating_new_pages.html">Creating new pages</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../contributing/docs_guidelines.html">Documentation guidelines</a></li>
 </ul>
 </body>
 </html>
@@ -258,31 +260,24 @@ Content on this topic
         <div class="bodywrapper" id="top-anchor">
           <div class="body" role="main">
             
-  <section id="documentation-guidelines">
-<span id="docs-guidelines"></span><h1>Documentation guidelines<a class="headerlink" href="#documentation-guidelines" title="Link to this heading">#</a></h1>
-<p>This documentation is built with <a class="reference external" href="https://www.sphinx-doc.org">Sphinx</a> and
-all source code is available at the path <a class="icon git reference external" href="https://github.com/analogdevicesinc/documentation/tree/main/docs">docs</a>.</p>
-<p>To contribute to it, first read <a class="reference internal" href="forking_publishing.html#forking-publishing"><span class="std std-ref">Forking and publishing</span></a>,
-read the guidelines
-(both the <a class="reference external" href="https://analogdevicesinc.github.io/doctools/docs_guidelines.html#docs-guidelines" title="(in Doctools v0.3)"><span class="xref std std-ref">general</span></a> <strong>and</strong> the
-additional guidelines below)
-and also <a class="reference internal" href="creating_new_pages.html#creating-new-pages"><span class="std std-ref">Creating new pages</span></a>.</p>
-<p>When you are satisfied with your contribution, open a pull request with the
-changes to <a class="icon git reference external" href="https://github.com/analogdevicesinc/documentation/tree/main/">this repository</a>.</p>
-<section id="templates">
-<h2>Templates<a class="headerlink" href="#templates" title="Link to this heading">#</a></h2>
-<p>Any page can be used as a template.</p>
-<p>In particular, for evaluation board user-guide, use the <a class="reference internal" href="../eval/user-guide/adrv9009/index.html#adrv9009"><span class="std std-ref">ADRV9009 &amp; ADRV9008</span></a> pages
-as a template.</p>
-<p>For (future) template pages with <code class="docutils literal notranslate"><span class="pre">:orphan:</span></code> on the first line, remove it.
-This marker is used to hide the templates from the
-<a class="reference external" href="https://www.sphinx-doc.org/en/master/usage/restructuredtext/directives.html#directive-toctree">TOC tree</a>.</p>
-<p>Also, instructions using the comment syntax may be present on the page and also
-need to be removed.
-Those comments have the format:</p>
-<div class="highlight-default notranslate"><div class="highlight"><pre><span></span><span class="o">..</span>
-   <span class="n">I</span><span class="s1">&#39;m a comment</span>
-</pre></div>
+  <section id="ltspice-examples">
+<h1>LTspice Examples<a class="headerlink" href="#ltspice-examples" title="Link to this heading">#</a></h1>
+<section id="lvds-pair-simulation">
+<h2>LVDS pair simulation<a class="headerlink" href="#lvds-pair-simulation" title="Link to this heading">#</a></h2>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">ASDF Caption</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="lvds_pair/index.html">LTspice Example: LVDS pair</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="lvds_pair/index.html#objective">Objective:</a></li>
+<li class="toctree-l2"><a class="reference internal" href="lvds_pair/index.html#warning">Warning</a></li>
+</ul>
+</li>
+</ul>
+</div>
+</section>
+<section id="another-example-asdf-example">
+<h2>Another Example: ASDF Example<a class="headerlink" href="#another-example-asdf-example" title="Link to this heading">#</a></h2>
+<div class="toctree-wrapper compound">
 </div>
 </section>
 </section>
@@ -291,8 +286,8 @@ Those comments have the format:</p>
           </div>
               <div class="related">
                 &nbsp;
-    <a href="creating_new_pages.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Creating new pages</a>
-    <div></div>
+    <a href="../learning/integrated_noise/index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Integrated Noise KWIK Lecture + Lab</a>
+    <a href="lvds_pair/index.html" title="Next document (Alt+Shift+RightArrow)" class="next">LTspice Example: LVDS pair</a>
               </div>
           
         </div>
