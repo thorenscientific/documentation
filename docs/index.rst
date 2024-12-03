@@ -57,6 +57,12 @@ Contents
    ./learning/index
 
 .. toctree::
+   :caption: LTspice Examples
+   :maxdepth: 4
+   
+   ./ltspice_examples/index
+
+.. toctree::
    :caption: Contributing and Guidelines
    :maxdepth: 4
 
