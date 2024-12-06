@@ -1,15 +1,10 @@
-EVAL-ADXL355-PMDZ User Guide
-############################
+ADXL355 3-Axis MEMS Accelerometer Developer Resources
+#####################################################
 
-Overview
-========
+ADXL355 Overview
+================
 
-The :adi:`EVAL-ADXL355-PMDZ` is a compact, low-cost,
-Pmod-compatible evaluation board for the :adi:`ADXL355` low noise
-density, low zero-g offset drift, low power, 3-axis MEMS accelerometer with
-selectable measurement ranges. The ADXL355 supports the ±2g, ±4g, and ±8g
-ranges, and offers industry leading noise, offset drift over temperature, and
-long term stability, enabling precision applications with minimal calibration
+The :adi:`ADXL355` is a low noise density, low zero-g offset drift, low power, 3-axis MEMS accelerometer with selectable measurement ranges. The ADXL355 supports the ±2g, ±4g, and ±8g ranges, and offers industry leading noise, offset drift over temperature, and long term stability, enabling precision applications with minimal calibration
 and with very low power consumption. Applications include:
 
 -  Inertial measurement units (IMUs)/altitude and heading reference systems (AHRS)
@@ -33,14 +28,59 @@ filtering from 1 Hz to 1 kHz, and low noise density of 25µ/√Hz at less than
 comparable to much more expensive devices with less power consumption and BOM
 cost.
 
-.. image:: adxl355_pmdz.png
+Getting Started
+===============
+
+There are several combinations of evaluation and development boards and controller platforms, with different capabilities and associated software and device driver resources. Review the options and choose the one that best suits your needs.
+
+Evaluation Boards and Development Platforms
+===========================================
+
+EVAL-ADXL35x-SDP
+----------------
+
+.. image:: EVAL-ADXL355Z-SDP-KIT_ANGLE.gif
    :width: 350px
 
-Input and Output Connections and Configurations
-===============================================
+The :adi:`EVAL-ADXL35x-SDP` is an easy-to-use Customer Evaluation System that allows the user a quick start on testing and evaluating the ADXL355 or ADXL357 accelerometer. The system consists of a main board (EVAL-SDP-CB1Z evaluation platform), an interface board (EVAL-SDP-INTER4-Z), and a satellite board (EVAL-ADXL355Z or EVAL-ADXL357Z breakout board).
 
-The PMOD board is small in size with dimensions approximately 2.5 cm in width
-by 2.5 cm in length.
+The EVAL-SDP-CB1Z board, also called “SDP-B”, connects directly to a PC via an USB cable, with the USB connection providing both communications and power to the board. The SDP-B is connected to the interface board (EVAL-SDP-INTER4-Z), which provides the signal conditioning and electrical connections to communicated with the satellite board (EVAL-ADXL355Z or EVAL-ADXL357Z) through a cable. This cable allows the satellite to be easily manipulated for testing or separately placed into an environmental chamber for temperature or humidity testing. Separating the boards mitigates corruption of data due to the temperature and humidity effects of other components.
+
+.. Note::
+   This system is intended for performance evaluation only. Source code for the SDP-B firmware and GUI software is not available.
+   
+For complete instructions refer to the `EVAL-ADXL35x-SDP User Guide <https://wiki.analog.com/resources/eval/user-guides/inertial-mems/accelerometers/adxl35x/eval-adxl35x-sdp>`__
+
+EVAL-ADXL35X
+------------
+
+.. image:: EVAL-ADXL354BZANGLE-web.gif
+   :width: 350px
+
+The :adi:`EVAL-ADXL35X-Z` are simple evaluation boards that allow quick evaluation of the performance of Analog Devices new series of low power, low noise, low drift 3-axis, MEMS accelerometers. The series consists of both analog and digital output devices, supporting a variety of Full Scale Ranges (FSR). The model descriptions are shown in the ordering guide below. These evaluation boards are ideal for evaluation of the ADXL35x accelerometer series in an existing system because the stiffness and the small size of the evaluation board minimize the effect of the board on both the system and acceleration measurements.
+
+.. Note::
+   This board does not directly interface to any standard platforms, and requires a separate cable. This may be desirable for interfacing to an arbitrary platform board, or when the sensor needs to be separated from the platform board by a cable.
+
+For complete instructions refer to the `EVAL-ADXL35X-Z User Guide <https://wiki.analog.com/resources/eval/user-guides/inertial-mems/accelerometers/adxl354_355>`__
+
+EVAL-ADXL355-PMDZ
+-----------------
+
+.. image:: EVAL-ADXL335-PMDZANGLE-web.png
+   :width: 350px
+
+The :adi:`EVAL-ADXL355-PMDZ` is a compact, low-cost, Pmod-compatible evaluation board for the ADXL355. It targets several standard microcontroller development boards that either have a native Pmod interface, or via an adapter. It also targets the Raspberry Pi via the :adi:`PMD-RPI-INTZ` adapter board. The Pmod board is small in size with dimensions approximately 2.5 cm in width by 2.5 cm in length.
+
+SPI PMOD peripheral connectors can also be found on many 3rd party MCU or FPGA development boards, where the EVAL-ADXL355-PMDZ can be connected directly into those systems, and you can develop your own code using our reference code below.
+
+Developing with the ADXL355
+===========================
+
+The EVAL-ADXL335-PMDZ will be used for the various example systems described below. These examples are designed to be used as-is for initial development, then ported to your target hardware.
+
+.. image:: adxl355_pmdz.png
+   :width: 350px
 
 Pmod  Processor Connector
 -------------------------
@@ -135,7 +175,6 @@ the EVAL-ADXL355-PMDZ:
   C#, and other languages. Application code can run directly on the platform
   board, communicating with the device over the local backend, or from a remote
   host over the network or USB backends.
-
 
 
 System Setup Using ADICUP3029
