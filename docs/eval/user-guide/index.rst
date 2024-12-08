@@ -9,6 +9,22 @@ Amplifiers
 Analog Switches and Multiplexers
 -------------------------------------------------------------------------------
 
+Analog to Digital Converters (ADC)
+-------------------------------------------------------------------------------
+
+.. toctree::
+   :caption: Single-Channel SAR ADCs
+   :maxdepth: 1
+
+   adc_pulsar_single/index
+   
+   
+.. toctree::
+   :caption: LTC2387 and ADAQ2387x family SAR ADCs
+   :maxdepth: 1
+
+   adaq2387/index
+
 Automatic Test Equipment - PMU & DPS
 -------------------------------------------------------------------------------
 
@@ -82,7 +98,7 @@ Time of Flight Boards
 -------------------------------------------------------------------------------
 
 .. toctree::
-   :caption: EVAL-ADTF3175D-NXZ ToF Module
+   :caption: Time of Flight Modules
    :maxdepth: 1
 
    eval-adtf3175d-nxz/index
