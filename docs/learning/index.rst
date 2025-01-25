@@ -55,3 +55,19 @@ Workshops
    :maxdepth: 1
 
    workshop_what_sw_for_sdr/index
+
+
+Signal Chain
+-------------------------------------------------------------------------------
+
+.. toctree::
+   :caption: Low Frequency Noise KWIK Lecture + Lab
+   :maxdepth: 1
+   
+   low_freq_noise/index
+   
+.. toctree::
+   :caption: Integrated Noise KWIK Lecture + Lab
+   :maxdepth: 1
+
+   integrated_noise/index
