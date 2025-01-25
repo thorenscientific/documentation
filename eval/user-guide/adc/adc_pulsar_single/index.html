@@ -1,0 +1,822 @@
+<!DOCTYPE html>
+
+<html lang="en" data-content_root="../../../../">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>Single-Channel, SPI-interface SAR ADC Developer Resources &#8212; System Level Documentation  documentation</title>
+    <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
+    <link rel="stylesheet" type="text/css" href="../../../../_static/style.min.css?v=a9555194" />
+    <script src="../../../../_static/documentation_options.js?v=5929fcd5"></script>
+    <script src="../../../../_static/doctools.js?v=9bcbadda"></script>
+    <script src="../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
+    <script defer="" src="../../../../_static/app.umd.js?v=689b8755"></script>
+    <link rel="icon" href="../../../../_static/icon.svg"/>
+    <link rel="index" title="Index" href="../../../../genindex.html" />
+    <link rel="search" title="Search" href="../../../../search.html" />
+    <link rel="next" title="ADXL355 3-Axis MEMS Accelerometer Developer Resources" href="../../mem/adxl355-pmdz/index.html" />
+    <link rel="prev" title="ADAQ2387x and LTC2387 family SAR ADC Developer Resources" href="../adaq2387/index.html" />
+   
+  
+  <meta name="global_root" content="../../../../../">
+  <meta name="repo" content="documentation">
+  
+
+
+<style>
+  body {
+    
+  }
+
+  body.dark {
+    
+  }
+
+  @media (prefers-color-scheme: dark) {
+    body:not(.light) {
+      
+    }
+  }
+</style>
+  </head><body>
+  <div class="banner"></div>
+  <input type="checkbox" id="input-show-toc">
+  <input type="checkbox" id="input-show-localtoc">
+  <input type="checkbox" id="input-show-repotoc">
+
+  
+  <div class="search-area">
+    <form action="" method="get">
+      <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
+      <button value="search" class="icon"></button>
+      <span id="search-progress"></span>
+    </form>
+  </div>
+  
+
+  <header>
+    <div id="left">
+      <label id="show-sidebar" class="icon" for="input-show-toc" title="Show/hide index"></label>
+    </div>
+    <div id="right">
+      <span>
+        <a id="logo-org" href="https://analog.com"></a>
+        <div class="vertical-divider"></div>
+        <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
+        <a id="logo" href="../../../../index.html">
+          <div>System Level</div>
+        </a>
+      </span>
+      <span class="reverse">
+        <label id="show-localtoc" class="icon" for="input-show-localtoc" title="Show/hide contents"></label>
+      </span>
+    </div>
+  </header>
+
+
+  <div class="repotoc-tree overlay">
+    <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+  <a href="../../../../../hdl/index.html">HDL</a>
+  <a href="../../../../../testbenches/index.html">HDL Testbenches</a>
+  <a href="../../../../../pyadi-iio/index.html">Hardware Python Interfaces</a>
+  <a href="../../../../../libiio/index.html">libiio</a>
+  <a href="../../../../../no-OS/index.html">no-OS</a>
+  <a href="../../../../../precision-converters-firmware/index.html">Precision Converters Firmware</a>
+  <a href="../../../../../PrecisionToolbox/index.html">Precision Toolbox</a>
+  <a href="../../../../../scopy/index.html">Scopy</a>
+  <a href="../../../../../doctools/index.html">Doctools</a>
+</root>
+
+  </div>
+    <div class="localtoc">
+      <div class="tocwrapper">
+        <div>
+          <div class="localtoc-header"></div>
+          <a id="scroll-up" href="#top-anchor" title="Back to top"></a>
+        </div>
+        <nav>
+          <ul>
+<li><a class="reference internal" href="#">Single-Channel, SPI-interface SAR ADC Developer Resources</a><ul>
+<li><a class="reference internal" href="#family-overview">Family Overview</a></li>
+<li><a class="reference internal" href="#getting-started">Getting Started</a></li>
+<li><a class="reference internal" href="#evaluation-boards-and-development-platforms">Evaluation Boards and Development Platforms</a><ul>
+<li><a class="reference internal" href="#pmod-peripheral-module">Pmod (Peripheral Module)</a></li>
+<li><a class="reference internal" href="#fmc-fpga-mezzanine-card">FMC (FPGA Mezzanine Card)</a></li>
+<li><a class="reference internal" href="#sdp-120-way-interface">SDP 120-way interface</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#software-resources">Software Resources</a><ul>
+<li><a class="reference internal" href="#standard-application-software">Standard Application Software</a></li>
+<li><a class="reference internal" href="#hdl-ip-core">HDL IP Core</a></li>
+<li><a class="reference internal" href="#linux-device-drivers">Linux Device Drivers</a></li>
+<li><a class="reference internal" href="#no-os-bare-metal-device-drivers-and-examples">no-OS (Bare Metal) Device Drivers and Examples</a></li>
+<li><a class="reference internal" href="#product-specific-software">Product-Specific Software</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#board-and-platform-summary">Board and Platform Summary</a></li>
+</ul>
+</li>
+</ul>
+
+        </nav>
+      </div>
+    </div>
+
+  
+      <div class="sphinxsidebar" role="navigation" aria-label="Main">
+        <div class="sphinxsidebarwrapper">
+    <a id="no-logo" href="../../../../index.html">
+      System Level Documentation
+    </a><input id="input-switch-toc" type="checkbox">
+<label id="show-repotoc" for="input-switch-toc">
+All content
+</label>
+<label id="show-toc" for="input-switch-toc">
+Content on this topic
+</label>
+<div class="repotoc-tree">
+  <root>
+  <a href="../../../../index.html" class="current">System Level</a>
+  <a href="../../../../../hdl/index.html">HDL</a>
+  <a href="../../../../../testbenches/index.html">HDL Testbenches</a>
+  <a href="../../../../../pyadi-iio/index.html">Hardware Python Interfaces</a>
+  <a href="../../../../../libiio/index.html">libiio</a>
+  <a href="../../../../../no-OS/index.html">no-OS</a>
+  <a href="../../../../../precision-converters-firmware/index.html">Precision Converters Firmware</a>
+  <a href="../../../../../PrecisionToolbox/index.html">Precision Toolbox</a>
+  <a href="../../../../../scopy/index.html">Scopy</a>
+  <a href="../../../../../doctools/index.html">Doctools</a>
+</root>
+
+</div>
+<div class="toc-tree">
+  <html>
+  <body><p class="caption" role="heading"><span class="caption-text">Kuiper &amp; Linux Kernel</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/iio-adc/index.html">IIO ADC</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio-adc/ad4052/index.html">AD4052</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-2" id="toctree-collapse-1-2"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/iio-transceiver/index.html">IIO Transceivers</a><label for="toctree-collapse-1-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-2-1" id="toctree-collapse-1-2-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/iio-transceiver/adrv9009/index.html">ADRV9009, ADRV9008-1, ADRV9008-2</a><label for="toctree-collapse-1-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/drivers/iio-transceiver/adrv9009/customization.html">Customization</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-3" id="toctree-collapse-1-3"/><div class="collapse"><a class="reference internal" href="../../../../linux/drivers/iio/index.html">Linux Industrial I/O Subsystem</a><label for="toctree-collapse-1-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio/iio-trig-sysfs.html">iio-trig-sysfs driver</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../linux/drivers/iio/iio-trig-bfin-timer.html">iio-trig-bfin-timer driver</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/petalinux.html">Building with Petalinux</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1-1" id="toctree-collapse-2-1-1"/><div class="collapse"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-2-1-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../../../linux/kernel/petalinux-dts/petalinux-system-user.html">Device Tree Modifications with system-user.dtsi</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-3" id="toctree-collapse-3"/><div class="collapse"><a class="reference internal" href="../../../../linux/kuiper/index.html">Kuiper Linux</a><label for="toctree-collapse-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kuiper/release-notes.html">Release notes</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kuiper/sdcard/index.html">SD Card flashing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kuiper/project-list.html">Project list</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../linux/kuiper/update.html">Updating</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Software</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4" id="toctree-collapse-4"/><div class="collapse"><a class="reference internal" href="../../../../software/iio-oscilloscope/index.html">IIO Oscilloscope</a><label for="toctree-collapse-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-4-1" id="toctree-collapse-4-1"/><div class="collapse"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/index.html">ADRV9009</a><label for="toctree-collapse-4-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/plugin.html">Standard Plugin</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../software/iio-oscilloscope/adrv9009/advanced-plugin.html">Advanced plugin</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-5" id="toctree-collapse-5"/><div class="collapse"><a class="reference internal" href="../../../../software/libiio/index.html">Libiio</a><label for="toctree-collapse-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/internals.html">About libiio</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/cli.html">Command line utility</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libiio/tips-tricks.html">Tips &amp; Tricks</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-6" id="toctree-collapse-6"/><div class="collapse"><a class="reference internal" href="../../../../software/libm2k/index.html">Libm2k</a><label for="toctree-collapse-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/calibration.html">Calibration</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/digital_communication.html">Digital communication</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/libm2k/m2kcli.html">Command line utility</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-7" id="toctree-collapse-7"/><div class="collapse"><a class="reference internal" href="../../../../software/matlab/index.html">MATLAB &amp; Simulink Toolboxes</a><label for="toctree-collapse-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/hsx-toolbox/index.html">High Speed Converter Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/transceiver-toolbox/index.html">Transceiver Toolbox</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../software/matlab/bsp-extend.html">Extending Device Interfaces</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Evaluation Boards</span></p>
+<ul class="current">
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8" checked=""/><div class="collapse"><a class="reference internal" href="../../index.html">User guides</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8-1" id="toctree-collapse-8-1"/><div class="collapse"><a class="reference internal" href="../ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-8-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../ad4052-ardz/user-guide.html">Evaluating the device</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../adaq2387/index.html">ADAQ2387x and LTC2387 family SAR ADC Developer Resources</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">Single-Channel, SPI-interface SAR ADC Developer Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../mem/adxl355-pmdz/index.html">ADXL355 3-Axis MEMS Accelerometer Developer Resources</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8-2" id="toctree-collapse-8-2"/><div class="collapse"><a class="reference internal" href="../../transceiver/adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-8-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../transceiver/adrv9009/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8-2-1" id="toctree-collapse-8-2-1"/><div class="collapse"><a class="reference internal" href="../../transceiver/adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-8-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../transceiver/adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="../../transceiver/adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8-3" id="toctree-collapse-8-3"/><div class="collapse"><a class="reference internal" href="../../transceiver/adrv9026/index.html">ADRV9026 &amp; ADRV9029</a><label for="toctree-collapse-8-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../transceiver/adrv9026/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8-3-1" id="toctree-collapse-8-3-1"/><div class="collapse"><a class="reference internal" href="../../transceiver/adrv9026/quickstart/index.html">Quickstart</a><label for="toctree-collapse-8-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l4"><a class="reference internal" href="../../transceiver/adrv9026/quickstart/zynqmp.html">ZCU102</a></li>
+<li class="toctree-l4"><a class="reference internal" href="../../transceiver/adrv9026/quickstart/versal.html">VCK190</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Products &amp; Tools</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/devs/index.html">For Developers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/users/index.html">For End Users</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/labview.html">Using With LabVIEW</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/obtaining_the_sources.html">Obtaining the Build Sources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/reboot.html">Rebooting</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../tools/pluto/users/antennas.html">Antennas</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/help_support.html">Support</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/prerequisites.html">Prerequisites</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../tools/pluto/transceiver_transferring_data.html">Controlling the transceiver and transferring data</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../tools/uartjtag/index.html">ADALM-UARTJTAG</a></li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Apps &amp; Solutions</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="../../../../solutions/application-software/index.html">Application Software</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/index.html">Reference Designs</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-1" id="toctree-collapse-12-1"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/index.html">AD-APARD32690-SL</a><label for="toctree-collapse-12-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-apard32690-sl/hardware-and-software-guide/index.html">Hardware &amp; Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-2" id="toctree-collapse-12-2"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/index.html">AD-BMSE2E3W-SL</a><label for="toctree-collapse-12-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/sample_application/index.html">Sample Application</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-bmse2e3w-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-3" id="toctree-collapse-12-3"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/index.html">AD-CELLPACKBM-SL</a><label for="toctree-collapse-12-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-cellpackbm-sl/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-4" id="toctree-collapse-12-4"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/index.html">AD-GMSL522-SL</a><label for="toctree-collapse-12-4"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/hardware-guide/index.html">Hardware Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmsl522-sl/software-guide/index.html">Software Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-5" id="toctree-collapse-12-5"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/index.html">AD-GMSLCAMRPI-ADP</a><label for="toctree-collapse-12-5"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/ad-gmslcamrpi-adp/raspberry-pi-user-guide/index.html">Raspberry Pi User Guide</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-6" id="toctree-collapse-12-6"/><div class="collapse"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-12-6"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">University Program</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../university/index.html">Engineering University Program</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../university/active_learning/buck_converter_basics/index.html">Activity: Buck Converter Basics</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../university/active_learning/index.html#main-lab-activities-and-exercise-list">Main Lab Activities and Exercise List</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Learning</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14" id="toctree-collapse-14"/><div class="collapse"><a class="reference internal" href="../../../../learning/index.html">Learning! Tutorials, Workshops, Etc</a><label for="toctree-collapse-14"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tutorial_prec_adc/index.html">Precision ADC Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/converter_connectivity_tutorial/index.html">Converter Connectivity Tutorial</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/sw_infrastructure/index.html">Key ADI’s Software Infrastructure for designing with ADCs, DACs, and Sensors</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_ls/index.html">Tools for Low Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/low_freq_noise/index.html">Low Frequency Noise KWIK Lecture + Lab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/integrated_noise/index.html">Integrated Noise KWIK Lecture + Lab</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">LTspice Examples</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../ltspice_examples/index.html">LTspice Examples</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../ltspice_examples/lvds_pair/index.html">LTspice Example: LVDS pair</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">Contributing and Guidelines</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../contributing/template/eval.html">Evaluation Boards</a></li>
+</ul>
+</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/docs_guidelines.html">Documentation guidelines</a></li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../contributing/forking_publishing.html">Forking and publishing</a></li>
+</ul>
+</body>
+</html>
+
+</div>
+        </div>
+      </div>
+
+  <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper" id="top-anchor">
+          <div class="body" role="main">
+            
+  <section id="single-channel-spi-interface-sar-adc-developer-resources">
+<h1>Single-Channel, SPI-interface SAR ADC Developer Resources<a class="headerlink" href="#single-channel-spi-interface-sar-adc-developer-resources" title="Link to this heading"></a></h1>
+<div class="admonition attention">
+<p class="admonition-title">Attention</p>
+<p>This is a draft, very much WIP document in a fork of <a class="reference external" href="https://github.com/analogdevicesinc/documentation">https://github.com/analogdevicesinc/documentation</a></p>
+</div>
+<section id="family-overview">
+<h2>Family Overview<a class="headerlink" href="#family-overview" title="Link to this heading"></a></h2>
+<p>This page describes various hardware and software resources available for evaluating and developing with certain Analog Devices’ single-channel, SPI-interface, successive-approximation (SAR) Analog to Digital Converters. Not all such devices across ADI’s product line are covered here, however the devices on this page are all supported by the same Linux or no-OS (bare metal) device driver, and FPGA HDL IP core and project.</p>
+<p>The evaluation and development boards across these devices use several industry-standard and ADI-proprietary connectors, compatible with industry-standard and proprietary carrier (processor/FPGA) boards. The choice depends on the developer’s needs; If the development flow involves software and HDL development on standard carrier boards, it is best to use either the Pmod or FMC boards. Review the example projects and their user guides for the various options in order to make the best choice.</p>
+<p>Wherever possible, pre-built programming and boot files are provided for the various carrier / eval board combinations. These typically implement an IIO (Industrial Input-Output) server, compatible with a wide array of software tools and language bindings, easing development considerably.</p>
+</section>
+<section id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading"></a></h2>
+<p>There are several combinations of evaluation and development boards and controller platforms, with different capabilities and associated software and device driver resources. Review the options and choose the one that best suits your needs. In general combinations fall into two categories:</p>
+<p>Legacy evaluation boards and software are geared toward performance evaluation, with Windows-based GUI software that computes typical metrics such as THD, SNR, linearity, etc. These are closed-source, and further development requires moving to other controller boards and software development environments. Examples for this famly of ADCs are shown in <a class="reference internal" href="#fig-adi-systems"><span class="std std-numref">Figure 1</span></a>. The FMC eval boards can target either the SDP-H1 board or standard development platforms, while the SDP eval boards can only target the SDP-B or SDP-H1 board.</p>
+<figure class="align-center" id="id1">
+<span id="fig-adi-systems"></span><a class="reference internal image-reference" href="../../../../_images/ADI_systems_block_diags.png"><img alt="../../../../_images/ADI_systems_block_diags.png" src="../../../../_images/ADI_systems_block_diags.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">ADI Proprietary Evaluation Systems</span><a class="headerlink" href="#id1" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>The second category of development systems is based on commercially available development platforms running open-source software, firmware, and HDL. Examples for this family of ADCs are shown in <a class="reference internal" href="#fig-iio-systems"><span class="std std-numref">Figure 2</span></a>. These systems are based on the Linux Industrial Input/Output (IIO) framework and are much more flexible, with multiple cross-platform options for both evaluation software and development software.</p>
+<figure class="align-center" id="id2">
+<span id="fig-iio-systems"></span><a class="reference internal image-reference" href="../../../../_images/iio_systems_block_diags.png"><img alt="../../../../_images/iio_systems_block_diags.png" src="../../../../_images/iio_systems_block_diags.png" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">IIO-Based Development Systems</span><a class="headerlink" href="#id2" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+<section id="evaluation-boards-and-development-platforms">
+<h2>Evaluation Boards and Development Platforms<a class="headerlink" href="#evaluation-boards-and-development-platforms" title="Link to this heading"></a></h2>
+<section id="pmod-peripheral-module">
+<h3>Pmod (Peripheral Module)<a class="headerlink" href="#pmod-peripheral-module" title="Link to this heading"></a></h3>
+<p>This is a de-facto standard developed by Digilent. Pmods communicate with host boards using 6, 8, or 12-pin, 100-mil pitch connectors that can carry multiple digital control signals, taking advantage of standard serial protocols such as SPI and I²C. The official specification is available from Digilent at <a class="reference external" href="https://digilent.com/reference/pmod/start">https://digilent.com/reference/pmod/start</a>. Pmod evaluation boards on this page are supported on either a ZedBoard or Cora Z7 FPGA carrier board. Pre-built example projects are provided that implement an IIO server, compatible with ACE, Scopy, and any language supported by the libiio (C, C#, Python, MATLAB, etc.)</p>
+<p>The Pmod board hardware documentation is at <a class="reference external" href="https://wiki.analog.com/resources/eval/user-guides/circuits-from-the-lab/pulsar-adc-pmods">https://wiki.analog.com/resources/eval/user-guides/circuits-from-the-lab/pulsar-adc-pmods</a></p>
+</section>
+<section id="fmc-fpga-mezzanine-card">
+<h3>FMC (FPGA Mezzanine Card)<a class="headerlink" href="#fmc-fpga-mezzanine-card" title="Link to this heading"></a></h3>
+<p>This is an industry standard, also known as VITA57. FMC is a widely used standard for both COTS and development carriers and module cards. FMC evaluation boards on this page are supported on the ZedBoard carrier board as well as the ADI proprietary SDP-H1 board. Pre-built example projects for the ZedBoard are provided that implement an IIO server, compatible with ACE, Scopy, and any language supported by the libiio (C, C#, Python, MATLAB, etc.) Important: The SDP-H1 is ADI proprietary, and works in conjunction with ACE software or product-specific evaluation software package. It is not intended as a development platform, and source code is not provided.</p>
+</section>
+<section id="sdp-120-way-interface">
+<h3>SDP 120-way interface<a class="headerlink" href="#sdp-120-way-interface" title="Link to this heading"></a></h3>
+<p>This is an ADI proprietary standard based on the  Hirose FX8 series connector. These boards interface with the SDP-B or SDP-H1, and work with ACE or product-specific evaluation software package. It is not intended as a development platform, and source code is not provided.</p>
+</section>
+</section>
+<section id="software-resources">
+<h2>Software Resources<a class="headerlink" href="#software-resources" title="Link to this heading"></a></h2>
+<section id="standard-application-software">
+<h3>Standard Application Software<a class="headerlink" href="#standard-application-software" title="Link to this heading"></a></h3>
+<p>The HDL, Linux, and no-OS example projects are typically based on the Linux Industrial Input-Output (IIO) framework. This maximizes flexibility, as the framework is cross-platform (Windows, Linux, Mac) and supports multiple languages (C, C++, C#, Python, MATLAB, and others). The projects are also supported by the ACE evaluation GUI, and the Scopy multi-purpose data acquisition GUI.</p>
+</section>
+<section id="hdl-ip-core">
+<h3>HDL IP Core<a class="headerlink" href="#hdl-ip-core" title="Link to this heading"></a></h3>
+<p>The HDL for these devices is based on the SPI Engine IP core, user guide here: <a class="reference external" href="https://analogdevicesinc.github.io/hdl/library/spi_engine/index.html">SPI Engine</a>, and PWM IP core, which generates the sample rate from the master clock.</p>
+<p>The example project for these devices is described at <a class="reference external" href="https://analogdevicesinc.github.io/hdl/projects/pulsar_adc/index.html">PULSAR-ADC HDL project</a>.</p>
+<p>The example project is parameterized for each device, and building the project generates a set of boot files that can be run on the target platform.</p>
+</section>
+<section id="linux-device-drivers">
+<h3>Linux Device Drivers<a class="headerlink" href="#linux-device-drivers" title="Link to this heading"></a></h3>
+<p>The Linux driver for these devices is presently in development, with the goal of having a single, unified driver covering all devices and the associated HDL code.</p>
+<p>The AD400x driver is in upstream review, documented at <a class="reference external" href="https://wiki.analog.com/resources/tools-software/linux-drivers/iio-adc/ad400x">https://wiki.analog.com/resources/tools-software/linux-drivers/iio-adc/ad400x</a></p>
+<p>The previous mainlined PulSAR family driver is documented at <a class="reference external" href="https://wiki.analog.com/resources/tools-software/linux-drivers/iio-adc/ad7476a">https://wiki.analog.com/resources/tools-software/linux-drivers/iio-adc/ad7476a</a></p>
+<p>The updated device driver is compatible with the HDL example project, and provides a convenient programming interface for controlling the ADC and capturing data.</p>
+</section>
+<section id="no-os-bare-metal-device-drivers-and-examples">
+<h3>no-OS (Bare Metal) Device Drivers and Examples<a class="headerlink" href="#no-os-bare-metal-device-drivers-and-examples" title="Link to this heading"></a></h3>
+<p>The no-OS driver is intended for systems not using an operating system. It is generally easier to start with a Linux-based system for initial development, then migrate to no-OS.</p>
+<p><a class="reference external" href="https://github.com/analogdevicesinc/no-OS/tree/main/projects/pulsar-adc">https://github.com/analogdevicesinc/no-OS/tree/main/projects/pulsar-adc</a></p>
+<p><a class="reference external" href="https://github.com/analogdevicesinc/no-OS/tree/main/drivers/adc/pulsar_adc">https://github.com/analogdevicesinc/no-OS/tree/main/drivers/adc/pulsar_adc</a></p>
+</section>
+<section id="product-specific-software">
+<h3>Product-Specific Software<a class="headerlink" href="#product-specific-software" title="Link to this heading"></a></h3>
+<p>The ADI proprietary controller boards typically work with product specific software, either a standalone GUI program, or through ACE via a control board plugin. These allow measurement of typical ADC performance metrics such as SNR, THD, linearity, etc., and saving data out to files.</p>
+</section>
+</section>
+<section id="board-and-platform-summary">
+<h2>Board and Platform Summary<a class="headerlink" href="#board-and-platform-summary" title="Link to this heading"></a></h2>
+<p>The various eval boards and their supported platforms are listed below. The standard platforms can be used for product performance evaluation using ACE software, software development, and system prototyping. The ADI proprietary platforms are more constrained, and only work with the software listed.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>Only a few example cells are filled out for now.</p>
+</div>
+<div class="table-wrapper docutils container" id="id3">
+<table class="docutils align-default" id="id3">
+<caption><span class="caption-number">Table 1 </span><span class="caption-text">Single-Channel SAR table test</span><a class="headerlink" href="#id3" title="Link to this table"></a></caption>
+<thead>
+<tr class="row-odd"><th class="head"><p>Part Number</p></th>
+<th class="head"><p>FMC Eval</p></th>
+<th class="head"><p>Zed</p></th>
+<th class="head"><p>H1</p></th>
+<th class="head"><p>Pmod</p></th>
+<th class="head"><p>Zed</p></th>
+<th class="head"><p>Cora</p></th>
+<th class="head"><p>SDP</p></th>
+<th class="head"><p>SDP Carrier</p></th>
+<th class="head"><p>SDP Software</p></th>
+</tr>
+</thead>
+<tbody>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.analog.com/ad7942">AD7942: 14-Bit 250 kSPS PulSAR Pseudo Differential ADC</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p><a class="reference external" href="https://www.analog.com/eval-ad7942-pmdz">eval-ad7942-pmdz</a></p></td>
+<td></td>
+<td></td>
+<td><p><a class="reference external" href="https://www.analog.com/eval-ad7942">eval-ad7942</a></p></td>
+<td><p>SDP-B, H1</p></td>
+<td><p><a class="reference external" href="https://www.analog.com/media/en/evaluation-boards-kits/evaluation-software/10_lead_software_v1.7.zip">10_lead_software_v1.7.zip</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.analog.com/ad7946">AD7946: 14-Bit 500 kSPS PulSAR ADC</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.analog.com/ad7988-1">AD7988-1: 16-Bit Lower Power PulSAR ADCs</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.analog.com/ad7685">AD7685: 16-Bit 250 kSPS PulSAR ADC</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.analog.com/ad7687">AD7687: 16-Bit 1.5 LSB INL 250 kSPS PulSAR Differential ADC</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.analog.com/ad7691">AD7691: 18-Bit 1.5 LSB INL 250 kSPS PulSAR Differential ADC</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.analog.com/ad7686">AD7686: 500 kSPS 16-BIT PulSAR A/D Converter</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.analog.com/ad7688">AD7688: 500 kSPS 16- BIT Differential PulSAR A/D Converter in µSOIC/QFN</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.analog.com/ad7693">AD7693: 16-Bit ±0.5 LSB 500 kSPS PulSAR Differential A/D Converter</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.analog.com/ad7988-5">AD7988-5: 16-Bit Lower Power PulSAR ADCs</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.analog.com/ad7980">AD7980: 16-Bit 1 MSPS PulSAR ADC</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p><a class="reference external" href="https://www.analog.com/eval-ad7980-pmdz">eval-ad7980-pmdz</a></p></td>
+<td></td>
+<td></td>
+<td><p><a class="reference external" href="https://www.analog.com/eval-ad7980">eval-ad7980</a></p></td>
+<td></td>
+<td><p><a class="reference external" href="https://www.analog.com/media/en/evaluation-boards-kits/evaluation-software/10_lead_software_v1.7.zip">10_lead_software_v1.7.zip</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.analog.com/ad7983">AD7983: 16-Bit 1.33 MSPS PulSAR ADC</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.analog.com/ad7690">AD7690: 18-Bit 1.5 LSB INL 400 kSPS PulSAR Differential ADC</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.analog.com/ad7689">AD7689: 16-Bit 8-Channel 250 kSPS PulSAR ADC</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.analog.com/ad4000">AD4000: 16-Bit 2 MSPS/1 MSPS/500 kSPS Precision Pseudo Differential</a></p></td>
+<td><p><a class="reference external" href="https://www.analog.com/eval-ad400x-fmcz">eval-ad400x-fmcz (00)</a></p></td>
+<td></td>
+<td><p>X</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.analog.com/ad4001">AD4001: 16-Bit 2 MSPS/1 MSPS Precision Differential</a></p></td>
+<td><p><a class="reference external" href="https://www.analog.com/eval-ad400x-fmcz">eval-ad400x-fmcz (01)</a></p></td>
+<td></td>
+<td><p>X</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.analog.com/ad4002">AD4002: 18-Bit 2 MSPS/1 MSPS/500 kSPS Precision Pseudo Differential</a></p></td>
+<td><p><a class="reference external" href="https://www.analog.com/eval-ad400x-fmcz">eval-ad400x-fmcz (02)</a></p></td>
+<td></td>
+<td><p>X</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.analog.com/ad4003">AD4003: 18-Bit 2 MSPS/1 MSPS/500 kSPS Easy Drive Differential</a></p></td>
+<td><p><a class="reference external" href="https://www.analog.com/eval-ad400x-fmcz">eval-ad400x-fmcz (03)</a></p></td>
+<td></td>
+<td><p>X</p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.analog.com/ad4004">AD4004: 16-Bit 2 MSPS/1 MSPS/500 kSPS Precision Pseudo Differential</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.analog.com/ad4005">AD4005: 16-Bit 2 MSPS/1 MSPS Precision Differential</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.analog.com/ad4006">AD4006: 18-Bit 2 MSPS/1 MSPS/500 kSPS Precision Pseudo Differential</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.analog.com/ad4007">AD4007: 18-Bit 2 MSPS/1 MSPS/500 kSPS Easy Drive Differential</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.analog.com/ad4008">AD4008: 16-Bit 2 MSPS/1 MSPS/500 kSPS Precision Pseudo Differential</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.analog.com/ad4010">AD4010: 18-Bit 2 MSPS/1 MSPS/500 kSPS Precision Pseudo Differential</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.analog.com/ad4011">AD4011: 18-Bit 2 MSPS/1 MSPS/500 kSPS Easy Drive Differential</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-odd"><td><p><a class="reference external" href="https://www.analog.com/adaq4003">ADAQ4003: 18-Bit 2 MSPS Precision DAQ Differential</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="reference external" href="https://www.analog.com/ad4020">AD4020: 20-Bit 1.8 MSPS/1 MSPS/500 kSPS Easy Drive Differential</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+</section>
+
+
+          </div>
+              <div class="related">
+                &nbsp;
+    <a href="../adaq2387/index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">ADAQ2387x and LTC2387 family SAR ADC Developer Resources</a>
+    <a href="../../mem/adxl355-pmdz/index.html" title="Next document (Alt+Shift+RightArrow)" class="next">ADXL355 3-Axis MEMS Accelerometer Developer Resources</a>
+              </div>
+          
+        </div>
+      </div>
+  </div>
+
+  <div id="vertical-border"></div>
+
+  <label id="cancel-area-show-toc" for="input-show-toc"></label>
+  <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
+    <footer>
+      &#169;2024, Analog Devices, Inc.
+      
+      |
+      Made with <a href="https://www.sphinx-doc.org/">Sphinx</a>
+      &amp; <a href="https://github.com/analogdevicesinc/doctools">Doctools</a>
+      
+    </footer>
+  </body>
+</html>

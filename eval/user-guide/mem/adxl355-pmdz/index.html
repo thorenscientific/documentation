@@ -5,7 +5,7 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>EVAL-ADXL355-PMDZ &#8212; System Level Documentation  documentation</title>
+    <title>ADXL355 3-Axis MEMS Accelerometer Developer Resources &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../../_static/pygments.css?v=8e8a900e" />
     <link rel="stylesheet" type="text/css" href="../../../../_static/style.min.css?v=a9555194" />
     <script src="../../../../_static/documentation_options.js?v=5929fcd5"></script>
@@ -16,7 +16,7 @@
     <link rel="index" title="Index" href="../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../search.html" />
     <link rel="next" title="ADRV9009 &amp; ADRV9008" href="../../transceiver/adrv9009/index.html" />
-    <link rel="prev" title="Evaluating the device" href="../../adc/ad4052-ardz/user-guide.html" />
+    <link rel="prev" title="Single-Channel, SPI-interface SAR ADC Developer Resources" href="../../adc/adc_pulsar_single/index.html" />
    
   
   <meta name="global_root" content="../../../../../">
@@ -98,9 +98,16 @@
         </div>
         <nav>
           <ul>
-<li><a class="reference internal" href="#">EVAL-ADXL355-PMDZ</a><ul>
-<li><a class="reference internal" href="#overview">Overview</a></li>
-<li><a class="reference internal" href="#input-and-output-connections-and-configurations">Input and Output Connections and Configurations</a><ul>
+<li><a class="reference internal" href="#">ADXL355 3-Axis MEMS Accelerometer Developer Resources</a><ul>
+<li><a class="reference internal" href="#adxl355-overview">ADXL355 Overview</a></li>
+<li><a class="reference internal" href="#getting-started">Getting Started</a></li>
+<li><a class="reference internal" href="#evaluation-boards-and-development-platforms">Evaluation Boards and Development Platforms</a><ul>
+<li><a class="reference internal" href="#eval-adxl35x-sdp">EVAL-ADXL35x-SDP</a></li>
+<li><a class="reference internal" href="#eval-adxl35x">EVAL-ADXL35X</a></li>
+<li><a class="reference internal" href="#eval-adxl355-pmdz">EVAL-ADXL355-PMDZ</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#developing-with-the-adxl355">Developing with the ADXL355</a><ul>
 <li><a class="reference internal" href="#pmod-processor-connector">Pmod  Processor Connector</a></li>
 <li><a class="reference internal" href="#adxl355-interrupt-pins">ADXL355 Interrupt Pins</a></li>
 <li><a class="reference internal" href="#power-supply-considerations-and-configuration">Power Supply Considerations and Configuration</a></li>
@@ -119,10 +126,10 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#system-setup-using-raspberry-pi">System Setup Using Raspberry Pi</a><ul>
-<li><a class="reference internal" href="#id3">Demo Requirements</a></li>
+<li><a class="reference internal" href="#id2">Demo Requirements</a></li>
 <li><a class="reference internal" href="#loading-image-on-sd-card">Loading Image on SD Card</a></li>
 <li><a class="reference internal" href="#configuring-the-sd-card">Configuring the SD Card</a></li>
-<li><a class="reference internal" href="#id4">Setting up the Hardware</a></li>
+<li><a class="reference internal" href="#id3">Setting up the Hardware</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#system-setup-using-eval-adicup360-deprecated">System Setup Using EVAL-ADICUP360 <strong>(DEPRECATED)</strong></a></li>
@@ -265,7 +272,9 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../../adc/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><a class="current reference internal" href="#">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../adc/adaq2387/index.html">ADAQ2387x and LTC2387 family SAR ADC Developer Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../adc/adc_pulsar_single/index.html">Single-Channel, SPI-interface SAR ADC Developer Resources</a></li>
+<li class="toctree-l2 current"><a class="current reference internal" href="#">ADXL355 3-Axis MEMS Accelerometer Developer Resources</a></li>
 <li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8-2" id="toctree-collapse-8-2"/><div class="collapse"><a class="reference internal" href="../../transceiver/adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-8-2"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../transceiver/adrv9009/prerequisites.html">Prerequisites</a></li>
 <li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8-2-1" id="toctree-collapse-8-2-1"/><div class="collapse"><a class="reference internal" href="../../transceiver/adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-8-2-1"><div class="icon"></div></label></div><ul>
@@ -371,8 +380,10 @@ Content on this topic
 <li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="../../../../university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../university/active_learning/buck_converter_basics/index.html">Activity: Buck Converter Basics</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../university/active_learning/index.html#main-lab-activities-and-exercise-list">Main Lab Activities and Exercise List</a></li>
 </ul>
 </li>
 </ul>
@@ -386,12 +397,21 @@ Content on this topic
 <li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/low_freq_noise/index.html">Low Frequency Noise KWIK Lecture + Lab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../learning/integrated_noise/index.html">Integrated Noise KWIK Lecture + Lab</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">LTspice Examples</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../ltspice_examples/index.html">LTspice Examples</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../ltspice_examples/lvds_pair/index.html">LTspice Example: LVDS pair</a></li>
 </ul>
 </li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Contributing and Guidelines</span></p>
 <ul>
-<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="../../../../contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../../contributing/template/eval.html">Evaluation Boards</a></li>
 </ul>
 </li>
@@ -410,16 +430,11 @@ Content on this topic
         <div class="bodywrapper" id="top-anchor">
           <div class="body" role="main">
             
-  <section id="eval-adxl355-pmdz">
-<span id="id1"></span><h1>EVAL-ADXL355-PMDZ<a class="headerlink" href="#eval-adxl355-pmdz" title="Link to this heading"></a></h1>
-<section id="overview">
-<h2>Overview<a class="headerlink" href="#overview" title="Link to this heading"></a></h2>
-<p>The <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADXL355-PMDZ">EVAL-ADXL355-PMDZ</a> is a compact, low-cost,
-Pmod-compatible evaluation board for the <a class="icon adi reference external" href="https://www.analog.com/ADXL355">ADXL355</a> low noise
-density, low zero-g offset drift, low power, 3-axis MEMS accelerometer with
-selectable measurement ranges. The ADXL355 supports the ±2g, ±4g, and ±8g
-ranges, and offers industry leading noise, offset drift over temperature, and
-long term stability, enabling precision applications with minimal calibration
+  <section id="adxl355-3-axis-mems-accelerometer-developer-resources">
+<h1>ADXL355 3-Axis MEMS Accelerometer Developer Resources<a class="headerlink" href="#adxl355-3-axis-mems-accelerometer-developer-resources" title="Link to this heading"></a></h1>
+<section id="adxl355-overview">
+<h2>ADXL355 Overview<a class="headerlink" href="#adxl355-overview" title="Link to this heading"></a></h2>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/ADXL355">ADXL355</a> is a low noise density, low zero-g offset drift, low power, 3-axis MEMS accelerometer with selectable measurement ranges. The ADXL355 supports the ±2g, ±4g, and ±8g ranges, and offers industry leading noise, offset drift over temperature, and long term stability, enabling precision applications with minimal calibration
 and with very low power consumption. Applications include:</p>
 <ul class="simple">
 <li><p>Inertial measurement units (IMUs)/altitude and heading reference systems (AHRS)</p></li>
@@ -441,13 +456,49 @@ filtering from 1 Hz to 1 kHz, and low noise density of 25µ/√Hz at less than
 200µA current consumption, ADXL355 MEMS accelerometer offers performance level
 comparable to much more expensive devices with less power consumption and BOM
 cost.</p>
+</section>
+<section id="getting-started">
+<h2>Getting Started<a class="headerlink" href="#getting-started" title="Link to this heading"></a></h2>
+<p>There are several combinations of evaluation and development boards and controller platforms, with different capabilities and associated software and device driver resources. Review the options and choose the one that best suits your needs.</p>
+</section>
+<section id="evaluation-boards-and-development-platforms">
+<h2>Evaluation Boards and Development Platforms<a class="headerlink" href="#evaluation-boards-and-development-platforms" title="Link to this heading"></a></h2>
+<section id="eval-adxl35x-sdp">
+<h3>EVAL-ADXL35x-SDP<a class="headerlink" href="#eval-adxl35x-sdp" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="../../../../_images/EVAL-ADXL355Z-SDP-KIT_ANGLE.gif"><img alt="../../../../_images/EVAL-ADXL355Z-SDP-KIT_ANGLE.gif" src="../../../../_images/EVAL-ADXL355Z-SDP-KIT_ANGLE.gif" style="width: 350px;" />
+</a>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADXL35x-SDP">EVAL-ADXL35x-SDP</a> is an easy-to-use Customer Evaluation System that allows the user a quick start on testing and evaluating the ADXL355 or ADXL357 accelerometer. The system consists of a main board (EVAL-SDP-CB1Z evaluation platform), an interface board (EVAL-SDP-INTER4-Z), and a satellite board (EVAL-ADXL355Z or EVAL-ADXL357Z breakout board).</p>
+<p>The EVAL-SDP-CB1Z board, also called “SDP-B”, connects directly to a PC via an USB cable, with the USB connection providing both communications and power to the board. The SDP-B is connected to the interface board (EVAL-SDP-INTER4-Z), which provides the signal conditioning and electrical connections to communicated with the satellite board (EVAL-ADXL355Z or EVAL-ADXL357Z) through a cable. This cable allows the satellite to be easily manipulated for testing or separately placed into an environmental chamber for temperature or humidity testing. Separating the boards mitigates corruption of data due to the temperature and humidity effects of other components.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This system is intended for performance evaluation only. Source code for the SDP-B firmware and GUI software is not available.</p>
+</div>
+<p>For complete instructions refer to the <a class="reference external" href="https://wiki.analog.com/resources/eval/user-guides/inertial-mems/accelerometers/adxl35x/eval-adxl35x-sdp">EVAL-ADXL35x-SDP User Guide</a></p>
+</section>
+<section id="eval-adxl35x">
+<h3>EVAL-ADXL35X<a class="headerlink" href="#eval-adxl35x" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="../../../../_images/EVAL-ADXL354BZANGLE-web.gif"><img alt="../../../../_images/EVAL-ADXL354BZANGLE-web.gif" src="../../../../_images/EVAL-ADXL354BZANGLE-web.gif" style="width: 350px;" />
+</a>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADXL35X-Z">EVAL-ADXL35X-Z</a> are simple evaluation boards that allow quick evaluation of the performance of Analog Devices new series of low power, low noise, low drift 3-axis, MEMS accelerometers. The series consists of both analog and digital output devices, supporting a variety of Full Scale Ranges (FSR). The model descriptions are shown in the ordering guide below. These evaluation boards are ideal for evaluation of the ADXL35x accelerometer series in an existing system because the stiffness and the small size of the evaluation board minimize the effect of the board on both the system and acceleration measurements.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>This board does not directly interface to any standard platforms, and requires a separate cable. This may be desirable for interfacing to an arbitrary platform board, or when the sensor needs to be separated from the platform board by a cable.</p>
+</div>
+<p>For complete instructions refer to the <a class="reference external" href="https://wiki.analog.com/resources/eval/user-guides/inertial-mems/accelerometers/adxl354_355">EVAL-ADXL35X-Z User Guide</a></p>
+</section>
+<section id="eval-adxl355-pmdz">
+<h3>EVAL-ADXL355-PMDZ<a class="headerlink" href="#eval-adxl355-pmdz" title="Link to this heading"></a></h3>
+<a class="reference internal image-reference" href="../../../../_images/EVAL-ADXL335-PMDZANGLE-web.png"><img alt="../../../../_images/EVAL-ADXL335-PMDZANGLE-web.png" src="../../../../_images/EVAL-ADXL335-PMDZANGLE-web.png" style="width: 350px;" />
+</a>
+<p>The <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADXL355-PMDZ">EVAL-ADXL355-PMDZ</a> is a compact, low-cost, Pmod-compatible evaluation board for the ADXL355. It targets several standard microcontroller development boards that either have a native Pmod interface, or via an adapter. It also targets the Raspberry Pi via the <a class="icon adi reference external" href="https://www.analog.com/PMD-RPI-INTZ">PMD-RPI-INTZ</a> adapter board. The Pmod board is small in size with dimensions approximately 2.5 cm in width by 2.5 cm in length.</p>
+<p>SPI PMOD peripheral connectors can also be found on many 3rd party MCU or FPGA development boards, where the EVAL-ADXL355-PMDZ can be connected directly into those systems, and you can develop your own code using our reference code below.</p>
+</section>
+</section>
+<section id="developing-with-the-adxl355">
+<h2>Developing with the ADXL355<a class="headerlink" href="#developing-with-the-adxl355" title="Link to this heading"></a></h2>
+<p>The EVAL-ADXL335-PMDZ will be used for the various example systems described below. These examples are designed to be used as-is for initial development, then ported to your target hardware.</p>
 <a class="reference internal image-reference" href="../../../../_images/adxl355_pmdz.png"><img alt="../../../../_images/adxl355_pmdz.png" src="../../../../_images/adxl355_pmdz.png" style="width: 350px;" />
 </a>
-</section>
-<section id="input-and-output-connections-and-configurations">
-<h2>Input and Output Connections and Configurations<a class="headerlink" href="#input-and-output-connections-and-configurations" title="Link to this heading"></a></h2>
-<p>The PMOD board is small in size with dimensions approximately 2.5 cm in width
-by 2.5 cm in length.</p>
 <section id="pmod-processor-connector">
 <h3>Pmod  Processor Connector<a class="headerlink" href="#pmod-processor-connector" title="Link to this heading"></a></h3>
 <p>The PMOD interface is a series of standardized digital interfaces for various
@@ -629,30 +680,30 @@ This is the <strong>EASIEST</strong> way to get started with the reference desig
 <li><p>Connect a micro-USB cable to the P10 connector of the EVAL-ADICUP3029 and
 connect it to a computer. The final setup should look similar to the picture
 below.</p>
-<figure class="align-default" id="id5">
+<figure class="align-default" id="id4">
 <a class="reference internal image-reference" href="../../../../_images/adxl355_adicup3029_connections.jpg"><img alt="../../../../_images/adxl355_adicup3029_connections.jpg" src="../../../../_images/adxl355_adicup3029_connections.jpg" style="width: 900px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 1 </span><span class="caption-text">Hardware Setup</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">Hardware Setup</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </li>
 <li><p>Make sure the following switches are as shown from the table below.</p>
-<figure class="align-default" id="id6">
+<figure class="align-default" id="id5">
 <a class="reference internal image-reference" href="../../../../_images/switch_config.png"><img alt="../../../../_images/switch_config.png" src="../../../../_images/switch_config.png" style="width: 900px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 2 </span><span class="caption-text">Switch Confuguration</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">Switch Confuguration</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </li>
 <li><p>From your PC, open My Computer and look for the DAPLINK drive, if you see
 this then the drivers are complete and correct.</p>
-<figure class="align-default" id="id7">
+<figure class="align-default" id="id6">
 <a class="reference internal image-reference" href="../../../../_images/daplink.jpg"><img alt="../../../../_images/daplink.jpg" src="../../../../_images/daplink.jpg" style="width: 300px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 3 </span><span class="caption-text">DAPLINK Drive</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">DAPLINK Drive</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </li>
@@ -670,7 +721,7 @@ will be approximately 9.8 m/s^2.</p></li>
 <p>The <strong>EVAL-ADXL355-PMDZ</strong> can be used with the MAX32655FTHR or
 MAX32650FTHR.</p>
 <section id="demo-requirements-1">
-<span id="id2"></span><h3>Demo Requirements<a class="headerlink" href="#demo-requirements-1" title="Link to this heading"></a></h3>
+<span id="id1"></span><h3>Demo Requirements<a class="headerlink" href="#demo-requirements-1" title="Link to this heading"></a></h3>
 <p>The following is the list of items needed in order to replicate this demo.</p>
 <ul class="simple">
 <li><p><strong>Hardware</strong></p>
@@ -818,8 +869,8 @@ correct COM port for the <strong>MAX32650FTHR</strong>.</p></li>
 <section id="system-setup-using-raspberry-pi">
 <h2>System Setup Using Raspberry Pi<a class="headerlink" href="#system-setup-using-raspberry-pi" title="Link to this heading"></a></h2>
 <p>The EVAL-ADXL355-PMDZ can be used with a Raspberry Pi.</p>
-<section id="id3">
-<h3>Demo Requirements<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
+<section id="id2">
+<h3>Demo Requirements<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
 <p>The following is a list of items needed in order to replicate this demo.</p>
 <ul class="simple">
 <li><p><strong>Hardware</strong></p>
@@ -860,8 +911,8 @@ following lines in <strong>config.txt</strong>:</p>
 </pre></div>
 </div>
 </section>
-<section id="id4">
-<h3>Setting up the Hardware<a class="headerlink" href="#id4" title="Link to this heading"></a></h3>
+<section id="id3">
+<h3>Setting up the Hardware<a class="headerlink" href="#id3" title="Link to this heading"></a></h3>
 <p>To set up the circuit for evaluation, consider the following steps:</p>
 <ol class="arabic">
 <li><p>Connect the <strong>P9</strong> of the <strong>PMOD to Raspberry Pi Interposer</strong> board at the
@@ -1152,7 +1203,7 @@ to receive all these great benefits and more!</p>
           </div>
               <div class="related">
                 &nbsp;
-    <a href="../../adc/ad4052-ardz/user-guide.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Evaluating the device</a>
+    <a href="../../adc/adc_pulsar_single/index.html" title="Previous document (Alt+Shift+LeftArrow)" class="prev">Single-Channel, SPI-interface SAR ADC Developer Resources</a>
     <a href="../../transceiver/adrv9009/index.html" title="Next document (Alt+Shift+RightArrow)" class="next">ADRV9009 &amp; ADRV9008</a>
               </div>
           

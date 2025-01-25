@@ -217,7 +217,9 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="eval/user-guide/adc/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><a class="reference internal" href="eval/user-guide/mem/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eval/user-guide/adc/adaq2387/index.html">ADAQ2387x and LTC2387 family SAR ADC Developer Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eval/user-guide/adc/adc_pulsar_single/index.html">Single-Channel, SPI-interface SAR ADC Developer Resources</a></li>
+<li class="toctree-l2"><a class="reference internal" href="eval/user-guide/mem/adxl355-pmdz/index.html">ADXL355 3-Axis MEMS Accelerometer Developer Resources</a></li>
 <li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8-2" id="toctree-collapse-8-2"/><div class="collapse"><a class="reference internal" href="eval/user-guide/transceiver/adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-8-2"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="eval/user-guide/transceiver/adrv9009/prerequisites.html">Prerequisites</a></li>
 <li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8-2-1" id="toctree-collapse-8-2-1"/><div class="collapse"><a class="reference internal" href="eval/user-guide/transceiver/adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-8-2-1"><div class="icon"></div></label></div><ul>
@@ -323,8 +325,10 @@ Content on this topic
 <li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13-1" id="toctree-collapse-13-1"/><div class="collapse"><a class="reference internal" href="university/active_learning/index.html">Active Learning: Student-oriented Lab Exercises</a><label for="toctree-collapse-13-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="university/active_learning/wien_bridge_oscillator/index.html">Activity: The Wien Bridge Oscillator</a></li>
 <li class="toctree-l3"><a class="reference internal" href="university/active_learning/efficiency_power_loss/index.html">Activity: Efficiency, Power Loss, and Thermal Management</a></li>
+<li class="toctree-l3"><a class="reference internal" href="university/active_learning/buck_converter_basics/index.html">Activity: Buck Converter Basics</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="university/active_learning/index.html#main-lab-activities-and-exercise-list">Main Lab Activities and Exercise List</a></li>
 </ul>
 </li>
 </ul>
@@ -338,12 +342,21 @@ Content on this topic
 <li class="toctree-l2"><a class="reference internal" href="learning/tools_for_prec_wb/index.html">Tools for Precision Wideband Mixed Signal System Design</a></li>
 <li class="toctree-l2"><a class="reference internal" href="learning/tools_for_hs/index.html">Tools for High-Speed Mixed Signal System Design</a></li>
 <li class="toctree-l2"><a class="reference internal" href="learning/workshop_what_sw_for_sdr/index.html">What software do I need for my SDR?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="learning/low_freq_noise/index.html">Low Frequency Noise KWIK Lecture + Lab</a></li>
+<li class="toctree-l2"><a class="reference internal" href="learning/integrated_noise/index.html">Integrated Noise KWIK Lecture + Lab</a></li>
+</ul>
+</li>
+</ul>
+<p class="caption" role="heading"><span class="caption-text">LTspice Examples</span></p>
+<ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="ltspice_examples/index.html">LTspice Examples</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="ltspice_examples/lvds_pair/index.html">LTspice Example: LVDS pair</a></li>
 </ul>
 </li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Contributing and Guidelines</span></p>
 <ul>
-<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-15" id="toctree-collapse-15"/><div class="collapse"><a class="reference internal" href="contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-15"><div class="icon"></div></label></div><ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-16" id="toctree-collapse-16"/><div class="collapse"><a class="reference internal" href="contributing/creating_new_pages.html">Creating new pages</a><label for="toctree-collapse-16"><div class="icon"></div></label></div><ul>
 <li class="toctree-l2"><a class="reference internal" href="contributing/template/eval.html">Evaluation Boards</a></li>
 </ul>
 </li>
@@ -745,6 +758,52 @@ developers get up and running fast.</p>
 </li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="learning/index.html#signal-chain">Signal Chain</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="learning/low_freq_noise/index.html">Low Frequency Noise KWIK Lecture + Lab</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="learning/low_freq_noise/index.html#general-description">General Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="learning/low_freq_noise/index.html#objective">Objective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="learning/low_freq_noise/index.html#lecture-materials">Lecture Materials</a></li>
+<li class="toctree-l4"><a class="reference internal" href="learning/low_freq_noise/index.html#kwik-demo-user-guide">KWIK Demo User Guide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="learning/low_freq_noise/index.html#adalm2000-active-learning-module-and-scopy">ADALM2000 Active Learning Module and Scopy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="learning/low_freq_noise/index.html#adalm2000-configuration-files">ADALM2000 Configuration Files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="learning/low_freq_noise/index.html#ltspice-simulation-circuits">LTspice Simulation Circuits</a></li>
+<li class="toctree-l4"><a class="reference internal" href="learning/low_freq_noise/index.html#kwik-demo-pcb-image">KWIK Demo PCB Image</a></li>
+<li class="toctree-l4"><a class="reference internal" href="learning/low_freq_noise/index.html#eval-kw4502z-gerber-files">EVAL-KW4502Z Gerber Files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="learning/low_freq_noise/index.html#additional-reading">Additional Reading</a></li>
+</ul>
+</li>
+<li class="toctree-l3"><a class="reference internal" href="learning/integrated_noise/index.html">Integrated Noise KWIK Lecture + Lab</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="learning/integrated_noise/index.html#general-description">General Description</a></li>
+<li class="toctree-l4"><a class="reference internal" href="learning/integrated_noise/index.html#objective">Objective</a></li>
+<li class="toctree-l4"><a class="reference internal" href="learning/integrated_noise/index.html#lecture-materials">Lecture Materials</a></li>
+<li class="toctree-l4"><a class="reference internal" href="learning/integrated_noise/index.html#integrated-noise-kwik-demo-board-user-guide">Integrated Noise KWIK Demo Board User Guide</a></li>
+<li class="toctree-l4"><a class="reference internal" href="learning/integrated_noise/index.html#adalm2000-active-learning-module-and-scopy">ADALM2000 Active Learning Module and Scopy</a></li>
+<li class="toctree-l4"><a class="reference internal" href="learning/integrated_noise/index.html#adalm2000-configuration-files">ADALM2000 Configuration Files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="learning/integrated_noise/index.html#ltspice-simulation-circuits">LTspice Simulation Circuits</a></li>
+<li class="toctree-l4"><a class="reference internal" href="learning/integrated_noise/index.html#eval-kw4501z-images">EVAL-KW4501Z Images</a></li>
+<li class="toctree-l4"><a class="reference internal" href="learning/integrated_noise/index.html#kwik-demo-gerber-files">KWIK Demo Gerber Files</a></li>
+<li class="toctree-l4"><a class="reference internal" href="learning/integrated_noise/index.html#additional-reading">Additional Reading</a></li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</li>
+</ul>
+</div>
+<div class="toctree-wrapper compound">
+<p class="caption" role="heading"><span class="caption-text">LTspice Examples</span></p>
+<ul>
+<li class="toctree-l1"><a class="reference internal" href="ltspice_examples/index.html">LTspice Examples</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="ltspice_examples/index.html#lvds-pair-simulation">LVDS pair simulation</a><ul>
+<li class="toctree-l3"><a class="reference internal" href="ltspice_examples/lvds_pair/index.html">LTspice Example: LVDS pair</a><ul>
+<li class="toctree-l4"><a class="reference internal" href="ltspice_examples/lvds_pair/index.html#objective">Objective:</a></li>
+<li class="toctree-l4"><a class="reference internal" href="ltspice_examples/lvds_pair/index.html#warning">Warning</a></li>
+</ul>
+</li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="ltspice_examples/index.html#another-example-asdf-example">Another Example: ASDF Example</a></li>
 </ul>
 </li>
 </ul>
