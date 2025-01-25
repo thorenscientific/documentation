@@ -66,3 +66,18 @@ Academic Workshops
    workshops_introduction_to_electronics/index
    workshops_embedded_baremetal/index
    workshops_embedded_linux/index
+
+Signal Chain Workshops
+-------------------------------------------------------------------------------
+
+.. toctree::
+   :caption: Low Frequency Noise KWIK Lecture + Lab
+   :maxdepth: 1
+   
+   low_freq_noise/index
+   
+.. toctree::
+   :caption: Integrated Noise KWIK Lecture + Lab
+   :maxdepth: 1
+
+   integrated_noise/index
