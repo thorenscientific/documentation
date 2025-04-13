@@ -3,6 +3,14 @@
 Applications and Solutions
 =============================
 
+Product Solution Centers
+-------------------------------------------------------------------------------
+
+.. toctree::
+   :maxdepth: 2
+   
+   product-solution-centers/index
+
 Application Software
 -------------------------------------------------------------------------------
 
@@ -19,3 +27,11 @@ Reference Designs
    :maxdepth: 2
    
    reference-designs/index
+
+Demos
+-------------------------------------------------------------------------------
+
+.. toctree::
+   :maxdepth: 2
+   
+   demos/index
