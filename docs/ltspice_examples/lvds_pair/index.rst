@@ -32,9 +32,9 @@ Here is how to number figures: :numref:`fig-lvds_screenshot` is a screenshot of 
    Screenshot of LVDS simulation
 
 
-Here is an example of embedding a video. Who better to describe the subtleties of signal Integrity than this expert?
+Here is an example of embedding a video, *LTspice Basics Part Two: Schematic Capture* on the Analog Devices YouTube channel:
 
-.. video:: https://www.youtube.com/watch?v=dQw4w9WgXcQ
+.. video:: https://www.youtube.com/watch?v=SFNWHovqf8w
 
 
 
