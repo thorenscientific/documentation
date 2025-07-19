@@ -73,7 +73,9 @@ Additionally, if there is only one carrier and user guide, the user guide can be
 integrated into the main page, replacing the carrier-agnostic paragraphs with
 the carrier-specific details.
 
-An example of this structure is :ref:`eval-adxl355-pmdz`.
+..
+   An example of this structure is :ref:`eval-adxl355-pmdz`.
+
 A more complex example is :ref:`eval-ad4052-ardz`.
 
 Structure Rationale

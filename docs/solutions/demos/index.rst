@@ -34,10 +34,11 @@ Why is is so great? Not only does it meet all of the objectives above, all of th
 
 `ADPD4100 Device Driver <https://github.com/analogdevicesinc/no-OS/tree/main/drivers/photo-electronic/adpd410x>`__
 
+.. Enable after adding content
+   This is a placeholder page for a reference design application software.
+   .. toctree::
+      :maxdepth: 1
+      :titlesonly:
+      :glob:
 
-
-.. toctree::
-   :maxdepth: 1
-   :glob:
-
-   */index
+      */index
