@@ -4,14 +4,12 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="This is a draft, very much WIP document in a fork of https://github.com/analogdevicesinc/documentation" name="description" />
 
     <title>Single-Channel, SPI-interface SAR ADC Developer Resources &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=0ea85bdb" />
-    <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
-    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
-    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script defer="" src="../../../_static/app.umd.js?v=25136f1d"></script>
+    <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=33d8ff8e" />
+    <script async="async" src="../../../_static/app.umd.js?v=cd58f2cb"></script>
     <link rel="icon" href="../../../_static/icon.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -21,6 +19,9 @@
   
   <meta name="repository" content="documentation">
   <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
   
 
 
@@ -48,8 +49,7 @@
   <div class="search-area">
     <form action="" method="get">
       <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
-      <button value="search" class="icon"></button>
-      <span id="search-progress"></span>
+      <button class="icon"></button>
     </form>
   </div>
   
@@ -60,7 +60,7 @@
     </div>
     <div id="right">
       <span>
-        <a id="logo-org" href="https://analog.com"></a>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
         <div class="vertical-divider"></div>
         <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
         <a id="logo" href="../../../index.html">
@@ -139,6 +139,7 @@ Content on this topic
 <li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1"/><div class="collapse"><a class="reference internal" href="../../../linux/drivers/iio-adc/index.html">IIO ADC</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../linux/drivers/iio-adc/ad4052/index.html">AD4052</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../linux/drivers/iio-adc/ad9084/index.html">AD9084/AD9088</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-2" id="toctree-collapse-1-2"/><div class="collapse"><a class="reference internal" href="../../../linux/drivers/iio-transceiver/index.html">IIO Transceivers</a><label for="toctree-collapse-1-2"><div class="icon"></div></label></div><ul>
@@ -156,7 +157,10 @@ Content on this topic
 </ul>
 </li>
 <li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/petalinux.html">Building with Petalinux</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1-1" id="toctree-collapse-2-1-1"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-2-1-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
@@ -204,27 +208,34 @@ Content on this topic
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Evaluation Boards</span></p>
 <ul>
-<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../eval/user-guide/index.html">User guides</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8-1" id="toctree-collapse-8-1"/><div class="collapse"><a class="reference internal" href="../../../eval/user-guide/adc/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-8-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../eval/user-guide/index.html">User guides</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9-1" id="toctree-collapse-9-1"/><div class="collapse"><a class="reference internal" href="../../../eval/user-guide/adc/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-9-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../eval/user-guide/adc/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../../eval/user-guide/adc/ad9084-ebz/index.html">EVAL-AD9084-EBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../eval/user-guide/mem/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8-2" id="toctree-collapse-8-2"/><div class="collapse"><a class="reference internal" href="../../../eval/user-guide/transceiver/adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-8-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9-2" id="toctree-collapse-9-2"/><div class="collapse"><a class="reference internal" href="../../../eval/user-guide/transceiver/adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-9-2"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../eval/user-guide/transceiver/adrv9009/prerequisites.html">Prerequisites</a></li>
-<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8-2-1" id="toctree-collapse-8-2-1"/><div class="collapse"><a class="reference internal" href="../../../eval/user-guide/transceiver/adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-8-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9-2-1" id="toctree-collapse-9-2-1"/><div class="collapse"><a class="reference internal" href="../../../eval/user-guide/transceiver/adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-9-2-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../eval/user-guide/transceiver/adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../eval/user-guide/transceiver/adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8-3" id="toctree-collapse-8-3"/><div class="collapse"><a class="reference internal" href="../../../eval/user-guide/transceiver/adrv9026/index.html">ADRV9026 &amp; ADRV9029</a><label for="toctree-collapse-8-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9-3" id="toctree-collapse-9-3"/><div class="collapse"><a class="reference internal" href="../../../eval/user-guide/transceiver/adrv9026/index.html">ADRV9026 &amp; ADRV9029</a><label for="toctree-collapse-9-3"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../eval/user-guide/transceiver/adrv9026/prerequisites.html">Prerequisites</a></li>
-<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8-3-1" id="toctree-collapse-8-3-1"/><div class="collapse"><a class="reference internal" href="../../../eval/user-guide/transceiver/adrv9026/quickstart/index.html">Quickstart</a><label for="toctree-collapse-8-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9-3-1" id="toctree-collapse-9-3-1"/><div class="collapse"><a class="reference internal" href="../../../eval/user-guide/transceiver/adrv9026/quickstart/index.html">Quickstart</a><label for="toctree-collapse-9-3-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../eval/user-guide/transceiver/adrv9026/quickstart/zynqmp.html">ZCU102</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../eval/user-guide/transceiver/adrv9026/quickstart/versal.html">VCK190</a></li>
 </ul>
@@ -236,7 +247,7 @@ Content on this topic
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Products &amp; Tools</span></p>
 <ul>
-<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/devs/index.html">For Developers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/users/index.html">For End Users</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/help_support.html">Support</a></li>
@@ -244,7 +255,7 @@ Content on this topic
 <li class="toctree-l2"><a class="reference internal" href="../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
@@ -253,18 +264,18 @@ Content on this topic
 <li class="toctree-l2"><a class="reference internal" href="../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-1" id="toctree-collapse-12-1"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-12-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-2" id="toctree-collapse-12-2"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-12-2"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-3" id="toctree-collapse-12-3"/><div class="collapse"><a class="reference internal" href="../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-12-3"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../tools/pluto/users/antennas.html">Antennas</a></li>
 </ul>
 </li>
@@ -278,9 +289,7 @@ Content on this topic
 <p class="caption" role="heading"><span class="caption-text">Apps &amp; Solutions</span></p>
 <ul class="current">
 <li class="toctree-l1"><a class="reference internal" href="../../application-software/index.html">Application Software</a></li>
-<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../demos/index.html">Demos!</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul class="simple">
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../../demos/index.html">Demos!</a></li>
 <li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">Product Solution Centers</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="../adaq2387/index.html">ADAQ2387x and LTC2387 family SAR ADC Developer Resources</a></li>
 <li class="toctree-l2 current"><a class="current reference internal" href="#">Single-Channel, SPI-interface SAR ADC Developer Resources</a></li>
@@ -322,10 +331,19 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../../reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-7" id="toctree-collapse-14-7"/><div class="collapse"><a class="reference internal" href="../../reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-14-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-7" id="toctree-collapse-14-7"/><div class="collapse"><a class="reference internal" href="../../reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-14-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-8" id="toctree-collapse-14-8"/><div class="collapse"><a class="reference internal" href="../../reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-14-8"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
 </ul>
@@ -405,7 +423,7 @@ Content on this topic
 <h1>Single-Channel, SPI-interface SAR ADC Developer Resources<a class="headerlink" href="#single-channel-spi-interface-sar-adc-developer-resources" title="Link to this heading"></a></h1>
 <div class="admonition attention">
 <p class="admonition-title">Attention</p>
-<p>This is a draft, very much WIP document in a fork of <a class="reference external" href="https://github.com/analogdevicesinc/documentation">https://github.com/analogdevicesinc/documentation</a></p>
+<p>This is a draft, very much WIP document in a fork of <a class="icon link reference external" href="https://github.com/analogdevicesinc/documentation" target="_blank">https://github.com/analogdevicesinc/documentation</a></p>
 </div>
 <section id="family-overview">
 <h2>Family Overview<a class="headerlink" href="#family-overview" title="Link to this heading"></a></h2>
@@ -437,8 +455,8 @@ Content on this topic
 <h2>Evaluation Boards and Development Platforms<a class="headerlink" href="#evaluation-boards-and-development-platforms" title="Link to this heading"></a></h2>
 <section id="pmod-peripheral-module">
 <h3>Pmod (Peripheral Module)<a class="headerlink" href="#pmod-peripheral-module" title="Link to this heading"></a></h3>
-<p>This is a de-facto standard developed by Digilent. Pmods communicate with host boards using 6, 8, or 12-pin, 100-mil pitch connectors that can carry multiple digital control signals, taking advantage of standard serial protocols such as SPI and I²C. The official specification is available from Digilent at <a class="reference external" href="https://digilent.com/reference/pmod/start">https://digilent.com/reference/pmod/start</a>. Pmod evaluation boards on this page are supported on either a ZedBoard or Cora Z7 FPGA carrier board. Pre-built example projects are provided that implement an IIO server, compatible with ACE, Scopy, and any language supported by the libiio (C, C#, Python, MATLAB, etc.)</p>
-<p>The Pmod board hardware documentation is at <a class="reference external" href="https://wiki.analog.com/resources/eval/user-guides/circuits-from-the-lab/pulsar-adc-pmods">https://wiki.analog.com/resources/eval/user-guides/circuits-from-the-lab/pulsar-adc-pmods</a></p>
+<p>This is a de-facto standard developed by Digilent. Pmods communicate with host boards using 6, 8, or 12-pin, 100-mil pitch connectors that can carry multiple digital control signals, taking advantage of standard serial protocols such as SPI and I²C. The official specification is available from Digilent at <a class="icon link reference external" href="https://digilent.com/reference/pmod/start" target="_blank">https://digilent.com/reference/pmod/start</a>. Pmod evaluation boards on this page are supported on either a ZedBoard or Cora Z7 FPGA carrier board. Pre-built example projects are provided that implement an IIO server, compatible with ACE, Scopy, and any language supported by the libiio (C, C#, Python, MATLAB, etc.)</p>
+<p>The Pmod board hardware documentation is at <a class="icon link reference external" href="https://wiki.analog.com/resources/eval/user-guides/circuits-from-the-lab/pulsar-adc-pmods" target="_blank">https://wiki.analog.com/resources/eval/user-guides/circuits-from-the-lab/pulsar-adc-pmods</a></p>
 </section>
 <section id="fmc-fpga-mezzanine-card">
 <h3>FMC (FPGA Mezzanine Card)<a class="headerlink" href="#fmc-fpga-mezzanine-card" title="Link to this heading"></a></h3>
@@ -457,22 +475,22 @@ Content on this topic
 </section>
 <section id="hdl-ip-core">
 <h3>HDL IP Core<a class="headerlink" href="#hdl-ip-core" title="Link to this heading"></a></h3>
-<p>The HDL for these devices is based on the SPI Engine IP core, user guide here: <a class="reference external" href="https://analogdevicesinc.github.io/hdl/library/spi_engine/index.html">SPI Engine</a>, and PWM IP core, which generates the sample rate from the master clock.</p>
-<p>The example project for these devices is described at <a class="reference external" href="https://analogdevicesinc.github.io/hdl/projects/pulsar_adc/index.html">PULSAR-ADC HDL project</a>.</p>
+<p>The HDL for these devices is based on the SPI Engine IP core, user guide here: <a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/library/spi_engine/index.html" target="_blank">SPI Engine</a>, and PWM IP core, which generates the sample rate from the master clock.</p>
+<p>The example project for these devices is described at <a class="icon link reference external" href="https://analogdevicesinc.github.io/hdl/projects/pulsar_adc/index.html" target="_blank">PULSAR-ADC HDL project</a>.</p>
 <p>The example project is parameterized for each device, and building the project generates a set of boot files that can be run on the target platform.</p>
 </section>
 <section id="linux-device-drivers">
 <h3>Linux Device Drivers<a class="headerlink" href="#linux-device-drivers" title="Link to this heading"></a></h3>
 <p>The Linux driver for these devices is presently in development, with the goal of having a single, unified driver covering all devices and the associated HDL code.</p>
-<p>The AD400x driver is in upstream review, documented at <a class="reference external" href="https://wiki.analog.com/resources/tools-software/linux-drivers/iio-adc/ad400x">https://wiki.analog.com/resources/tools-software/linux-drivers/iio-adc/ad400x</a></p>
-<p>The previous mainlined PulSAR family driver is documented at <a class="reference external" href="https://wiki.analog.com/resources/tools-software/linux-drivers/iio-adc/ad7476a">https://wiki.analog.com/resources/tools-software/linux-drivers/iio-adc/ad7476a</a></p>
+<p>The AD400x driver is in upstream review, documented at <a class="icon link reference external" href="https://wiki.analog.com/resources/tools-software/linux-drivers/iio-adc/ad400x" target="_blank">https://wiki.analog.com/resources/tools-software/linux-drivers/iio-adc/ad400x</a></p>
+<p>The previous mainlined PulSAR family driver is documented at <a class="icon link reference external" href="https://wiki.analog.com/resources/tools-software/linux-drivers/iio-adc/ad7476a" target="_blank">https://wiki.analog.com/resources/tools-software/linux-drivers/iio-adc/ad7476a</a></p>
 <p>The updated device driver is compatible with the HDL example project, and provides a convenient programming interface for controlling the ADC and capturing data.</p>
 </section>
 <section id="no-os-bare-metal-device-drivers-and-examples">
 <h3>no-OS (Bare Metal) Device Drivers and Examples<a class="headerlink" href="#no-os-bare-metal-device-drivers-and-examples" title="Link to this heading"></a></h3>
 <p>The no-OS driver is intended for systems not using an operating system. It is generally easier to start with a Linux-based system for initial development, then migrate to no-OS.</p>
-<p><a class="reference external" href="https://github.com/analogdevicesinc/no-OS/tree/main/projects/pulsar-adc">https://github.com/analogdevicesinc/no-OS/tree/main/projects/pulsar-adc</a></p>
-<p><a class="reference external" href="https://github.com/analogdevicesinc/no-OS/tree/main/drivers/adc/pulsar_adc">https://github.com/analogdevicesinc/no-OS/tree/main/drivers/adc/pulsar_adc</a></p>
+<p><a class="icon link reference external" href="https://github.com/analogdevicesinc/no-OS/tree/main/projects/pulsar-adc" target="_blank">https://github.com/analogdevicesinc/no-OS/tree/main/projects/pulsar-adc</a></p>
+<p><a class="icon link reference external" href="https://github.com/analogdevicesinc/no-OS/tree/main/drivers/adc/pulsar_adc" target="_blank">https://github.com/analogdevicesinc/no-OS/tree/main/drivers/adc/pulsar_adc</a></p>
 </section>
 <section id="product-specific-software">
 <h3>Product-Specific Software<a class="headerlink" href="#product-specific-software" title="Link to this heading"></a></h3>
@@ -503,29 +521,18 @@ Content on this topic
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><a class="reference external" href="https://www.analog.com/ad7942">AD7942: 14-Bit 250 kSPS PulSAR Pseudo Differential ADC</a></p></td>
+<tr class="row-even"><td><p><a class="icon link reference external" href="https://www.analog.com/ad7942" target="_blank">AD7942: 14-Bit 250 kSPS PulSAR Pseudo Differential ADC</a></p></td>
 <td></td>
 <td></td>
 <td></td>
-<td><p><a class="reference external" href="https://www.analog.com/eval-ad7942-pmdz">eval-ad7942-pmdz</a></p></td>
+<td><p><a class="icon link reference external" href="https://www.analog.com/eval-ad7942-pmdz" target="_blank">eval-ad7942-pmdz</a></p></td>
 <td></td>
 <td></td>
-<td><p><a class="reference external" href="https://www.analog.com/eval-ad7942">eval-ad7942</a></p></td>
+<td><p><a class="icon link reference external" href="https://www.analog.com/eval-ad7942" target="_blank">eval-ad7942</a></p></td>
 <td><p>SDP-B, H1</p></td>
-<td><p><a class="reference external" href="https://www.analog.com/media/en/evaluation-boards-kits/evaluation-software/10_lead_software_v1.7.zip">10_lead_software_v1.7.zip</a></p></td>
+<td><p><a class="icon link reference external" href="https://www.analog.com/media/en/evaluation-boards-kits/evaluation-software/10_lead_software_v1.7.zip" target="_blank">10_lead_software_v1.7.zip</a></p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://www.analog.com/ad7946">AD7946: 14-Bit 500 kSPS PulSAR ADC</a></p></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-<td></td>
-</tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://www.analog.com/ad7988-1">AD7988-1: 16-Bit Lower Power PulSAR ADCs</a></p></td>
+<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.analog.com/ad7946" target="_blank">AD7946: 14-Bit 500 kSPS PulSAR ADC</a></p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -536,7 +543,7 @@ Content on this topic
 <td></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://www.analog.com/ad7685">AD7685: 16-Bit 250 kSPS PulSAR ADC</a></p></td>
+<tr class="row-even"><td><p><a class="icon link reference external" href="https://www.analog.com/ad7988-1" target="_blank">AD7988-1: 16-Bit Lower Power PulSAR ADCs</a></p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -547,7 +554,7 @@ Content on this topic
 <td></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://www.analog.com/ad7687">AD7687: 16-Bit 1.5 LSB INL 250 kSPS PulSAR Differential ADC</a></p></td>
+<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.analog.com/ad7685" target="_blank">AD7685: 16-Bit 250 kSPS PulSAR ADC</a></p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -558,7 +565,7 @@ Content on this topic
 <td></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://www.analog.com/ad7691">AD7691: 18-Bit 1.5 LSB INL 250 kSPS PulSAR Differential ADC</a></p></td>
+<tr class="row-even"><td><p><a class="icon link reference external" href="https://www.analog.com/ad7687" target="_blank">AD7687: 16-Bit 1.5 LSB INL 250 kSPS PulSAR Differential ADC</a></p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -569,7 +576,7 @@ Content on this topic
 <td></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://www.analog.com/ad7686">AD7686: 500 kSPS 16-BIT PulSAR A/D Converter</a></p></td>
+<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.analog.com/ad7691" target="_blank">AD7691: 18-Bit 1.5 LSB INL 250 kSPS PulSAR Differential ADC</a></p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -580,7 +587,7 @@ Content on this topic
 <td></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://www.analog.com/ad7688">AD7688: 500 kSPS 16- BIT Differential PulSAR A/D Converter in µSOIC/QFN</a></p></td>
+<tr class="row-even"><td><p><a class="icon link reference external" href="https://www.analog.com/ad7686" target="_blank">AD7686: 500 kSPS 16-BIT PulSAR A/D Converter</a></p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -591,7 +598,7 @@ Content on this topic
 <td></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://www.analog.com/ad7693">AD7693: 16-Bit ±0.5 LSB 500 kSPS PulSAR Differential A/D Converter</a></p></td>
+<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.analog.com/ad7688" target="_blank">AD7688: 500 kSPS 16- BIT Differential PulSAR A/D Converter in µSOIC/QFN</a></p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -602,7 +609,7 @@ Content on this topic
 <td></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://www.analog.com/ad7988-5">AD7988-5: 16-Bit Lower Power PulSAR ADCs</a></p></td>
+<tr class="row-even"><td><p><a class="icon link reference external" href="https://www.analog.com/ad7693" target="_blank">AD7693: 16-Bit ±0.5 LSB 500 kSPS PulSAR Differential A/D Converter</a></p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -613,18 +620,7 @@ Content on this topic
 <td></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://www.analog.com/ad7980">AD7980: 16-Bit 1 MSPS PulSAR ADC</a></p></td>
-<td></td>
-<td></td>
-<td></td>
-<td><p><a class="reference external" href="https://www.analog.com/eval-ad7980-pmdz">eval-ad7980-pmdz</a></p></td>
-<td></td>
-<td></td>
-<td><p><a class="reference external" href="https://www.analog.com/eval-ad7980">eval-ad7980</a></p></td>
-<td></td>
-<td><p><a class="reference external" href="https://www.analog.com/media/en/evaluation-boards-kits/evaluation-software/10_lead_software_v1.7.zip">10_lead_software_v1.7.zip</a></p></td>
-</tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://www.analog.com/ad7983">AD7983: 16-Bit 1.33 MSPS PulSAR ADC</a></p></td>
+<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.analog.com/ad7988-5" target="_blank">AD7988-5: 16-Bit Lower Power PulSAR ADCs</a></p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -635,7 +631,18 @@ Content on this topic
 <td></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://www.analog.com/ad7690">AD7690: 18-Bit 1.5 LSB INL 400 kSPS PulSAR Differential ADC</a></p></td>
+<tr class="row-even"><td><p><a class="icon link reference external" href="https://www.analog.com/ad7980" target="_blank">AD7980: 16-Bit 1 MSPS PulSAR ADC</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td><p><a class="icon link reference external" href="https://www.analog.com/eval-ad7980-pmdz" target="_blank">eval-ad7980-pmdz</a></p></td>
+<td></td>
+<td></td>
+<td><p><a class="icon link reference external" href="https://www.analog.com/eval-ad7980" target="_blank">eval-ad7980</a></p></td>
+<td></td>
+<td><p><a class="icon link reference external" href="https://www.analog.com/media/en/evaluation-boards-kits/evaluation-software/10_lead_software_v1.7.zip" target="_blank">10_lead_software_v1.7.zip</a></p></td>
+</tr>
+<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.analog.com/ad7983" target="_blank">AD7983: 16-Bit 1.33 MSPS PulSAR ADC</a></p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -646,7 +653,7 @@ Content on this topic
 <td></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://www.analog.com/ad7689">AD7689: 16-Bit 8-Channel 250 kSPS PulSAR ADC</a></p></td>
+<tr class="row-even"><td><p><a class="icon link reference external" href="https://www.analog.com/ad7690" target="_blank">AD7690: 18-Bit 1.5 LSB INL 400 kSPS PulSAR Differential ADC</a></p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -657,8 +664,19 @@ Content on this topic
 <td></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://www.analog.com/ad4000">AD4000: 16-Bit 2 MSPS/1 MSPS/500 kSPS Precision Pseudo Differential</a></p></td>
-<td><p><a class="reference external" href="https://www.analog.com/eval-ad400x-fmcz">eval-ad400x-fmcz (00)</a></p></td>
+<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.analog.com/ad7689" target="_blank">AD7689: 16-Bit 8-Channel 250 kSPS PulSAR ADC</a></p></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+<td></td>
+</tr>
+<tr class="row-even"><td><p><a class="icon link reference external" href="https://www.analog.com/ad4000" target="_blank">AD4000: 16-Bit 2 MSPS/1 MSPS/500 kSPS Precision Pseudo Differential</a></p></td>
+<td><p><a class="icon link reference external" href="https://www.analog.com/eval-ad400x-fmcz" target="_blank">eval-ad400x-fmcz (00)</a></p></td>
 <td></td>
 <td><p>X</p></td>
 <td></td>
@@ -668,8 +686,8 @@ Content on this topic
 <td></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://www.analog.com/ad4001">AD4001: 16-Bit 2 MSPS/1 MSPS Precision Differential</a></p></td>
-<td><p><a class="reference external" href="https://www.analog.com/eval-ad400x-fmcz">eval-ad400x-fmcz (01)</a></p></td>
+<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.analog.com/ad4001" target="_blank">AD4001: 16-Bit 2 MSPS/1 MSPS Precision Differential</a></p></td>
+<td><p><a class="icon link reference external" href="https://www.analog.com/eval-ad400x-fmcz" target="_blank">eval-ad400x-fmcz (01)</a></p></td>
 <td></td>
 <td><p>X</p></td>
 <td></td>
@@ -679,8 +697,8 @@ Content on this topic
 <td></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://www.analog.com/ad4002">AD4002: 18-Bit 2 MSPS/1 MSPS/500 kSPS Precision Pseudo Differential</a></p></td>
-<td><p><a class="reference external" href="https://www.analog.com/eval-ad400x-fmcz">eval-ad400x-fmcz (02)</a></p></td>
+<tr class="row-even"><td><p><a class="icon link reference external" href="https://www.analog.com/ad4002" target="_blank">AD4002: 18-Bit 2 MSPS/1 MSPS/500 kSPS Precision Pseudo Differential</a></p></td>
+<td><p><a class="icon link reference external" href="https://www.analog.com/eval-ad400x-fmcz" target="_blank">eval-ad400x-fmcz (02)</a></p></td>
 <td></td>
 <td><p>X</p></td>
 <td></td>
@@ -690,8 +708,8 @@ Content on this topic
 <td></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://www.analog.com/ad4003">AD4003: 18-Bit 2 MSPS/1 MSPS/500 kSPS Easy Drive Differential</a></p></td>
-<td><p><a class="reference external" href="https://www.analog.com/eval-ad400x-fmcz">eval-ad400x-fmcz (03)</a></p></td>
+<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.analog.com/ad4003" target="_blank">AD4003: 18-Bit 2 MSPS/1 MSPS/500 kSPS Easy Drive Differential</a></p></td>
+<td><p><a class="icon link reference external" href="https://www.analog.com/eval-ad400x-fmcz" target="_blank">eval-ad400x-fmcz (03)</a></p></td>
 <td></td>
 <td><p>X</p></td>
 <td></td>
@@ -701,7 +719,7 @@ Content on this topic
 <td></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://www.analog.com/ad4004">AD4004: 16-Bit 2 MSPS/1 MSPS/500 kSPS Precision Pseudo Differential</a></p></td>
+<tr class="row-even"><td><p><a class="icon link reference external" href="https://www.analog.com/ad4004" target="_blank">AD4004: 16-Bit 2 MSPS/1 MSPS/500 kSPS Precision Pseudo Differential</a></p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -712,7 +730,7 @@ Content on this topic
 <td></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://www.analog.com/ad4005">AD4005: 16-Bit 2 MSPS/1 MSPS Precision Differential</a></p></td>
+<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.analog.com/ad4005" target="_blank">AD4005: 16-Bit 2 MSPS/1 MSPS Precision Differential</a></p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -723,7 +741,7 @@ Content on this topic
 <td></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://www.analog.com/ad4006">AD4006: 18-Bit 2 MSPS/1 MSPS/500 kSPS Precision Pseudo Differential</a></p></td>
+<tr class="row-even"><td><p><a class="icon link reference external" href="https://www.analog.com/ad4006" target="_blank">AD4006: 18-Bit 2 MSPS/1 MSPS/500 kSPS Precision Pseudo Differential</a></p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -734,7 +752,7 @@ Content on this topic
 <td></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://www.analog.com/ad4007">AD4007: 18-Bit 2 MSPS/1 MSPS/500 kSPS Easy Drive Differential</a></p></td>
+<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.analog.com/ad4007" target="_blank">AD4007: 18-Bit 2 MSPS/1 MSPS/500 kSPS Easy Drive Differential</a></p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -745,7 +763,7 @@ Content on this topic
 <td></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://www.analog.com/ad4008">AD4008: 16-Bit 2 MSPS/1 MSPS/500 kSPS Precision Pseudo Differential</a></p></td>
+<tr class="row-even"><td><p><a class="icon link reference external" href="https://www.analog.com/ad4008" target="_blank">AD4008: 16-Bit 2 MSPS/1 MSPS/500 kSPS Precision Pseudo Differential</a></p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -756,7 +774,7 @@ Content on this topic
 <td></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://www.analog.com/ad4010">AD4010: 18-Bit 2 MSPS/1 MSPS/500 kSPS Precision Pseudo Differential</a></p></td>
+<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.analog.com/ad4010" target="_blank">AD4010: 18-Bit 2 MSPS/1 MSPS/500 kSPS Precision Pseudo Differential</a></p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -767,7 +785,7 @@ Content on this topic
 <td></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://www.analog.com/ad4011">AD4011: 18-Bit 2 MSPS/1 MSPS/500 kSPS Easy Drive Differential</a></p></td>
+<tr class="row-even"><td><p><a class="icon link reference external" href="https://www.analog.com/ad4011" target="_blank">AD4011: 18-Bit 2 MSPS/1 MSPS/500 kSPS Easy Drive Differential</a></p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -778,7 +796,7 @@ Content on this topic
 <td></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://www.analog.com/adaq4003">ADAQ4003: 18-Bit 2 MSPS Precision DAQ Differential</a></p></td>
+<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.analog.com/adaq4003" target="_blank">ADAQ4003: 18-Bit 2 MSPS Precision DAQ Differential</a></p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -789,7 +807,7 @@ Content on this topic
 <td></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://www.analog.com/ad4020">AD4020: 20-Bit 1.8 MSPS/1 MSPS/500 kSPS Easy Drive Differential</a></p></td>
+<tr class="row-even"><td><p><a class="icon link reference external" href="https://www.analog.com/ad4020" target="_blank">AD4020: 20-Bit 1.8 MSPS/1 MSPS/500 kSPS Easy Drive Differential</a></p></td>
 <td></td>
 <td></td>
 <td></td>
@@ -817,8 +835,6 @@ Content on this topic
         </div>
       </div>
   </div>
-
-  <div id="vertical-border"></div>
 
   <label id="cancel-area-show-toc" for="input-show-toc"></label>
   <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>

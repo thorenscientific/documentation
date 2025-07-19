@@ -4,14 +4,12 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="The Quick Start Guides provide a simple step by step instruction on how to do an initial system setup for the EVAL-ADRV9026/ADRV9029 boards on various FPGA development boards. They will discuss how to program the bitstream, run a no-OS program or boot a Linux distribution." name="description" />
 
     <title>Quickstart &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../../../_static/pygments.css?v=8e8a900e" />
-    <link rel="stylesheet" type="text/css" href="../../../../../_static/app.min.css?v=0ea85bdb" />
-    <script src="../../../../../_static/documentation_options.js?v=5929fcd5"></script>
-    <script src="../../../../../_static/doctools.js?v=9bcbadda"></script>
-    <script src="../../../../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script defer="" src="../../../../../_static/app.umd.js?v=25136f1d"></script>
+    <link rel="stylesheet" type="text/css" href="../../../../../_static/app.min.css?v=33d8ff8e" />
+    <script async="async" src="../../../../../_static/app.umd.js?v=cd58f2cb"></script>
     <link rel="icon" href="../../../../../_static/icon.svg"/>
     <link rel="index" title="Index" href="../../../../../genindex.html" />
     <link rel="search" title="Search" href="../../../../../search.html" />
@@ -21,6 +19,9 @@
   
   <meta name="repository" content="documentation">
   <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
   
 
 
@@ -48,8 +49,7 @@
   <div class="search-area">
     <form action="" method="get">
       <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
-      <button value="search" class="icon"></button>
-      <span id="search-progress"></span>
+      <button class="icon"></button>
     </form>
   </div>
   
@@ -60,7 +60,7 @@
     </div>
     <div id="right">
       <span>
-        <a id="logo-org" href="https://analog.com"></a>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
         <div class="vertical-divider"></div>
         <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
         <a id="logo" href="../../../../../index.html">
@@ -130,6 +130,7 @@ Content on this topic
 <li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/drivers/iio-adc/index.html">IIO ADC</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../linux/drivers/iio-adc/ad4052/index.html">AD4052</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../linux/drivers/iio-adc/ad9084/index.html">AD9084/AD9088</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-2" id="toctree-collapse-1-2"/><div class="collapse"><a class="reference internal" href="../../../../../linux/drivers/iio-transceiver/index.html">IIO Transceivers</a><label for="toctree-collapse-1-2"><div class="icon"></div></label></div><ul>
@@ -147,7 +148,10 @@ Content on this topic
 </ul>
 </li>
 <li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/petalinux.html">Building with Petalinux</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1-1" id="toctree-collapse-2-1-1"/><div class="collapse"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-2-1-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
@@ -195,27 +199,34 @@ Content on this topic
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Evaluation Boards</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8" checked=""/><div class="collapse"><a class="reference internal" href="../../../index.html">User guides</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul class="current">
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8-1" id="toctree-collapse-8-1"/><div class="collapse"><a class="reference internal" href="../../../adc/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-8-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9" checked=""/><div class="collapse"><a class="reference internal" href="../../../index.html">User guides</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9-1" id="toctree-collapse-9-1"/><div class="collapse"><a class="reference internal" href="../../../adc/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-9-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../adc/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../../adc/ad9084-ebz/index.html">EVAL-AD9084-EBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../mem/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8-2" id="toctree-collapse-8-2"/><div class="collapse"><a class="reference internal" href="../../adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-8-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9-2" id="toctree-collapse-9-2"/><div class="collapse"><a class="reference internal" href="../../adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-9-2"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../adrv9009/prerequisites.html">Prerequisites</a></li>
-<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8-2-1" id="toctree-collapse-8-2-1"/><div class="collapse"><a class="reference internal" href="../../adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-8-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9-2-1" id="toctree-collapse-9-2-1"/><div class="collapse"><a class="reference internal" href="../../adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-9-2-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8-3" id="toctree-collapse-8-3" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">ADRV9026 &amp; ADRV9029</a><label for="toctree-collapse-8-3"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9-3" id="toctree-collapse-9-3" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">ADRV9026 &amp; ADRV9029</a><label for="toctree-collapse-9-3"><div class="icon"></div></label></div><ul class="current">
 <li class="toctree-l3"><a class="reference internal" href="../prerequisites.html">Prerequisites</a></li>
-<li class="toctree-l3 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8-3-1" id="toctree-collapse-8-3-1" checked=""/><div class="collapse"><a class="current reference internal" href="#">Quickstart</a><label for="toctree-collapse-8-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9-3-1" id="toctree-collapse-9-3-1" checked=""/><div class="collapse"><a class="current reference internal" href="#">Quickstart</a><label for="toctree-collapse-9-3-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l4"><a class="reference internal" href="zynqmp.html">ZCU102</a></li>
 <li class="toctree-l4"><a class="reference internal" href="versal.html">VCK190</a></li>
 </ul>
@@ -227,7 +238,7 @@ Content on this topic
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Products &amp; Tools</span></p>
 <ul>
-<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/devs/index.html">For Developers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/users/index.html">For End Users</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/help_support.html">Support</a></li>
@@ -235,7 +246,7 @@ Content on this topic
 <li class="toctree-l2"><a class="reference internal" href="../../../../../tools/m2k/matlab.html">Using with MATLAB</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
@@ -244,18 +255,18 @@ Content on this topic
 <li class="toctree-l2"><a class="reference internal" href="../../../../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-1" id="toctree-collapse-12-1"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-12-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-2" id="toctree-collapse-12-2"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-12-2"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-3" id="toctree-collapse-12-3"/><div class="collapse"><a class="reference internal" href="../../../../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-12-3"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../tools/pluto/users/antennas.html">Antennas</a></li>
 </ul>
 </li>
@@ -269,9 +280,7 @@ Content on this topic
 <p class="caption" role="heading"><span class="caption-text">Apps &amp; Solutions</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../../../solutions/application-software/index.html">Application Software</a></li>
-<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/demos/index.html">Demos!</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul class="simple">
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../../../solutions/demos/index.html">Demos!</a></li>
 <li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/product-solution-centers/index.html">Product Solution Centers</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/product-solution-centers/adaq2387/index.html">ADAQ2387x and LTC2387 family SAR ADC Developer Resources</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/product-solution-centers/adc_pulsar_single/index.html">Single-Channel, SPI-interface SAR ADC Developer Resources</a></li>
@@ -313,10 +322,19 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-7" id="toctree-collapse-14-7"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-14-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-7" id="toctree-collapse-14-7"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-14-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-8" id="toctree-collapse-14-8"/><div class="collapse"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-14-8"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
 </ul>
@@ -396,7 +414,7 @@ Content on this topic
   <section id="quickstart">
 <span id="adrv9026-quickstart"></span><h1>Quickstart<a class="headerlink" href="#quickstart" title="Link to this heading"></a></h1>
 <p>The Quick Start Guides provide a simple step by step instruction on how to do
-an initial system setup for the <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADRV9026">EVAL-ADRV9026/ADRV9029</a>
+an initial system setup for the <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADRV9026" target="_blank">EVAL-ADRV9026/ADRV9029</a>
 boards on various FPGA development boards. They will discuss how to program the
 bitstream, run a no-OS program or boot a Linux distribution.</p>
 <div class="toctree-wrapper compound">
@@ -428,7 +446,7 @@ bitstream, run a no-OS program or boot a Linux distribution.</p>
 </div>
 <section id="supported-carriers">
 <span id="adrv9026-carriers"></span><h2>Supported carriers<a class="headerlink" href="#supported-carriers" title="Link to this heading"></a></h2>
-<p>The <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADRV9026">EVAL-ADRV9026/ADRV9029</a>, is, by definition a “FPGA
+<p>The <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADRV9026" target="_blank">EVAL-ADRV9026/ADRV9029</a>, is, by definition a “FPGA
 mezzanine card” (FMC), that means it needs a carrier to plug into.
 The carriers we support are:</p>
 <div class="table-wrapper docutils container">
@@ -440,35 +458,35 @@ The carriers we support are:</p>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><a class="reference external" href="https://www.xilinx.com/ZCU102">ZCU102</a></p></td>
+<tr class="row-even"><td><p><a class="icon link reference external" href="https://www.xilinx.com/ZCU102" target="_blank">ZCU102</a></p></td>
 <td><p>Yes</p></td>
 <td><p>Yes</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://www.xilinx.com/KC705">KC705</a></p></td>
+<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.xilinx.com/KC705" target="_blank">KC705</a></p></td>
 <td></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://www.xilinx.com/VC707">VC707</a></p></td>
+<tr class="row-even"><td><p><a class="icon link reference external" href="https://www.xilinx.com/VC707" target="_blank">VC707</a></p></td>
 <td></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://www.xilinx.com/KCU105">KCU105</a></p></td>
+<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.xilinx.com/KCU105" target="_blank">KCU105</a></p></td>
 <td></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://www.xilinx.com/ZC706">ZC706</a></p></td>
+<tr class="row-even"><td><p><a class="icon link reference external" href="https://www.xilinx.com/ZC706" target="_blank">ZC706</a></p></td>
 <td></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://www.xilinx.com/VCU118">VCU118</a></p></td>
+<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.xilinx.com/VCU118" target="_blank">VCU118</a></p></td>
 <td><p>Yes</p></td>
 <td><p>Yes</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://www.xilinx.com/VCK190">VCK190</a></p></td>
+<tr class="row-even"><td><p><a class="icon link reference external" href="https://www.xilinx.com/VCK190" target="_blank">VCK190</a></p></td>
 <td><p>Yes</p></td>
 <td><p>Yes</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://www.intel.com/content/www/us/en/products/details/fpga/arria/10.html">Arria 10 SoC</a></p></td>
+<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.intel.com/content/www/us/en/products/details/fpga/arria/10.html" target="_blank">Arria 10 SoC</a></p></td>
 <td><p>Yes</p></td>
 <td><p>Yes</p></td>
 </tr>
@@ -489,42 +507,42 @@ The carriers we support are:</p>
 </tr>
 </thead>
 <tbody>
-<tr class="row-even"><td><p><a class="reference external" href="https://www.xilinx.com/ZCU102">ZCU102</a></p></td>
+<tr class="row-even"><td><p><a class="icon link reference external" href="https://www.xilinx.com/ZCU102" target="_blank">ZCU102</a></p></td>
 <td><p>Yes</p></td>
 <td><p>Yes</p></td>
 <td><p>Yes</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://www.xilinx.com/KC705">KC705</a></p></td>
+<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.xilinx.com/KC705" target="_blank">KC705</a></p></td>
 <td></td>
 <td></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://www.xilinx.com/VC707">VC707</a></p></td>
+<tr class="row-even"><td><p><a class="icon link reference external" href="https://www.xilinx.com/VC707" target="_blank">VC707</a></p></td>
 <td></td>
 <td></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://www.xilinx.com/KCU105">KCU105</a></p></td>
+<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.xilinx.com/KCU105" target="_blank">KCU105</a></p></td>
 <td></td>
 <td></td>
 <td></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://www.xilinx.com/ZC706">ZC706</a></p></td>
+<tr class="row-even"><td><p><a class="icon link reference external" href="https://www.xilinx.com/ZC706" target="_blank">ZC706</a></p></td>
 <td></td>
 <td></td>
 <td></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://www.xilinx.com/VCU118">VCU118</a></p></td>
+<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.xilinx.com/VCU118" target="_blank">VCU118</a></p></td>
 <td><p>Yes</p></td>
 <td><p>Yes</p></td>
 <td><p>Yes</p></td>
 </tr>
-<tr class="row-even"><td><p><a class="reference external" href="https://www.xilinx.com/VCK190">VCK190</a></p></td>
+<tr class="row-even"><td><p><a class="icon link reference external" href="https://www.xilinx.com/VCK190" target="_blank">VCK190</a></p></td>
 <td><p>Yes</p></td>
 <td><p>Yes</p></td>
 <td><p>Yes</p></td>
 </tr>
-<tr class="row-odd"><td><p><a class="reference external" href="https://www.intel.com/content/www/us/en/products/details/fpga/arria/10.html">Arria 10 SoC</a></p></td>
+<tr class="row-odd"><td><p><a class="icon link reference external" href="https://www.intel.com/content/www/us/en/products/details/fpga/arria/10.html" target="_blank">Arria 10 SoC</a></p></td>
 <td><p>Yes</p></td>
 <td><p>Yes</p></td>
 <td></td>
@@ -535,7 +553,7 @@ The carriers we support are:</p>
 </section>
 <section id="hardware-setup">
 <h2>Hardware Setup<a class="headerlink" href="#hardware-setup" title="Link to this heading"></a></h2>
-<p>In most carriers, the <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADRV9026">EVAL-ADRV9026/ADRV9029</a> boards
+<p>In most carriers, the <a class="icon adi reference external" href="https://www.analog.com/EVAL-ADRV9026" target="_blank">EVAL-ADRV9026/ADRV9029</a> boards
 connects to the HPC1 connector (unless otherwise noted). The carrier setup
 requires power, UART (115200), ethernet (Linux), HDMI (if available) and/or
 JTAG (no-OS) connections. A few typical setups are shown below.</p>
@@ -552,7 +570,7 @@ JTAG (no-OS) connections. A few typical setups are shown below.</p>
 </section>
 <section id="unboxing-guide">
 <h2>Unboxing guide<a class="headerlink" href="#unboxing-guide" title="Link to this heading"></a></h2>
-<p><a class="icon ez reference external" href="https://ez.analog.com/cfs-file/__key/communityserver-discussions-components-files/703/AD9371-and-ADRV9026-setup-with-ZCU102-or-ZC706-April2019.pdf">Detailed unboxing guide</a></p>
+<p><a class="icon ez reference external" href="https://ez.analog.com/cfs-file/__key/communityserver-discussions-components-files/703/AD9371-and-ADRV9026-setup-with-ZCU102-or-ZC706-April2019.pdf" target="_blank">Detailed unboxing guide</a></p>
 </section>
 </section>
 
@@ -567,8 +585,6 @@ JTAG (no-OS) connections. A few typical setups are shown below.</p>
         </div>
       </div>
   </div>
-
-  <div id="vertical-border"></div>
 
   <label id="cancel-area-show-toc" for="input-show-toc"></label>
   <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>

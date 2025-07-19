@@ -4,14 +4,12 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="This is currently the main list of all the labs we have. The goal here is to use this list and either include the sub-table for a topic-specific page, or copy individual labs over the labs you desire for the course you need. Please remember to ADD any new labs you may have created to keep this list as current as possible" name="description" />
 
     <title>Active Learning: Student-oriented Lab Exercises &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../_static/pygments.css?v=8e8a900e" />
-    <link rel="stylesheet" type="text/css" href="../../_static/app.min.css?v=0ea85bdb" />
-    <script src="../../_static/documentation_options.js?v=5929fcd5"></script>
-    <script src="../../_static/doctools.js?v=9bcbadda"></script>
-    <script src="../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script defer="" src="../../_static/app.umd.js?v=25136f1d"></script>
+    <link rel="stylesheet" type="text/css" href="../../_static/app.min.css?v=33d8ff8e" />
+    <script async="async" src="../../_static/app.umd.js?v=cd58f2cb"></script>
     <link rel="icon" href="../../_static/icon.svg"/>
     <link rel="index" title="Index" href="../../genindex.html" />
     <link rel="search" title="Search" href="../../search.html" />
@@ -21,6 +19,9 @@
   
   <meta name="repository" content="documentation">
   <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
   
 
 
@@ -48,8 +49,7 @@
   <div class="search-area">
     <form action="" method="get">
       <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
-      <button value="search" class="icon"></button>
-      <span id="search-progress"></span>
+      <button class="icon"></button>
     </form>
   </div>
   
@@ -60,7 +60,7 @@
     </div>
     <div id="right">
       <span>
-        <a id="logo-org" href="https://analog.com"></a>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
         <div class="vertical-divider"></div>
         <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
         <a id="logo" href="../../index.html">
@@ -135,6 +135,7 @@ Content on this topic
 <li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1"/><div class="collapse"><a class="reference internal" href="../../linux/drivers/iio-adc/index.html">IIO ADC</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../linux/drivers/iio-adc/ad4052/index.html">AD4052</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../linux/drivers/iio-adc/ad9084/index.html">AD9084/AD9088</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-2" id="toctree-collapse-1-2"/><div class="collapse"><a class="reference internal" href="../../linux/drivers/iio-transceiver/index.html">IIO Transceivers</a><label for="toctree-collapse-1-2"><div class="icon"></div></label></div><ul>
@@ -152,7 +153,10 @@ Content on this topic
 </ul>
 </li>
 <li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../linux/kernel/petalinux.html">Building with Petalinux</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1-1" id="toctree-collapse-2-1-1"/><div class="collapse"><a class="reference internal" href="../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-2-1-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
@@ -200,27 +204,34 @@ Content on this topic
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Evaluation Boards</span></p>
 <ul>
-<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../eval/user-guide/index.html">User guides</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8-1" id="toctree-collapse-8-1"/><div class="collapse"><a class="reference internal" href="../../eval/user-guide/adc/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-8-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../eval/user-guide/index.html">User guides</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9-1" id="toctree-collapse-9-1"/><div class="collapse"><a class="reference internal" href="../../eval/user-guide/adc/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-9-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../eval/user-guide/adc/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../eval/user-guide/adc/ad9084-ebz/index.html">EVAL-AD9084-EBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../eval/user-guide/mem/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8-2" id="toctree-collapse-8-2"/><div class="collapse"><a class="reference internal" href="../../eval/user-guide/transceiver/adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-8-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9-2" id="toctree-collapse-9-2"/><div class="collapse"><a class="reference internal" href="../../eval/user-guide/transceiver/adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-9-2"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../eval/user-guide/transceiver/adrv9009/prerequisites.html">Prerequisites</a></li>
-<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8-2-1" id="toctree-collapse-8-2-1"/><div class="collapse"><a class="reference internal" href="../../eval/user-guide/transceiver/adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-8-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9-2-1" id="toctree-collapse-9-2-1"/><div class="collapse"><a class="reference internal" href="../../eval/user-guide/transceiver/adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-9-2-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../eval/user-guide/transceiver/adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../eval/user-guide/transceiver/adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8-3" id="toctree-collapse-8-3"/><div class="collapse"><a class="reference internal" href="../../eval/user-guide/transceiver/adrv9026/index.html">ADRV9026 &amp; ADRV9029</a><label for="toctree-collapse-8-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9-3" id="toctree-collapse-9-3"/><div class="collapse"><a class="reference internal" href="../../eval/user-guide/transceiver/adrv9026/index.html">ADRV9026 &amp; ADRV9029</a><label for="toctree-collapse-9-3"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../eval/user-guide/transceiver/adrv9026/prerequisites.html">Prerequisites</a></li>
-<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8-3-1" id="toctree-collapse-8-3-1"/><div class="collapse"><a class="reference internal" href="../../eval/user-guide/transceiver/adrv9026/quickstart/index.html">Quickstart</a><label for="toctree-collapse-8-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9-3-1" id="toctree-collapse-9-3-1"/><div class="collapse"><a class="reference internal" href="../../eval/user-guide/transceiver/adrv9026/quickstart/index.html">Quickstart</a><label for="toctree-collapse-9-3-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../eval/user-guide/transceiver/adrv9026/quickstart/zynqmp.html">ZCU102</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../eval/user-guide/transceiver/adrv9026/quickstart/versal.html">VCK190</a></li>
 </ul>
@@ -232,7 +243,7 @@ Content on this topic
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Products &amp; Tools</span></p>
 <ul>
-<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../tools/m2k/index.html">ADALM2000</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../tools/m2k/devs/index.html">For Developers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../tools/m2k/users/index.html">For End Users</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../tools/m2k/help_support.html">Support</a></li>
@@ -240,7 +251,7 @@ Content on this topic
 <li class="toctree-l2"><a class="reference internal" href="../../tools/m2k/matlab.html">Using with MATLAB</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../tools/pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../tools/pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../tools/pluto-m2k/drivers.html">Installing Drivers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../tools/pluto-m2k/firmware.html">Firmware Updates</a></li>
@@ -249,18 +260,18 @@ Content on this topic
 <li class="toctree-l2"><a class="reference internal" href="../../tools/pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../tools/pluto/index.html">ADALM-PLUTO</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-1" id="toctree-collapse-12-1"/><div class="collapse"><a class="reference internal" href="../../tools/pluto/devs/index.html">For Developers</a><label for="toctree-collapse-12-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../tools/pluto/devs/usb_otg.html">USB OTG</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2"/><div class="collapse"><a class="reference internal" href="../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-2" id="toctree-collapse-12-2"/><div class="collapse"><a class="reference internal" href="../../tools/pluto/hacking/index.html">For Hackers</a><label for="toctree-collapse-12-2"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../tools/pluto/hacking/hardware.html">ADALM-PLUTO Hardware</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../tools/pluto/hacking/listening_to_yourself.html">Self Reception</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../tools/pluto/hacking/power_amp.html">Controlling External Devices</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-3" id="toctree-collapse-12-3"/><div class="collapse"><a class="reference internal" href="../../tools/pluto/users/index.html">For End Users</a><label for="toctree-collapse-12-3"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../tools/pluto/users/antennas.html">Antennas</a></li>
 </ul>
 </li>
@@ -274,9 +285,7 @@ Content on this topic
 <p class="caption" role="heading"><span class="caption-text">Apps &amp; Solutions</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../solutions/application-software/index.html">Application Software</a></li>
-<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../solutions/demos/index.html">Demos!</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul class="simple">
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../../solutions/demos/index.html">Demos!</a></li>
 <li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../solutions/product-solution-centers/index.html">Product Solution Centers</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../solutions/product-solution-centers/adaq2387/index.html">ADAQ2387x and LTC2387 family SAR ADC Developer Resources</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../solutions/product-solution-centers/adc_pulsar_single/index.html">Single-Channel, SPI-interface SAR ADC Developer Resources</a></li>
@@ -318,10 +327,19 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-7" id="toctree-collapse-14-7"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-14-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-7" id="toctree-collapse-14-7"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-14-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-8" id="toctree-collapse-14-8"/><div class="collapse"><a class="reference internal" href="../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-14-8"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
 </ul>
@@ -452,94 +470,94 @@ this list as current as possible</p>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Amplifiers</p></td>
-<td><p><a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-1">Basic OP Amp Configurations</a> -
-<a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-olg">Op-Amp Open-Loop Gain</a> -
-<a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-gbw">Op-Amp Gain Bandwidth Product</a> -</p></td>
-<td><p><a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-1">Simple Op Amps</a> -
-<a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-opamp-comparator">Op Amp as Comparator</a> -
-<a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-1st">Op Amp Settling Time</a> -
-<a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-loop-gain">Measuring Loop Gain</a> -
-<a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-12sg">Differential pair triangle to sine converter</a> -</p></td>
+<td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-1" target="_blank">Basic OP Amp Configurations</a> -
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-olg" target="_blank">Op-Amp Open-Loop Gain</a> -
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-gbw" target="_blank">Op-Amp Gain Bandwidth Product</a> -</p></td>
+<td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-1" target="_blank">Simple Op Amps</a> -
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-opamp-comparator" target="_blank">Op Amp as Comparator</a> -
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-1st" target="_blank">Op Amp Settling Time</a> -
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-loop-gain" target="_blank">Measuring Loop Gain</a> -
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-12sg" target="_blank">Differential pair triangle to sine converter</a> -</p></td>
 </tr>
 <tr class="row-odd"><td><p>PN Junction</p></td>
-<td><p><a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-2pnj">The voltage dependent capacitance of the PN junction</a> -</p></td>
-<td><p><a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-pn-junction-cap">Voltage dependent capacitance of the PN junction</a> -</p></td>
+<td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-2pnj" target="_blank">The voltage dependent capacitance of the PN junction</a> -</p></td>
+<td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-pn-junction-cap" target="_blank">Voltage dependent capacitance of the PN junction</a> -</p></td>
 </tr>
 <tr class="row-even"><td><p>Diodes</p></td>
 <td><dl class="simple">
-<dt><a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-2">PN Diode I/V curves</a> -</dt><dd><p><a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-zener-diode">Zener Diode I/V curves</a> -
-<a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/circuits1/alm-cir-diode-rectifier">Diode Rectifiers</a> -
-<a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/circuits1/alm-cir-precision-rectifier">Precision Rectifiers, Absolute value circuits</a> -
-<a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-3">BJT as a diode</a> -
-<a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-3m">MOS as a diode</a> -</p>
+<dt><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-2" target="_blank">PN Diode I/V curves</a> -</dt><dd><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-zener-diode" target="_blank">Zener Diode I/V curves</a> -
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/circuits1/alm-cir-diode-rectifier" target="_blank">Diode Rectifiers</a> -
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/circuits1/alm-cir-precision-rectifier" target="_blank">Precision Rectifiers, Absolute value circuits</a> -
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-3" target="_blank">BJT as a diode</a> -
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-3m" target="_blank">MOS as a diode</a> -</p>
 </dd>
 </dl>
 </td>
 <td><dl class="simple">
-<dt><a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-2">PN Diode I/V curves</a> -</dt><dd><p><a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-26">Zener diode regulator</a> -
-<a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-3">BJT as a diode</a> -
-<a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-3m">MOS as a diode</a> -
-<a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-25">Differential Temperature Sensor using Diodes</a></p>
+<dt><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-2" target="_blank">PN Diode I/V curves</a> -</dt><dd><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-26" target="_blank">Zener diode regulator</a> -
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-3" target="_blank">BJT as a diode</a> -
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-3m" target="_blank">MOS as a diode</a> -
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-25" target="_blank">Differential Temperature Sensor using Diodes</a></p>
 </dd>
 </dl>
 </td>
 </tr>
 <tr class="row-odd"><td><p>Bipolar Junction Transistors (BJT)</p></td>
 <td><dl class="simple">
-<dt><a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-4">BJT Device I/V curves</a> -</dt><dd><p><a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-4s">BJT as a switch</a> -
-<a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-5">Common Emitter Amplifier</a> -
-<a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-ce-freq-resp">Frequency Response of CE amplifier</a> -
-<a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-cb">Common Base Amplifier</a> -
-<a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-fca">Folded Cascode Amplifier</a> -
-<a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-6">BJT Current Mirror</a> -
-<a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-7">BJT Zero Gain Amplifier</a> -
-<a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-8">BJT Stabilized current source</a> -
-<a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-11">BJT Emitter Follower</a> -
-<a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-phase-split">Phase Splitter Amplifier</a> -
-<a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-12">BJT Differential Pair</a> -
-<a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-mstageamp">Multi Stage Amplifier</a> -
-<a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-13">Making a full Amplifier from circuit blocks</a> -
-<a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-13a">Output Stages</a> -</p>
+<dt><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-4" target="_blank">BJT Device I/V curves</a> -</dt><dd><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-4s" target="_blank">BJT as a switch</a> -
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-5" target="_blank">Common Emitter Amplifier</a> -
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-ce-freq-resp" target="_blank">Frequency Response of CE amplifier</a> -
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-cb" target="_blank">Common Base Amplifier</a> -
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-fca" target="_blank">Folded Cascode Amplifier</a> -
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-6" target="_blank">BJT Current Mirror</a> -
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-7" target="_blank">BJT Zero Gain Amplifier</a> -
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-8" target="_blank">BJT Stabilized current source</a> -
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-11" target="_blank">BJT Emitter Follower</a> -
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-phase-split" target="_blank">Phase Splitter Amplifier</a> -
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-12" target="_blank">BJT Differential Pair</a> -
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-mstageamp" target="_blank">Multi Stage Amplifier</a> -
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-13" target="_blank">Making a full Amplifier from circuit blocks</a> -
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-13a" target="_blank">Output Stages</a> -</p>
 </dd>
 </dl>
 </td>
 <td><dl class="simple">
-<dt><a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-4">BJT Device I/V curves</a> -</dt><dd><p><a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-5">Common emitter amplifier</a> -
-<a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-5fr">Amplifier Frequency Response</a> -
-<a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-ce-loop-gain">CE amplifier loop gain</a> -
-<a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-6">BJT Current Mirror</a> -
-<a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-7">BJT Zero gain amplifier</a> -
-<a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-8">BJT Stabilized current source</a> -
-<a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-8a">Floating (two terminal) Current Source / Sink</a> -
-<a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-11">BJT Emitter follower</a> -
-<a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-12">BJT Differential Pair</a> -
-<a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-12a">Transresistance input stage</a> -
-<a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-13">Making a full Amplifier from circuit blocks</a> -
-<a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-13a">Output Stages</a> -</p>
+<dt><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-4" target="_blank">BJT Device I/V curves</a> -</dt><dd><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-5" target="_blank">Common emitter amplifier</a> -
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-5fr" target="_blank">Amplifier Frequency Response</a> -
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-ce-loop-gain" target="_blank">CE amplifier loop gain</a> -
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-6" target="_blank">BJT Current Mirror</a> -
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-7" target="_blank">BJT Zero gain amplifier</a> -
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-8" target="_blank">BJT Stabilized current source</a> -
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-8a" target="_blank">Floating (two terminal) Current Source / Sink</a> -
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-11" target="_blank">BJT Emitter follower</a> -
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-12" target="_blank">BJT Differential Pair</a> -
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-12a" target="_blank">Transresistance input stage</a> -
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-13" target="_blank">Making a full Amplifier from circuit blocks</a> -
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-13a" target="_blank">Output Stages</a> -</p>
 </dd>
 </dl>
 </td>
 </tr>
 <tr class="row-even"><td><p>Metal Oxide Transistors (MOS)</p></td>
 <td><dl class="simple">
-<dt><a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-4m">MOS Device I/V curves</a> -</dt><dd><p><a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-4ms">MOS as a switch</a> -
-<a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-5m">Common Source Amplifier</a> -
-<a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-cg">Common Gate Amplifier</a> -
-<a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-6m">MOS Current Mirror</a> -
-<a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-7m">MOS Zero Gain Amplifier</a> -
-<a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-8m">MOS Stabilized current source</a> -
-<a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-11m">MOS Source Follower</a> -
-<a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-12m">MOS Differential Pair</a> -</p>
+<dt><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-4m" target="_blank">MOS Device I/V curves</a> -</dt><dd><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-4ms" target="_blank">MOS as a switch</a> -
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-5m" target="_blank">Common Source Amplifier</a> -
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-cg" target="_blank">Common Gate Amplifier</a> -
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-6m" target="_blank">MOS Current Mirror</a> -
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-7m" target="_blank">MOS Zero Gain Amplifier</a> -
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-8m" target="_blank">MOS Stabilized current source</a> -
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-11m" target="_blank">MOS Source Follower</a> -
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-12m" target="_blank">MOS Differential Pair</a> -</p>
 </dd>
 </dl>
 </td>
 <td><dl class="simple">
-<dt><a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-4m">MOS Device I/V curves</a> -</dt><dd><p><a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-5m">Common source amplifier</a> -
-<a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-6m">MOS Current Mirror</a> -
-<a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-7m">MOS Zero gain amplifier</a> -
-<a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-8m">MOS Stabilized current source</a> -
-<a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-11m">MOS source follower</a> -
-<a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-12m">MOS Differential Pair</a> -</p>
+<dt><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-4m" target="_blank">MOS Device I/V curves</a> -</dt><dd><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-5m" target="_blank">Common source amplifier</a> -
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-6m" target="_blank">MOS Current Mirror</a> -
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-7m" target="_blank">MOS Zero gain amplifier</a> -
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-8m" target="_blank">MOS Stabilized current source</a> -
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-11m" target="_blank">MOS source follower</a> -
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-12m" target="_blank">MOS Differential Pair</a> -</p>
 </dd>
 </dl>
 </td>
@@ -561,78 +579,78 @@ this list as current as possible</p>
 <tbody>
 <tr class="row-even"><td><p>CMOS</p></td>
 <td><dl class="simple">
-<dt><a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-20">CMOS Amplifier</a></dt><dd><p><a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-ota">Two stage CMOS OTA</a>
-<a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-18">CMOS Analog Switches</a></p>
+<dt><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-20" target="_blank">CMOS Amplifier</a></dt><dd><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-ota" target="_blank">Two stage CMOS OTA</a>
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-18" target="_blank">CMOS Analog Switches</a></p>
 </dd>
 </dl>
 </td>
 <td><dl class="simple">
-<dt><a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-20">CMOS Amplifier</a></dt><dd><p>(with chopping / auto zero)
-<a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-18">CMOS Analog Switches</a></p>
+<dt><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-20" target="_blank">CMOS Amplifier</a></dt><dd><p>(with chopping / auto zero)
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-18" target="_blank">CMOS Analog Switches</a></p>
 </dd>
 </dl>
 </td>
 </tr>
 <tr class="row-odd"><td><p>Pulse Width Modulation (PWM)</p></td>
-<td><p><a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-pwm">Pulse Width Modulator</a></p></td>
+<td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-pwm" target="_blank">Pulse Width Modulator</a></p></td>
 <td></td>
 </tr>
 <tr class="row-even"><td><p>Triggering</p></td>
 <td></td>
-<td><p><a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-external-trigger">Adjustable External Triggering Circuit</a></p></td>
+<td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-external-trigger" target="_blank">Adjustable External Triggering Circuit</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>Voltage Reference</p></td>
 <td><dl class="simple">
-<dt><a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-9">Regulated Voltage Reference</a></dt><dd><p><a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-10">Shunt Voltage Regulator</a></p>
+<dt><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-9" target="_blank">Regulated Voltage Reference</a></dt><dd><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-10" target="_blank">Shunt Voltage Regulator</a></p>
 </dd>
 </dl>
 </td>
 <td><dl class="simple">
-<dt><a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-9">Regulated Voltage Reference</a></dt><dd><p><a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-10">Shunt voltage regulator</a></p>
+<dt><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-9" target="_blank">Regulated Voltage Reference</a></dt><dd><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-10" target="_blank">Shunt voltage regulator</a></p>
 </dd>
 </dl>
 </td>
 </tr>
 <tr class="row-even"><td><p>Digital to Analog Converters</p></td>
 <td></td>
-<td><p><a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-14">Digital to Analog</a></p></td>
+<td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-14" target="_blank">Digital to Analog</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>Analog to Digital Converters</p></td>
 <td></td>
-<td><p><a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-adc">Analog to Digital</a>
-<a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-17">Delta – Sigma Modulator</a></p></td>
+<td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-adc" target="_blank">Analog to Digital</a>
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-17" target="_blank">Delta – Sigma Modulator</a></p></td>
 </tr>
 <tr class="row-even"><td><p>Oscillators</p></td>
-<td><p><a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-21">CMOS LC Oscillator</a>
-<a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-lco">Light Controlled RC Oscillator</a>
-<a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-vco">Voltage Controlled RC Oscillator</a></p></td>
-<td><p><a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-21">CMOS LC Oscillator</a>
-<a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-lco">Light Controlled RC Oscillator</a></p></td>
+<td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-21" target="_blank">CMOS LC Oscillator</a>
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-lco" target="_blank">Light Controlled RC Oscillator</a>
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-vco" target="_blank">Voltage Controlled RC Oscillator</a></p></td>
+<td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-21" target="_blank">CMOS LC Oscillator</a>
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-lco" target="_blank">Light Controlled RC Oscillator</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>Rectifiers</p></td>
-<td><p><a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-scr">Silicon Controlled Rectifiers</a>
-<a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-active-rectifiers">Active Rectifiers</a></p></td>
-<td><p><a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-scr">Silicon Controlled Rectifiers</a>
-<a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-32">Active Rectifiers</a></p></td>
+<td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-scr" target="_blank">Silicon Controlled Rectifiers</a>
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-active-rectifiers" target="_blank">Active Rectifiers</a></p></td>
+<td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-scr" target="_blank">Silicon Controlled Rectifiers</a>
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-32" target="_blank">Active Rectifiers</a></p></td>
 </tr>
 <tr class="row-even"><td><p>Optocouplers</p></td>
-<td><p><a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-22">Optocouplers (analog isolation amplifier)</a></p></td>
-<td><p><a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-22">Optocouplers (analog isolation amplifier)</a></p></td>
+<td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-22" target="_blank">Optocouplers (analog isolation amplifier)</a></p></td>
+<td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-22" target="_blank">Optocouplers (analog isolation amplifier)</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>Sensor Circuits</p></td>
 <td><dl class="simple">
-<dt><a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-led-sensor">LED as light sensor</a></dt><dd><p><a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-pv">Photo Voltaic Solar Cells</a>
-<a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-s1">Electret microphone preamplifier</a>
-<a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-heart-rate-mon">Heart Rate Monitor Circuit</a></p>
+<dt><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-led-sensor" target="_blank">LED as light sensor</a></dt><dd><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-pv" target="_blank">Photo Voltaic Solar Cells</a>
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-s1" target="_blank">Electret microphone preamplifier</a>
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-heart-rate-mon" target="_blank">Heart Rate Monitor Circuit</a></p>
 </dd>
 </dl>
 </td>
 <td><dl class="simple">
-<dt><a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-led-sensor">LED as light sensor</a></dt><dd><p><a class="reference external" href="https://wiki.analog.com/university/courses/eps/photovoltaic">Characteristics of Photovoltaic Solar Cells</a>
-<a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-nr">Negative voltage reference from positive reference</a>
-<a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-speaker">Measuring a Loudspeaker Impedance Profile</a>
-<a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-heartbeat">Heartbeat Measurement Circuit</a>
-<a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-window-comp-tmp01">Temperature Control using Window Comparator</a></p>
+<dt><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-led-sensor" target="_blank">LED as light sensor</a></dt><dd><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/eps/photovoltaic" target="_blank">Characteristics of Photovoltaic Solar Cells</a>
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-nr" target="_blank">Negative voltage reference from positive reference</a>
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-speaker" target="_blank">Measuring a Loudspeaker Impedance Profile</a>
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-heartbeat" target="_blank">Heartbeat Measurement Circuit</a>
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-window-comp-tmp01" target="_blank">Temperature Control using Window Comparator</a></p>
 </dd>
 </dl>
 </td>
@@ -653,42 +671,42 @@ this list as current as possible</p>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>TTL Logic</p></td>
-<td><p><a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-27">TTL inverter and NAND gate</a></p></td>
-<td><p><a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-27">TTL inverter and NAND gate</a></p></td>
+<td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-27" target="_blank">TTL inverter and NAND gate</a></p></td>
+<td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-27" target="_blank">TTL inverter and NAND gate</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>CMOS Logic</p></td>
 <td><dl class="simple">
-<dt><a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-28">Build CMOS Logic Functions Using CD4007 Array</a></dt><dd><p><a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-30">CMOS Logic Circuits, Transmission Gate XOR</a>
-<a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-29">CMOS Logic Circuits, D Type Latch</a></p>
+<dt><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-28" target="_blank">Build CMOS Logic Functions Using CD4007 Array</a></dt><dd><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-30" target="_blank">CMOS Logic Circuits, Transmission Gate XOR</a>
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-29" target="_blank">CMOS Logic Circuits, D Type Latch</a></p>
 </dd>
 </dl>
 </td>
 <td><dl class="simple">
-<dt><a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-28">Build CMOS Logic Functions Using CD4007 Array</a></dt><dd><p><a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-30">CMOS Logic Circuits, Transmission Gate XOR</a>
-<a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-29">CMOS Logic Circuits, D Type Latch</a></p>
+<dt><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-28" target="_blank">Build CMOS Logic Functions Using CD4007 Array</a></dt><dd><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-30" target="_blank">CMOS Logic Circuits, Transmission Gate XOR</a>
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-29" target="_blank">CMOS Logic Circuits, D Type Latch</a></p>
 </dd>
 </dl>
 </td>
 </tr>
 <tr class="row-even"><td><p>Voltage Shifting</p></td>
-<td><p><a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-voltage-level-shifter">Logic Voltage Level Shifting</a></p></td>
-<td><p><a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-voltage-level-shifter">Logic Voltage Level Shifting</a></p></td>
+<td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-voltage-level-shifter" target="_blank">Logic Voltage Level Shifting</a></p></td>
+<td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-voltage-level-shifter" target="_blank">Logic Voltage Level Shifting</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>Multivibrators</p></td>
 <td><dl class="simple">
-<dt><a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-24">NPN</a></dt><dd><p><a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-24m">NMOS</a></p>
+<dt><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-24" target="_blank">NPN</a></dt><dd><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-24m" target="_blank">NMOS</a></p>
 </dd>
 </dl>
 </td>
 <td><dl class="simple">
-<dt><a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-24">NPN</a></dt><dd><p><a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-24m">NMOS</a></p>
+<dt><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-24" target="_blank">NPN</a></dt><dd><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-24m" target="_blank">NMOS</a></p>
 </dd>
 </dl>
 </td>
 </tr>
 <tr class="row-even"><td><p>Ring Oscillators</p></td>
 <td><dl class="simple">
-<dt><a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-ring-osc">CMOS Ring Oscillator</a></dt><dd><p><a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-ring-3x">CMOS Ring Oscillator Frequency Multiplier</a></p>
+<dt><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-ring-osc" target="_blank">CMOS Ring Oscillator</a></dt><dd><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-ring-3x" target="_blank">CMOS Ring Oscillator Frequency Multiplier</a></p>
 </dd>
 </dl>
 </td>
@@ -713,9 +731,9 @@ this list as current as possible</p>
 <tbody>
 <tr class="row-even"><td><p>Communications</p></td>
 <td><p>Transformers</p></td>
-<td><p><a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-transformers">Transformers</a></p></td>
+<td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-transformers" target="_blank">Transformers</a></p></td>
 <td><dl class="simple">
-<dt><a class="reference external" href="https://wiki.analog.com/university/labs/comms_lab_isr_adalm2000">Inductor Self Resonance</a></dt><dd><p><a class="reference external" href="https://wiki.analog.com/university/labs/comms_lab_transformers_adalm2000">Transformers</a></p>
+<dt><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/labs/comms_lab_isr_adalm2000" target="_blank">Inductor Self Resonance</a></dt><dd><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/labs/comms_lab_transformers_adalm2000" target="_blank">Transformers</a></p>
 </dd>
 </dl>
 </td>
@@ -723,16 +741,16 @@ this list as current as possible</p>
 </tr>
 <tr class="row-odd"><td><p>Communications</p></td>
 <td><p>Transmission Lines</p></td>
-<td><p><a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lc-atline">Artificial Transmission Lines</a></p></td>
-<td><p><a class="reference external" href="https://wiki.analog.com/university/labs/tlines_standing_waves_adalm2000">Transmission Lines and Standing Waves</a></p></td>
+<td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lc-atline" target="_blank">Artificial Transmission Lines</a></p></td>
+<td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/labs/tlines_standing_waves_adalm2000" target="_blank">Transmission Lines and Standing Waves</a></p></td>
 <td></td>
 </tr>
 <tr class="row-even"><td><p>Communications</p></td>
 <td><p>Tuned Amplifiers</p></td>
-<td><p><a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-trans-coupled-amp">Transformer Coupled Amplifier</a></p></td>
+<td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-trans-coupled-amp" target="_blank">Transformer Coupled Amplifier</a></p></td>
 <td><dl class="simple">
-<dt><a class="reference external" href="https://wiki.analog.com/university/labs/comms_lab_tuned_amplifiers_1_adalm2000">Tuned Amplifiers,part I</a></dt><dd><p><a class="reference external" href="https://wiki.analog.com/university/labs/comms_lab_tuned_amplifiers_2_adalm2000">Tuned Amplifiers,part II</a>
-<a class="reference external" href="https://wiki.analog.com/university/labs/electronics_lab_transformer_coupled_amp_adalm2000">Transformer Coupled Amplifier</a></p>
+<dt><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/labs/comms_lab_tuned_amplifiers_1_adalm2000" target="_blank">Tuned Amplifiers,part I</a></dt><dd><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/labs/comms_lab_tuned_amplifiers_2_adalm2000" target="_blank">Tuned Amplifiers,part II</a>
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/labs/electronics_lab_transformer_coupled_amp_adalm2000" target="_blank">Transformer Coupled Amplifier</a></p>
 </dd>
 </dl>
 </td>
@@ -741,12 +759,12 @@ this list as current as possible</p>
 <tr class="row-odd"><td><p>Communications</p></td>
 <td><p>Filters</p></td>
 <td><dl class="simple">
-<dt><a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-signals-labs/alm-band-pass-step-response-lab">Band Pass Filter step-response</a></dt><dd><p><a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-signals-labs/alm-poly-phase-filter-lab">Polyphase Filters</a></p>
+<dt><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-signals-labs/alm-band-pass-step-response-lab" target="_blank">Band Pass Filter step-response</a></dt><dd><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-signals-labs/alm-poly-phase-filter-lab" target="_blank">Polyphase Filters</a></p>
 </dd>
 </dl>
 </td>
 <td><dl class="simple">
-<dt><a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-active-filter">Active Filters</a></dt><dd><p><a class="reference external" href="https://wiki.analog.com/university/courses/electronics/comms-lab-polyphase-filter">Polyphase Filters</a></p>
+<dt><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-active-filter" target="_blank">Active Filters</a></dt><dd><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/comms-lab-polyphase-filter" target="_blank">Polyphase Filters</a></p>
 </dd>
 </dl>
 </td>
@@ -754,9 +772,9 @@ this list as current as possible</p>
 </tr>
 <tr class="row-even"><td><p>Communications</p></td>
 <td><p>Detectors</p></td>
-<td><p><a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/circuits1/alm-cir-envelope-detector">AM modulation and Envelop Detectors</a></p></td>
+<td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/circuits1/alm-cir-envelope-detector" target="_blank">AM modulation and Envelop Detectors</a></p></td>
 <td><dl class="simple">
-<dt><a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-envelope-detector">Envelope Detectors</a></dt><dd><p><a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics_lab_fm_detectors">FM Detectors</a></p>
+<dt><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-envelope-detector" target="_blank">Envelope Detectors</a></dt><dd><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics_lab_fm_detectors" target="_blank">FM Detectors</a></p>
 </dd>
 </dl>
 </td>
@@ -765,76 +783,76 @@ this list as current as possible</p>
 <tr class="row-odd"><td><p>Communications</p></td>
 <td><p>Variable Amplifiers</p></td>
 <td></td>
-<td><p><a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-variable-gain-amplifier">Variable Gain Amplifiers</a></p></td>
+<td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-variable-gain-amplifier" target="_blank">Variable Gain Amplifiers</a></p></td>
 <td></td>
 </tr>
 <tr class="row-even"><td><p>Communications</p></td>
 <td><p>Frequency Synthesizers</p></td>
-<td><p><a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-hartley-osc">Hartley oscillator</a></p></td>
-<td><p><a class="reference external" href="https://wiki.analog.com/university/courses/electronics/comms-lab-hartley-osc">Hartley oscillator</a>
-<a class="reference external" href="https://wiki.analog.com/university/courses/electronics/comms-lab-colpitts-osc">Colpitts oscillator</a>
-<a class="reference external" href="https://wiki.analog.com/university/courses/electronics/comms-lab-clapp-osc">Clapp oscillator</a>
-<a class="reference external" href="https://wiki.analog.com/university/courses/electronics/comms-lab-peltz-osc">Peltz Oscillator</a></p></td>
+<td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-hartley-osc" target="_blank">Hartley oscillator</a></p></td>
+<td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/comms-lab-hartley-osc" target="_blank">Hartley oscillator</a>
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/comms-lab-colpitts-osc" target="_blank">Colpitts oscillator</a>
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/comms-lab-clapp-osc" target="_blank">Clapp oscillator</a>
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/comms-lab-peltz-osc" target="_blank">Peltz Oscillator</a></p></td>
 <td></td>
 </tr>
 <tr class="row-odd"><td><p>Communications</p></td>
 <td><p>Modulation</p></td>
-<td><p><a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-pwm">Pulse Width Modulation</a></p></td>
-<td><p><a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-pulse-width-modulation">Pulse Width Modulation</a>
-<a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics_lab_diode_ring_modulator">Diode Ring Modulators</a></p></td>
+<td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-pwm" target="_blank">Pulse Width Modulation</a></p></td>
+<td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-pulse-width-modulation" target="_blank">Pulse Width Modulation</a>
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics_lab_diode_ring_modulator" target="_blank">Diode Ring Modulators</a></p></td>
 <td></td>
 </tr>
 <tr class="row-even"><td><p>Communications</p></td>
 <td><p>Pulsed Oscillators</p></td>
-<td><p><a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-pulsed-osc">Pulsed Oscillators</a></p></td>
-<td><p><a class="reference external" href="https://wiki.analog.com/university/courses/electronics/comms-lab-pulse-osc">Pulsed Oscillators</a></p></td>
+<td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-pulsed-osc" target="_blank">Pulsed Oscillators</a></p></td>
+<td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/comms-lab-pulse-osc" target="_blank">Pulsed Oscillators</a></p></td>
 <td></td>
 </tr>
 <tr class="row-odd"><td><p>Communications</p></td>
 <td><p>Phase Locked Loop</p></td>
-<td><p><a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-signals-labs/alm-phase-locked-loop-lab">Phase Locked Loops</a></p></td>
-<td><p><a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-31">Phase Locked Loops</a></p></td>
+<td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-signals-labs/alm-phase-locked-loop-lab" target="_blank">Phase Locked Loops</a></p></td>
+<td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-31" target="_blank">Phase Locked Loops</a></p></td>
 <td></td>
 </tr>
 <tr class="row-even"><td><p>Communications</p></td>
 <td><p>Mixers</p></td>
 <td></td>
-<td><p><a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-active-mixer">Active Mixers</a></p></td>
+<td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-active-mixer" target="_blank">Active Mixers</a></p></td>
 <td></td>
 </tr>
 <tr class="row-odd"><td><p>Communications</p></td>
 <td><p>Generators</p></td>
-<td><p><a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-signals-labs/alm-lfsr-lab">Pseudo-Random Sequence Generators</a></p></td>
-<td><p><a class="reference external" href="https://wiki.analog.com/university/courses/electronics/comms-lab-lfsr">Pseudo-Random Sequence Generators</a></p></td>
+<td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-signals-labs/alm-lfsr-lab" target="_blank">Pseudo-Random Sequence Generators</a></p></td>
+<td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/comms-lab-lfsr" target="_blank">Pseudo-Random Sequence Generators</a></p></td>
 <td></td>
 </tr>
 <tr class="row-even"><td><p>Digital Communications</p></td>
 <td><p>SDR Basics and Probability</p></td>
 <td></td>
 <td></td>
-<td><p><a class="reference external" href="https://github.com/sdrforengineers/LabGuides/blob/master/textbook/ece4305_lab0.pdf">Introduction To SDR (PDF)</a>
-<a class="reference external" href="https://github.com/sdrforengineers/LabGuides/tree/master/textbook/lab0">Introduction To SDR (LaTeX)</a></p></td>
+<td><p><a class="icon link reference external" href="https://github.com/sdrforengineers/LabGuides/blob/master/textbook/ece4305_lab0.pdf" target="_blank">Introduction To SDR (PDF)</a>
+<a class="icon link reference external" href="https://github.com/sdrforengineers/LabGuides/tree/master/textbook/lab0" target="_blank">Introduction To SDR (LaTeX)</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>Digital Communications</p></td>
 <td><p>Timing Recovery</p></td>
 <td></td>
 <td></td>
-<td><p><a class="reference external" href="https://github.com/sdrforengineers/LabGuides/blob/master/textbook/ece4305_lab1.pdf">Symbol Synchronization (PDF)</a>
-<a class="reference external" href="https://github.com/sdrforengineers/LabGuides/tree/master/textbook/lab1">Symbol Synchronization (LaTeX)</a></p></td>
+<td><p><a class="icon link reference external" href="https://github.com/sdrforengineers/LabGuides/blob/master/textbook/ece4305_lab1.pdf" target="_blank">Symbol Synchronization (PDF)</a>
+<a class="icon link reference external" href="https://github.com/sdrforengineers/LabGuides/tree/master/textbook/lab1" target="_blank">Symbol Synchronization (LaTeX)</a></p></td>
 </tr>
 <tr class="row-even"><td><p>Digital Communications</p></td>
 <td><p>Frequency Recovery</p></td>
 <td></td>
 <td></td>
-<td><p><a class="reference external" href="https://github.com/sdrforengineers/LabGuides/blob/master/textbook/ece4305_lab2.pdf">Carrier Synchronization (PDF)</a>
-<a class="reference external" href="https://github.com/sdrforengineers/LabGuides/tree/master/textbook/lab2">Carrier Synchronization (LaTeX)</a></p></td>
+<td><p><a class="icon link reference external" href="https://github.com/sdrforengineers/LabGuides/blob/master/textbook/ece4305_lab2.pdf" target="_blank">Carrier Synchronization (PDF)</a>
+<a class="icon link reference external" href="https://github.com/sdrforengineers/LabGuides/tree/master/textbook/lab2" target="_blank">Carrier Synchronization (LaTeX)</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>Digital Communications</p></td>
 <td><p>Frame Synchronization</p></td>
 <td></td>
 <td></td>
-<td><p><a class="reference external" href="https://github.com/sdrforengineers/LabGuides/blob/master/textbook/ece4305_lab3.pdf">Frame Synchronization (PDF)</a>
-<a class="reference external" href="https://github.com/sdrforengineers/LabGuides/tree/master/textbook/lab3">Frame Synchronization (LaTeX)</a></p></td>
+<td><p><a class="icon link reference external" href="https://github.com/sdrforengineers/LabGuides/blob/master/textbook/ece4305_lab3.pdf" target="_blank">Frame Synchronization (PDF)</a>
+<a class="icon link reference external" href="https://github.com/sdrforengineers/LabGuides/tree/master/textbook/lab3" target="_blank">Frame Synchronization (LaTeX)</a></p></td>
 </tr>
 <tr class="row-even"><td><dl class="simple">
 <dt>tvelliott/charon</dt><dd><p>(3rd party/ external)</p>
@@ -844,7 +862,7 @@ this list as current as possible</p>
 <td><p>OFDM Transceiver</p></td>
 <td></td>
 <td></td>
-<td><p><a class="reference external" href="https://github.com/tvelliott/charon">Charon: stand-alone OFDM transceiver using Pluto SDR</a></p></td>
+<td><p><a class="icon link reference external" href="https://github.com/tvelliott/charon" target="_blank">Charon: stand-alone OFDM transceiver using Pluto SDR</a></p></td>
 </tr>
 <tr class="row-odd"><td><dl class="simple">
 <dt>PySDR</dt><dd><p>(3rd party/ external)</p>
@@ -854,7 +872,7 @@ this list as current as possible</p>
 <td><p>PySDR: A Guide to SDR and DSP using Python</p></td>
 <td></td>
 <td></td>
-<td><p><a class="reference external" href="https://pysdr.org/content/pluto.html">Pluto SDR in Python</a></p></td>
+<td><p><a class="icon link reference external" href="https://pysdr.org/content/pluto.html" target="_blank">Pluto SDR in Python</a></p></td>
 </tr>
 <tr class="row-even"><td><dl class="simple">
 <dt>PlutoSDR/dump1090</dt><dd><p>(3rd party/ external)</p>
@@ -864,7 +882,7 @@ this list as current as possible</p>
 <td><p>ADSB decoder</p></td>
 <td></td>
 <td></td>
-<td><p><a class="reference external" href="https://github.com/PlutoSDR/dump1090">Dump 1090 ADSB decoder</a></p></td>
+<td><p><a class="icon link reference external" href="https://github.com/PlutoSDR/dump1090" target="_blank">Dump 1090 ADSB decoder</a></p></td>
 </tr>
 </tbody>
 </table>
@@ -885,73 +903,73 @@ this list as current as possible</p>
 </thead>
 <tbody>
 <tr class="row-even"><td><p>Diodes</p></td>
-<td><p><a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-2">PN Diode I/V curves</a>
-<a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-zener-diode">Zener Diode I/V curves</a>
-<a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/circuits1/alm-cir-diode-rectifier">Diode Rectifiers</a>
-<a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-3">BJT as a diode</a>
-<a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-3m">MOS as a diode</a></p></td>
-<td><p><a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-2">PN Diode I/V curves</a>
-<a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-26">Zener diode regulator</a>
-<a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-3">BJT as a diode</a>
-<a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-3m">MOS as a diode</a></p></td>
+<td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-2" target="_blank">PN Diode I/V curves</a>
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-zener-diode" target="_blank">Zener Diode I/V curves</a>
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/circuits1/alm-cir-diode-rectifier" target="_blank">Diode Rectifiers</a>
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-3" target="_blank">BJT as a diode</a>
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-3m" target="_blank">MOS as a diode</a></p></td>
+<td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-2" target="_blank">PN Diode I/V curves</a>
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-26" target="_blank">Zener diode regulator</a>
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-3" target="_blank">BJT as a diode</a>
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-3m" target="_blank">MOS as a diode</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>Active Rectifiers</p></td>
-<td><p><a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-active-rectifiers">Active Rectifiers</a></p></td>
+<td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-active-rectifiers" target="_blank">Active Rectifiers</a></p></td>
 <td></td>
 </tr>
 <tr class="row-even"><td><p>Bipolar Junction Transistors (BJT)</p></td>
-<td><p><a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-4">BJT Device I/V curves</a>
-<a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-4s">BJT as a switch</a></p></td>
-<td><p><a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-4">BJT Device I/V curves</a></p></td>
+<td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-4" target="_blank">BJT Device I/V curves</a>
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-4s" target="_blank">BJT as a switch</a></p></td>
+<td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-4" target="_blank">BJT Device I/V curves</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>Metal Oxide Transistors (MOS)</p></td>
-<td><p><a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-4m">MOS Device I/V curves</a>
-<a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-4ms">MOS as a switch</a></p></td>
-<td><p><a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-4m">MOS Device I/V curves</a></p></td>
+<td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-4m" target="_blank">MOS Device I/V curves</a>
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-4ms" target="_blank">MOS as a switch</a></p></td>
+<td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-4m" target="_blank">MOS Device I/V curves</a></p></td>
 </tr>
 <tr class="row-even"><td><p>Voltage Reference</p></td>
-<td><p><a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-9">Regulated Voltage Reference</a>
-<a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-10">Shunt Voltage Regulator</a></p></td>
-<td><p><a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-9">Regulated Voltage Reference</a>
-<a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-10">Shunt voltage regulator</a></p></td>
+<td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-9" target="_blank">Regulated Voltage Reference</a>
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-10" target="_blank">Shunt Voltage Regulator</a></p></td>
+<td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-9" target="_blank">Regulated Voltage Reference</a>
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-10" target="_blank">Shunt voltage regulator</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>Power Basics</p></td>
-<td><p><a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-power-efficiency">Efficiency, Power Loss, and Thermal Management</a></p></td>
-<td><p><a class="reference external" href="https://wiki.analog.com/university/courses/electronics/efficiency_power_loss">Efficiency, Power Loss, and Thermal Management</a></p></td>
+<td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-power-efficiency" target="_blank">Efficiency, Power Loss, and Thermal Management</a></p></td>
+<td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/efficiency_power_loss" target="_blank">Efficiency, Power Loss, and Thermal Management</a></p></td>
 </tr>
 <tr class="row-even"><td><p>Current Sensing</p></td>
-<td><p><a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-current-transformer">The Current Transformer</a></p></td>
+<td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-current-transformer" target="_blank">The Current Transformer</a></p></td>
 <td></td>
 </tr>
 <tr class="row-odd"><td><p>Switched Capacitor Design</p></td>
 <td></td>
 <td><dl class="simple">
-<dt><a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-19">Switched Capacitor circuits</a></dt><dd><p><a class="reference external" href="https://wiki.analog.com/university/courses/electronics/switched-cap-power-supplies">Switched Capacitor Power Supplies</a></p>
+<dt><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-19" target="_blank">Switched Capacitor circuits</a></dt><dd><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/switched-cap-power-supplies" target="_blank">Switched Capacitor Power Supplies</a></p>
 </dd>
 </dl>
 </td>
 </tr>
 <tr class="row-even"><td><p>DC-DC Converters</p></td>
-<td><p><a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-15">DC-DC Converters I (inductors)</a>
-<a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-16">DC-DC Converters II (capacitors)</a>
-<a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/circuits1/alm-joule-thief">Simple “Joule Thief” DC/DC Converter</a></p></td>
-<td><p><a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-15">DC-DC Converters I (inductors)</a>
-<a class="reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-16">DC-DC Converters II (capacitors)</a></p></td>
+<td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-15" target="_blank">DC-DC Converters I (inductors)</a>
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-lab-16" target="_blank">DC-DC Converters II (capacitors)</a>
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/circuits1/alm-joule-thief" target="_blank">Simple “Joule Thief” DC/DC Converter</a></p></td>
+<td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-15" target="_blank">DC-DC Converters I (inductors)</a>
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/electronics-lab-16" target="_blank">DC-DC Converters II (capacitors)</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>Regulators</p></td>
-<td><p><a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-ldo-lab">Low Drop out Linear Voltage Regulators</a></p></td>
+<td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-ldo-lab" target="_blank">Low Drop out Linear Voltage Regulators</a></p></td>
 <td></td>
 </tr>
 <tr class="row-even"><td><p>Buck &amp; Boost Converters</p></td>
-<td><p><a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/circuits1/alm-cir-15a">DC-DC Boost Converters</a>
-<a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/circuits1/alm-bipolar-step-up-dc-dc">Forward DC-DC Converters</a></p></td>
-<td><p><a class="reference external" href="https://wiki.analog.com/university/courses/electronics/buck_converter_basics">Buck Converter Basics</a>
-<a class="reference external" href="https://wiki.analog.com/university/labs/open_loop_boost_and_buck_adalm2000">Boost and Buck converter open-loop operation</a>
-<a class="reference external" href="https://wiki.analog.com/university/labs/closed_loop_buck_adalm2000">Buck converter closed-loop operation</a>
-<a class="reference external" href="https://wiki.analog.com/university/labs/closed_loop_boost_adalm2000">Boost converter closed-loop operation</a></p></td>
+<td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/circuits1/alm-cir-15a" target="_blank">DC-DC Boost Converters</a>
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/circuits1/alm-bipolar-step-up-dc-dc" target="_blank">Forward DC-DC Converters</a></p></td>
+<td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/electronics/buck_converter_basics" target="_blank">Buck Converter Basics</a>
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/labs/open_loop_boost_and_buck_adalm2000" target="_blank">Boost and Buck converter open-loop operation</a>
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/labs/closed_loop_buck_adalm2000" target="_blank">Buck converter closed-loop operation</a>
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/labs/closed_loop_boost_adalm2000" target="_blank">Boost converter closed-loop operation</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>Electronic Circuit Breakers</p></td>
-<td><p><a class="reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-circuit-breaker">Electronic Circuit Breakers</a></p></td>
+<td><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/courses/alm1k/alm-circuit-breaker" target="_blank">Electronic Circuit Breakers</a></p></td>
 <td></td>
 </tr>
 </tbody>
@@ -976,21 +994,21 @@ this list as current as possible</p>
 <td><p>X</p></td>
 </tr>
 <tr class="row-odd"><td><p>Basic I/O</p></td>
-<td><p><a class="reference external" href="https://analogdevicesinc.github.io/msdk//USERGUIDE/#getting-started-with-visual-studio-code">Blink (MSDK User Guide)</a>
-<a class="reference external" href="https://github.com/Analog-Devices-MSDK/msdk/tree/main/Examples/MAX78000/GPIO">Button (MSDK GPIO example)</a></p></td>
-<td><p><a class="reference external" href="https://docs.arduino.cc/built-in-examples/basics/Blink/">Blink</a>
-<a class="reference external" href="https://www.arduino.cc/en/Tutorial/BuiltInExamples/Button">Button</a></p></td>
-<td><p><a class="reference external" href="https://www.playembedded.org/blog/simplest-project-chibios/">Simplest ChibiOS Progect Ever (Blink)</a>
-<a class="reference external" href="https://www.playembedded.org/blog/mastering-push-buttons-chibios-pal/">Mastering Push Buttons with ChibiOS</a></p></td>
+<td><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/msdk//USERGUIDE/#getting-started-with-visual-studio-code" target="_blank">Blink (MSDK User Guide)</a>
+<a class="icon link reference external" href="https://github.com/Analog-Devices-MSDK/msdk/tree/main/Examples/MAX78000/GPIO" target="_blank">Button (MSDK GPIO example)</a></p></td>
+<td><p><a class="icon link reference external" href="https://docs.arduino.cc/built-in-examples/basics/Blink/" target="_blank">Blink</a>
+<a class="icon link reference external" href="https://www.arduino.cc/en/Tutorial/BuiltInExamples/Button" target="_blank">Button</a></p></td>
+<td><p><a class="icon link reference external" href="https://www.playembedded.org/blog/simplest-project-chibios/" target="_blank">Simplest ChibiOS Progect Ever (Blink)</a>
+<a class="icon link reference external" href="https://www.playembedded.org/blog/mastering-push-buttons-chibios-pal/" target="_blank">Mastering Push Buttons with ChibiOS</a></p></td>
 </tr>
 <tr class="row-even"><td><p>Interrupt Service Routines</p></td>
 <td><p>X</p></td>
 <td><p>X</p></td>
-<td><p><a class="reference external" href="https://www.playembedded.org/blog/mastering-exti-chibios-pal/">External Interrupts with ChibiOS PAL: From Polling to Events</a></p></td>
+<td><p><a class="icon link reference external" href="https://www.playembedded.org/blog/mastering-exti-chibios-pal/" target="_blank">External Interrupts with ChibiOS PAL: From Polling to Events</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>Analog to Digital (ADC)</p></td>
 <td><dl class="simple">
-<dt><a class="reference external" href="https://github.com/Analog-Devices-MSDK/msdk/tree/main/Examples/MAX78000/ADC">Voltmeter</a></dt><dd><p>Temperature Measurement</p>
+<dt><a class="icon link reference external" href="https://github.com/Analog-Devices-MSDK/msdk/tree/main/Examples/MAX78000/ADC" target="_blank">Voltmeter</a></dt><dd><p>Temperature Measurement</p>
 </dd>
 </dl>
 </td>
@@ -1006,28 +1024,28 @@ this list as current as possible</p>
 </td>
 </tr>
 <tr class="row-even"><td><p>Timers</p></td>
-<td><p><a class="reference external" href="https://github.com/Analog-Devices-MSDK/msdk/tree/main/Examples/MAX78000/TMR">Timer Examples</a></p></td>
+<td><p><a class="icon link reference external" href="https://github.com/Analog-Devices-MSDK/msdk/tree/main/Examples/MAX78000/TMR" target="_blank">Timer Examples</a></p></td>
 <td><p>X</p></td>
 <td><p>X</p></td>
 </tr>
 <tr class="row-odd"><td><p>Serial Communication: UART</p></td>
-<td><p><a class="reference external" href="https://github.com/Analog-Devices-MSDK/msdk/tree/main/Examples/MAX78000/UART">UART Example</a></p></td>
+<td><p><a class="icon link reference external" href="https://github.com/Analog-Devices-MSDK/msdk/tree/main/Examples/MAX78000/UART" target="_blank">UART Example</a></p></td>
 <td><p>Lab</p></td>
-<td><p><a class="reference external" href="https://www.playembedded.org/blog/stm32-usart-chibios-serial/">Using STM32 USART with ChibiOS</a></p></td>
+<td><p><a class="icon link reference external" href="https://www.playembedded.org/blog/stm32-usart-chibios-serial/" target="_blank">Using STM32 USART with ChibiOS</a></p></td>
 </tr>
 <tr class="row-even"><td><p>Serial Communication: I2C</p></td>
 <td><dl class="simple">
-<dt><a class="reference external" href="https://github.com/Analog-Devices-MSDK/msdk/tree/main/Examples/MAX78000/I2C_SCAN">I2C Bus Scanner</a></dt><dd><p><a class="reference external" href="https://github.com/Analog-Devices-MSDK/msdk/tree/main/Examples/MAX78000/I2C_ADXL343">I2C Accelerometer (ADXL343)</a></p>
+<dt><a class="icon link reference external" href="https://github.com/Analog-Devices-MSDK/msdk/tree/main/Examples/MAX78000/I2C_SCAN" target="_blank">I2C Bus Scanner</a></dt><dd><p><a class="icon link reference external" href="https://github.com/Analog-Devices-MSDK/msdk/tree/main/Examples/MAX78000/I2C_ADXL343" target="_blank">I2C Accelerometer (ADXL343)</a></p>
 </dd>
 </dl>
 </td>
-<td><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/Linduino/tree/main/LTSketchbook/Utilities/I2C_Address_Scan/I2C_Address_Scan.ino">I2C Bus Scanner</a></p></td>
-<td><p><a class="reference external" href="https://www.playembedded.org/blog/stm32-i2c-chibios/">Using STM32 I2C with ChibiOS</a></p></td>
+<td><p><a class="icon git reference external" href="https://github.com/analogdevicesinc/Linduino/tree/main/LTSketchbook/Utilities/I2C_Address_Scan/I2C_Address_Scan.ino" target="_blank">I2C Bus Scanner</a></p></td>
+<td><p><a class="icon link reference external" href="https://www.playembedded.org/blog/stm32-i2c-chibios/" target="_blank">Using STM32 I2C with ChibiOS</a></p></td>
 </tr>
 <tr class="row-odd"><td><p>Serial Communication: SPI</p></td>
-<td><p><a class="reference external" href="https://github.com/Analog-Devices-MSDK/msdk/tree/main/Examples/MAX78000/SPI">SPI loopback</a></p></td>
+<td><p><a class="icon link reference external" href="https://github.com/Analog-Devices-MSDK/msdk/tree/main/Examples/MAX78000/SPI" target="_blank">SPI loopback</a></p></td>
 <td><p>X</p></td>
-<td><p><a class="reference external" href="https://www.playembedded.org/blog/hands-on-exercise-with-the-adxl355-and-chibios-spi/">ADXL355 and ChibiOS SPI</a></p></td>
+<td><p><a class="icon link reference external" href="https://www.playembedded.org/blog/hands-on-exercise-with-the-adxl355-and-chibios-spi/" target="_blank">ADXL355 and ChibiOS SPI</a></p></td>
 </tr>
 <tr class="row-even"><td><p>Direct Memory Access (DMA)</p></td>
 <td><p>X</p></td>
@@ -1035,22 +1053,22 @@ this list as current as possible</p>
 <td><p>X</p></td>
 </tr>
 <tr class="row-odd"><td><p>Camera</p></td>
-<td><p><a class="reference external" href="https://github.com/Analog-Devices-MSDK/msdk/tree/main/Examples/MAX78000/ImgCapture">Image Capture</a></p></td>
+<td><p><a class="icon link reference external" href="https://github.com/Analog-Devices-MSDK/msdk/tree/main/Examples/MAX78000/ImgCapture" target="_blank">Image Capture</a></p></td>
 <td><p>X</p></td>
 <td><p>X</p></td>
 </tr>
 <tr class="row-even"><td><p>TFT Display</p></td>
-<td><p><a class="reference external" href="https://github.com/Analog-Devices-MSDK/msdk/tree/main/Examples/MAX78000/TFT_Demo">TFT Featherwing Example</a></p></td>
+<td><p><a class="icon link reference external" href="https://github.com/Analog-Devices-MSDK/msdk/tree/main/Examples/MAX78000/TFT_Demo" target="_blank">TFT Featherwing Example</a></p></td>
 <td><p>X</p></td>
 <td><p>X</p></td>
 </tr>
 <tr class="row-odd"><td><p>Serial Communication: I2S/TDM Audio</p></td>
-<td><p><a class="reference external" href="https://github.com/Analog-Devices-MSDK/msdk/tree/main/Examples/MAX78000/I2S">Simple I2S Receiver</a></p></td>
+<td><p><a class="icon link reference external" href="https://github.com/Analog-Devices-MSDK/msdk/tree/main/Examples/MAX78000/I2S" target="_blank">Simple I2S Receiver</a></p></td>
 <td><p>X</p></td>
 <td><p>X</p></td>
 </tr>
 <tr class="row-even"><td><p>Random Numbers</p></td>
-<td><p><a class="reference external" href="https://github.com/Analog-Devices-MSDK/msdk/tree/main/Examples/MAX78000/TRNG">True Random Number Generator</a></p></td>
+<td><p><a class="icon link reference external" href="https://github.com/Analog-Devices-MSDK/msdk/tree/main/Examples/MAX78000/TRNG" target="_blank">True Random Number Generator</a></p></td>
 <td><p>X</p></td>
 <td><p>X</p></td>
 </tr>
@@ -1060,7 +1078,7 @@ this list as current as possible</p>
 <td><p>X</p></td>
 </tr>
 <tr class="row-even"><td><p>Pulse Train Engine</p></td>
-<td><p><a class="reference external" href="https://github.com/Analog-Devices-MSDK/msdk/tree/main/Examples/MAX78000/Pulse_Train">Pulse Train Example</a></p></td>
+<td><p><a class="icon link reference external" href="https://github.com/Analog-Devices-MSDK/msdk/tree/main/Examples/MAX78000/Pulse_Train" target="_blank">Pulse Train Example</a></p></td>
 <td><p>X</p></td>
 <td><p>X</p></td>
 </tr>
@@ -1080,10 +1098,10 @@ this list as current as possible</p>
 <td><p>X</p></td>
 </tr>
 <tr class="row-even"><td><p>Convolutional Neural Networks</p></td>
-<td><p><a class="reference external" href="https://github.com/Analog-Devices-MSDK/msdk/tree/main/Examples/MAX78000/CNN/mnist">MNIST Handwriting Recognition</a>
-<a class="reference external" href="https://github.com/Analog-Devices-MSDK/msdk/tree/main/Examples/MAX78000/CNN/cats-dogs_demo">Cat or Dog?</a>
-<a class="reference external" href="https://github.com/Analog-Devices-MSDK/msdk/tree/main/Examples/MAX78000/CNN/facial_recognition">Facial Recognition</a>
-<a class="reference external" href="https://github.com/Analog-Devices-MSDK/msdk/tree/main/Examples/MAX78000/CNN/kws20_demo">Keyword Spotting</a></p></td>
+<td><p><a class="icon link reference external" href="https://github.com/Analog-Devices-MSDK/msdk/tree/main/Examples/MAX78000/CNN/mnist" target="_blank">MNIST Handwriting Recognition</a>
+<a class="icon link reference external" href="https://github.com/Analog-Devices-MSDK/msdk/tree/main/Examples/MAX78000/CNN/cats-dogs_demo" target="_blank">Cat or Dog?</a>
+<a class="icon link reference external" href="https://github.com/Analog-Devices-MSDK/msdk/tree/main/Examples/MAX78000/CNN/facial_recognition" target="_blank">Facial Recognition</a>
+<a class="icon link reference external" href="https://github.com/Analog-Devices-MSDK/msdk/tree/main/Examples/MAX78000/CNN/kws20_demo" target="_blank">Keyword Spotting</a></p></td>
 <td><p>X</p></td>
 <td><p>X</p></td>
 </tr>
@@ -1104,8 +1122,6 @@ this list as current as possible</p>
         </div>
       </div>
   </div>
-
-  <div id="vertical-border"></div>
 
   <label id="cancel-area-show-toc" for="input-show-toc"></label>
   <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>

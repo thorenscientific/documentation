@@ -4,14 +4,12 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta content="Whether you want to understand the changes between revisions, or just understand how to probe the PCB, this is where all the information should be." name="description" />
 
     <title>ADALM-PLUTO Hardware &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=0ea85bdb" />
-    <script src="../../../_static/documentation_options.js?v=5929fcd5"></script>
-    <script src="../../../_static/doctools.js?v=9bcbadda"></script>
-    <script src="../../../_static/sphinx_highlight.js?v=dc90522c"></script>
-    <script defer="" src="../../../_static/app.umd.js?v=25136f1d"></script>
+    <link rel="stylesheet" type="text/css" href="../../../_static/app.min.css?v=33d8ff8e" />
+    <script async="async" src="../../../_static/app.umd.js?v=cd58f2cb"></script>
     <link rel="icon" href="../../../_static/icon.svg"/>
     <link rel="index" title="Index" href="../../../genindex.html" />
     <link rel="search" title="Search" href="../../../search.html" />
@@ -21,6 +19,9 @@
   
   <meta name="repository" content="documentation">
   <meta name="version" content="">
+  
+    <meta name="page_source_suffix" content=".rst">
+  
   
 
 
@@ -48,8 +49,7 @@
   <div class="search-area">
     <form action="" method="get">
       <input type="text" name="q" aria-labelledby="search-documentation" value="" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false" role="search" placeholder="Search"/>
-      <button value="search" class="icon"></button>
-      <span id="search-progress"></span>
+      <button class="icon"></button>
     </form>
   </div>
   
@@ -60,7 +60,7 @@
     </div>
     <div id="right">
       <span>
-        <a id="logo-org" href="https://analog.com"></a>
+        <a id="logo-org" href="https://analog.com" aria-label="Analog Devices Inc. landing page"></a>
         <div class="vertical-divider"></div>
         <label id="show-repotoc" for="input-show-repotoc" title="Show/hide docs" tabindex="0">Docs</label>
         <a id="logo" href="../../../index.html">
@@ -148,6 +148,7 @@ Content on this topic
 <li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1" id="toctree-collapse-1"/><div class="collapse"><a class="reference internal" href="../../../linux/drivers/index.html">Linux drivers</a><label for="toctree-collapse-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-1" id="toctree-collapse-1-1"/><div class="collapse"><a class="reference internal" href="../../../linux/drivers/iio-adc/index.html">IIO ADC</a><label for="toctree-collapse-1-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../linux/drivers/iio-adc/ad4052/index.html">AD4052</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../linux/drivers/iio-adc/ad9084/index.html">AD9084/AD9088</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-1-2" id="toctree-collapse-1-2"/><div class="collapse"><a class="reference internal" href="../../../linux/drivers/iio-transceiver/index.html">IIO Transceivers</a><label for="toctree-collapse-1-2"><div class="icon"></div></label></div><ul>
@@ -165,7 +166,10 @@ Content on this topic
 </ul>
 </li>
 <li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2" id="toctree-collapse-2"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/index.html">Kernel and devicetrees</a><label for="toctree-collapse-2"><div class="icon"></div></label></div><ul>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/petalinux.html">Building with Petalinux</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/zynq.html">Build Zynq</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/zynqmp.html">Build ZynqMP</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../linux/kernel/microblaze.html">Build MicroBlaze</a></li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1" id="toctree-collapse-2-1"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/petalinux.html">Build with Petalinux</a><label for="toctree-collapse-2-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-2-1-1" id="toctree-collapse-2-1-1"/><div class="collapse"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/index.html">Petalinux Device Trees</a><label for="toctree-collapse-2-1-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-custom-dts.html">Custom Device Trees with meta-adi</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../linux/kernel/petalinux-dts/petalinux-meta-adi-bypass.html">Custom Device Trees with DTG (meta-adi Bypass)</a></li>
@@ -213,27 +217,34 @@ Content on this topic
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../software/pyadi-iio/index.html">PyADI-IIO</a></li>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../software/zephyr/index.html">Zephyr RTOS</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/zephyr-devicetree.html">Intro to Devicetree</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/kconfig/zephyr-kconfig.html">Introduction to Kconfig</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../software/zephyr/using-zephyr-codefusion-fs/zephyr_codefusion_fs.html">Using Zephyr &amp; Codefusion Studio to Partition a Flash Filesystem</a></li>
+</ul>
+</li>
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Evaluation Boards</span></p>
 <ul>
-<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8" id="toctree-collapse-8"/><div class="collapse"><a class="reference internal" href="../../../eval/user-guide/index.html">User guides</a><label for="toctree-collapse-8"><div class="icon"></div></label></div><ul>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8-1" id="toctree-collapse-8-1"/><div class="collapse"><a class="reference internal" href="../../../eval/user-guide/adc/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-8-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../../eval/user-guide/index.html">User guides</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9-1" id="toctree-collapse-9-1"/><div class="collapse"><a class="reference internal" href="../../../eval/user-guide/adc/ad4052-ardz/index.html">EVAL-AD4050/AD4052-ARDZ</a><label for="toctree-collapse-9-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../eval/user-guide/adc/ad4052-ardz/user-guide.html">Evaluating the device</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><a class="reference internal" href="../../../eval/user-guide/adc/ad9084-ebz/index.html">EVAL-AD9084-EBZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../eval/user-guide/mem/adxl355-pmdz/index.html">EVAL-ADXL355-PMDZ</a></li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8-2" id="toctree-collapse-8-2"/><div class="collapse"><a class="reference internal" href="../../../eval/user-guide/transceiver/adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-8-2"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9-2" id="toctree-collapse-9-2"/><div class="collapse"><a class="reference internal" href="../../../eval/user-guide/transceiver/adrv9009/index.html">ADRV9009 &amp; ADRV9008</a><label for="toctree-collapse-9-2"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../eval/user-guide/transceiver/adrv9009/prerequisites.html">Prerequisites</a></li>
-<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8-2-1" id="toctree-collapse-8-2-1"/><div class="collapse"><a class="reference internal" href="../../../eval/user-guide/transceiver/adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-8-2-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9-2-1" id="toctree-collapse-9-2-1"/><div class="collapse"><a class="reference internal" href="../../../eval/user-guide/transceiver/adrv9009/quickstart/index.html">Quickstart</a><label for="toctree-collapse-9-2-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../eval/user-guide/transceiver/adrv9009/quickstart/zynqmp.html">ZCU102</a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="../../../eval/user-guide/transceiver/adrv9009/basic-iq-datafiles.html">Basic IQ Datafiles</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8-3" id="toctree-collapse-8-3"/><div class="collapse"><a class="reference internal" href="../../../eval/user-guide/transceiver/adrv9026/index.html">ADRV9026 &amp; ADRV9029</a><label for="toctree-collapse-8-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9-3" id="toctree-collapse-9-3"/><div class="collapse"><a class="reference internal" href="../../../eval/user-guide/transceiver/adrv9026/index.html">ADRV9026 &amp; ADRV9029</a><label for="toctree-collapse-9-3"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../eval/user-guide/transceiver/adrv9026/prerequisites.html">Prerequisites</a></li>
-<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-8-3-1" id="toctree-collapse-8-3-1"/><div class="collapse"><a class="reference internal" href="../../../eval/user-guide/transceiver/adrv9026/quickstart/index.html">Quickstart</a><label for="toctree-collapse-8-3-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9-3-1" id="toctree-collapse-9-3-1"/><div class="collapse"><a class="reference internal" href="../../../eval/user-guide/transceiver/adrv9026/quickstart/index.html">Quickstart</a><label for="toctree-collapse-9-3-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l4"><a class="reference internal" href="../../../eval/user-guide/transceiver/adrv9026/quickstart/zynqmp.html">ZCU102</a></li>
 <li class="toctree-l4"><a class="reference internal" href="../../../eval/user-guide/transceiver/adrv9026/quickstart/versal.html">VCK190</a></li>
 </ul>
@@ -245,7 +256,7 @@ Content on this topic
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Products &amp; Tools</span></p>
 <ul class="current">
-<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-9" id="toctree-collapse-9"/><div class="collapse"><a class="reference internal" href="../../m2k/index.html">ADALM2000</a><label for="toctree-collapse-9"><div class="icon"></div></label></div><ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../m2k/index.html">ADALM2000</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../m2k/devs/index.html">For Developers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../m2k/users/index.html">For End Users</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../m2k/help_support.html">Support</a></li>
@@ -253,7 +264,7 @@ Content on this topic
 <li class="toctree-l2"><a class="reference internal" href="../../m2k/matlab.html">Using with MATLAB</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-10" id="toctree-collapse-10"/><div class="collapse"><a class="reference internal" href="../../pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-10"><div class="icon"></div></label></div><ul>
+<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11"/><div class="collapse"><a class="reference internal" href="../../pluto-m2k/index.html">Common PLUTO&amp;M2K</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../pluto-m2k/building_the_image.html">Building the Firmware Image</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../pluto-m2k/drivers.html">Installing Drivers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../pluto-m2k/firmware.html">Firmware Updates</a></li>
@@ -262,18 +273,18 @@ Content on this topic
 <li class="toctree-l2"><a class="reference internal" href="../../pluto-m2k/usb_otg_host.html">USB OTG – HOST function Support</a></li>
 </ul>
 </li>
-<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11" id="toctree-collapse-11" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">ADALM-PLUTO</a><label for="toctree-collapse-11"><div class="icon"></div></label></div><ul class="current">
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-1" id="toctree-collapse-11-1"/><div class="collapse"><a class="reference internal" href="../devs/index.html">For Developers</a><label for="toctree-collapse-11-1"><div class="icon"></div></label></div><ul>
+<li class="toctree-l1 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12" checked=""/><div class="collapse"><a class="reference internal" href="../index.html">ADALM-PLUTO</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-1" id="toctree-collapse-12-1"/><div class="collapse"><a class="reference internal" href="../devs/index.html">For Developers</a><label for="toctree-collapse-12-1"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../devs/usb_otg.html">USB OTG</a></li>
 </ul>
 </li>
-<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-2" id="toctree-collapse-11-2" checked=""/><div class="collapse"><a class="reference internal" href="index.html">For Hackers</a><label for="toctree-collapse-11-2"><div class="icon"></div></label></div><ul class="current">
+<li class="toctree-l2 current"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-2" id="toctree-collapse-12-2" checked=""/><div class="collapse"><a class="reference internal" href="index.html">For Hackers</a><label for="toctree-collapse-12-2"><div class="icon"></div></label></div><ul class="current">
 <li class="toctree-l3 current"><a class="current reference internal" href="#">ADALM-PLUTO Hardware</a></li>
 <li class="toctree-l3"><a class="reference internal" href="listening_to_yourself.html">Self Reception</a></li>
 <li class="toctree-l3"><a class="reference internal" href="power_amp.html">Controlling External Devices</a></li>
 </ul>
 </li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-11-3" id="toctree-collapse-11-3"/><div class="collapse"><a class="reference internal" href="../users/index.html">For End Users</a><label for="toctree-collapse-11-3"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12-3" id="toctree-collapse-12-3"/><div class="collapse"><a class="reference internal" href="../users/index.html">For End Users</a><label for="toctree-collapse-12-3"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../users/antennas.html">Antennas</a></li>
 </ul>
 </li>
@@ -287,9 +298,7 @@ Content on this topic
 <p class="caption" role="heading"><span class="caption-text">Apps &amp; Solutions</span></p>
 <ul>
 <li class="toctree-l1"><a class="reference internal" href="../../../solutions/application-software/index.html">Application Software</a></li>
-<li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-12" id="toctree-collapse-12"/><div class="collapse"><a class="reference internal" href="../../../solutions/demos/index.html">Demos!</a><label for="toctree-collapse-12"><div class="icon"></div></label></div><ul class="simple">
-</ul>
-</li>
+<li class="toctree-l1"><a class="reference internal" href="../../../solutions/demos/index.html">Demos!</a></li>
 <li class="toctree-l1"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-13" id="toctree-collapse-13"/><div class="collapse"><a class="reference internal" href="../../../solutions/product-solution-centers/index.html">Product Solution Centers</a><label for="toctree-collapse-13"><div class="icon"></div></label></div><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../solutions/product-solution-centers/adaq2387/index.html">ADAQ2387x and LTC2387 family SAR ADC Developer Resources</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../solutions/product-solution-centers/adc_pulsar_single/index.html">Single-Channel, SPI-interface SAR ADC Developer Resources</a></li>
@@ -331,10 +340,19 @@ Content on this topic
 <li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/ad-swiot1l-sl/software-guide/index.html">Software User Guide</a></li>
 </ul>
 </li>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-7" id="toctree-collapse-14-7"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/index.html">EVAL-CN0503-ARDZ</a><label for="toctree-collapse-14-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/cn0503-software/index.html">Software User Guide</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/fluorescence-measurement/index.html">Fluorescence Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/nitrate-measurement/index.html">Nitrate Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/pH-measurement/index.html">pH Measurement Demo</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0503-ardz/turbidity/index.html">Turbidity Measurement Demo</a></li>
+</ul>
+</li>
+<li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0565-ardz/index.html">EVAL-CN0565-ARDZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0575-rpiz/index.html">EVAL-CN0575-RPIZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-cn0577-fmcz/index.html">EVAL-CN0577-FMCZ</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../solutions/reference-designs/eval-ess1-sys/index.html">EVAL-ESS1-SYS</a></li>
-<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-7" id="toctree-collapse-14-7"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-14-7"><div class="icon"></div></label></div><ul>
+<li class="toctree-l2"><input class="toctree-collapse" type="checkbox" name="toctree-collapse-14-8" id="toctree-collapse-14-8"/><div class="collapse"><a class="reference internal" href="../../../solutions/reference-designs/eval-isomax/index.html">EVAL-ISOMAX</a><label for="toctree-collapse-14-8"><div class="icon"></div></label></div><ul>
 <li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-isomax/hardware_guide/index.html">Hardware User Guide</a></li>
 <li class="toctree-l3"><a class="reference internal" href="../../../solutions/reference-designs/eval-isomax/software_guide/index.html">Software User Guide</a></li>
 </ul>
@@ -436,16 +454,16 @@ Host mode.</p>
 <a class="reference internal image-reference" href="../../../_images/back.png"><img alt="../../../_images/back.png" src="../../../_images/back.png" style="width: 200px;" />
 </a>
 <p>The plastic case comes off quite easily, with the removal of two
-black <a class="reference external" href="https://en.wikipedia.org/wiki/List_of_screw_drives#Phillips">Phillips</a>
+black <a class="icon link reference external" href="https://en.wikipedia.org/wiki/List_of_screw_drives#Phillips" target="_blank">Phillips</a>
 screws on the bottom of the case. This is a picture of the pre-production Rev B
 boards. The production version may be different.
-It will for sure be <a class="reference external" href="https://wiki.analog.com/university/tools/pluto/common/regulatory_compliance">CE and FCC certified</a>
+It will for sure be <a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/tools/pluto/common/regulatory_compliance" target="_blank">CE and FCC certified</a>
 (already passed).</p>
 <p>Removing the screws will allow you to take the top off the case, and expose the
 PCB.</p>
 <p>If you want to remove the PCB, and place it on the table, we recommend that you
 attach
-<a class="reference external" href="https://www.digikey.com/scripts/DkSearch/dksus.dll?KeywordSearch?Site=US&amp;Keywords=3M156065-ND">Cylindrical Bumpers</a>
+<a class="icon link reference external" href="https://www.digikey.com/scripts/DkSearch/dksus.dll?KeywordSearch?Site=US&amp;Keywords=3M156065-ND" target="_blank">Cylindrical Bumpers</a>
 (also known as feet), on
 the PCB to protect the components on the bottom of the PCB. These are not
 included in the design, and must be purchased separately (as we don’t expect too
@@ -456,7 +474,7 @@ many people wanting to do this).</p>
 <p>Different revisions of the PlutoSDR does not include any major functionality
 changes, and there is no difference for end users (there may be minor internal
 feature changes). While it is natural to want the “latest” version, there is no
-<a class="icon adi reference external" href="https://www.analog.com/media/en/news-marketing-collateral/product-highlight/ADALM-PLUTO-Product-Highlight.pdf">specified</a>
+<a class="icon adi reference external" href="https://www.analog.com/media/en/news-marketing-collateral/product-highlight/ADALM-PLUTO-Product-Highlight.pdf" target="_blank">specified</a>
 functionality changes. All revisions are:</p>
 <ul class="simple">
 <li><p>1x Rx SMA, Tuning from 325 MHz to 3.8 GHz, 200 kHz - 20 MHz of instantaneous
@@ -471,7 +489,7 @@ Radio, Python, and others.</p></li>
 <div class="admonition important">
 <p class="admonition-title">Important</p>
 <p>When you order from ADI’s
-<a class="icon adi reference external" href="https://www.analog.com/en/about-adi/corporate-information/sales-distribution.html">authorized channels</a>,
+<a class="icon adi reference external" href="https://www.analog.com/en/about-adi/corporate-information/sales-distribution.html" target="_blank">authorized channels</a>,
 you may get any revision listed below; there is no way to order one specific
 revision (it’s a single part number), so do not ask - it’s not possible.
 <em>Normally</em> inventory is managed via a FIFO (First In; First Out) mechanism, so
@@ -528,7 +546,7 @@ rev <code class="docutils literal notranslate"><span class="pre">C</span></code>
 <h3>New Rev D features<a class="headerlink" href="#new-rev-d-features" title="Link to this heading"></a></h3>
 <p>There are new internal rev D features:</p>
 <ul class="simple">
-<li><p>addition of internal <a class="reference external" href="https://en.wikipedia.org/wiki/Hirose_U.FL">U.FL</a>
+<li><p>addition of internal <a class="icon link reference external" href="https://en.wikipedia.org/wiki/Hirose_U.FL" target="_blank">U.FL</a>
 connectors for:</p>
 <ul>
 <li><p>second receive channel</p></li>
@@ -544,15 +562,15 @@ clock)</p></li>
 </ul>
 <p>u.FL to SMA cables can be picked up for a few dollars at a variety of locations
 including
-<a class="reference external" href="https://www.digikey.com/scripts/DkSearch/dksus.dll?KeywordSearch?Site=US&amp;Keywords=U.FL%20to%20SMA">Digkey</a>,
-<a class="reference external" href="https://www.mouser.com/c/?q=U.FL%20to%20SMA">Mouser</a>,
-<a class="reference external" href="https://www.adafruit.com/product/851">AdaFruit</a> or
-<a class="reference external" href="https://www.sparkfun.com/products/9145">Sparkfun</a>.</p>
+<a class="icon link reference external" href="https://www.digikey.com/scripts/DkSearch/dksus.dll?KeywordSearch?Site=US&amp;Keywords=U.FL%20to%20SMA" target="_blank">Digkey</a>,
+<a class="icon link reference external" href="https://www.mouser.com/c/?q=U.FL%20to%20SMA" target="_blank">Mouser</a>,
+<a class="icon link reference external" href="https://www.adafruit.com/product/851" target="_blank">AdaFruit</a> or
+<a class="icon link reference external" href="https://www.sparkfun.com/products/9145" target="_blank">Sparkfun</a>.</p>
 <a class="reference internal image-reference" href="../../../_images/pluto.png"><img alt="../../../_images/pluto.png" src="../../../_images/pluto.png" style="width: 600px;" />
 </a>
 <p>The standard features - Rx1, Rx2, USB OTG work as previously. See how to add
 these to your units, check out how to
-<a class="reference external" href="https://wiki.analog.com/university/tools/pluto/users/customizing#updating_to_the_ad9364">set config settings</a>.</p>
+<a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/tools/pluto/users/customizing#updating_to_the_ad9364" target="_blank">set config settings</a>.</p>
 <div class="iframe-video"><iframe class="only-screen" src="https://www.youtube-nocookie.com/embed/ph0Kv4SgSuI"></iframe><span class="only-screen"><p>Enable Dual Receive and Dual Transmit for the new revision of Pluto</p>
 </span><div class="admonition video only-print"><p class="admonition-title">Video</p>
 <p>Enable Dual Receive and Dual Transmit for the new revision of Pluto</p>
@@ -564,18 +582,18 @@ you something like (this connects the additional Rx and Tx, and CLK input):</p>
 <div class="admonition-download admonition">
 <p class="admonition-title">Download</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://wiki.analog.com/_media/university/tools/pluto/hacking/plutosdr_schematic_revd_0.1.pdf">Rev D Schematics</a></p></li>
-<li><p><a class="reference external" href="https://wiki.analog.com/_media/university/tools/pluto/hacking/plutosdr_gerber_revd.zip">Rev D Gerbers</a></p></li>
-<li><p><a class="reference external" href="https://wiki.analog.com/_media/university/tools/pluto/hacking/plutosdr_bom_revd.xlsx">Rev D Bill of materials</a></p></li>
-<li><p><a class="reference external" href="https://wiki.analog.com/_media/university/tools/pluto/hacking/plutosdr_brd_revd.zip">Rev D Allegro Board File</a>
-<a class="reference external" href="http://www.7-zip.org/7z.html">compressed</a>). Get the <a class="reference external" href="https://www.cadence.com/en_US/home/tools/pcb-design-and-analysis/allegro-downloads-start.html">Allegro FREE
+<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/_media/university/tools/pluto/hacking/plutosdr_schematic_revd_0.1.pdf" target="_blank">Rev D Schematics</a></p></li>
+<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/_media/university/tools/pluto/hacking/plutosdr_gerber_revd.zip" target="_blank">Rev D Gerbers</a></p></li>
+<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/_media/university/tools/pluto/hacking/plutosdr_bom_revd.xlsx" target="_blank">Rev D Bill of materials</a></p></li>
+<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/_media/university/tools/pluto/hacking/plutosdr_brd_revd.zip" target="_blank">Rev D Allegro Board File</a>
+<a class="icon link reference external" href="http://www.7-zip.org/7z.html" target="_blank">compressed</a>). Get the <a class="icon link reference external" href="https://www.cadence.com/en_US/home/tools/pcb-design-and-analysis/allegro-downloads-start.html" target="_blank">Allegro FREE
 Physical Viewer</a>
 to view.</p></li>
-<li><p><a class="reference external" href="https://wiki.analog.com/_media/university/tools/pluto/hacking/plutosdr_cadence_revd.zip">Rev D Cadence Project</a>
-<a class="reference external" href="http://www.7-zip.org/7z.html">compressed</a>)</p></li>
-<li><p><a class="reference external" href="https://wiki.analog.com/_media/university/tools/pluto/hacking/pluto_revb_3d.zip">Rev B 3D model (Case, bare PCB, connectors)</a>
+<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/_media/university/tools/pluto/hacking/plutosdr_cadence_revd.zip" target="_blank">Rev D Cadence Project</a>
+<a class="icon link reference external" href="http://www.7-zip.org/7z.html" target="_blank">compressed</a>)</p></li>
+<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/_media/university/tools/pluto/hacking/pluto_revb_3d.zip" target="_blank">Rev B 3D model (Case, bare PCB, connectors)</a>
 versions.</p></li>
-<li><p>There are few pictures of rev D in the <a class="reference external" href="https://wiki.analog.com/university/tools/pluto/marketing">Marketing</a> section
+<li><p>There are few pictures of rev D in the <a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/tools/pluto/marketing" target="_blank">Marketing</a> section
 as well.</p></li>
 </ul>
 </div>
@@ -602,16 +620,16 @@ We keep using the “special” version. If you are starting a new design - use 
 <code class="docutils literal notranslate"><span class="pre">XC7Z007S-1CLG225C</span></code>.</p>
 </div>
 <ul class="simple">
-<li><p><a class="reference external" href="https://wiki.analog.com/_media/university/tools/pluto/hacking/plutosdr_schematic_revb.pdf">Rev B Schematics</a></p></li>
-<li><p><a class="reference external" href="https://wiki.analog.com/_media/university/tools/pluto/hacking/plutosdr_gerber_revb.zip">Rev B Gerbers</a></p></li>
-<li><p><a class="reference external" href="https://wiki.analog.com/_media/university/tools/pluto/hacking/plutosdr_bom_revb.xls">Rev B Bill of materials</a></p></li>
-<li><p><a class="reference external" href="https://wiki.analog.com/_media/university/tools/pluto/hacking/plutosdr_brd_revb.zip">Rev B Allegro Board File</a>
-<a class="reference external" href="http://www.7-zip.org/7z.html">compressed</a>). Get the <a class="reference external" href="https://www.cadence.com/en_US/home/tools/pcb-design-and-analysis/allegro-downloads-start.html">Allegro FREE
+<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/_media/university/tools/pluto/hacking/plutosdr_schematic_revb.pdf" target="_blank">Rev B Schematics</a></p></li>
+<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/_media/university/tools/pluto/hacking/plutosdr_gerber_revb.zip" target="_blank">Rev B Gerbers</a></p></li>
+<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/_media/university/tools/pluto/hacking/plutosdr_bom_revb.xls" target="_blank">Rev B Bill of materials</a></p></li>
+<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/_media/university/tools/pluto/hacking/plutosdr_brd_revb.zip" target="_blank">Rev B Allegro Board File</a>
+<a class="icon link reference external" href="http://www.7-zip.org/7z.html" target="_blank">compressed</a>). Get the <a class="icon link reference external" href="https://www.cadence.com/en_US/home/tools/pcb-design-and-analysis/allegro-downloads-start.html" target="_blank">Allegro FREE
 Physical Viewer</a>
 to view.</p></li>
-<li><p><a class="reference external" href="https://wiki.analog.com/_media/university/tools/pluto/hacking/plutosdr_cadence_project_revb.zip">Rev B Cadence Project</a></p></li>
-<li><p><a class="reference external" href="https://wiki.analog.com/_media/university/tools/pluto/hacking/pluto_revb_3d.zip">Rev B 3D model (Case, bare PCB, connectors)</a></p></li>
-<li><p>There are few pictures of rev B in the <a class="reference external" href="https://wiki.analog.com/university/tools/pluto/marketing">Marketing</a> section
+<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/_media/university/tools/pluto/hacking/plutosdr_cadence_project_revb.zip" target="_blank">Rev B Cadence Project</a></p></li>
+<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/_media/university/tools/pluto/hacking/pluto_revb_3d.zip" target="_blank">Rev B 3D model (Case, bare PCB, connectors)</a></p></li>
+<li><p>There are few pictures of rev B in the <a class="icon dokuwiki reference external" href="https://wiki.analog.com/university/tools/pluto/marketing" target="_blank">Marketing</a> section
 as well.</p></li>
 </ul>
 </div>
@@ -634,7 +652,7 @@ on the back side, underneath the USB connector.</p>
 RF connector.</p></li>
 <li><p>As a cost optimization (and feature enhancement), we may redo some of the
 power section (replacing the NCP339AFCT2G, ADM1177, with the
-<a class="reference external" href="http://cds.linear.com/docs/en/datasheet/441312ff.pdf">LTC4413</a>) - this is
+<a class="icon link reference external" href="http://cds.linear.com/docs/en/datasheet/441312ff.pdf" target="_blank">LTC4413</a>) - this is
 still TBD based on lab work to be done. One of the usability issues - is that
 the 2 NCP339AFCT2G devices are designed to be break before make - which
 causes the power supply to reset if you plug the ADALM-PLUTO into a PC (which
@@ -642,8 +660,8 @@ causes it to boot), and then eventually a power supply (which causes the
 supply to disappear for a small time, and then re-appear). We don’t think
 this is a huge issue, but it would be enhance the usability. It would mean
 however, that we loose the ability to read USB voltage/current (which we
-currently do in the <a class="icon adi reference external" href="https://www.analog.com/ADM1177">ADM1177</a>.</p></li>
-<li><p><a class="icon ez reference external" href="https://ez.analog.com/thread/93054">Request</a> to pin out the 2nd channel with
+currently do in the <a class="icon adi reference external" href="https://www.analog.com/ADM1177" target="_blank">ADM1177</a>.</p></li>
+<li><p><a class="icon ez reference external" href="https://ez.analog.com/thread/93054" target="_blank">Request</a> to pin out the 2nd channel with
 pads/footprints.</p></li>
 </ul>
 </section>
@@ -653,11 +671,11 @@ pads/footprints.</p></li>
 <div class="admonition-download admonition">
 <p class="admonition-title">Download</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://wiki.analog.com/_media/university/tools/pluto/hacking/plutosdr_schematic_reva.pdf">Rev A Schematics</a></p></li>
-<li><p><a class="reference external" href="https://wiki.analog.com/_media/university/tools/pluto/hacking/plutosdr_gerber_reva.zip">Rev A Gerbers</a></p></li>
-<li><p><a class="reference external" href="https://wiki.analog.com/_media/university/tools/pluto/hacking/plutosdr_bom_reva.xls">Rev A Bill of materials</a></p></li>
-<li><p><a class="reference external" href="https://wiki.analog.com/_media/university/tools/pluto/hacking/plutosdr_brd_reva.zip">Rev A Allegro Board File</a>
-<a class="reference external" href="http://www.7-zip.org/7z.html">compressed</a>). Get the <a class="reference external" href="https://www.cadence.com/en_US/home/tools/pcb-design-and-analysis/allegro-downloads-start.html">Allegro FREE
+<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/_media/university/tools/pluto/hacking/plutosdr_schematic_reva.pdf" target="_blank">Rev A Schematics</a></p></li>
+<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/_media/university/tools/pluto/hacking/plutosdr_gerber_reva.zip" target="_blank">Rev A Gerbers</a></p></li>
+<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/_media/university/tools/pluto/hacking/plutosdr_bom_reva.xls" target="_blank">Rev A Bill of materials</a></p></li>
+<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/_media/university/tools/pluto/hacking/plutosdr_brd_reva.zip" target="_blank">Rev A Allegro Board File</a>
+<a class="icon link reference external" href="http://www.7-zip.org/7z.html" target="_blank">compressed</a>). Get the <a class="icon link reference external" href="https://www.cadence.com/en_US/home/tools/pcb-design-and-analysis/allegro-downloads-start.html" target="_blank">Allegro FREE
 Physical Viewer</a>
 to view.</p></li>
 </ul>
@@ -668,10 +686,10 @@ to view.</p></li>
 <li><p>RF performance was bad. (EVM was poor, ~-32dBm; goal was -45dBm). This was
 due to the Rakon oscillator having no PPSR <a class="footnote-reference brackets" href="#id4" id="id2" role="doc-noteref"><span class="fn-bracket">[</span>2<span class="fn-bracket">]</span></a>, and us powering the
 oscillator directly from a 1.8V digital rail (which was noisy). A LDO was
-<a class="reference external" href="https://en.wikipedia.org/wiki/Point-to-point_construction#.22Dead_bug.22_construction">dead bugged</a>
+<a class="icon link reference external" href="https://en.wikipedia.org/wiki/Point-to-point_construction#.22Dead_bug.22_construction" target="_blank">dead bugged</a>
 onto rev A, and it fixed the performance problem. We tried a few L/C &amp;
 ferrites, but it was not as good as the LDO, so we added an ultralow noise
-LDO, the <a class="icon adi reference external" href="https://www.analog.com/ADM7160">ADM7160ACPZN1.8</a> to the design.</p></li>
+LDO, the <a class="icon adi reference external" href="https://www.analog.com/ADM7160" target="_blank">ADM7160ACPZN1.8</a> to the design.</p></li>
 <li><p>RF performance was bad on certain PCs, even with with the added LDO (above).
 This was tracked down to to noise on the power supply. We added a power choke
 (DLW5BSM801TQ2L), and this went away, and we got much better results
@@ -694,7 +712,7 @@ some minor power circuit, and monitoring VBUS, so was looked at as “low risk�
 <h2>Datasheets<a class="headerlink" href="#datasheets" title="Link to this heading"></a></h2>
 <p>Here are some pointers to datasheets that are sometimes hard to find.</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://www.rakon.com/">Rakon</a> <a class="reference external" href="https://wiki.analog.com/_media/university/tools/pluto/hacking/rakon_rxo3225m_40mhz_513371_1.8v.pdf">1.8V RXO3225M 40MHz</a></p></li>
+<li><p><a class="icon link reference external" href="https://www.rakon.com/" target="_blank">Rakon</a> <a class="icon dokuwiki reference external" href="https://wiki.analog.com/_media/university/tools/pluto/hacking/rakon_rxo3225m_40mhz_513371_1.8v.pdf" target="_blank">1.8V RXO3225M 40MHz</a></p></li>
 </ul>
 </section>
 <section id="before-plutosdr">
@@ -703,9 +721,9 @@ some minor power circuit, and monitoring VBUS, so was looked at as “low risk�
 platforms. There were a few different AD936x /Zynq platforms that were worked on
 that we borrowed things from:</p>
 <ul class="simple">
-<li><p><a class="reference external" href="https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms3-ebz/hardware">FMCOMMS3 FMC Card</a>,
+<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms3-ebz/hardware" target="_blank">FMCOMMS3 FMC Card</a>,
 which includes the baluns/RF and connection back to the Zynq</p></li>
-<li><p><a class="reference external" href="https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms5-ebz/hardware">FMCOMMS5 FMC Card</a>,
+<li><p><a class="icon dokuwiki reference external" href="https://wiki.analog.com/resources/eval/user-guides/ad-fmcomms5-ebz/hardware" target="_blank">FMCOMMS5 FMC Card</a>,
 which is where we borrowed the (buggy) oscillator design, since the AD9363
 can not be used with a crystal.</p></li>
 <li><p>PicoZed SDR (which is were most of the Zynq and USB comes from).</p></li>
@@ -735,8 +753,6 @@ the next chip, English nomenclature is terrible</p>
         </div>
       </div>
   </div>
-
-  <div id="vertical-border"></div>
 
   <label id="cancel-area-show-toc" for="input-show-toc"></label>
   <label id="cancel-area-show-localtoc" for="input-show-localtoc"></label>
