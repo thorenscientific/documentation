@@ -1,5 +1,3 @@
-.. _hsx-toolbox:
-
 High Speed Converter Toolbox
 ============================
 
