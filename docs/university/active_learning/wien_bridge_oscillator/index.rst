@@ -28,7 +28,7 @@ Oscillators are circuits that generate periodic waveforms without any input sign
 
 Consider the first one, and its consequences in an oscillator: If the loop gain is less than unity, the oscillations will die out. If the loop gain is greater than unity, the oscillations will increase in amplitude, either forever (which is possible in a simulation), or until something limits the amplitude (hopefully gracefully, and not as the result of a catastrophic failure.) If the end application is not very sensitive to distortion (output frequencies at multiples of the desired fundamental frequency), then simple gain limiting methods can be employed - this could be as simple as allowing the amplifier output to “clip” at the supply voltage. But if the application requires a pure sine wave, then carefully controlling the amplifier's gain is absolutely critical.
 
-There are various feedback elements employed to generate the required frequency-dependent phase shift - quartz crystals, mechanical resonators, L-C (inductor-capacitor) networks. The Wien_bridge was developed by Max Wien in 1891, as an extension of the Wheatstone_bridge. Whereas the Wheatstone bridge consists of purely resistive elements, the Wien bridge can be used to measure capacitors. While initially intended as a measurement circuit, at balance, the phase shift of a Wien bridge is zero, so including a gain element with a phase shift of zero will satisfy one of the Barkhausen criterion.
+There are various feedback elements employed to generate the required frequency-dependent phase shift - quartz crystals, mechanical resonators, L-C (inductor-capacitor) networks. The Wien_bridge was developed by Max Wien in 1891, as an extension of the Wheatstone_bridge. Whereas the Wheatstone bridge consists of purely resistive elements, the Wien bridge can be used to measure capacitors. While initially intended as a measurement circuit, at balance, the phase shift of a Wien bridge is zero, so including a gain element with a phase shift of zero will satisfy one part of the Barkhausen criterion.
 
 (It would have been impossible, or at least exceedingly difficult, to make an oscillator in 1891 as no linear electronic gain elements existed - the audion tube was invented in 1906.)
 
@@ -60,7 +60,7 @@ Once the circuit is oscillating, the amplitude control can be described as follo
 
 Eventually, the gain settles to a value that is likely very close to 3 - whatever is required to maintain oscillation - and the amplitude stabilizes.
 
-----------
+
 Wheatstone Bridge Simulation
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
@@ -257,7 +257,7 @@ Further Reading
 
 .. rubric:: Footnotes
 
-.. [#] Why Barkhausen "criterion" and not "criteria"?These two conditions are inseparable in practice:
+.. [#] Why Barkhausen "criterion" and not "criteria"? These two conditions are inseparable in practice:
 
    If the gain is right but the phase is off, the feedback won't reinforce the signal—it might even cancel it.
    If the phase is right but the gain is too low or too high, the oscillation won't sustain—it will either die out or grow uncontrollably.
