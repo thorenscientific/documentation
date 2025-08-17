@@ -97,12 +97,19 @@
 <li><a class="reference internal" href="#wheatstone-bridge-simulation">Wheatstone Bridge Simulation</a></li>
 <li><a class="reference internal" href="#ac-wien-bridge-simulation">AC Wien Bridge Simulation</a></li>
 <li><a class="reference internal" href="#simulated-wien-bridge-oscillator">Simulated Wien Bridge Oscillator</a></li>
+<li><a class="reference internal" href="#simulation-and-construction-of-a-complete-wien-bridge-oscillator">Simulation and Construction of a Complete Wien Bridge Oscillator</a></li>
 </ul>
 </li>
-<li><a class="reference internal" href="#simulation-and-construction-of-a-complete-wien-bridge-oscillator">Simulation and Construction of a Complete Wien Bridge Oscillator</a></li>
 <li><a class="reference internal" href="#materials">Materials</a></li>
-<li><a class="reference internal" href="#acknowledgements">Acknowledgements</a></li>
+<li><a class="reference internal" href="#questions">Questions</a><ul>
+<li><a class="reference internal" href="#a-much-lower-distortion-version-of-the-circuit">A Much Lower Distortion Version of the Circuit</a></li>
+</ul>
+</li>
+<li><a class="reference internal" href="#id2">Questions</a><ul>
 <li><a class="reference internal" href="#further-reading">Further Reading</a></li>
+<li><a class="reference internal" href="#acknowledgements">Acknowledgements</a></li>
+</ul>
+</li>
 <li><a class="reference internal" href="#warning">Warning</a></li>
 </ul>
 </li>
@@ -430,7 +437,7 @@ Content on this topic
 <section id="background">
 <h2>Background<a class="headerlink" href="#background" title="Link to this heading"></a></h2>
 <p>The Wien bridge oscillator holds a significant place in electronics history. Hewlett Packard’s (HP) very first product, the Model 200A audio signal generator, was based on Bill Hewlett’s 1939 Master’s thesis at Stanford University. (see Linear Technology Application Note 43, Appendix C, “The Wien Bridge and Mr. Hewlett”) This groundbreaking device boasted impressive specifications for its time, including a 1-watt output and distortion better than 1% over most of the audio range, powered by standard line voltage. Beyond testing telephone amplifiers and general audio circuits, one of its earliest and most notable applications was in the production of Disney’s Fantasia movie. You can even find a replica of Hewlett Packard’s original garage at Stanford University, commemorating its role as the birthplace of Silicon Valley’s “garage startup” culture. Bill Hewlett’s original Master’s thesis is available for perusal, offering a fascinating glimpse into the circuit theory and design from that era.</p>
-<p>Oscillators are circuits that generate periodic waveforms without any input signal. They generally include some form of amplifier stage - transistors, OP-AMPs, vacuum tubes - with a feedback network consisting of a combination of passive devices such as resistors, capacitors, or inductors. This statement is intentionally general; there are lots of other ways to make an electronic oscillator. For example, the General Radio Type 213-B uses a tuning fork as the frequency selective component, and a carbon microphone as the amplification stage (See <a class="icon link reference external" href="https://www.rsp-italy.it/Electronics/Magazines/General%20Radio%20Experimenter/General%20Radio%20Experimenter%201930%2004.pdf" target="_blank">The General Radio Experimenter, Volume IV, number II</a>) Regardless of the implementation details, in order to oscillate, a linear circuit must satisfy the Barkhausen stability criterion <a class="footnote-reference brackets" href="#id3" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> , which in simple terms states that at the frequency of oscillation:</p>
+<p>Oscillators are circuits that generate periodic waveforms without any input signal. They generally include some form of amplifier stage - transistors, OP-AMPs, vacuum tubes - with a feedback network consisting of a combination of passive devices such as resistors, capacitors, or inductors. This statement is intentionally general; there are lots of other ways to make an electronic oscillator. For example, the General Radio Type 213-B uses a tuning fork as the frequency selective component, and a carbon microphone as the amplification stage (See <a class="icon link reference external" href="https://www.rsp-italy.it/Electronics/Magazines/General%20Radio%20Experimenter/General%20Radio%20Experimenter%201930%2004.pdf" target="_blank">The General Radio Experimenter, Volume IV, number II</a>) Regardless of the implementation details, in order to oscillate, a linear circuit must satisfy the Barkhausen stability criterion <a class="footnote-reference brackets" href="#id4" id="id1" role="doc-noteref"><span class="fn-bracket">[</span>1<span class="fn-bracket">]</span></a> , which in simple terms states that at the frequency of oscillation:</p>
 <ul class="simple">
 <li><p>The loop gain is equal to unity in absolute magnitude</p></li>
 <li><p>The phase shift around the loop is zero or an integer multiple of 2π</p></li>
@@ -452,11 +459,11 @@ Content on this topic
 </li>
 </ul>
 <p>With the phase shift satisfied, the other half of the Barkhausen criterion is a loop gain of unity. At resonance, the reactive arm of the Wien bridge has an attenuation of 1/3, so the amplifier must have a gain of 3. The circuit shown in <a class="reference internal" href="#fig-wien-simple"><span class="std std-numref">Figure 1</span></a> is a simple Wien bridge oscillator with a 1.0kHz output that illustrates this principle.</p>
-<figure class="align-center" id="id4">
+<figure class="align-center" id="id5">
 <span id="fig-wien-simple"></span><a class="reference internal image-reference" href="../../../_images/williams_simple_wien_bridge_osc.png"><img alt="../../../_images/williams_simple_wien_bridge_osc.png" src="../../../_images/williams_simple_wien_bridge_osc.png" style="width: 600px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 1 </span><span class="caption-text">1.0kHz Wien Bridge Oscillator</span><a class="headerlink" href="#id4" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 1 </span><span class="caption-text">1.0kHz Wien Bridge Oscillator</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>Gain control is achieved with an incandescent light bulb (as it is in Bill Hewlett’s configuration.) An incandescent bulb’s resistance increases with power dissipation, and as a rough rule of thumb the hot resistance is often about 10 times the cold resistance. The #327 lamp shown has an operating voltage of 28V and operating current of 40mA, for a hot resistance of about 700 ohms, and a cold resistance of around 70 ohms, which matches actual measurements of a few bulbs. In order to achieve a non-inverting gain of 3, the lamp’s resistance must be half of the feedback resistance, or about 215 ohms.</p>
@@ -471,11 +478,11 @@ Content on this topic
 <p>In order to become familiar with the operation of a bridge circuit, open the
 <strong>wheatstone_bridge.asc</strong> LTspice simulation shown in
 <a class="reference internal" href="#fig-wheatstone-ltspice"><span class="std std-numref">Figure 2</span></a>.</p>
-<figure class="align-center" id="id5">
+<figure class="align-center" id="id6">
 <span id="fig-wheatstone-ltspice"></span><a class="reference internal image-reference" href="../../../_images/wheatstone_ltspice.png"><img alt="../../../_images/wheatstone_ltspice.png" src="../../../_images/wheatstone_ltspice.png" style="width: 600px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 2 </span><span class="caption-text">Wheatstone Bridge Simulation</span><a class="headerlink" href="#id5" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 2 </span><span class="caption-text">Wheatstone Bridge Simulation</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>Note that the bridge is initially unbalanced, and a small, but nonzero voltage appears at Vcd. (A Voltage-controlled voltage source with a gain of unity is a convenient way to measure the difference between two nodes such that it appears in the simulation results.) Experiment with different values for R3, noting that a value of 10k should balance the bridge and give a zero output. Try reducing R1 and R2 to 1k - does this have any effect on the output voltage?</p>
@@ -483,69 +490,69 @@ Content on this topic
 <section id="ac-wien-bridge-simulation">
 <h3>AC Wien Bridge Simulation<a class="headerlink" href="#ac-wien-bridge-simulation" title="Link to this heading"></a></h3>
 <p>Open the <strong>basic_wein_bridge.asc</strong> LTspice simulation shown in <a class="reference internal" href="#fig-basic-wien-ltspice"><span class="std std-numref">Figure 3</span></a>. The simulation is set up as an AC sweep from 100Hz to 10kHz, with the result shown in <a class="reference internal" href="#fig-basic-wien-ltspice-result"><span class="std std-numref">Figure 4</span></a>. (Note that a DC bridge supply would produce a fairly predictable output - node C would be at ground potential, and node D would be at 1/3 of the supply.) Run the simulation and probe node C, the output of the reactive arm of the bridge. Notice the “Gentle” hump in response, peaking somewhere slightly less than 2kHz. Probe node Vcd next. Notice the extremely sharp null in response, making it very easy to locate the exact resonant frequency of 1.59kHz.</p>
-<figure class="align-center" id="id6">
+<figure class="align-center" id="id7">
 <span id="fig-basic-wien-ltspice"></span><a class="reference internal image-reference" href="../../../_images/basic_wien_ltspice.png"><img alt="../../../_images/basic_wien_ltspice.png" src="../../../_images/basic_wien_ltspice.png" style="width: 400px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 3 </span><span class="caption-text">Wein Bridge Frequency Response Simulation</span><a class="headerlink" href="#id6" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 3 </span><span class="caption-text">Wein Bridge Frequency Response Simulation</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<figure class="align-center" id="id7">
+<figure class="align-center" id="id8">
 <span id="fig-basic-wien-ltspice-result"></span><a class="reference internal image-reference" href="../../../_images/basic_wien_ltspice_result.png"><img alt="../../../_images/basic_wien_ltspice_result.png" src="../../../_images/basic_wien_ltspice_result.png" style="width: 400px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 4 </span><span class="caption-text">Frequency Response Simulation Result</span><a class="headerlink" href="#id7" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 4 </span><span class="caption-text">Frequency Response Simulation Result</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 </section>
 <section id="simulated-wien-bridge-oscillator">
 <h3>Simulated Wien Bridge Oscillator<a class="headerlink" href="#simulated-wien-bridge-oscillator" title="Link to this heading"></a></h3>
 <p>Open the <strong>wien_bridge_vcvs_gain.asc</strong> LTspice simulation shown in <a class="reference internal" href="#fig-wien-bridge-vcvs-gain"><span class="std std-numref">Figure 5</span></a>. This is a circuit that is impossible to build in real life—the gain stage is essentially perfect: infinite input impedance, zero output impedance, and no offset or gain error. But it allows us to experiment with ideal cases, to gain some intuition into the Barkhausen criterion and test out some assertions made in the background information.</p>
-<figure class="align-center" id="id8">
+<figure class="align-center" id="id9">
 <span id="fig-wien-bridge-vcvs-gain"></span><a class="reference internal image-reference" href="../../../_images/wien_bridge_vcvs_gain.png"><img alt="../../../_images/wien_bridge_vcvs_gain.png" src="../../../_images/wien_bridge_vcvs_gain.png" style="width: 400px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 5 </span><span class="caption-text">Wien Bridge Oscillator with Ideal Gain Stage</span><a class="headerlink" href="#id8" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 5 </span><span class="caption-text">Wien Bridge Oscillator with Ideal Gain Stage</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>Ignoring V1 for the moment, note that when this simulation is started, all voltages are zero. There is no reason for it to do anything other than stay at zero forever. V1 is there to “kick” the circuit into operation by providing a step to the gain stage when the simulation is first started, then it ramps back to zero and has no further effect on the circuit’s operation. Run the simulation, and probe the output node. Results should look similar to <a class="reference internal" href="#fig-wien-bridge-vcvs-g-2p97"><span class="std std-numref">Figure 6</span></a>.</p>
-<figure class="align-center" id="id9">
+<figure class="align-center" id="id10">
 <span id="fig-wien-bridge-vcvs-g-2p97"></span><a class="reference internal image-reference" href="../../../_images/wien_bridge_vcvs_g_2p97.png"><img alt="../../../_images/wien_bridge_vcvs_g_2p97.png" src="../../../_images/wien_bridge_vcvs_g_2p97.png" style="width: 400px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 6 </span><span class="caption-text">Ideal Wien Oscillator, G=2.97</span><a class="headerlink" href="#id9" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 6 </span><span class="caption-text">Ideal Wien Oscillator, G=2.97</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>Note that the circuit oscillates for a few milliseconds, but the amplitude exponentially decays to zero. This is because the gain is set 1% too low (as you might expect if you built an amplifier with 1% resistors.) Next, set the value for E2 to 2.997, or about 0.1% too low, as shown in <a class="reference internal" href="#fig-wien-bridge-vcvs-g-2p997"><span class="std std-numref">Figure 7</span></a>. Oscillations continue longer, but still decay.</p>
-<figure class="align-center" id="id10">
+<figure class="align-center" id="id11">
 <span id="fig-wien-bridge-vcvs-g-2p997"></span><a class="reference internal image-reference" href="../../../_images/wien_bridge_vcvs_g_2p997.png"><img alt="../../../_images/wien_bridge_vcvs_g_2p997.png" src="../../../_images/wien_bridge_vcvs_g_2p997.png" style="width: 400px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 7 </span><span class="caption-text">Ideal Wien Oscillator, G=2.997</span><a class="headerlink" href="#id10" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 7 </span><span class="caption-text">Ideal Wien Oscillator, G=2.997</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>Since we know that the gain needs to be exactly 3 to sustain oscillation, set the gain to 3.0 as shown in <a class="reference internal" href="#fig-wien-bridge-vcvs-g-3p0"><span class="std std-numref">Figure 8</span></a> and run the simulation.</p>
-<figure class="align-center" id="id11">
+<figure class="align-center" id="id12">
 <span id="fig-wien-bridge-vcvs-g-3p0"></span><a class="reference internal image-reference" href="../../../_images/wien_bridge_vcvs_g_3p0.png"><img alt="../../../_images/wien_bridge_vcvs_g_3p0.png" src="../../../_images/wien_bridge_vcvs_g_3p0.png" style="width: 400px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 8 </span><span class="caption-text">Ideal Wien Oscillator, G=3.0</span><a class="headerlink" href="#id11" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 8 </span><span class="caption-text">Ideal Wien Oscillator, G=3.0</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>Notice that the operation is exactly as predicted, with a steady amplitude for the entire 250ms simulation time. This would never happen in real life, or even with simulations using a model of a real amplifier—the finite gain, finite input impedance, would cause the gain to be slightly more or less than 3.</p>
 <p>As a final illustration that simulations can model situations that would be impossible in the real world, set the gain to 3.03 (1% too high) as shown in <a class="reference internal" href="#fig-wien-bridge-vcvs-g-3p03"><span class="std std-numref">Figure 9</span></a> and run the simulation.</p>
-<figure class="align-center" id="id12">
+<figure class="align-center" id="id13">
 <span id="fig-wien-bridge-vcvs-g-3p03"></span><a class="reference internal image-reference" href="../../../_images/wien_bridge_vcvs_g_3p03.png"><img alt="../../../_images/wien_bridge_vcvs_g_3p03.png" src="../../../_images/wien_bridge_vcvs_g_3p03.png" style="width: 400px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 9 </span><span class="caption-text">Ideal Wien Oscillator, G=3.03</span><a class="headerlink" href="#id12" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 9 </span><span class="caption-text">Ideal Wien Oscillator, G=3.03</span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>The output amplitude hits 15 <strong>TERAVOLTS</strong> after 250ms, with no end in sight. Again, this simulation is only to build intuition about the Barkhausen criterion and has no basis in reality. If you were to build this circuit with an op-amp configured with a gain of 3.03 and powered by +/-5V, oscillations would build until they approached 5V amplitude, then simply “clip” (producing a distorted waveform).</p>
 </section>
-</section>
 <section id="simulation-and-construction-of-a-complete-wien-bridge-oscillator">
-<h2>Simulation and Construction of a Complete Wien Bridge Oscillator<a class="headerlink" href="#simulation-and-construction-of-a-complete-wien-bridge-oscillator" title="Link to this heading"></a></h2>
+<h3>Simulation and Construction of a Complete Wien Bridge Oscillator<a class="headerlink" href="#simulation-and-construction-of-a-complete-wien-bridge-oscillator" title="Link to this heading"></a></h3>
+</section>
 </section>
 <section id="materials">
 <h2>Materials<a class="headerlink" href="#materials" title="Link to this heading"></a></h2>
@@ -571,45 +578,117 @@ functionality</p></li>
 </ul>
 <p>Alternatively, printed circuit board files with matching LTspice simulations are available to fabricate a PCB version of this experiment, available at <a class="icon link reference external" href="https://analogdevicesinc.github.io/DownGit/#/home?url=https://github.com/analogdevicesinc/education_tools/tree/master/experiment-boards/wien_bridge_oscillator" target="_blank">Wien Bridge PCB files and LTspice files</a>.</p>
 <p>The circuit shown in <a class="reference internal" href="#fig-wien-bridge-osc-complete-ltspice"><span class="std std-numref">Figure 10</span></a> is a complete (and practical) Wein bridge oscillator circuit that can be built on a breadboard and run as a simulation (<strong>wien_bridge_osc_complete.asc</strong>). Rather than using an incandescent bulb (which has a positive coefficient of resistance) for the amplifier’s input resistor, this circuit shunts part of the feedback resistance with diodes, which have a negative coefficient of resistance. Ignoring the diodes, the gain would be 1+(10k+4.7k)/(4.7k+2k)), or about 3.19. But as the voltage across D1 and D2 approaches 600mV or so, the effective resistance of R2 is reduced, dropping the gain.</p>
-<figure class="align-center" id="id13">
+<figure class="align-center" id="id14">
 <span id="fig-wien-bridge-osc-complete-ltspice"></span><a class="reference internal image-reference" href="../../../_images/wien_bridge_osc_complete_ltspice.png"><img alt="../../../_images/wien_bridge_osc_complete_ltspice.png" src="../../../_images/wien_bridge_osc_complete_ltspice.png" style="width: 600px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 10 </span><span class="caption-text">Complete, Practical Wien Bridge Oscillator</span><a class="headerlink" href="#id13" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 10 </span><span class="caption-text">Complete, Practical Wien Bridge Oscillator</span><a class="headerlink" href="#id14" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>Run the simulation; the output should resemble <a class="reference internal" href="#fig-wien-bridge-osc-complete-result"><span class="std std-numref">Figure 11</span></a>. The “kick” circuit is not necessary to get the simulation to start… eventually. But the amplifier’s offset in the model is quite low, so the kick helps the simulation start up much faster. Startup time is also a concern in some real-world applications, and circuits similar to V3, such as a pulse generator made from logic gates can be employed. Experiment with different values for vkick (including zero).</p>
-<figure class="align-center" id="id14">
+<figure class="align-center" id="id15">
 <span id="fig-wien-bridge-osc-complete-result"></span><a class="reference internal image-reference" href="../../../_images/wien_bridge_osc_complete_result.png"><img alt="../../../_images/wien_bridge_osc_complete_result.png" src="../../../_images/wien_bridge_osc_complete_result.png" style="width: 400px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 11 </span><span class="caption-text">Wien Bridge Oscillator Simulation Result</span><a class="headerlink" href="#id14" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 11 </span><span class="caption-text">Wien Bridge Oscillator Simulation Result</span><a class="headerlink" href="#id15" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>Next, construct the circuit as shown in <a class="reference internal" href="#fig-wien-bridge-layout"><span class="std std-numref">Figure 12</span></a>.</p>
 <p><strong>To Do:</strong> Needs Update - V- not connected</p>
-<figure class="align-center" id="id15">
+<figure class="align-center" id="id16">
 <span id="fig-wien-bridge-layout"></span><a class="reference internal image-reference" href="../../../_images/wien_bridge_layout.jpg"><img alt="../../../_images/wien_bridge_layout.jpg" src="../../../_images/wien_bridge_layout.jpg" style="width: 800px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 12 </span><span class="caption-text">Complete Wien Bridge Oscillator</span><a class="headerlink" href="#id15" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 12 </span><span class="caption-text">Complete Wien Bridge Oscillator</span><a class="headerlink" href="#id16" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<p>Note that R5 is a potentiometer, allowing the gain of the circuit to be “dialed in” to where oscillation just starts. Measure the output with Scopy’s oscilloscope, results should be similar to <a class="reference internal" href="#fig-wien-bridge-osc-complete-scopy"><span class="std std-numref">Figure 13</span></a>.</p>
-<p><strong>To Do:</strong> Take nicer Scopyshot</p>
-<figure class="align-center" id="id16">
-<span id="fig-wien-bridge-osc-complete-scopy"></span><a class="reference internal image-reference" href="../../../_images/wien_bridge_osc_complete_scopy.png"><img alt="../../../_images/wien_bridge_osc_complete_scopy.png" src="../../../_images/wien_bridge_osc_complete_scopy.png" style="width: 600px;" />
+<p>Note that R5 is a potentiometer, allowing the gain of the circuit to be “dialed in” to where oscillation just starts. Measure the output with Scopy’s oscilloscope; set the vertical to 1 Volts/Div and the timebase to 200 µs/Div. The results should be similar to <a class="reference internal" href="#fig-wien-bridge-osc-complete-scopy"><span class="std std-numref">Figure 13</span></a>.</p>
+<figure class="align-center" id="id17">
+<span id="fig-wien-bridge-osc-complete-scopy"></span><a class="reference internal image-reference" href="../../../_images/diode_clamp_osc.png"><img alt="../../../_images/diode_clamp_osc.png" src="../../../_images/diode_clamp_osc.png" style="width: 800px;" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 13 </span><span class="caption-text">Wien Bridge Oscillator Measured Output</span><a class="headerlink" href="#id16" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 13 </span><span class="caption-text">Wien Bridge Oscillator Measured Output</span><a class="headerlink" href="#id17" title="Link to this image"></a></p>
 </figcaption>
 </figure>
-<p>** To Do:** Frequency Domain measurements, Distortion vs. potentiometer setting</p>
-<p>Questions:</p>
-<p>What is the relationship between the gain control elements and distortion?</p>
+<p>That is a “pretty nice” looking sinewave, but how nice is it? Can your eye detect any distortion at all? It is nearly impossible to visually detect distortion in a time-domain (oscilloscope) plot - even with a perfect reference sinewave to compare against, distortion less than 1% is difficult to see. To truly analyze low-level distortion components, Fourier Transform techniques are required, and that is exactly what Scopy’s spectrum analyzer does. Open up the spectrum analyzer, and set the start frequency to 0 kHz, Stop frequency to 20 kHz, Top to 0 dB, and Bottom to -120 dB. <strong>IMPORTANT:</strong> Click the channel 1 settings, select Blackman-Harris window, and set the Gain Mode to High.</p>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>The ADALM2000 has two input ranges, +/-2.5 V and +/-20 V. These are selected automatically in the oscilloscope as you adjust the vertical gain, but not in the spectrum analyzer. Note that if you increase the oscillator’s gain to the point where the output exceeds +/- 2.5V, you will need to set the Gain Mode to Low to avoid “clipping”, which will not damage anything, but will result in excessive distortion.</p>
+</div>
+<p>Observe the spectrum of the oscilator’s output, as in <a class="reference internal" href="#fig-diode-clamp-spectrum"><span class="std std-numref">Figure 14</span></a>.</p>
+<figure class="align-center" id="id18">
+<span id="fig-diode-clamp-spectrum"></span><a class="reference internal image-reference" href="../../../_images/diode_clamp_spectrum.png"><img alt="../../../_images/diode_clamp_spectrum.png" src="../../../_images/diode_clamp_spectrum.png" style="width: 800px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 14 </span><span class="caption-text">Output Spectrum, Diode Clamp Amplitude Control</span><a class="headerlink" href="#id18" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>While the diode clamp method of limiting the gain is simple, it’s difficult to get better than approximately -40 dB (about 1%) distortion.</p>
+</section>
+<section id="questions">
+<h2>Questions<a class="headerlink" href="#questions" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>What is the relationship between the gain control elements and distortion?</p></li>
+<li><p>What would happen to the distortion components if you replaced one of the diodes in the diode clamp circuit with a Schottky diode, that has a lower forward drop than a silicon diode?</p></li>
+</ul>
+<section id="a-much-lower-distortion-version-of-the-circuit">
+<h3>A Much Lower Distortion Version of the Circuit<a class="headerlink" href="#a-much-lower-distortion-version-of-the-circuit" title="Link to this heading"></a></h3>
+<p>Let’s build up a variant of the circuit shown earier in <a class="reference internal" href="#fig-wien-simple"><span class="std std-numref">Figure 1</span></a>. The #327 incandescent bulb is a 28 V indicator lamp with a cold resistance of approximately 130 Ω and a hot resistance of approximately 650 Ω. This can be modeled as a resistor in LTspice, with resistance being a function of the power dissipation. But the resistance can’t change instantaneously - if it did, then as the output sinewave went from zero, to full-amplitude, back to zero, and to full negative amplitude, the amplifier’s gain would change in concert, distorting the output waveform - NOT what we are after. The operation of the circuit relies on the bulb’s thermal time constant being much longer than half the output period. (Why half the output period? Recall that the formula for power dissipated in a resistor is V^2/r, so both positive and negative output swings produce positive power dissipation.) This time lag is modeled by translating the bulb’s power dissipation into a current, which drives a parallel R-C network (R100 and C100), with a resulting time constant of 50 ms - much longer than the 628 µs half-period of the 1.59 KHz output. Thus the bulb’s resistance is dependent on the average power dissipation over many cycles.</p>
+<p>Open the wien_bridge_osc_experimenter.asc simulation, shown in <a class="reference internal" href="#fig-wien-bridge-osc-incandescent"><span class="std std-numref">Figure 15</span></a>.</p>
+<figure class="align-center" id="id19">
+<span id="fig-wien-bridge-osc-incandescent"></span><a class="reference internal image-reference" href="../../../_images/wien_bridge_osc_incandescent.png"><img alt="../../../_images/wien_bridge_osc_incandescent.png" src="../../../_images/wien_bridge_osc_incandescent.png" style="width: 800px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 15 </span><span class="caption-text">LTspice Simulation of Incandescent Bulb Amplitude Control</span><a class="headerlink" href="#id19" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Run the simulation and probe the output, as shown in <a class="reference internal" href="#fig-wien-bridge-osc-incand-waveform"><span class="std std-numref">Figure 16</span></a>.</p>
+<figure class="align-center" id="id20">
+<span id="fig-wien-bridge-osc-incand-waveform"></span><a class="reference internal image-reference" href="../../../_images/wien_bridge_osc_incand_waveform.png"><img alt="../../../_images/wien_bridge_osc_incand_waveform.png" src="../../../_images/wien_bridge_osc_incand_waveform.png" style="width: 400px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 16 </span><span class="caption-text">Output, LTspice Simulation of Incandescent Bulb Amplitude Control</span><a class="headerlink" href="#id20" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p>Note the initial transient, where the circuit is “hunting” for just the right amplitude to sustain oscillation.  While this circuit may be built up on a breadboard, if you have made it this far into the exercise, you might want to have something a bit more reliable, and permanent. <a class="reference internal" href="#fig-experimenter"><span class="std std-numref">Figure 17</span></a> shows the completed board, with ADALM2000 attached.</p>
+<figure class="align-center" id="id21">
+<span id="fig-experimenter"></span><a class="reference internal image-reference" href="../../../_images/experimenter.jpg"><img alt="../../../_images/experimenter.jpg" src="../../../_images/experimenter.jpg" style="width: 600px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 17 </span><span class="caption-text">Assembled Wien Bridge Oscillator Experimenter Board</span><a class="headerlink" href="#id21" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+<p><a class="reference internal" href="#fig-bulb-spectrum"><span class="std std-numref">Figure 18</span></a> below shows the output spectrum of the Wien Bridge Oscillator Experimenter board, set to bulb control. Note that the distortion is better than 60 dB - ten times lower than typically actievable with the diode-clamp circuit. In fact, this is pushing the distortion floor of the ADALM2000 itself! While the exact number varies, there’s an axiom that a measurement instrument should be 4 to 10 times better than the device under test. We have reached the limit of the ADALM2000; the only option for truly measuring this ciruit’s distortion is to use a better test instrument.</p>
+<figure class="align-center" id="id22">
+<span id="fig-bulb-spectrum"></span><a class="reference internal image-reference" href="../../../_images/bulb_spectrum.png"><img alt="../../../_images/bulb_spectrum.png" src="../../../_images/bulb_spectrum.png" style="width: 800px;" />
+</a>
+<figcaption>
+<p><span class="caption-number">Figure 18 </span><span class="caption-text">Output Spectrum, Incandescent Bulb Amplitude Control</span><a class="headerlink" href="#id22" title="Link to this image"></a></p>
+</figcaption>
+</figure>
+</section>
+</section>
+<section id="id2">
+<h2>Questions<a class="headerlink" href="#id2" title="Link to this heading"></a></h2>
+<ul class="simple">
+<li><p>What is the state of the art for distortion measurement instruments in the audio range?</p></li>
+<li><p>If you can’t afford a state of the art benchtop distortion analyzer, are there other options?
+* (Hint: Watch the video at the start of this article!)</p></li>
+</ul>
+<section id="further-reading">
+<h3>Further Reading<a class="headerlink" href="#further-reading" title="Link to this heading"></a></h3>
+<ul class="simple">
+<li><p><a class="icon link reference external" href="https://m.eet.com/media/1146147/22254-61856.pdf" target="_blank">“Thank You, Bill Hewlett”, Jim Williams, EDN Magazine Feb. 2001</a></p></li>
+<li><p><a class="icon link reference external" href="https://web.archive.org/web/20211006041636/https://www.hp.com/us-en/pdf/002patent_tcm_245_921599.pdf" target="_blank">U.S. Patent 2,268,872: Variable Frequency Oscillation Generator</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/media/en/technical-documentation/application-notes/an43f.pdf" target="_blank">Linear Technology Application Note 43: Bridge Circuits</a></p></li>
+<li><p><a class="icon adi reference external" href="https://www.analog.com/media/en/technical-documentation/application-notes/an132f.pdf" target="_blank">Linear Technology Application Note 132: Fidelity Testing for A-D Converters</a></p></li>
+<li><p><a class="icon link reference external" href="https://www.kennethkuhn.com/hpmuseum/scans/" target="_blank">Bill Hewlett’s Master’s thesis on Kenneth Kuhn’s HP Manuals page, See text “Bill Hewlett’s famous thesis” for actual link</a></p></li>
+<li><p><a class="icon link reference external" href="https://en.wikipedia.org/wiki/Wien_bridge_oscillator" target="_blank">Wien_bridge_oscillator</a></p></li>
+<li><p><a class="icon link reference external" href="http://www.tronola.com/moorepage/Lamps.html" target="_blank">Using lamps for stabilizing oscillators</a></p></li>
+</ul>
 </section>
 <section id="acknowledgements">
-<h2>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Link to this heading"></a></h2>
+<h3>Acknowledgements<a class="headerlink" href="#acknowledgements" title="Link to this heading"></a></h3>
 <p>This exercise was inspired by an ASEE 2022 conference workshop presented in partnership with Dr. Robert Bowman, author of the book “EE Freshman Practicum”. The full workshop video is available here:</p>
 <div class="iframe-video"><iframe class="only-screen" src="https://www.youtube-nocookie.com/embed/-FxNJlDDGIs"></iframe><span class="only-screen"></span><div class="admonition video only-print"><p class="admonition-title">Video</p>
 <p><a href="https://www.youtube.com/watch?v=-FxNJlDDGIs"><span>https://www.youtube.com/watch?v=-FxNJlDDGIs</span></a></p>
@@ -621,21 +700,9 @@ functionality</p></li>
 </ul>
 </dd>
 </dl>
-</section>
-<section id="further-reading">
-<h2>Further Reading<a class="headerlink" href="#further-reading" title="Link to this heading"></a></h2>
-<ul class="simple">
-<li><p><a class="icon link reference external" href="https://m.eet.com/media/1146147/22254-61856.pdf" target="_blank">“Thank You, Bill Hewlett”, Jim Williams, EDN Magazine Feb. 2001</a></p></li>
-<li><p><a class="icon link reference external" href="https://web.archive.org/web/20211006041636/https://www.hp.com/us-en/pdf/002patent_tcm_245_921599.pdf" target="_blank">U.S. Patent 2,268,872: Variable Frequency Oscillation Generator</a></p></li>
-<li><p><a class="icon adi reference external" href="https://www.analog.com/media/en/technical-documentation/application-notes/an43f.pdf" target="_blank">Linear Technology Application Note 43: Bridge Circuits</a></p></li>
-<li><p><a class="icon adi reference external" href="https://www.analog.com/media/en/technical-documentation/application-notes/an132f.pdf" target="_blank">Linear Technology Application Note 132: Fidelity Testing for A-D Converters</a></p></li>
-<li><p><a class="icon link reference external" href="https://www.kennethkuhn.com/hpmuseum/scans/" target="_blank">Bill Hewlett’s Master’s thesis on Kenneth Kuhn’s HP Manuals page, See text “Bill Hewlett’s famous thesis” for actual link</a></p></li>
-<li><p><a class="icon link reference external" href="https://en.wikipedia.org/wiki/Wien_bridge_oscillator" target="_blank">Wien_bridge_oscillator</a></p></li>
-<li><p><a class="icon link reference external" href="http://www.tronola.com/moorepage/Lamps.html" target="_blank">Using lamps for stabilizing oscillators</a></p></li>
-</ul>
 <p class="rubric">Footnotes</p>
 <aside class="footnote-list brackets">
-<aside class="footnote brackets" id="id3" role="doc-footnote">
+<aside class="footnote brackets" id="id4" role="doc-footnote">
 <span class="label"><span class="fn-bracket">[</span><a role="doc-backlink" href="#id1">1</a><span class="fn-bracket">]</span></span>
 <p>Why Barkhausen “criterion” and not “criteria”? These two conditions are inseparable in practice:</p>
 <p>If the gain is right but the phase is off, the feedback won’t reinforce the signal—it might even cancel it.
@@ -643,6 +710,7 @@ If the phase is right but the gain is too low or too high, the oscillation won�
 So, the Barkhausen criterion is not two independent criteria, but rather a compound condition—both parts must be satisfied at the same frequency for oscillation to occur. That’s why it’s referred to in the singular: “the Barkhausen criterion.”</p>
 </aside>
 </aside>
+</section>
 </section>
 <section id="warning">
 <h2>Warning<a class="headerlink" href="#warning" title="Link to this heading"></a></h2>
