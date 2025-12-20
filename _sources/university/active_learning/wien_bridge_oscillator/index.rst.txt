@@ -206,8 +206,6 @@ Open **wien_bridge_osc_complete.asc** in LTspice, and run the simulation; the ou
 
 Next, construct the circuit as shown in :numref:`fig-wien_bridge_layout`.
 
-**To Do:** Needs Update - V- not connected
-
 .. _fig-wien_bridge_layout:
 
 .. figure:: wien_bridge_layout.jpg
