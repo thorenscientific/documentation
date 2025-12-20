@@ -4,7 +4,9 @@ Activity: The Wien Bridge Oscillator
 Objective
 ~~~~~~~~~
 
-The objective of this exercise is to explore, understand, simulate, and finally, construct a Wien bridge oscillator. Design files for a printed circuit board version of this experiment are available so you can build one of your own you follow the exercise.
+The objective of this exercise is to explore, understand, simulate, and finally, construct a Wien bridge oscillator. As an added bonus, we will build and test an alternate circuit with considerably better performance.
+
+Design files for a printed circuit board version of this experiment are available so you can build one of your own as you follow the exercise.
 
 A complete video run-through of the experiment, including circuit construction, testing, and measurements, is available in the video "A Low-Distortion Wien Bridge Oscillator You Can Build!":
 
@@ -45,7 +47,7 @@ With the gain and phase shift requirements satisfied, the next step is to ensure
    1.0 kHz Wien bridge oscillator with the LT1037
 
 
-Gain control is achieved with an incandescent light bulb (as it is in Bill Hewlett's configuration.) An incandescent bulb's resistance increases with power dissipation, and as a rough rule of thumb the hot resistance is often about 10 times the cold resistance. The #327 lamp shown has an operating voltage of 28 V and operating current of 40 mA, for a hot resistance of about 700 Ω and a cold resistance of around 70 Ω, which matches the actual measurements of a few bulbs. To achieve a noninverting gain of 3, the lamp's resistance must be half of the feedback resistance, or about 215 Ω.
+Gain control is achieved with an incandescent light bulb (as it is in Bill Hewlett's configuration.) An incandescent bulb's resistance increases with power dissipation, and as a rough rule of thumb the hot resistance is often about 10 times the cold resistance. The \#327 lamp shown has an operating voltage of 28 V and operating current of 40 mA, for a hot resistance of about 700 Ω and a cold resistance of around 70 Ω, which matches the actual measurements of a few bulbs. To achieve a noninverting gain of 3, the lamp's resistance must be half of the feedback resistance, or about 215 Ω.
 
 Once the circuit is oscillating, the amplitude control can be intuitively understood as:
 
@@ -164,9 +166,9 @@ Materials
 
 * :adi:`ADALM2000 (M2K) Active Learning module <adalm2000>` OR:
 
-  * Two-channel oscilloscope, signal generator, and / or network analyzer
+  * Two-channel oscilloscope, signal generator, and/or network analyzer
     functionality
-  * +/-5 V bipolar tracking power supply
+  * ±5 V bipolar tracking power supply
 
 * :adi:`ADALP2000 Parts Kit <adalp2000>` Items:
 
@@ -182,7 +184,7 @@ Materials
 Alternatively, printed circuit board files with matching LTspice simulations are available to fabricate a PCB version of this experiment, available at `Wien Bridge PCB files and LTspice files <https://analogdevicesinc.github.io/DownGit/#/home?url=https://github.com/analogdevicesinc/education_tools/tree/master/experiment-boards/wien_bridge_oscillator>`_.
 
 
-The circuit shown in :numref:`fig-wien_bridge_osc_complete_ltspice` is a complete (and practical) Wein bridge oscillator circuit that can be built on a breadboard. Rather than using an incandescent bulb (which has a positive coefficient of resistance) for the amplifier's input resistor, this circuit shunts part of the feedback resistance with diodes, which have a negative coefficient of resistance. Ignoring the diodes, the gain would be 1+(10k+4.7k)/(4.7k+2k)), or about 3.19. But as the voltage across D1 and D2 approaches 600mV or so, the effective resistance of R2 is reduced, dropping the gain.
+The circuit shown in :numref:`fig-wien_bridge_osc_complete_ltspice` is a complete (and practical) Wien bridge oscillator circuit that can be built on a breadboard. Rather than using an incandescent bulb (which has a positive coefficient of resistance) for the amplifier's input resistor, this circuit shunts part of the feedback resistance with diodes, which have a negative coefficient of resistance. Ignoring the diodes, the gain would be 1+(10k+4.7k)/(4.7k+2k)), or about 3.19. But as the voltage across D1 and D2 approaches 600 mV or so, the effective resistance of R2 is reduced, dropping the gain.
 
 .. _fig-wien_bridge_osc_complete_ltspice:
 
@@ -190,7 +192,7 @@ The circuit shown in :numref:`fig-wien_bridge_osc_complete_ltspice` is a complet
    :align: center
    :width: 600
 
-   Complete, Practical Wien Bridge Oscillator
+   A complete, practical Wien bridge oscillator
 
 Open **wien_bridge_osc_complete.asc** in LTspice, and run the simulation; the output should resemble :numref:`fig-wien_bridge_osc_complete_result`. The "kick" circuit is not actually necessary to get the simulation to start; it will start... eventually. But the amplifier's offset in the model is quite low, so the kick helps the simulation start up much faster. Startup time is also a concern in some real-world applications, and circuits similar to V3, such as a pulse generator made from logic gates can be employed. Experiment with different values for vkick (including zero).
 
@@ -250,7 +252,7 @@ Questions
 A Much Lower Distortion Version of the Circuit
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Let's build up a variant of the circuit shown in :numref:`fig-wien_simple`. The #327 incandescent bulb is a 28 V indicator lamp with a cold resistance of approximately 130 Ω and a hot resistance of approximately 650 Ω. This can be modeled as a resistor in LTspice, with resistance being a function of the power dissipation. But the resistance can't change instantaneously—if it did, then as the output sine wave went from zero, to full-amplitude, back to zero, and to full negative amplitude, the amplifier's gain would change in concert, distorting the output waveform; this is NOT what we are after.
+Let's build up a variant of the circuit shown in :numref:`fig-wien_simple`. The \#327 incandescent bulb is a 28 V indicator lamp with a cold resistance of approximately 130 Ω and a hot resistance of approximately 650 Ω. This can be modeled as a resistor in LTspice, with resistance being a function of the power dissipation. But the resistance can't change instantaneously—if it did, then as the output sine wave went from zero, to full-amplitude, back to zero, and to full negative amplitude, the amplifier's gain would change in concert, distorting the output waveform; this is NOT what we are after.
 
 The operation of the circuit relies on the bulb's thermal time constant being much longer than half the output period. Why half the output period? Recall that the formula for power dissipated in a resistor is V²/r, so both positive and negative output swings produce positive power dissipation. This time lag is modeled by translating the bulb's power dissipation into a current, which drives a parallel R-C network (R100 and C100), with a resulting time constant of 50 ms—much longer than the 628 μs half-period of the 1.59 kHz output. Thus the bulb's resistance is dependent on the *average* power dissipation over many cycles.
 
@@ -300,6 +302,7 @@ Questions
 
 * What is the state of the art for distortion measurement instruments in the audio range?
 * If you can't afford a state of the art benchtop distortion analyzer, are there other options?
+
   * (Hint: Watch the video at the start of this article!)
 
 .. _further_reading:
@@ -322,8 +325,9 @@ This exercise was inspired by an ASEE 2022 conference workshop presented in part
 
 .. video:: https://www.youtube.com/watch?v=-FxNJlDDGIs
 
-**Resources:**
-  * Fritzing files: (To Do)
+Resources
+~~~~~~~~~
+
   * `Wien Bridge Lab LTspice files <https://analogdevicesinc.github.io/DownGit/#/home?url=https://github.com/analogdevicesinc/education_tools/tree/master/m2k/ltspice/wien_bridge_osc>`_
   * `Wien Bridge PCB files and LTspice files <https://analogdevicesinc.github.io/DownGit/#/home?url=https://github.com/analogdevicesinc/education_tools/tree/master/experiment-boards/wien_bridge_oscillator>`_
 

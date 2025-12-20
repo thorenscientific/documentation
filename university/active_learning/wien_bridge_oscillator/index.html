@@ -4,7 +4,7 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
-<meta content="The objective of this exercise is to explore, understand, simulate, and finally, construct a Wien bridge oscillator. Design files for a printed circuit board version of this experiment are available so you can build one of your own you follow the exercise." name="description" />
+<meta content="The objective of this exercise is to explore, understand, simulate, and finally, construct a Wien bridge oscillator. As an added bonus, we will build and test an alternate circuit with considerably better performance." name="description" />
 
     <title>Activity: The Wien Bridge Oscillator &#8212; System Level Documentation  documentation</title>
     <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8e8a900e" />
@@ -113,7 +113,8 @@
 </ul>
 </li>
 <li><a class="reference internal" href="#further-reading">Further Reading</a></li>
-<li><a class="reference internal" href="#acknowledgements">Acknowledgements</a><ul>
+<li><a class="reference internal" href="#acknowledgements">Acknowledgements</a></li>
+<li><a class="reference internal" href="#resources">Resources</a><ul>
 <li><a class="reference internal" href="#warning">Warning</a></li>
 </ul>
 </li>
@@ -492,7 +493,8 @@ Content on this topic
 <h1>Activity: The Wien Bridge Oscillator<a class="headerlink" href="#activity-the-wien-bridge-oscillator" title="Link to this heading"></a></h1>
 <section id="objective">
 <h2>Objective<a class="headerlink" href="#objective" title="Link to this heading"></a></h2>
-<p>The objective of this exercise is to explore, understand, simulate, and finally, construct a Wien bridge oscillator. Design files for a printed circuit board version of this experiment are available so you can build one of your own you follow the exercise.</p>
+<p>The objective of this exercise is to explore, understand, simulate, and finally, construct a Wien bridge oscillator. As an added bonus, we will build and test an alternate circuit with considerably better performance.</p>
+<p>Design files for a printed circuit board version of this experiment are available so you can build one of your own as you follow the exercise.</p>
 <p>A complete video run-through of the experiment, including circuit construction, testing, and measurements, is available in the video “A Low-Distortion Wien Bridge Oscillator You Can Build!”:</p>
 <div class="iframe-video"><iframe class="only-screen" src="https://www.youtube-nocookie.com/embed/XbeZBm2lghw"></iframe><span class="only-screen"></span><div class="admonition video only-print"><p class="admonition-title">Video</p>
 <p><a href="https://www.youtube.com/watch?v=XbeZBm2lghw"><span>https://www.youtube.com/watch?v=XbeZBm2lghw</span></a></p>
@@ -625,9 +627,9 @@ Content on this topic
 <ul class="simple">
 <li><p><a class="icon adi reference external" href="https://www.analog.com/adalm2000" target="_blank">ADALM2000 (M2K) Active Learning module</a> OR:</p>
 <ul>
-<li><p>Two-channel oscilloscope, signal generator, and / or network analyzer
+<li><p>Two-channel oscilloscope, signal generator, and/or network analyzer
 functionality</p></li>
-<li><p>+/-5 V bipolar tracking power supply</p></li>
+<li><p>±5 V bipolar tracking power supply</p></li>
 </ul>
 </li>
 <li><p><a class="icon adi reference external" href="https://www.analog.com/adalp2000" target="_blank">ADALP2000 Parts Kit</a> Items:</p>
@@ -644,12 +646,12 @@ functionality</p></li>
 </li>
 </ul>
 <p>Alternatively, printed circuit board files with matching LTspice simulations are available to fabricate a PCB version of this experiment, available at <a class="icon link reference external" href="https://analogdevicesinc.github.io/DownGit/#/home?url=https://github.com/analogdevicesinc/education_tools/tree/master/experiment-boards/wien_bridge_oscillator" target="_blank">Wien Bridge PCB files and LTspice files</a>.</p>
-<p>The circuit shown in <a class="reference internal" href="#fig-wien-bridge-osc-complete-ltspice"><span class="std std-numref">Figure 10</span></a> is a complete (and practical) Wein bridge oscillator circuit that can be built on a breadboard. Rather than using an incandescent bulb (which has a positive coefficient of resistance) for the amplifier’s input resistor, this circuit shunts part of the feedback resistance with diodes, which have a negative coefficient of resistance. Ignoring the diodes, the gain would be 1+(10k+4.7k)/(4.7k+2k)), or about 3.19. But as the voltage across D1 and D2 approaches 600mV or so, the effective resistance of R2 is reduced, dropping the gain.</p>
+<p>The circuit shown in <a class="reference internal" href="#fig-wien-bridge-osc-complete-ltspice"><span class="std std-numref">Figure 10</span></a> is a complete (and practical) Wien bridge oscillator circuit that can be built on a breadboard. Rather than using an incandescent bulb (which has a positive coefficient of resistance) for the amplifier’s input resistor, this circuit shunts part of the feedback resistance with diodes, which have a negative coefficient of resistance. Ignoring the diodes, the gain would be 1+(10k+4.7k)/(4.7k+2k)), or about 3.19. But as the voltage across D1 and D2 approaches 600 mV or so, the effective resistance of R2 is reduced, dropping the gain.</p>
 <figure class="align-center" id="id15">
 <span id="fig-wien-bridge-osc-complete-ltspice"></span><a class="reference internal image-reference" href="https://media.githubusercontent.com/media/thorenscientific/documentation/main/docs/university/active_learning/wien_bridge_oscillator/wien_bridge_osc_complete_ltspice.png"><img alt="https://media.githubusercontent.com/media/thorenscientific/documentation/main/docs/university/active_learning/wien_bridge_oscillator/wien_bridge_osc_complete_ltspice.png" src="https://media.githubusercontent.com/media/thorenscientific/documentation/main/docs/university/active_learning/wien_bridge_oscillator/wien_bridge_osc_complete_ltspice.png" width="600" />
 </a>
 <figcaption>
-<p><span class="caption-number">Figure 10 </span><span class="caption-text">Complete, Practical Wien Bridge Oscillator</span><a class="headerlink" href="#id15" title="Link to this image"></a></p>
+<p><span class="caption-number">Figure 10 </span><span class="caption-text">A complete, practical Wien bridge oscillator</span><a class="headerlink" href="#id15" title="Link to this image"></a></p>
 </figcaption>
 </figure>
 <p>Open <strong>wien_bridge_osc_complete.asc</strong> in LTspice, and run the simulation; the output should resemble <a class="reference internal" href="#fig-wien-bridge-osc-complete-result"><span class="std std-numref">Figure 11</span></a>. The “kick” circuit is not actually necessary to get the simulation to start; it will start… eventually. But the amplifier’s offset in the model is quite low, so the kick helps the simulation start up much faster. Startup time is also a concern in some real-world applications, and circuits similar to V3, such as a pulse generator made from logic gates can be employed. Experiment with different values for vkick (including zero).</p>
@@ -740,8 +742,11 @@ functionality</p></li>
 <h3>Questions<a class="headerlink" href="#id2" title="Link to this heading"></a></h3>
 <ul class="simple">
 <li><p>What is the state of the art for distortion measurement instruments in the audio range?</p></li>
-<li><p>If you can’t afford a state of the art benchtop distortion analyzer, are there other options?
-* (Hint: Watch the video at the start of this article!)</p></li>
+<li><p>If you can’t afford a state of the art benchtop distortion analyzer, are there other options?</p>
+<ul>
+<li><p>(Hint: Watch the video at the start of this article!)</p></li>
+</ul>
+</li>
 </ul>
 </section>
 </section>
@@ -762,14 +767,15 @@ functionality</p></li>
 <p>This exercise was inspired by an ASEE 2022 conference workshop presented in partnership with Dr. Robert Bowman, author of the book “EE Freshman Practicum”. The full workshop video is available here:</p>
 <div class="iframe-video"><iframe class="only-screen" src="https://www.youtube-nocookie.com/embed/-FxNJlDDGIs"></iframe><span class="only-screen"></span><div class="admonition video only-print"><p class="admonition-title">Video</p>
 <p><a href="https://www.youtube.com/watch?v=-FxNJlDDGIs"><span>https://www.youtube.com/watch?v=-FxNJlDDGIs</span></a></p>
-</div></div><dl class="simple">
-<dt><strong>Resources:</strong></dt><dd><ul class="simple">
-<li><p>Fritzing files: (To Do)</p></li>
+</div></div></section>
+<section id="resources">
+<h2>Resources<a class="headerlink" href="#resources" title="Link to this heading"></a></h2>
+<blockquote>
+<div><ul class="simple">
 <li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/DownGit/#/home?url=https://github.com/analogdevicesinc/education_tools/tree/master/m2k/ltspice/wien_bridge_osc" target="_blank">Wien Bridge Lab LTspice files</a></p></li>
 <li><p><a class="icon link reference external" href="https://analogdevicesinc.github.io/DownGit/#/home?url=https://github.com/analogdevicesinc/education_tools/tree/master/experiment-boards/wien_bridge_oscillator" target="_blank">Wien Bridge PCB files and LTspice files</a></p></li>
 </ul>
-</dd>
-</dl>
+</div></blockquote>
 <p class="rubric">Footnotes</p>
 <aside class="footnote-list brackets">
 <aside class="footnote brackets" id="id5" role="doc-footnote">
