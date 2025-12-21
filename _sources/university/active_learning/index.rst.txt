@@ -622,10 +622,7 @@ Power Electronics Lab Activities and Exercises
       - :dokuwiki:`DC-DC Boost Converters </university/courses/alm1k/circuits1/alm-cir-15a>`
 
         :dokuwiki:`Forward DC-DC Converters </university/courses/alm1k/circuits1/alm-bipolar-step-up-dc-dc>`
-      - 
-        :dokuwiki:`Buck Converter Basics </university/courses/electronics/buck_converter_basics>`
-
-        :dokuwiki:`Boost and Buck converter open-loop operation </university/labs/open_loop_boost_and_buck_adalm2000>`
+      - :dokuwiki:`Boost and Buck converter open-loop operation </university/labs/open_loop_boost_and_buck_adalm2000>`
 
         :dokuwiki:`Buck converter closed-loop operation </university/labs/closed_loop_buck_adalm2000>`
 
