@@ -3,6 +3,10 @@ System Level Documentation
 
 .. attention::
 
+   This Thorenscientific's fork of `<https://github.com/analogdevicesinc/documentation>`__ , NOT the original Analog Devices, Inc. documentation.
+
+.. attention::
+
    Work-in-progress, not all content available at the
    `wiki <https://wiki.analog.com/resources/eval/user-guides/>`_
    has been imported yet.
@@ -15,6 +19,13 @@ developers get up and running fast.
 
 Contents
 -------------------------------------------------------------------------------
+
+.. toctree::
+   :caption: Scratchpad: Thorenscientific's Ideas and Experiments
+   :maxdepth: 4
+   :glob:
+
+   scratchpad/index
 
 .. toctree::
    :caption: Product Categories
