@@ -4,7 +4,7 @@ Activity: The Wien Bridge Oscillator
 Objective
 ~~~~~~~~~
 
-The objective of this exercise is to explore, understand, simulate, and finally, construct a Wien bridge oscillator. As an added bonus, we will build and test an alternate circuit with considerably better performance.
+The objective of this exercise is to explore, understand, simulate, and finally construct a basic Wien bridge oscillator. As an added bonus, we will then build and test an alternate circuit with considerably lower distortion, approaching that of quality benchtop audio signal generators.
 
 Design files for a printed circuit board version of this experiment are available so you can build one of your own as you follow the exercise.
 
@@ -17,6 +17,9 @@ Background
 
 The Wien bridge oscillator holds a significant place in electronics history. Hewlett Packard's (HP) very first product, the model 200A audio signal generator, was based on Bill Hewlett's 1939 master's thesis at Stanford University. This groundbreaking device boasted impressive specifications for its time, including a 1 W output and distortion better than 1% over most of the audio range, powered by standard line voltage. Beyond testing telephone amplifiers and general audio circuits, one of its earliest and most notable applications was in the production of Disney's Fantasia movie. You can even find a replica of Hewlett Packard's original garage, complete with a model 200A, at Stanford University, commemorating its role as the birthplace of Silicon Valley's "garage startup" culture. A link to a copy of Bill Hewlett's original Master's thesis is available for perusal in the :ref:`further_reading` section, offering a fascinating glimpse into the circuit theory and design from that era. Another insightful reference is Linear Technology Application Note 43, Appendix C, “The Wien Bridge and Mr. Hewlett”.
 
+What is an Oscillator?
+~~~~~~~~~~~~~~~~~~~~~~~
+
 Oscillators are circuits that generate periodic waveforms without requiring any input signal. They generally include some form of electronic amplifier stage — transistors, op amps, or vacuum tubes — with a frequency-selective feedback network consisting of a combination of passive devices such as resistors, capacitors, or inductors. The generality of this statement reflects the diversity of oscillator designs; there are plenty of other ways to make an electronic (or electric) oscillator. For example, the General Radio Type 213-B uses a mechanical tuning fork as the frequency selective component, and a carbon microphone as the amplification stage (See `The General Radio Experimenter, Volume IV, number II <https://www.rsp-italy.it/Electronics/Magazines/General%20Radio%20Experimenter/General%20Radio%20Experimenter%201930%2004.pdf>`_) Regardless of the implementation details, in order to oscillate, a linear circuit must satisfy the Barkhausen stability criteria [#]_ , which in simple terms states that at the frequency of oscillation:
 
 * The loop gain is equal to unity in absolute magnitude
@@ -24,7 +27,12 @@ Oscillators are circuits that generate periodic waveforms without requiring any 
 
 Consider the first requirement, and its consequences in an oscillator: If the loop gain is less than unity, the oscillations will die out. If the loop gain is greater than unity, the oscillations will increase in amplitude, either forever (which is possible in a simulation), or until something limits the amplitude (hopefully gracefully, and not as the result of a catastrophic failure.) If the end application is not very sensitive to distortion (output frequencies at multiples of the desired fundamental frequency), then simple gain limiting methods can be employed - this could be as simple as allowing the amplifier output to “clip” at the supply rails. But if the application requires a pure sine wave, then carefully controlling the amplifier's gain is absolutely critical.
 
-Consider the second requirement; there are various feedback elements employed to generate the required frequency-dependent phase shift — quartz crystals, mechanical resonators, L-C (inductor-capacitor) networks. The Wien_bridge was developed by Max Wien in 1891, as an extension of the Wheatstone_bridge. Whereas the Wheatstone bridge consists of purely resistive elements, the Wien bridge can be used to measure capacitors. While initially intended as a measurement circuit, at balance, the phase shift of a Wien bridge is zero, so including a gain element with a phase shift of zero will satisfy one part of the Barkhausen criterion.
+Consider the second requirement; there are various feedback elements employed to generate the required frequency-dependent phase shift — quartz crystals, mechanical resonators, L-C (inductor-capacitor) networks, or - R-C (resistor-capacitor) networks, including the Wien bridge.
+
+The Wien Bridge
+---------------
+
+The Wien bridge was developed by Max Wien in 1891, as an extension of the Wheatstone bridge. Whereas the Wheatstone bridge consists of purely resistive elements, the Wien bridge can be used to measure capacitors. While initially intended as a measurement circuit, at balance, the phase shift of a Wien bridge is zero, so including a gain element with a phase shift of zero will satisfy one part of the Barkhausen criterion.
 
 (It would have been impossible, or at least exceedingly difficult, to make an oscillator based on the Wien bridge in 1891 as no linear electronic gain elements existed — the audion tube was invented in 1906.)
 
@@ -36,13 +44,16 @@ There are several advantages to using a Wien bridge as the feedback element in a
    * variable resistors
    * variable capacitors
 
+A Fully Operational "Classic" Wien Bridge Oscillator
+----------------------------------------------------
+
 With the gain and phase shift requirements satisfied, the next step is to ensure a loop gain of exactly unity. At resonance, the reactive arm of the Wien bridge has an attenuation of 1/3, so the amplifier must have a gain of 3. The circuit shown in :numref:`fig-wien_simple` is a simple Wien bridge oscillator with a 1.0 kHz output that illustrates this principle.
 
 .. _fig-wien_simple:
 
 .. figure:: williams_simple_wien_bridge_osc.png
    :align: center
-   :width: 600
+   :width: 400
 
    1.0 kHz Wien bridge oscillator with the LT1037
 
