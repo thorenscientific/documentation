@@ -16,7 +16,6 @@ author = 'Analog Devices, Inc.'
 extensions = [
     "sphinx.ext.todo",
     "adi_doctools",
-    "ext_lfs_to_links",
 ]
 
 needs_extensions = {
@@ -34,6 +33,7 @@ interref_repos = [
     'pyadi-iio',
     'adi-kuiper-gen',
     'scopy',
+    'linux',
     'no-OS',
     'precision-converters-firmware',
 ]
