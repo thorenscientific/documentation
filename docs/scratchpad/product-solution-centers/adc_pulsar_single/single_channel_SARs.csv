@@ -1,8 +1,13 @@
-Part Number,Arduino,FMC,Pmod,Zed,Cora,SDP-K1,ST Nucleo
-`AD4000: 16-Bit 2 MSPS/1 MSPS/500 kSPS Precision Pseudo Differential <https://www.analog.com/ad4000>`__ ,,`eval-ad400x-fmcz (00) <https://www.analog.com/eval-ad400x-fmcz>`__ ,`EVAL-AD4000-PMDZ <https://www.analog.com/eval-ad4000-pmdz>`__ ,?,?,,
-`AD4001: 16-Bit 2 MSPS/1 MSPS Precision Differential <https://www.analog.com/ad4001>`__ ,,`eval-ad400x-fmcz (01) <https://www.analog.com/eval-ad400x-fmcz>`__ ,`EVAL-AD4001-PMDZ <https://www.analog.com/eval-ad4001-pmdz>`__ ,,,,
-`AD4002: 18-Bit 2 MSPS/1 MSPS/500 kSPS Precision Pseudo Differential <https://www.analog.com/ad4002>`__ ,,`eval-ad400x-fmcz (02) <https://www.analog.com/eval-ad400x-fmcz>`__ ,`EVAL-AD4002-PMDZ <https://www.analog.com/eval-ad4002-pmdz>`__ ,,,,
-`AD4003: 18-Bit 2 MSPS/1 MSPS/500 kSPS Easy Drive Differential <https://www.analog.com/ad4003>`__ ,,`eval-ad400x-fmcz (03) <https://www.analog.com/eval-ad400x-fmcz>`__ ,`EVAL-AD4003-PMDZ <https://www.analog.com/eval-ad4003-pmdz>`__ ,,,,
+,Arduino,FMC,Pmod,ZedBoard,Cora,SDP-K1,ST Nucleo
+Part Number,Eval Board,Eval Board,Eval Board,Controller,Controller,Controller,Controller
+`AD4000: 16-Bit 2 MSPS/1 MSPS/500 kSPS Precision Pseudo Differential <https://www.analog.com/ad4000>`__ ,,`EVAL-AD400x-fmcz (00) <https://www.analog.com/eval-ad400x-fmcz>`__ ,,X,,,
+AD4000 '',,,`EVAL-AD4000-PMDZ <https://www.analog.com/eval-ad4000-pmdz>`__ ,,X,,
+`AD4001: 16-Bit 2 MSPS/1 MSPS Precision Differential <https://www.analog.com/ad4001>`__ ,,`EVAL-AD400x-fmcz (01) <https://www.analog.com/eval-ad400x-fmcz>`__ ,,X,,,
+,,,`EVAL-AD4001-PMDZ <https://www.analog.com/eval-ad4001-pmdz>`__ ,,X,,
+`AD4002: 18-Bit 2 MSPS/1 MSPS/500 kSPS Precision Pseudo Differential <https://www.analog.com/ad4002>`__ ,,`EVAL-AD400x-fmcz (02) <https://www.analog.com/eval-ad400x-fmcz>`__ ,,X,,,
+AD4002 '',,,`EVAL-AD4002-PMDZ <https://www.analog.com/eval-ad4002-pmdz>`__ ,,X,,
+`AD4003: 18-Bit 2 MSPS/1 MSPS/500 kSPS Easy Drive Differential <https://www.analog.com/ad4003>`__ ,,`eval-ad400x-fmcz (03) <https://www.analog.com/eval-ad400x-fmcz>`__ ,,X,,,
+AD4003 '',,,`EVAL-AD4003-PMDZ <https://www.analog.com/eval-ad4003-pmdz>`__ ,,,,
 `AD4004: 16-Bit 2 MSPS/1 MSPS/500 kSPS Precision Pseudo Differential <https://www.analog.com/ad4004>`__ ,,,,,,,
 `AD4005: 16-Bit 2 MSPS/1 MSPS Precision Differential <https://www.analog.com/ad4005>`__ ,,,,,,,
 `AD4006: 18-Bit 2 MSPS/1 MSPS/500 kSPS Precision Pseudo Differential <https://www.analog.com/ad4006>`__ ,,,,,,,
