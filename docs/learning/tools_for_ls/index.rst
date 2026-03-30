@@ -204,15 +204,25 @@ but will be documented in a future tutorial.
 
    Port the Fred in the Shed curve tracer to no-OS on Linux.
 
-Next Steps: Porting to a fully embedded system
+Porting to a fully embedded system
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
-Hi this is me 
+
+If you're reading this, I assume you like metal. I too like the taste of bare-metal projects, 
+and the idea of running code on a microcontroller without the overhead of an operating system. 
+But I also like the convenience of Linux, and the power of Python for data analysis. 
+So why not have both? With the right hardware and software stack, you can develop your code in Python on Linux, 
+then port it to run on a microcontroller with no operating system:
 
 
 .. image:: TeraTerm.png
+   :alt: Tera Term screenshot
+   :align: center
 
 This photo highlights the ideal goal for this fully embedded system
 
+.. todo::
+
+   Show fully embedded projects and steps how to achieve them
 
 More “Just Enough Software” examples
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
