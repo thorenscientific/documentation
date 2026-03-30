@@ -206,6 +206,13 @@ but will be documented in a future tutorial.
 
 Next Steps: Porting to a fully embedded system
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+Hi this is me 
+
+
+.. image:: TeraTerm.png
+
+This photo highlights the ideal goal for this fully embedded system
+
 
 More “Just Enough Software” examples
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
