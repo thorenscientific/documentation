@@ -19,7 +19,7 @@ effects, allowing users to validate theoretical expectations through direct
 measurement. All scripts referenced in this tutorial are available in the
 associated repository.
 
-User Guide
+User Guides
 -------------------------------------------------------------------------------
 
 Using the Detect Sample Frequency Script
