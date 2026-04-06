@@ -210,12 +210,23 @@ Porting to a fully embedded system
 If you're reading this, I assume you like metal. I too like the taste of bare-metal projects, 
 and the idea of running code on a microcontroller without the overhead of an operating system. 
 But I also like the convenience of Linux, and the power of Python for data analysis. 
-So why not have both? With the right hardware and software stack, you can develop your code in Python on Linux, 
-then port it to run on a microcontroller with no operating system:
+So why not have both? With the right hardware and software stack, you can develop your code in pure bare-metal C, 
+with it fully functioning. 
 
 
-.. image:: TeraTerm.png
-   :alt: Tera Term screenshot
+To verify the proof of concept, The challenge was to fully port a high level IIO-based Python script 
+to a no-OS C program running only from the microcontroller. Since the idea was if it can be done in an IIO Level 
+It's most certainly possible to do it in a bare-metal C program project. The script in question is the
+:git-pyadi-iio:`AD5592r / AD5593r Curve Tracer Pyadi-IIO examples <examples/ad5592r_examples>`. Note that not everything 
+can be fully ported from the high-level script, but the core functionality of setting voltages, reading voltages, 
+and using the devices all in all can be done in a fully embedded system. Additionally, the final script should contain the following:
+
+-  ASCII output of the results, such as printing to a console, or sending over UART, etc.
+-  Curve tracer data that can be used to plot using a spreadsheet tool like Excel, or LibreOffice.
+-  The same functionality as the original script, such as setting voltages, reading voltages, and using the devices all in all.
+
+.. image:: CurveTracerOutput.png
+   :alt: Curve Tracer ASCII Output
    :align: center
 
 This photo highlights the ideal goal for this fully embedded system
