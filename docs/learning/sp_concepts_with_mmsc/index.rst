@@ -9,8 +9,8 @@ Overview
 -------------------------------------------------------------------------------
 
 This document provides a practical introduction to signal‑processing concepts
-using the **AD4080 oversampled ADC**, the **ADALM2000 (M2K)**, and the **MMSC
-platform**. It combines theoretical explanations with interactive Python scripts
+using the **AD4080 **, the **ADALM2000 (M2K)**, and the **MMSC
+board**. It combines theoretical explanations with interactive Python scripts
 to demonstrate frequency‑domain analysis, oversampling, digital filtering, and
 noise behavior in a real mixed‑signal measurement setup.
 
@@ -66,7 +66,6 @@ Adjusting the physical clock on the AD4080 board causes the ADC sampling
 frequency to change. This shift is reflected in the FFT output and calculated
 sampling frequency in real time.
 
----
 
 Using the Frequency Sweep Script
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -89,23 +88,13 @@ Additionally, the interface offers radio buttons to select the desired **digital
 filter type**.
 
 Pressing the **Run sweep** button initiates the automated frequency sweep.
-During operation, the interface displays:
-
-1. **Time‑domain waveform**
-2. **Frequency‑domain spectrum**
-3. **Filter frequency response**
+During operation, the interface displays the **Filter frequency response**.
 
 **Expected Output**
 
-.. figure:: filtersweep1.png
+.. figure:: newfilterfreq.png
    :align: center
    :width: 900
-
-.. figure:: filtersweep2.png
-   :align: center
-   :width: 850
-
----
 
 Using the AD4080 Sink Script
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -134,7 +123,6 @@ to voltage units, normalized to full scale, and analyzed using FFTs.
    :align: center
    :width: 900
 
----
 
 Using the Interactive Sinc Folding Script
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -155,18 +143,23 @@ The interface allows real‑time adjustment of:
 The frequency‑domain display updates in real time, showing how noise folds into
 the baseband and how digital filtering shapes the spectrum.
 
----
 
 Using the Noise Sweep Script
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 To run the **noise bandwidth sweep script**, connect the ADALM2000 and AD4080 and
 verify the front-end sampling frequency.
 
-Select the digital filter and OSR, then press **Start sweep**. The script
-increments noise bandwidth from DC, captures ADC samples, removes DC offset, and
-computes RMS noise using the standard deviation.
+The script increments noise bandwidth from DC, captures ADC samples, removes DC offset, and
+computes RMS noise using the standard deviation.Thegraphical interface will launch automatically, 
+providing user‑configurable input fields for sweep parameters including:
 
-.. figure:: noisesweep.png
+- **Start frequency**
+- **Stop frequency**
+- **Step size**
+- **OSR (Oversampling Ratio)**
+
+
+.. figure:: newnoisesweep.png
    :align: center
    :width: 900
 
