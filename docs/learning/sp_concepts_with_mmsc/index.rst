@@ -187,7 +187,6 @@ If the input frequency is known, the sampling frequency can be estimated as:
 
 :math:`f_s = \frac{f_{in} \cdot N}{k}`
 
----
 
 Sinc Folding Concepts
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -199,7 +198,6 @@ Higher‑order sinc filters provide stronger attenuation but introduce more
 pronounced shaping. Increasing OSR reduces bandwidth and increases noise
 suppression while moving folding points closer together.
 
----
 
 Integrated Noise in Oversampled ADCs
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
