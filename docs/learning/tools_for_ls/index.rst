@@ -275,8 +275,8 @@ Below are onboard connections that you can use to test your code, but feel free 
 
 
 ::
-   Channel 0 -> Channel 1 (DAC0 => ADC1), Channel 1 -> Channel 2 (ADC1 => ADC-DAC2)
 
+   Channel 0 -> Channel 1 (DAC0 => ADC1), Channel 1 -> Channel 2 (ADC1 => ADC-DAC2)
 
 Now to start development on a fully embedded system port, The number one rule of thumb in doing this is always cross referencing the drivers of the device that you will use and 
 the original PyADI-IIO Script. In this case, the :git-no-OS:`AD5592r driver <drivers/adc-dac/ad5592r>` is the one you look around to use the base drivers rather than the IIO ones but
@@ -286,8 +286,8 @@ Parsing values, and important addresses for the device. Majority of the time the
 It's important to see project examples on how they are used.
 
 ::
-   int32_t ad5592r_read_adc(struct ad5592r_dev *dev, uint8_t chan, uint16_t *value)
 
+   int32_t ad5592r_read_adc(struct ad5592r_dev *dev, uint8_t chan, uint16_t *value)
 
 In our journey in porting this, if you have noticed that the abscence of printf statements in the code, this is because our microcontroller does not have a standard output, but rather
 only uses UART for communication, so we have to use the UART functions in no-OS API to send our data over UART and then read it on a terminal on our computer.
@@ -295,11 +295,10 @@ The function below is our method of writing data to the terminal. You can read m
 immediately you will notice it will not work, that is because it does not catch up to the speed of the data being sent, so you have to add a delay after for your scripts which is also written below
 
 ::
+
    no_os_uart_write(struct no_os_uart_desc *desc, const uint8_t *data, uint32_t bytes_number)
 
    no_os_delay(uint32_t delay_ms)
-
-
 
 .. todo::
 
