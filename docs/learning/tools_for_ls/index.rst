@@ -273,9 +273,9 @@ Once done reading you can now start trying to use the driver functions, such as 
 You can start by writing a simple code that sets the DAC voltage and reads it back using the ADC, then you can move on to more complex code such as the curve tracer example.
 Below are onboard connections that you can use to test your code, but feel free to make your own connections using the other GPIO pins as well!
 
-.. Connections::
 
-   Channel 0 -> Channel 1 (DAC0 => ADC1), Channel 1 -> Channel 2 (ADC1 => ADC-DAC2)
+
+   **Channel 0 -> Channel 1 (DAC0 => ADC1), Channel 1 -> Channel 2 (ADC1 => ADC-DAC2)**
 
 
 
