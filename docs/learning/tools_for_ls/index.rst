@@ -225,6 +225,8 @@ and using the devices all in all can be done in a fully embedded system. Additio
 -  The same functionality as the original script, such as setting voltages, reading voltages, and using the devices all in all.
 
 .. image:: CurveTracerOutput.png
+   :width: 700px
+   :height: 400px
    :alt: Curve Tracer ASCII Output
    :align: center
 
@@ -232,6 +234,8 @@ This photo shows the output of the PyADI-IIO curve tracer scripts
 
 
 .. image:: max78000dog.png
+   :width: 700px
+   :height: 400px
    :alt: ASCII_Dog_78000
    :align: center
 
@@ -239,8 +243,9 @@ Here is an example of an ASCII Art printed on a terminal.
 
 
 
-To start the project, you must first setup your enviroment through this :wiki.analog:`Wiki guide <resources/no-os/build>` 
-NOTE: In making of this project, majority of the time I use WSL rather than standard windows due to unresolved issues.
+To start the project, you must first setup your enviroment through this `Wiki guide <https://wiki.analog.com/resources/no-os/build>`__ 
+
+**NOTE:** In making of this project, majority of the time I use **WSL** rather than standard windows due to unresolved issues.
 Once the environment is setup, you can start by creating a new no-OS project by cloning the no-OS repository
 
 .. shell::
@@ -251,18 +256,28 @@ Once done, a good way to test your enviroment is if you can build and run your e
 
 .. shell::
 
-   $cd no-OS/projects/adalm-lsmspg
+   $cd /no-OS/projects/adalm-lsmspg/
+
+.. shell::
+
    $make PLATFORM=maxim TARGET=max32665 run
 
 If this command works, now you can start writing your own fully embbedded projects! 
+
 A good way to start is to get a glimspe of existing fully embedded example scripts so that you can grasp how to write your own.
-:git-no-OS:`Here is a basic example does not use IIOs <projects>`
+:git-no-OS:`Here is a basic / dummy example with no IIOs <projects/ad74413r/src/examples/dummy/dummy_example.c>`
 See how almost everything in the example file are just wrappers and function calls to the drivers and no-OS API.
 This is the beauty of no-OS, you can write your own code and use the existing drivers and API to do all the heavy lifting for you.
 
+Once done reading you can now start trying to use the driver functions, such as the ones in the AD5592r driver, to write your own code. 
+You can start by writing a simple code that sets the DAC voltage and reads it back using the ADC, then you can move on to more complex code such as the curve tracer example.
+Below are onboard connections that you can use to test your code, but feel free to make your own connections using the other GPIO pins as well!
+
+.. Connections::
+
+   Channel 0 -> Channel 1 (DAC0 => ADC1), Channel 1 -> Channel 2 (ADC1 => ADC-DAC2)
 
 
-:git-no-OS:`Here is a basic example does not use IIOs <drivers/adc-dac/ad5592r>`
 
 .. todo::
 
