@@ -225,7 +225,6 @@ and using the devices all in all can be done in a fully embedded system. Additio
 -  The same functionality as the original script, such as setting voltages, reading voltages, and using the devices all in all.
 
 .. image:: CurveTracerOutput.png
-   :size: 500px
    :alt: Curve Tracer ASCII Output
    :align: center
 
@@ -233,7 +232,6 @@ This photo shows the output of the PyADI-IIO curve tracer scripts
 
 
 .. image:: max78000dog.png
-   :size: 500px
    :alt: ASCII_Dog_78000
    :align: center
 
