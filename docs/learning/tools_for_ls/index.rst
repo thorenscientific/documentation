@@ -274,8 +274,8 @@ You can start by writing a simple code that sets the DAC voltage and reads it ba
 Below are onboard connections that you can use to test your code, but feel free to make your own connections using the other GPIO pins as well!
 
 
-
-   **Channel 0 -> Channel 1 (DAC0 => ADC1), Channel 1 -> Channel 2 (ADC1 => ADC-DAC2)**
+::
+   Channel 0 -> Channel 1 (DAC0 => ADC1), Channel 1 -> Channel 2 (ADC1 => ADC-DAC2)
 
 
 Now to start development on a fully embedded system port, The number one rule of thumb in doing this is always cross referencing the drivers of the device that you will use and 
@@ -285,6 +285,8 @@ Additionally, it's important to know how drivers are structured in no-OS, as the
 Parsing values, and important addresses for the device. Majority of the time the debugging process is just reading these files back and fourth checking whether you are using them properly, Once again, indicating that 
 It's important to see project examples on how they are used.
 
+::
+   int32_t ad5592r_read_adc(struct ad5592r_dev *dev, uint8_t chan, uint16_t *value)
 
 
 In our journey in porting this, if you have noticed that the abscence of printf statements in the code, this is because our microcontroller does not have a standard output, but rather
@@ -292,10 +294,10 @@ only uses UART for communication, so we have to use the UART functions in no-OS 
 The function below is our method of writing data to the terminal. You can read more about the function :git-no-OS:`here <drivers/api/no_os_uart.c>`. Additionally, if you tried this function 
 immediately you will notice it will not work, that is because it does not catch up to the speed of the data being sent, so you have to add a delay after for your scripts which is also written below
 
+::
+   no_os_uart_write(struct no_os_uart_desc *desc, const uint8_t *data, uint32_t bytes_number)
 
-   **no_os_uart_write(struct no_os_uart_desc *desc, const uint8_t *data, uint32_t bytes_number)**
-
-   **no_os_delay(uint32_t delay_ms)**
+   no_os_delay(uint32_t delay_ms)
 
 
 
