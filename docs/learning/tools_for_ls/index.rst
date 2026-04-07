@@ -207,11 +207,10 @@ but will be documented in a future tutorial.
 Porting to a fully embedded system
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-If you're reading this, I assume you like metal. I too like the taste of bare-metal projects, 
-and the idea of running code on a microcontroller without the overhead of an operating system. 
-But I also like the convenience of Linux, and the power of Python for data analysis. 
-So why not have both? With the right hardware and software stack, you can develop your code in pure bare-metal C, 
-with it fully functioning. 
+The idea of running code on a microcontroller without the overhead of an operating system. This is the ideal for a lot of embedded applications, 
+and is the ultimate goal of this tutorial. In this tutorial, we are using the no-OS software stack, which is a portable software stack that can run on any platform that supports a C compiler. 
+This could be bare metal microcontrollers, truly running without an operating system, up through full systems like our Kuiper Linux running on a Raspberry Pi. 
+The No-OS repository includes existing support for the Linux OS, Real-Time Operating Systems Chibios, and mbed, Raspberry Pico, as well as hardware support for Maxim/ADI, STM32, Xilinx and Altera.
 
 
 To verify the proof of concept, The challenge was to fully port a high level IIO-based Python script 
@@ -226,10 +225,46 @@ and using the devices all in all can be done in a fully embedded system. Additio
 -  The same functionality as the original script, such as setting voltages, reading voltages, and using the devices all in all.
 
 .. image:: CurveTracerOutput.png
+   :size: 500px
    :alt: Curve Tracer ASCII Output
    :align: center
 
-This photo highlights the ideal goal for this fully embedded system
+This photo shows the output of the PyADI-IIO curve tracer scripts
+
+
+.. image:: max78000dog.png
+   :size: 500px
+   :alt: ASCII_Dog_78000
+   :align: center
+
+Here is an example of an ASCII Art printed on a terminal.
+
+
+
+To start the project, you must first setup your enviroment through this :wiki.analog:`Wiki guide <resources/no-os/build>` 
+NOTE: In making of this project, majority of the time I use WSL rather than standard windows due to unresolved issues.
+Once the environment is setup, you can start by creating a new no-OS project by cloning the no-OS repository
+
+.. shell::
+
+   $git clone https://github.com/analogdevicesinc/no-OS.git
+
+Once done, a good way to test your enviroment is if you can build and run your existing project. You can do this by running the command
+
+.. shell::
+
+   $cd no-OS/projects/adalm-lsmspg
+   $make PLATFORM=maxim TARGET=max32665 run
+
+If this command works, now you can start writing your own fully embbedded projects! 
+A good way to start is to get a glimspe of existing fully embedded example scripts so that you can grasp how to write your own.
+:git-no-OS:`Here is a basic example does not use IIOs <projects>`
+See how almost everything in the example file are just wrappers and function calls to the drivers and no-OS API.
+This is the beauty of no-OS, you can write your own code and use the existing drivers and API to do all the heavy lifting for you.
+
+
+
+:git-no-OS:`Here is a basic example does not use IIOs <drivers/adc-dac/ad5592r>`
 
 .. todo::
 
