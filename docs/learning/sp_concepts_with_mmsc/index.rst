@@ -9,7 +9,7 @@ Overview
 -------------------------------------------------------------------------------
 
 This document provides a practical introduction to signal‑processing concepts
-using the **AD4080 **, the **ADALM2000 (M2K)**, and the **MMSC
+using the **AD4080 ** , the **ADALM2000 (M2K)** , and the **MMSC
 board**. It combines theoretical explanations with interactive Python scripts
 to demonstrate frequency‑domain analysis, oversampling, digital filtering, and
 noise behavior in a real mixed‑signal measurement setup.
