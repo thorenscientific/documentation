@@ -1,10 +1,6 @@
 Signal Processing Concepts with ADALM-MMSC
 ===============================================================================
 
-.. note::
-
-   This is a work in progress. Raya is working on this docu!
-
 Overview
 -------------------------------------------------------------------------------
 
@@ -231,3 +227,5 @@ For support related to hardware setup, script execution, or data interpretation:
 - Review the script repository documentation
 - Consult the AD4080, ADALM2000, and MMSC user manuals
 - Contact your Analog Devices applications support representative
+
+Documentation authored by Raya Norelle Mangahas, Spring Intern 2026
