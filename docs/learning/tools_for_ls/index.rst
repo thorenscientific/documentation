@@ -204,8 +204,105 @@ but will be documented in a future tutorial.
 
    Port the Fred in the Shed curve tracer to no-OS on Linux.
 
-Next Steps: Porting to a fully embedded system
+Porting to a fully embedded system
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
+
+The idea of running code on a microcontroller without the overhead of an operating system. This is the ideal for a lot of embedded applications, 
+and is the ultimate goal of this tutorial. In this tutorial, we are using the no-OS software stack, which is a portable software stack that can run on any platform that supports a C compiler. 
+This could be bare metal microcontrollers, truly running without an operating system, up through full systems like our Kuiper Linux running on a Raspberry Pi. 
+The No-OS repository includes existing support for the Linux OS, Real-Time Operating Systems Chibios, and mbed, Raspberry Pico, as well as hardware support for Maxim/ADI, STM32, Xilinx and Altera.
+
+
+To verify the proof of concept, The challenge was to fully port a high level IIO-based Python script 
+to a no-OS C program running only from the microcontroller. Since the idea was if it can be done in an IIO Level 
+It's most certainly possible to do it in a bare-metal C program project. The script in question is the
+:git-pyadi-iio:`AD5592r / AD5593r Curve Tracer Pyadi-IIO examples <examples/ad5592r_examples>`. Note that not everything 
+can be fully ported from the high-level script, but the core functionality of setting voltages, reading voltages, 
+and using the devices all in all can be done in a fully embedded system. Additionally, the final script should contain the following:
+
+-  ASCII output of the results, such as printing to a console, or sending over UART, etc.
+-  Curve tracer data that can be used to plot using a spreadsheet tool like Excel, or LibreOffice.
+-  The same functionality as the original script, such as setting voltages, reading voltages, and using the devices all in all.
+
+.. image:: CurveTracerOutput.png
+   :width: 700px
+   :height: 400px
+   :alt: Curve Tracer ASCII Output
+   :align: center
+
+This photo shows the output of the PyADI-IIO curve tracer scripts
+
+
+.. image:: max78000dog.png
+   :width: 700px
+   :height: 400px
+   :alt: ASCII_Dog_78000
+   :align: center
+
+Here is an example of an ASCII Art printed on a terminal.
+
+
+
+To start the project, you must first setup your enviroment through this `Wiki guide <https://wiki.analog.com/resources/no-os/build>`__ 
+
+**NOTE:** In making of this project, majority of the time I use **WSL** rather than standard windows due to unresolved issues.
+Once the environment is setup, you can start by creating a new no-OS project by cloning the no-OS repository
+
+.. shell::
+
+   $git clone https://github.com/analogdevicesinc/no-OS.git
+
+Once done, a good way to test your enviroment is if you can build and run your existing project. You can do this by running the command
+
+.. shell::
+
+   $cd /no-OS/projects/adalm-lsmspg/
+
+.. shell::
+
+   $make PLATFORM=maxim TARGET=max32665 run
+
+If this command works, now you can start writing your own fully embbedded projects! 
+
+A good way to start is to get a glimspe of existing fully embedded example scripts so that you can grasp how to write your own.
+:git-no-OS:`Here is a basic / dummy example with no IIOs <projects/ad74413r/src/examples/dummy/dummy_example.c>`
+See how almost everything in the example file are just wrappers and function calls to the drivers and no-OS API.
+This is the beauty of no-OS, you can write your own code and use the existing drivers and API to do all the heavy lifting for you.
+
+Once done reading you can now start trying to use the driver functions, such as the ones in the AD5592r driver, to write your own code. 
+You can start by writing a simple code that sets the DAC voltage and reads it back using the ADC, then you can move on to more complex code such as the curve tracer example.
+Below are onboard connections that you can use to test your code, but feel free to make your own connections using the other GPIO pins as well!
+
+
+::
+
+   Channel 0 -> Channel 1 (DAC0 => ADC1), Channel 1 -> Channel 2 (ADC1 => ADC-DAC2)
+
+Now to start development on a fully embedded system port, The number one rule of thumb in doing this is always cross referencing the drivers of the device that you will use and 
+the original PyADI-IIO Script. In this case, the :git-no-OS:`AD5592r driver <drivers/adc-dac/ad5592r>` is the one you look around to use the base drivers rather than the IIO ones but
+a good practice also is to read the IIO drivers as it you can always assume it uses majority of the base drivers properly giving you more examples how how to use the function calls and wrappers of the base driver.
+Additionally, it's important to know how drivers are structured in no-OS, as they are strctured with each having there own header file and main file. Sometimes the header file contains things such as conversion values,
+Parsing values, and important addresses for the device. Majority of the time the debugging process is just reading these files back and fourth checking whether you are using them properly, Once again, indicating that 
+It's important to see project examples on how they are used.
+
+::
+
+   int32_t ad5592r_read_adc(struct ad5592r_dev *dev, uint8_t chan, uint16_t *value)
+
+In our journey in porting this, if you have noticed that the abscence of printf statements in the code, this is because our microcontroller does not have a standard output, but rather
+only uses UART for communication, so we have to use the UART functions in no-OS API to send our data over UART and then read it on a terminal on our computer.
+The function below is our method of writing data to the terminal. You can read more about the function :git-no-OS:`here <drivers/api/no_os_uart.c>`. Additionally, if you tried this function 
+immediately you will notice it will not work, that is because it does not catch up to the speed of the data being sent, so you have to add a delay after for your scripts which is also written below
+
+::
+
+   no_os_uart_write(struct no_os_uart_desc *desc, const uint8_t *data, uint32_t bytes_number)
+
+   no_os_delay(uint32_t delay_ms)
+
+.. todo::
+
+   Show fully embedded projects and steps how to achieve them
 
 More “Just Enough Software” examples
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
